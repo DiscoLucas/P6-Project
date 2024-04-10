@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[SerializeField]
-public class Event
+
+public class CustomerEvent : Event
 {
-
-
+    CustomerEvent realtedeEvent;
 }
