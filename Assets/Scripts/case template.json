@@ -1,0 +1,17 @@
+{
+    "clientName": "clientName",
+    "age": null,
+    "job": "job",
+    "city": "city",
+    "maritalStatus": "maritalStatus",
+    "Finance":
+    {
+        "monthlyIncome": null,
+        "monthlyExpenses": null,
+        "monthlySavings": null,
+        "totalSavings": null,
+
+        "neededLoan": null
+    },
+    "caseDesription": "caseDesription"
+}
