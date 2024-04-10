@@ -1,0 +1,17 @@
+{
+    "clientName": "Peter",
+    "age": 25,
+    "job": "job",
+    "city": "København",
+    "maritalStatus": "maritalStatus",
+    "Finance":
+    {
+        "monthlyIncome": 28000,
+        "monthlyExpenses": null,
+        "monthlySavings": null,
+        "totalSavings": 100000,
+
+        "neededLoan": null
+    },
+    "caseDesription": "caseDesription"
+}
