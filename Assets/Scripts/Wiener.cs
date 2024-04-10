@@ -3,7 +3,7 @@ using UnityEngine;
 public class Wiener : MonoBehaviour
 {
     
-   public double GenerateNoise
+   /*public double GenerateNoise
         (double initPos, double drift, double diffusion, double deltaTime, int numSteps)
     {
         double[] wienerProcess = new double[numSteps];
@@ -18,5 +18,5 @@ public class Wiener : MonoBehaviour
         }
 
         return wienerProcess;
-    }
+    }*/
 }

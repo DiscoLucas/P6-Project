@@ -14,11 +14,13 @@ public class Interest_Rate_Predictor : MonoBehaviour
     IRModel_HullWhite model;
     [SerializeField]
     int shownAmount = 10;
+    [SerializeField]
+    float dt = 0.5f;
     // Start is called before the first frame update
 
     private void Awake()
     {
-        model = new IRModel_HullWhite();
+        model = new IRModel_HullWhite((double)Random.Range(1f, 100f), (double)Random.Range(0.01f, 0.05f), (double)Random.Range(0.01f, 0.1f));
         if (chart == null)
         {
             Debug.LogError("The Chart is not been added to the componet");
@@ -42,7 +44,7 @@ public class Interest_Rate_Predictor : MonoBehaviour
         //chart.ClearSerieData();
         //chart.ClearData();
         chart.RemoveData();
-        double[] predicData = model.predictIRforTimeInterval(shownAmount);
+        double[] predicData = model.predictIRforTimeInterval(dt, shownAmount);
         chart.AddSerie<Line>(seriesName);
         for (int i = 0; i < shownAmount; i++) {
             double d = predicData[i];
@@ -53,16 +55,3 @@ public class Interest_Rate_Predictor : MonoBehaviour
     }
 }
 
-public class IRModel_HullWhite {
-    public IRModel_HullWhite() { 
-    
-    }
-    public double[] predictIRforTimeInterval(int amount)
-    {
-        double[] intR = new double[amount];
-        for (int i = 0; i < amount; i++) {
-            intR[i] = (double)Random.Range(0.01f, 0.1f);
-        }
-        return intR;
-    }
-}
