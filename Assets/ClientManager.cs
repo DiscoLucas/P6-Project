@@ -18,22 +18,27 @@ public class KundeTemplate : MonoBehaviour
 
     void Update()
     {
-        if (!an.isPlaying && !hastalked && Client.activeInHierarchy)
+        if (!an.isPlaying && !hastalked && Client.activeInHierarchy) //When client has walked in
         {
-            //sig noget lort @jacob please lav det her
             hastalked= true;
             di.TiggerDialogue();
+        }
+
+        if(Client.transform.position.x == -12 && !an.isPlaying) //GRIM LØSNING, IKKE RØR ANIMATIONEN HVOR DEN GÅR UD FØR DET HER ER FIKSET!
+        {
+            Client.SetActive(false);
         }
 
         if (Input.GetKeyDown("up")) //Det her if statment skal bare byttes ud med hvad end conditionen for at en client kommer IND.
         {
             hastalked = false;
             Client.SetActive(true);
+            an.Play("WalkIn");
         }
 
         if (Input.GetKeyDown("down")) //Det her if statment skal bare byttes ud med hvad end conditionen for at en client kommer UD.
         {
-            Client.SetActive(false);
+            an.Play("WalkOut");
         }
     }
 }
