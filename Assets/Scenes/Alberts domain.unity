@@ -489,6 +489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628552072}
   - component: {fileID: 1628552073}
+  - component: {fileID: 1628552074}
   m_Layer: 0
   m_Name: ClientManager
   m_TagString: Untagged
@@ -523,6 +524,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923c5597de8321346b47eadaca78c863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clients: []
+  Client: {fileID: 246500641}
+--- !u!114 &1628552074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628552071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientData:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 
+    caseDescription: 
+  clientName: Albert
+  age: 3
+  job: Pantsamler
+  city: Zoo
+  maritalStatus: Single
+  caseDescription: Albert vil gerne have bananer.
+  monthlyIncome: 40
+  monthlyExpenses: 10
+  monthlySavings: 30
+  totalSavings: 120
+  neededLoan: 500
 --- !u!1 &1661254854
 GameObject:
   m_ObjectHideFlags: 0
