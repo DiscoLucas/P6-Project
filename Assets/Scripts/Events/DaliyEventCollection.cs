@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class DaliyEventCollection
 {
-    public List<Event> events;
+    public List<Action> events;
     public int eventIndex = 0;
     public void startDay() {
         eventIndex = 0;

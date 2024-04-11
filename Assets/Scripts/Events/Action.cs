@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [Serializable]
-public class Event
+[CreateAssetMenu(fileName = "Action", menuName = "Actions/Default_Action", order = 1)]
+public class Action: ScriptableObject
 {
-    public string name;
+    public string a_name;
     public string describtion;
     public bool is_done = false;
-    public Event realted_Event;
+    public Action realted_Event;
     public EventInterface e_interface;
     public GameObject e_interface_prefab;
 

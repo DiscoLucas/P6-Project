@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -154,44 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   days:
   - events:
-    - name: Kig bag dig
-      describtion: Der er en stor farlig mand
-      is_done: 0
-      e_interface: {fileID: 0}
-      e_interface_prefab: {fileID: 7569732159221397172, guid: ab20cbd29782c4042803e620530ccc89,
-        type: 3}
-    - name: Hahahaha
-      describtion: Jeg fik dig
-      is_done: 0
-      e_interface: {fileID: 0}
-      e_interface_prefab: {fileID: 7569732159221397172, guid: ab20cbd29782c4042803e620530ccc89,
-        type: 3}
-    - name: Taber
-      describtion: mushahah
-      is_done: 0
-      e_interface: {fileID: 0}
-      e_interface_prefab: {fileID: 7569732159221397172, guid: ab20cbd29782c4042803e620530ccc89,
-        type: 3}
-    eventIndex: 0
-  - events:
-    - name: sry
-      describtion: :(
-      is_done: 0
-      e_interface: {fileID: 0}
-      e_interface_prefab: {fileID: 7569732159221397172, guid: ab20cbd29782c4042803e620530ccc89,
-        type: 3}
-    - name: Jeg var grum
-      describtion: ;.(
-      is_done: 0
-      e_interface: {fileID: 0}
-      e_interface_prefab: {fileID: 7569732159221397172, guid: ab20cbd29782c4042803e620530ccc89,
-        type: 3}
-    - name: Taber
-      describtion: mushahah
-      is_done: 0
-      e_interface: {fileID: 0}
-      e_interface_prefab: {fileID: 7569732159221397172, guid: ab20cbd29782c4042803e620530ccc89,
-        type: 3}
+    - {fileID: 11400000, guid: ef0ca339a8d0adc4eb303076c225b195, type: 2}
+    - {fileID: 11400000, guid: e1cb6cc1ce8233548bf75dd264a03cd4, type: 2}
     eventIndex: 0
   dayIndex: 0
   EI_transform: {fileID: 1415736023}
