@@ -6,12 +6,14 @@ public class KundeTemplate : MonoBehaviour
     ClientData[] clients;
     public GameObject Client; // Client er det client gameobject vi har lige nu.
     Animation an;
+    DialogueInteractor di;
 
     bool hastalked = false;
 
     void Start()
     {
         an = Client.GetComponent<Animation>();
+        di = Client.GetComponent <DialogueInteractor>();
     }
 
     void Update()
@@ -19,8 +21,8 @@ public class KundeTemplate : MonoBehaviour
         if (!an.isPlaying && !hastalked && Client.activeInHierarchy)
         {
             //sig noget lort @jacob please lav det her
-            Debug.Log("hej jeg er albert");
             hastalked= true;
+            di.TiggerDialogue();
         }
 
         if (Input.GetKeyDown("up")) //Det her if statment skal bare byttes ud med hvad end conditionen for at en client kommer IND.

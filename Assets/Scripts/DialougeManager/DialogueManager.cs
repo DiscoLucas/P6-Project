@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
     {
         this.dialoguec = dialogue;
         animator.SetBool("IsOpen", true); //This is for controlling the animaton state of the dialogue canvas.
-        //Debug.Log("Srat " + dialogue.name);
+        Debug.Log("Srat " + dialogue.name);
 
         char_name.text = dialogue.name; //This replaces the "Name" text field on the dialogue canvas.
 
@@ -76,7 +76,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
         StartCoroutine(TypeDia(sentince, dialoguec.TypeSpeed, dialoguec.VoiceClip, dialoguec.maxPitch, dialoguec.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
         //Debug.Log(sentince);
-        //Debug.Log("Next Sentince");
+        Debug.Log("Next Sentince");
     }
 
     IEnumerator TypeDia (string sentence, float TypeSpeed, string[] VoiceClip, float maxPitch, float minPitch) 
@@ -94,7 +94,7 @@ public class DialogueManager : MonoBehaviour
 
     private void PlayCharSound(int currentDisplayedCharacterCount, string[] VoiceClip, float maxPitch, float minPitch)
     {
-        Debug.Log(currentDisplayedCharacterCount);
+        //Debug.Log(currentDisplayedCharacterCount);
         if (currentDisplayedCharacterCount % textFreq == 0)
         {
             string vClip = VoiceClip[Random.Range(0, VoiceClip.Length)];
@@ -113,6 +113,11 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", false);
         //Debug.Log("End");
+    }
+
+    public void Log()
+    {
+        Debug.Log("beep boop");
     }
 
 }
