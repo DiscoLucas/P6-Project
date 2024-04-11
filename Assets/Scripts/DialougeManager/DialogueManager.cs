@@ -114,10 +114,4 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);
         //Debug.Log("End");
     }
-
-    public void Log()
-    {
-        Debug.Log("beep boop");
-    }
-
 }
