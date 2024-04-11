@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventInterface : MonoBehaviour
 {
-    public Event ye_event;
+    public Action ye_event;
 
     public void Start()
     {
