@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6717328503421305980}
   - component: {fileID: 805053994002990058}
   - component: {fileID: 97913378011513985}
+  - component: {fileID: -3375625209119912074}
   m_Layer: 0
   m_Name: Albert
-  m_TagString: Untagged
+  m_TagString: ClientTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,3 +102,33 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &-3375625209119912074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884194875180618394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientData:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 
+    caseDescription: 
+  clientName: 
+  age: 0
+  job: 
+  city: 
+  maritalStatus: 
+  caseDescription: 
+  monthlyIncome: 0
+  monthlyExpenses: 0
+  monthlySavings: 0
+  totalSavings: 0
+  neededLoan: 0
