@@ -1,4 +1,6 @@
 using System;
+using UnityEditor.PackageManager;
+
 [Serializable]
 public class Action
 {
@@ -7,7 +9,7 @@ public class Action
     public bool isDone = false;
     public ActionTemplate originalAction;
     public actionsDisplay aDisplay;
-
+    public ClientTemplate client;
     public virtual void startAction()
     {
         aName = originalAction.aName;
@@ -15,6 +17,7 @@ public class Action
         isDone = originalAction.isDone;
         aDisplay = Event_manager.instance.instiate_interface(originalAction.eInterfacePrefab);
         aDisplay.yeEvent = this;
+        client = originalAction.client;
         originalAction.start();
     }
     public virtual void end()

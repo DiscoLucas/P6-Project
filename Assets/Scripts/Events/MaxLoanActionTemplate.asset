@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: MaxLoanActionTemplate
   m_EditorClassIdentifier: 
   aName: "Hvad er dett maximale jeg kan l\xE5ne for"
-  description: "Jeg ville gerne h\xF8re hvad det er jeg maximalt kan l\xE5ne for"
+  description: "Jeg hedder [Navn] tjener [Tjener]. g\xE6ldsfactor [G\xE6ldsfactor] "
   isDone: 1
   relatedEvent: {fileID: 0}
   eInterfacePrefab: {fileID: 1346754697225984583, guid: c76a5d89211952241823511d99e716a6,
     type: 3}
+  client: {fileID: 11400000, guid: ff2e5fdb1f452d24585258ea9b98c3b8, type: 2}
   debtFactor: 4

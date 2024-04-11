@@ -7,4 +7,5 @@ using UnityEngine;
 public class MaxLoanAction : ActionTemplate
 {
     public float debtFactor = 4;
+    public float wronganswerprocent = 5;
 }
