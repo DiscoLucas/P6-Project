@@ -11,7 +11,9 @@ public class DialogueManager : MonoBehaviour
 {
     private Dialogue TypeSpeed;
     public TMP_Text Diatext;
-    public TMP_Text char_name;
+    
+    public ClientInfo clientInfo;
+    public TMP_Text nameText;
 
     public Animator animator;
 
@@ -22,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int textFreq = 2;
     //[HideInInspector]
     public Dialogue dialoguec;
+    bool hasRun = false;
 
 
 
@@ -52,15 +55,29 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true); //This is for controlling the animaton state of the dialogue canvas.
         Debug.Log("Srat " + dialogue.name);
 
-        char_name.text = dialogue.name; //This replaces the "Name" text field on the dialogue canvas.
+        Debug.Log(clientInfo.clientName);
+        dialogue.name = clientInfo.clientName; //This replaces the "Name" text field on the dialogue canvas.
+        nameText.text = clientInfo.clientName;
 
         sentensis.Clear();
+
+        if (hasRun)
+        {
+            DisplayCaseSummary();
+            return;
+        }
 
         foreach (string sentince in dialogue.sentensis) //Takes each sentince variable in "sentinsis" array from the dialogue class and Enqueues them.
         {
             sentensis.Enqueue(sentince);
         }
+        
+        DisplayNextScentence();
+    }
 
+    private void DisplayCaseSummary()
+    {
+        sentensis.Enqueue(clientInfo.caseDescription);
         DisplayNextScentence();
     }
 
@@ -68,6 +85,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentensis.Count == 0) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
+            hasRun = true;
             EndDialogue();
             return;
         }

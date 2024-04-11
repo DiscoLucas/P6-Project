@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
   m_Name: Peter
   m_EditorClassIdentifier: 
-  clientName: 
-  age: 0
+  clientName: Peter
+  age: 25
   job: 
-  city: 
+  city: "K\xF8benhavn"
   maritalStatus: 
-  caseDescription: 
+  caseDescription: aaaaaaaaaaaaaaaa
   monthlyIncome: 0
   monthlyExpenses: 0
   monthlySavings: 0
