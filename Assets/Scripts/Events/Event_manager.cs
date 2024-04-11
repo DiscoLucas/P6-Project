@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Event_manager : MonoBehaviour
 {
-    public List<DaliyEventCollection> days;
+    public List<Turn> days;
     public int dayIndex = 0;
     public static Event_manager instance;
     public Transform EI_transform;
@@ -33,14 +33,14 @@ public class Event_manager : MonoBehaviour
         if (dayIndex >= days.Count)
             Debug.Log("Færdig");
         else
-            days[dayIndex].updateEvent();
+            days[dayIndex].updateActions();
 
     }
 
-    public EventInterface instiate_interface(GameObject obj)
+    public actionsDisplay instiate_interface(GameObject obj)
     {
         GameObject go = Instantiate(obj, EI_transform.position, EI_transform.rotation);
         go.transform.parent = EI_transform;
-        return go.GetComponent<EventInterface>();
+        return go.GetComponent<actionsDisplay>();
     }
 }

@@ -6,24 +6,22 @@ public class Action
     public string description;
     public bool isDone = false;
     public ActionTemplate originalAction;
-    public EventInterface eInterface;
+    public actionsDisplay aDisplay;
 
-    public virtual void startEvent()
+    public virtual void startAction()
     {
         aName = originalAction.aName;
         description = originalAction.description;
         isDone = originalAction.isDone;
-
-
-
-        eInterface = Event_manager.instance.instiate_interface(originalAction.eInterfacePrefab);
-        eInterface.yeEvent = this;
+        aDisplay = Event_manager.instance.instiate_interface(originalAction.eInterfacePrefab);
+        aDisplay.yeEvent = this;
+        originalAction.start();
     }
-    public virtual void endEvent()
+    public virtual void end()
     {
-        eInterface.endInterface();
+        aDisplay.end();
     }
-    public virtual bool isEventFinnished()
+    public virtual bool isFinnished()
     {
         return isDone;
     }

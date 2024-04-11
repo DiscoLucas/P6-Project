@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c494a90deb89a2e43bdb78f54ac21ec6, type: 3}
+  m_Name: MaxLoanActionTemplate
+  m_EditorClassIdentifier: 
+  aName: "Hvad er dett maximale jeg kan l\xE5ne for"
+  description: "Jeg ville gerne h\xF8re hvad det er jeg maximalt kan l\xE5ne for"
+  isDone: 1
+  relatedEvent: {fileID: 0}
+  eInterfacePrefab: {fileID: 1346754697225984583, guid: c76a5d89211952241823511d99e716a6,
+    type: 3}
+  debtFactor: 4

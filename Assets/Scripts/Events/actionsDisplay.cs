@@ -1,28 +1,28 @@
 using UnityEngine;
 
-public class EventInterface : MonoBehaviour
+public class actionsDisplay : MonoBehaviour
 {
     public Action yeEvent;
 
     public void Start()
     {
-        fillOutInterface();
+        fillOutDisplay();
     }
-    public virtual void fillOutInterface()
+    public virtual void fillOutDisplay()
     {
 
     }
 
-    public void endInterface()
+    public void end()
     {
         Destroy(gameObject);
     }
-    public virtual void interfaceUpdate()
+    public virtual void displayUpdate()
     {
         return;
     }
 
-    public void updateEvent()
+    public void updateActions()
     {
         Event_manager.instance.updateDay();
     }

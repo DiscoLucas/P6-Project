@@ -11,6 +11,8 @@ public class ActionTemplate : ScriptableObject
     public GameObject eInterfacePrefab;
 
 
-
+    public virtual void start() {
+        
+    }
 
 }

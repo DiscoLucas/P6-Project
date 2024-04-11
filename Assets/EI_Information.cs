@@ -1,12 +1,12 @@
 using TMPro;
 using UnityEngine;
-public class EI_Information : EventInterface
+public class EI_Information : actionsDisplay
 {
     [SerializeField]
     TMP_Text header;
     [SerializeField]
     TMP_Text describtion;
-    public override void fillOutInterface()
+    public override void fillOutDisplay()
     {
         header.text = yeEvent.aName;
         describtion.text = yeEvent.description;
