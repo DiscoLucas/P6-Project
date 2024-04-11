@@ -120,7 +120,7 @@ namespace XCharts.Runtime
 
         internal override void SetComponent(MainComponent component)
         {
-            this.component = (T) component;
+            this.component = (T)component;
         }
     }
 }

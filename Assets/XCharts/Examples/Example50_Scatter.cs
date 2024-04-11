@@ -23,7 +23,7 @@ namespace XCharts.Example
 
         float SymbolSize(List<double> data)
         {
-            return (float) (Math.Sqrt(data[2]) / 6e2);
+            return (float)(Math.Sqrt(data[2]) / 6e2);
         }
     }
 }

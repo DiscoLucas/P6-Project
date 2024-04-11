@@ -235,7 +235,7 @@ namespace XCharts.Runtime
                 return m_Color;
 
             var color = m_Color;
-            color.a = (byte) (color.a * m_Opacity);
+            color.a = (byte)(color.a * m_Opacity);
             return color;
         }
 
@@ -245,7 +245,7 @@ namespace XCharts.Runtime
                 return m_ToColor;
 
             var color = m_ToColor;
-            color.a = (byte) (color.a * m_Opacity);
+            color.a = (byte)(color.a * m_Opacity);
             return color;
         }
 
@@ -255,7 +255,7 @@ namespace XCharts.Runtime
                 return m_Color0;
 
             var color = m_Color0;
-            color.a = (byte) (color.a * m_Opacity);
+            color.a = (byte)(color.a * m_Opacity);
             return color;
         }
 
@@ -266,7 +266,7 @@ namespace XCharts.Runtime
             if (m_Opacity == 1 || color.a == 0)
                 return color;
 
-            color.a = (byte) (color.a * m_Opacity);
+            color.a = (byte)(color.a * m_Opacity);
             return color;
         }
 
@@ -277,7 +277,7 @@ namespace XCharts.Runtime
             if (m_Opacity == 1 || color.a == 0)
                 return color;
 
-            color.a = (byte) (color.a * m_Opacity);
+            color.a = (byte)(color.a * m_Opacity);
             return color;
         }
 
@@ -288,7 +288,7 @@ namespace XCharts.Runtime
             if (m_Opacity == 1 || color.a == 0)
                 return color;
 
-            color.a = (byte) (color.a * m_Opacity);
+            color.a = (byte)(color.a * m_Opacity);
             return color;
         }
 
@@ -299,7 +299,7 @@ namespace XCharts.Runtime
             if (m_Opacity == 1 || color.a == 0)
                 return color;
 
-            color.a = (byte) (color.a * m_Opacity);
+            color.a = (byte)(color.a * m_Opacity);
             return color;
         }
 
@@ -330,7 +330,7 @@ namespace XCharts.Runtime
             }
             if (m_Opacity != 1)
             {
-                color.a = (byte) (color.a * m_Opacity);
+                color.a = (byte)(color.a * m_Opacity);
             }
             return color;
         }

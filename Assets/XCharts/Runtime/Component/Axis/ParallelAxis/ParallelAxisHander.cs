@@ -63,7 +63,7 @@ namespace XCharts.Runtime
             var theme = chart.theme;
             var xAxisIndex = axis.index;
             axis.painter = chart.painter;
-            axis.refreshComponent = delegate()
+            axis.refreshComponent = delegate ()
             {
                 UpdateContext(axis);
                 InitAxis(null,

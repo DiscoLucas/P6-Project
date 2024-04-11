@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,19 +23,22 @@ public class Event_manager : MonoBehaviour
         days[dayIndex].startDay();
     }
 
-    public void changeDay() {
+    public void changeDay()
+    {
         dayIndex++;
         days[dayIndex].startDay();
     }
-    public void updateDay() {
+    public void updateDay()
+    {
         if (dayIndex >= days.Count)
             Debug.Log("Færdig");
         else
-          days[dayIndex].updateEvent();
-        
+            days[dayIndex].updateEvent();
+
     }
 
-    public EventInterface instiate_interface(GameObject obj) {
+    public EventInterface instiate_interface(GameObject obj)
+    {
         GameObject go = Instantiate(obj, EI_transform.position, EI_transform.rotation);
         go.transform.parent = EI_transform;
         return go.GetComponent<EventInterface>();

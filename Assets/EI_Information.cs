@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 public class EI_Information : EventInterface
 {
     [SerializeField]
@@ -10,8 +8,8 @@ public class EI_Information : EventInterface
     TMP_Text describtion;
     public override void fillOutInterface()
     {
-        header.text = ye_event.a_name;
-        describtion.text = ye_event.describtion;
-        ye_event.is_done = true;
+        header.text = yeEvent.aName;
+        describtion.text = yeEvent.description;
+        yeEvent.isDone = true;
     }
 }

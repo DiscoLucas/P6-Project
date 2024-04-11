@@ -37,7 +37,7 @@ namespace XCharts.Runtime
                 animationType = attribute.type;
                 enableSerieDataAnimation = attribute.enableSerieDataAddedAnimation;
             }
-            UpdateAnimationType(serie.animation, animationType,enableSerieDataAnimation);
+            UpdateAnimationType(serie.animation, animationType, enableSerieDataAnimation);
         }
 
         public static void UpdateAnimationType(AnimationStyle animation, AnimationType defaultType, bool enableSerieDataAnimation)

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using XCharts.Runtime;
 
@@ -25,6 +23,6 @@ public class ChartTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

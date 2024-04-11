@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using XCharts.Runtime;
 /// <summary>
@@ -31,22 +29,24 @@ public class Interest_Rate_Predictor : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void updateGraph() { 
+    public void updateGraph()
+    {
         //chart.ClearSerieData();
         //chart.ClearData();
         chart.RemoveData();
         double[] predicData = model.predictIRforTimeInterval(dt, shownAmount);
         chart.AddSerie<Line>(seriesName);
-        for (int i = 0; i < shownAmount; i++) {
+        for (int i = 0; i < shownAmount; i++)
+        {
             double d = predicData[i];
             chart.AddXAxisData(i.ToString());
             chart.AddData(0, d);

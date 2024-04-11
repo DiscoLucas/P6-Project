@@ -1,27 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EventInterface : MonoBehaviour
 {
-    public Action ye_event;
+    public Action yeEvent;
 
     public void Start()
     {
         fillOutInterface();
     }
-    public virtual void fillOutInterface() { 
-       
+    public virtual void fillOutInterface()
+    {
+
     }
 
-    public void endInterface() {
+    public void endInterface()
+    {
         Destroy(gameObject);
     }
-    public virtual void interfaceUpdate() {
+    public virtual void interfaceUpdate()
+    {
         return;
     }
 
-    public void updateEvent() {
+    public void updateEvent()
+    {
         Event_manager.instance.updateDay();
     }
 }

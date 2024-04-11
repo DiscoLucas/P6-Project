@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Serialization;
 using UnityEngine;
+[CreateAssetMenu(fileName = "Client Template", menuName = "Clients/SpawnClientTemplate", order = 0)]
 
-public class ClientTemplate : MonoBehaviour
+public class ClientTemplate : ScriptableObject
 {
-    public ClientData clientData;
     [Header("Client Info")]
     public string clientName;
     public int age;
@@ -25,13 +22,13 @@ public class ClientTemplate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Client Name: " + clientData.clientName);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
 }
