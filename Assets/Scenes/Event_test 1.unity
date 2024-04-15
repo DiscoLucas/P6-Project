@@ -153,18 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   days:
-  - events:
-    - aName: 
-      description: 
-      isDone: 0
-      originalAction: {fileID: 0}
-      eInterface: {fileID: 0}
-    - aName: 
-      description: 
-      isDone: 0
-      originalAction: {fileID: 0}
-      eInterface: {fileID: 0}
-    eventIndex: 0
+  - actions:
+    - {fileID: 0}
+    actionsIndex: 0
   dayIndex: 0
   EI_transform: {fileID: 1415736023}
 --- !u!4 &22636175

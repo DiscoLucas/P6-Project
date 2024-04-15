@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Rendering.Universal;
 
-public class MaxLoanActionDisplay : actionsDisplay
+public class RuleOfThumbAD : actionsDisplay
 {
     [SerializeField]
     TMP_Text header;
@@ -13,63 +13,60 @@ public class MaxLoanActionDisplay : actionsDisplay
     TMP_Text describtion;
     [SerializeField]
     TMP_InputField answerFeild;
-    [SerializeField] 
+    [SerializeField]
     GameObject button;
     [SerializeField]
     TMP_Text wrongAnswer;
     [SerializeField]
-    MaxLoanAction infoamtion;
-    [SerializeField]
     string[] tags = {
         "[Tjener]",
         "[Navn]",
-        "[Gældsfactor]"
     };
     [SerializeField]
     float correctAnswer = 0;
 
     public override void fillOutDisplay()
     {
-        infoamtion = (MaxLoanAction)originalAction;
         header.text = aName;
-        string[] values = { client.monthlyIncome.ToString(), client.name, infoamtion.debtFactor.ToString() };
-        string des =originalAction.replaceString(description, tags, values);
+        string[] values = { client.monthlyIncome.ToString(), client.name };
+        string des = originalAction.replaceString(description, tags, values);
         describtion.text = des;
-        correctAnswer = infoamtion.debtFactor * (12 * client.monthlyIncome);
+        correctAnswer = (5);
     }
-    public void typeAnswer() {
+    public void typeAnswer()
+    {
         if (answerFeild.text != null)
         {
-            if(answerFeild.text.Length > 0)
+            if (answerFeild.text.Length > 0)
                 button.SetActive(true);
             else
                 button.SetActive(false);
         }
-        else {
+        else
+        {
             button.SetActive(false);
         }
     }
-    public void giveAnswer() {
+    public void giveAnswer()
+    {
         wrongAnswer.gameObject.SetActive(false);
-        if (answerFeild.text != null ) {
+        if (answerFeild.text != null)
+        {
             float answer = float.Parse(answerFeild.text);
-            if (answer == correctAnswer ||
-                    (
-                        answer > correctAnswer - procent(infoamtion.wronganswerprocent, correctAnswer)
-                    &&
-                        answer < correctAnswer + procent(infoamtion.wronganswerprocent, correctAnswer)
-                    )
-                )
+            Debug.Log("This to check " + answer);
+            if (answer == correctAnswer)
             {
                 isDone = true;
                 updateActions();
             }
-            else {
+            else
+            {
                 wrongAnswer.gameObject.SetActive(true);
             }
         }
     }
-    public float procent(float procent, float value) {
+    public float procent(float procent, float value)
+    {
         return value * (procent / 100);
     }
 }

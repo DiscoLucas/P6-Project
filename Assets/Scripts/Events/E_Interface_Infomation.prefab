@@ -586,11 +586,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2f5e93ef6fd2949929183090b49e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ye_event:
-    name: 
-    describtion: 
-    is_done: 0
-    e_interface: {fileID: 0}
-    e_interface_prefab: {fileID: 0}
+  aName: 
+  description: 
+  isDone: 0
+  originalAction: {fileID: 11400000, guid: ef0ca339a8d0adc4eb303076c225b195, type: 2}
+  client: {fileID: 11400000, guid: 8132364d0ffcb1d44b5d89e7b49242d8, type: 2}
   header: {fileID: 8922444865645202403}
   describtion: {fileID: 5308548375419614208}
