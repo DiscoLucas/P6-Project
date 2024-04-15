@@ -7,6 +7,7 @@ TagManager:
   - ClientTag
   - Button
   - Tab
+  - Page
   layers:
   - Default
   - TransparentFX
