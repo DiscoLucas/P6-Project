@@ -44,10 +44,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fcadb6fd60eb124781a8d6c2ae70456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundsArray: []
+  soundsArray:
+  - name: Correct
+    clip: {fileID: 8300000, guid: 8bf34abe4254306409a52d2688f324f4, type: 3}
+    volume: 1
+    pitch: 0
+    spatialBlend: 0
+    spatialize: 0
+    loop: 0
+    doblerEffect: 0
+    source: {fileID: 0}
+    mixerGroup: {fileID: 4398597937258103469, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
+  - name: Wrong
+    clip: {fileID: 8300000, guid: c11e081b44daa7348b42b9eebb779c1d, type: 3}
+    volume: 0.5
+    pitch: 0
+    spatialBlend: 0
+    spatialize: 0
+    loop: 0
+    doblerEffect: 0
+    source: {fileID: 0}
+    mixerGroup: {fileID: 4398597937258103469, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   voiceArray:
   - name: AlbertFan1
-    clip: {fileID: 8300000, guid: e81e4cdfc50456748b073900ef7e1081, type: 3}
+    clip: {fileID: 8300000, guid: 9ebaca72d8c8d6d429c8aa418ea982da, type: 3}
     volume: 1
     pitch: 1
     spatialBlend: 0
@@ -55,10 +79,11 @@ MonoBehaviour:
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-    mixerGroup: {fileID: 0}
-    mixer: {fileID: 0}
+    mixerGroup: {fileID: 2363960013303356346, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   - name: AlbertFan2
-    clip: {fileID: 8300000, guid: cc74985bc1c941442b8ddeaa50c1b8fa, type: 3}
+    clip: {fileID: 8300000, guid: 37f87273ad1131243bf4d26bee62d56f, type: 3}
     volume: 1
     pitch: 1
     spatialBlend: 0
@@ -66,10 +91,11 @@ MonoBehaviour:
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-    mixerGroup: {fileID: 0}
-    mixer: {fileID: 0}
+    mixerGroup: {fileID: 2363960013303356346, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   - name: AlbertFan3
-    clip: {fileID: 8300000, guid: 51b30f1fdcd960843af62df3db1ff44f, type: 3}
+    clip: {fileID: 8300000, guid: 287847574067cbb42aae15c31930fa59, type: 3}
     volume: 1
     pitch: 1
     spatialBlend: 0
@@ -77,6 +103,7 @@ MonoBehaviour:
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-    mixerGroup: {fileID: 0}
-    mixer: {fileID: 0}
+    mixerGroup: {fileID: 2363960013303356346, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   musicArray: []
