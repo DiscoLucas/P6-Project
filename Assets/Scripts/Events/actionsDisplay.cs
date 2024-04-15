@@ -17,8 +17,9 @@ public class actionsDisplay : MonoBehaviour
         fillOutDisplay();
     }
 
-    public virtual void fillOutDisplay() {
-    
+    public virtual void fillOutDisplay() 
+    {
+        
     }
     public virtual void displayUpdate()
     {
@@ -35,7 +36,8 @@ public class actionsDisplay : MonoBehaviour
         return isDone;
     }
 
-    public virtual void end() {
+    public virtual void end() 
+    {
     
     }
 }

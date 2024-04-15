@@ -5,6 +5,7 @@ using UnityEngine;
 public class ActionTemplate : ScriptableObject
 {
     public string aName;
+    [TextArea(3, 10)]
     public string description;
     public bool isDone = false;
     public ActionTemplate relatedEvent;
