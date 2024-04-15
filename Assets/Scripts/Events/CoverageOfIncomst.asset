@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1441d4ee74ab7647a6c58cc3804bd1e, type: 3}
-  m_Name: RuleOfThumb
+  m_Name: CoverageOfIncomst
   m_EditorClassIdentifier: 
   aName: Peter
-  description: "Hvor mange % skal jeg som udgangpunkt selv l\xE6gge i udbetaling?"
+  description: "Hvor stor en % af prisen d\xE6kker de penge jeg har tiludbetaling?"
   isDone: 0
   relatedEvent: {fileID: 0}
-  eInterfacePrefab: {fileID: 1012754527507686263, guid: 7523dce2203160141a2839afe59a7755,
-    type: 3}
+  eInterfacePrefab: {fileID: 0}
   client: {fileID: 11400000, guid: ff2e5fdb1f452d24585258ea9b98c3b8, type: 2}
