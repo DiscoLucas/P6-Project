@@ -55,9 +55,8 @@ MonoBehaviour:
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-    mixerGroup: {fileID: 7277132456012211015, guid: 62c74f15664b25a41b81e276fa8d1c65,
-      type: 2}
-    mixer: {fileID: 24100000, guid: 62c74f15664b25a41b81e276fa8d1c65, type: 2}
+    mixerGroup: {fileID: 0}
+    mixer: {fileID: 0}
   - name: AlbertFan2
     clip: {fileID: 8300000, guid: cc74985bc1c941442b8ddeaa50c1b8fa, type: 3}
     volume: 1
@@ -67,9 +66,8 @@ MonoBehaviour:
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-    mixerGroup: {fileID: 7277132456012211015, guid: 62c74f15664b25a41b81e276fa8d1c65,
-      type: 2}
-    mixer: {fileID: 24100000, guid: 62c74f15664b25a41b81e276fa8d1c65, type: 2}
+    mixerGroup: {fileID: 0}
+    mixer: {fileID: 0}
   - name: AlbertFan3
     clip: {fileID: 8300000, guid: 51b30f1fdcd960843af62df3db1ff44f, type: 3}
     volume: 1
@@ -79,7 +77,6 @@ MonoBehaviour:
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-    mixerGroup: {fileID: 7277132456012211015, guid: 62c74f15664b25a41b81e276fa8d1c65,
-      type: 2}
-    mixer: {fileID: 24100000, guid: 62c74f15664b25a41b81e276fa8d1c65, type: 2}
+    mixerGroup: {fileID: 0}
+    mixer: {fileID: 0}
   musicArray: []
