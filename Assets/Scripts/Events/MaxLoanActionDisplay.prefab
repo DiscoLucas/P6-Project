@@ -320,13 +320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c351d47ce3bec2547a8e2cce9e4c9e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yeEvent:
-    aName: 
-    description: 
-    isDone: 0
-    originalAction: {fileID: 0}
-    aDisplay: {fileID: 0}
-    client: {fileID: 0}
+  aName: 
+  description: 
+  isDone: 0
+  originalAction: {fileID: 11400000, guid: 4758207f86d168f42b73207ccc0408ba, type: 2}
+  client: {fileID: 0}
   header: {fileID: 3892040207968371088}
   describtion: {fileID: 8505123033929863707}
   answerFeild: {fileID: 8037302015637335072}

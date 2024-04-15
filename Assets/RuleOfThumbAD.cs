@@ -27,8 +27,9 @@ public class RuleOfThumbAD : actionsDisplay
 
     public override void fillOutDisplay()
     {
+        ClientData client = Event_manager.instance.clientManager.getClient(clientIndex);
         header.text = aName;
-        string[] values = { client.monthlyIncome.ToString(), client.name };
+        string[] values = { client.Finance.monthlyIncome.ToString(), client.clientName };
         string des = originalAction.replaceString(description, tags, values);
         describtion.text = des;
         correctAnswer = (5);

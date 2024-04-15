@@ -11,7 +11,7 @@ public class ClientInfo : MonoBehaviour
     public int age;
     public string job;
     public string city;
-    public string maritalStatus;
+    public MaterialStatus maritalStatus;
     public string caseDescription;
 
     [Header("Client financial info")]

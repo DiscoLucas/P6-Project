@@ -18,18 +18,3 @@ public class JsonReader : MonoBehaviour
     }
 }
 
-[System.Serializable]
-public class ClientData
-{
-    public string clientName;
-    public int age;
-    public string job;
-    public string city;
-    public string maritalStatus;
-    public FinanceData Finance;
-    public string caseDescription;
-
-    public class FinanceData
-    {
-    }
-}

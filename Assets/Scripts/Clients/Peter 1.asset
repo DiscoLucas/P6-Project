@@ -18,6 +18,7 @@ MonoBehaviour:
   city: riz city
   maritalStatus: Lavede din mor
   caseDescription: ib bab
+  chacterSprite: {fileID: 21300000, guid: dbcdfe8d60655104fb4feb222abdcd4c, type: 3}
   monthlyIncome: 1
   monthlyExpenses: 0.5
   monthlySavings: 0

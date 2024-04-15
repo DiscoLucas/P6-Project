@@ -27,9 +27,10 @@ public class IncomeActionDisplay : actionsDisplay
 
     public override void fillOutDisplay()
     {
-        float monthlyIncome = client.monthlyIncome;
+        ClientData client = Event_manager.instance.clientManager.getClient(clientIndex);
+        float monthlyIncome = client.Finance.monthlyIncome;
         header.text = aName;
-        string[] values = { client.monthlyIncome.ToString(), client.name };
+        string[] values = { client.Finance.monthlyIncome.ToString(), client.clientName };
         string des = originalAction.replaceString(description, tags, values);
         describtion.text = des;
         correctAnswer = (monthlyIncome * 12);

@@ -6,17 +6,21 @@ public class actionsDisplay : MonoBehaviour
     public string description;
     public bool isDone = false;
     public ActionTemplate originalAction;
-    public ClientTemplate client;
+    public int clientIndex = -1;
+    public ClientData actionClient;
 
     private void Awake()
     {
         aName = originalAction.aName;
         description = originalAction.description;
-        client = originalAction.client;
         isDone= originalAction.isDone;
-        fillOutDisplay();
     }
 
+    public void setClient(int index) {
+        clientIndex = index;
+        Debug.Log(index);
+        actionClient = Event_manager.instance.clientManager.getClient(clientIndex);
+    }
     public virtual void fillOutDisplay() 
     {
         
@@ -38,6 +42,6 @@ public class actionsDisplay : MonoBehaviour
 
     public virtual void end() 
     {
-    
+        Destroy(gameObject);
     }
 }

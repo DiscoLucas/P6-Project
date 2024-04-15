@@ -8,8 +8,9 @@ public class ClientTemplate : ScriptableObject
     public int age;
     public string job;
     public string city;
-    public string maritalStatus;
+    public MaterialStatus maritalStatus;
     public string caseDescription;
+    public Sprite chacterSprite;
 
     [Header("Client financial info")]
     public float monthlyIncome;

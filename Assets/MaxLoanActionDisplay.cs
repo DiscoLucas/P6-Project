@@ -30,12 +30,13 @@ public class MaxLoanActionDisplay : actionsDisplay
 
     public override void fillOutDisplay()
     {
+        ClientData client = actionClient;
         infoamtion = (MaxLoanAction)originalAction;
         header.text = aName;
-        string[] values = { client.monthlyIncome.ToString(), client.name, infoamtion.debtFactor.ToString() };
+        string[] values = { client.Finance.monthlyIncome.ToString(), client.clientName, infoamtion.debtFactor.ToString() };
         string des =originalAction.replaceString(description, tags, values);
         describtion.text = des;
-        correctAnswer = infoamtion.debtFactor * (12 * client.monthlyIncome);
+        correctAnswer = infoamtion.debtFactor * (12 * client.Finance.monthlyIncome);
     }
     public void typeAnswer() {
         if (answerFeild.text != null)

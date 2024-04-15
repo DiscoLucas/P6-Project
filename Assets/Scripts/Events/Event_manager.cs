@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class Event_manager : MonoBehaviour
 {
-    public List<Turn> days;
-    public int dayIndex = 0;
+    public List<Turn> turns;
+    public int turnIndex = 0;
     public static Event_manager instance;
     public Transform EI_transform;
+    public ClientManager clientManager;
     public void Awake()
     {
         //tjekker om der er en instance og hvis der ikke er
@@ -20,20 +21,20 @@ public class Event_manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        days[dayIndex].startDay();
+        turns[turnIndex].startDay();
     }
 
     public void changeDay()
     {
-        dayIndex++;
-        days[dayIndex].startDay();
+        turnIndex++;
+        turns[turnIndex].startDay();
     }
     public void updateDay()
     {
-        if (dayIndex >= days.Count)
+        if (turnIndex >= turns.Count)
             Debug.Log("Færdig");
         else
-            days[dayIndex].updateActions();
+            turns[turnIndex].updateActions();
 
     }
 
@@ -43,4 +44,6 @@ public class Event_manager : MonoBehaviour
         go.transform.parent = EI_transform;
         return go.GetComponent<actionsDisplay>();
     }
+
+    
 }
