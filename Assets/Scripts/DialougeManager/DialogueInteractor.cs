@@ -17,31 +17,4 @@ public class DialogueInteractor : MonoBehaviour
     {
         DialogueManager.instance.StartDia(dialogue);
     }
-
-    /*
-    public override void interaction()
-    {
-        //DialogueManager.instance.StartDia(dialogue);
-        if (!InDialogue)
-        {
-            TiggerDialogue();
-            //AudioManager.instance.PlayVoice(dialogue.VoiceClip);
-            InDialogue = true;
-        }
-        else
-        {
-            DialogueManager.instance.DisplayNextScentence();
-            //AudioManager.instance.PlayVoice(dialogue.VoiceClip);
-        }
-
-    }
-
-    public override void outOfReach()
-    {
-        InDialogue = false;
-        base.outOfReach();
-        DialogueManager.instance.EndDialogue();
-    }
-    */
-
 }

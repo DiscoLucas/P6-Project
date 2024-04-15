@@ -22,9 +22,8 @@ public class DialogueManager : MonoBehaviour
 
     [Range(1, 3)]
     [SerializeField] private int textFreq = 2;
-    //[HideInInspector]
+    [HideInInspector]
     public Dialogue dialoguec;
-    bool hasRun = false;
 
 
 
@@ -53,7 +52,7 @@ public class DialogueManager : MonoBehaviour
     {
         this.dialoguec = dialogue;
         animator.SetBool("IsOpen", true); //This is for controlling the animaton state of the dialogue canvas.
-        Debug.Log("Srat " + dialogue.name);
+        //Debug.Log("Srat " + dialogue.name);
 
         Debug.Log(clientInfo.clientName);
         dialogue.name = clientInfo.clientName; //This replaces the "Name" text field on the dialogue canvas.
@@ -61,7 +60,7 @@ public class DialogueManager : MonoBehaviour
 
         sentensis.Clear();
 
-        if (hasRun)
+        if (dialoguec.hasRun)
         {
             DisplayCaseSummary();
             return;
@@ -85,7 +84,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentensis.Count == 0) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
-            hasRun = true;
+            dialoguec.hasRun = true;
             EndDialogue();
             return;
         }
@@ -119,7 +118,6 @@ public class DialogueManager : MonoBehaviour
             AudioManager.instance.DisableAudioSource(vClip);
 
             float randomPitch = Random.Range(dialoguec.minPitch, dialoguec.maxPitch);
-            //AudioManager.instance. = randomPitch;
             Voice v = AudioManager.instance.GetVoiceClip(vClip);
             v.source.pitch = randomPitch;
             AudioManager.instance.PlayVoice(vClip); // this adds the voice clip for the charector

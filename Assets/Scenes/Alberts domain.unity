@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -285,6 +285,7 @@ MonoBehaviour:
     - Alber er gud
     - Albert er konge
     - "Alber er alt jeg t\xE6nker p\xE5"
+    hasRun: 0
 --- !u!114 &405516083 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6967509256780663969, guid: e78d1e0f7334c264f8ccefbc83b052b2,
@@ -410,7 +411,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Diatext: {fileID: 2146697493}
-  char_name: {fileID: 405516083}
+  clientInfo: {fileID: 0}
+  nameText: {fileID: 405516083}
   animator: {fileID: 1611199253}
   textFreq: 2
   dialoguec:
@@ -420,6 +422,7 @@ MonoBehaviour:
     minPitch: -0.5
     maxPitch: 1.5
     sentensis: []
+    hasRun: 0
 --- !u!1001 &1010584901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -810,7 +813,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.3
+  m_fontSize: 26.4
   m_fontSizeBase: 14.74
   m_fontWeight: 400
   m_enableAutoSizing: 1
