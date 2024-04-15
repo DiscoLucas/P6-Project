@@ -1,33 +1,34 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+
 [Serializable]
 public class Turn
 {
-    public List<Action> actions;
+    public List<GameObject> actions;
+    actionsDisplay currentActionDisplay;
     public int actionsIndex = 0;
     public void startDay()
     {
         actionsIndex = 0;
-
-        actions[actionsIndex].startAction();
+        currentActionDisplay = Event_manager.instance.instiate_interface(actions[actionsIndex]);
     }
 
     public void updateActions()
     {
-        if (actions[actionsIndex].isFinnished())
+        if (currentActionDisplay.isFinnished())
         {
-            actions[actionsIndex].end();
+            currentActionDisplay.end();
             actionsIndex++;
             if (actionsIndex >= actions.Count)
                 Event_manager.instance.changeDay();
             else
             {
-                actions[actionsIndex].startAction();
+                currentActionDisplay = Event_manager.instance.instiate_interface(actions[actionsIndex]);
 
             }
 
         }
-        actions[actionsIndex].update();
-        actions[actionsIndex].VisualUpdate();
+        currentActionDisplay.displayUpdate();
     }
 }

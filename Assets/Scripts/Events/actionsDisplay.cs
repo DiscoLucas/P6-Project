@@ -2,20 +2,23 @@ using UnityEngine;
 
 public class actionsDisplay : MonoBehaviour
 {
-    public Action yeEvent;
+    public string aName;
+    public string description;
+    public bool isDone = false;
+    public ActionTemplate originalAction;
+    public ClientTemplate client;
 
-    public void Start()
+    private void Awake()
     {
+        aName = originalAction.aName;
+        description = originalAction.description;
+        client = originalAction.client;
+        isDone= originalAction.isDone;
         fillOutDisplay();
     }
-    public virtual void fillOutDisplay()
-    {
 
-    }
-
-    public void end()
-    {
-        Destroy(gameObject);
+    public virtual void fillOutDisplay() {
+    
     }
     public virtual void displayUpdate()
     {
@@ -25,5 +28,14 @@ public class actionsDisplay : MonoBehaviour
     public void updateActions()
     {
         Event_manager.instance.updateDay();
+    }
+
+    public virtual bool isFinnished()
+    {
+        return isDone;
+    }
+
+    public virtual void end() {
+    
     }
 }

@@ -30,12 +30,12 @@ public class MaxLoanActionDisplay : actionsDisplay
 
     public override void fillOutDisplay()
     {
-        infoamtion = (MaxLoanAction)yeEvent.originalAction;
-        header.text = yeEvent.aName;
-        string[] values = { yeEvent.client.monthlyIncome.ToString(), yeEvent.client.name, infoamtion.debtFactor.ToString() };
-        string des = yeEvent.originalAction.replaceString(yeEvent.description, tags, values);
+        infoamtion = (MaxLoanAction)originalAction;
+        header.text = aName;
+        string[] values = { client.monthlyIncome.ToString(), client.name, infoamtion.debtFactor.ToString() };
+        string des =originalAction.replaceString(description, tags, values);
         describtion.text = des;
-        correctAnswer = infoamtion.debtFactor * (12 * yeEvent.client.monthlyIncome);
+        correctAnswer = infoamtion.debtFactor * (12 * client.monthlyIncome);
     }
     public void typeAnswer() {
         if (answerFeild.text != null)
@@ -61,7 +61,7 @@ public class MaxLoanActionDisplay : actionsDisplay
                     )
                 )
             {
-                yeEvent.isDone = true;
+                isDone = true;
                 updateActions();
             }
             else {

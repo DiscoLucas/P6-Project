@@ -154,18 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   days:
   - actions:
-    - aName: 
-      description: 
-      isDone: 0
-      originalAction: {fileID: 11400000, guid: 4758207f86d168f42b73207ccc0408ba, type: 2}
-      aDisplay: {fileID: 0}
-      client: {fileID: 0}
-    - aName: 
-      description: 
-      isDone: 0
-      originalAction: {fileID: 11400000, guid: ef0ca339a8d0adc4eb303076c225b195, type: 2}
-      aDisplay: {fileID: 0}
-      client: {fileID: 0}
+    - {fileID: 7569732159221397172, guid: ab20cbd29782c4042803e620530ccc89, type: 3}
     actionsIndex: 0
   dayIndex: 0
   EI_transform: {fileID: 1415736023}

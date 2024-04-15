@@ -27,10 +27,10 @@ public class IncomeActionDisplay : actionsDisplay
 
     public override void fillOutDisplay()
     {
-        float monthlyIncome = yeEvent.client.monthlyIncome;
-        header.text = yeEvent.aName;
-        string[] values = { yeEvent.client.monthlyIncome.ToString(), yeEvent.client.name };
-        string des = yeEvent.originalAction.replaceString(yeEvent.description, tags, values);
+        float monthlyIncome = client.monthlyIncome;
+        header.text = aName;
+        string[] values = { client.monthlyIncome.ToString(), client.name };
+        string des = originalAction.replaceString(description, tags, values);
         describtion.text = des;
         correctAnswer = (monthlyIncome * 12);
     }
@@ -57,7 +57,7 @@ public class IncomeActionDisplay : actionsDisplay
             Debug.Log("This to check " + answer);
             if (answer == correctAnswer)
             {
-                yeEvent.isDone = true;
+                isDone = true;
                 updateActions();
             }
             else

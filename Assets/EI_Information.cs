@@ -8,8 +8,8 @@ public class EI_Information : actionsDisplay
     TMP_Text describtion;
     public override void fillOutDisplay()
     {
-        header.text = yeEvent.aName;
-        describtion.text = yeEvent.description;
-        yeEvent.isDone = true;
+        header.text = aName;
+        describtion.text =description;
+        isDone = true;
     }
 }

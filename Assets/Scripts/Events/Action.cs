@@ -16,7 +16,6 @@ public class Action
         description = originalAction.description;
         isDone = originalAction.isDone;
         aDisplay = Event_manager.instance.instiate_interface(originalAction.eInterfacePrefab);
-        aDisplay.yeEvent = this;
         client = originalAction.client;
         originalAction.start();
     }
