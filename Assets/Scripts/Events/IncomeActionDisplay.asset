@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1441d4ee74ab7647a6c58cc3804bd1e, type: 3}
   m_Name: IncomeActionDisplay
   m_EditorClassIdentifier: 
-  aName: "Hvor meget er det nu jeg tj\xE6ner om \xE5ret?"
-  description: "Jeg Tjener [Tjener] om m\xE5neden."
+  aName: Peter
+  description: "Jeg Tjener [Tjener] om \xE5ret."
   isDone: 0
   relatedEvent: {fileID: 0}
   eInterfacePrefab: {fileID: 6516724265197178728, guid: f2fcbe219598c6342bb45f348897183b,
