@@ -41,7 +41,7 @@ public class ClientManager : MonoBehaviour
     public ClientData getClient(int index)
     {
         Debug.Log("Index: " + index + " client count: " + clients.Count);
-        if (clients.Count == 0) {
+        if (clients.Count == 0 || clients.Count >= index) {
             ClientTemplate template = templates[Random.Range(0, templates.Length)];
             ClientData c = new ClientData(template);
             clients.Add(c);
@@ -63,6 +63,10 @@ public class ClientManager : MonoBehaviour
         return clients[index];
     }
 
+    public ClientData getNewClient() {
+        return getClient(clients.Count);
+    }
+
     public void startClientIntro(ClientData c) {
         spriteRenderer.sprite = c.sprite;
         if (an != null)
@@ -81,11 +85,11 @@ public class ClientManager : MonoBehaviour
     void Update()
     {
         //TODO: FUCKING FIX::..... vi skifter til animatoren i stedet og tjekker navnet (gidder ikke at løse)
-        if (ClientObject.transform.position.x == -12 && !an.isPlaying) //GRIM LØSNING, IKKE RØR ANIMATIONEN HVOR DEN GÅR UD FØR DET HER ER FIKSET!
+       /* if (ClientObject.transform.position.x == -12 && !an.isPlaying) //GRIM LØSNING, IKKE RØR ANIMATIONEN HVOR DEN GÅR UD FØR DET HER ER FIKSET!
         {
             ClientObject.SetActive(false);
             Event_manager.instance.turns[Event_manager.instance.turnIndex].currentActionDisplay.gameObject.SetActive(true);
-        }
+        }*/
 
         /*if (!an.isPlaying && !hastalked && ClientObject.activeInHierarchy) //When client has walked in
         {

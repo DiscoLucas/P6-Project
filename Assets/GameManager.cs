@@ -44,9 +44,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("New customer");
         if(cm != null)
         {
-            cm.hastalked = false;
-            cm.ClientObject.SetActive(true);
-            cm.an.Play("WalkIn");
+            ClientData client = cm.getNewClient();
+            cm.startClientIntro(client);
 
         }
     }
