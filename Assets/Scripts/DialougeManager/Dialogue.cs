@@ -7,10 +7,10 @@ public class Dialogue
 {
     //Thiss class is for storing all the dialogue properties.
     [Tooltip("Here you write the charectors name and set voice clips")]
-    public string name;
+    //public string name;
     public string[] VoiceClip;
-    [Range(0.01f, 0.1f)]
-    public float TypeSpeed = 0.04f;
+    //[Range(0.01f, 0.1f)]
+    //public float TypeSpeed = 0.04f;
     [Tooltip("minPitch and maxPitch is for setting a charectors voice pitch.")]
     [Range(-3f, 3f)]
     [SerializeField] public float minPitch = -0.5f;

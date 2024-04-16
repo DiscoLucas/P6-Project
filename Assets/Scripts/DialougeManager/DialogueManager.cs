@@ -9,11 +9,12 @@ using TMPro;
 //This Manager is inspired by Bakyes at https://www.youtube.com/watch?v=_nRzoTzeyxU
 public class DialogueManager : MonoBehaviour
 {
-    private Dialogue TypeSpeed;
     public TMP_Text Diatext;
-    
-    public ClientInfo clientInfo;
     public TMP_Text nameText;
+    public ClientTemplate clietntTemp;
+    public ClientData clientData;
+    public ClientInfo clientInfo;
+
 
     public Animator animator;
 
@@ -22,6 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     [Range(1, 3)]
     [SerializeField] private int textFreq = 2;
+    [SerializeField] private float TypeSpeed = 0.04f;
     [HideInInspector]
     public Dialogue dialoguec;
 
@@ -29,6 +31,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        clientData = new ClientData(clietntTemp);
         //Singleton pattern
         if (instance == null)
         {
@@ -54,9 +57,9 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", true); //This is for controlling the animaton state of the dialogue canvas.
         //Debug.Log("Srat " + dialogue.name);
 
-        Debug.Log(clientInfo.clientName);
-        dialogue.name = clientInfo.clientName; //This replaces the "Name" text field on the dialogue canvas.
-        nameText.text = clientInfo.clientName;
+        Debug.Log(clientData.clientName);
+        //dialogue.name = clientData.clientName; //This replaces the "Name" text field on the dialogue canvas.
+        nameText.text = clientData.clientName;
 
         sentensis.Clear();
 
@@ -91,7 +94,7 @@ public class DialogueManager : MonoBehaviour
 
         string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
         StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
-        StartCoroutine(TypeDia(sentince, dialoguec.TypeSpeed, dialoguec.VoiceClip, dialoguec.maxPitch, dialoguec.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
+        StartCoroutine(TypeDia(sentince, TypeSpeed, dialoguec.VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
         //Debug.Log(sentince);
         Debug.Log("Next Sentince");
     }
@@ -117,7 +120,7 @@ public class DialogueManager : MonoBehaviour
             string vClip = VoiceClip[Random.Range(0, VoiceClip.Length)];
             AudioManager.instance.DisableAudioSource(vClip);
 
-            float randomPitch = Random.Range(dialoguec.minPitch, dialoguec.maxPitch);
+            float randomPitch = Random.Range(clientData.minPitch, clientData.maxPitch);
             Voice v = AudioManager.instance.GetVoiceClip(vClip);
             v.source.pitch = randomPitch;
             AudioManager.instance.PlayVoice(vClip); // this adds the voice clip for the charector
