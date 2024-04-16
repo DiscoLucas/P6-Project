@@ -19,6 +19,9 @@ public class ClientData
     public FinanceData Finance;
     public Sprite sprite;
     public bool haveBeenPresented = false;
+    [Header("Audio properties")]
+    public float minPitch;
+    public float maxPitch;
     public ClientData(ClientTemplate template) {
         clientName = template.clientName;
         age = template.age;
@@ -26,8 +29,7 @@ public class ClientData
         city = template.city;
         maritalStatus = template.maritalStatus;
         sprite = template.chacterSprite;
-        Finance = new FinanceData(template);  
-
+        Finance = new FinanceData(template);
 
     }
 }
