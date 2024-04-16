@@ -39,7 +39,8 @@ public class Paper_work : MonoBehaviour
     //Game relatet code
     private void solutionChecker()
     {
-        if (currentAswer = worldText) 
+        float wtNumber = float.Parse(worldText.text);
+        if (currentAswer == wtNumber) 
         { 
             
         }

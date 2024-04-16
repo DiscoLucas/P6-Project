@@ -8,26 +8,44 @@ public class ClientManager : MonoBehaviour
     [SerializeField]
     List<ClientData> clients;
     
-    public GameObject ClientObject; // Client er det client gameobject vi har lige nu.
-    [SerializeField]
-    public Animation an;
     DialogueInteractor di;
     [SerializeField]
-    SpriteRenderer spriteRenderer;
 
-    public bool hastalked = false;
+    public bool hastalked = false; 
+
+    [Header("Animation/Visuals")]
+    [SerializeField]
+    public Animator an;
+    [SerializeField]
+    SpriteRenderer spriteRenderer;
+    public GameObject ClientObject; // Client er det client gameobject vi har lige nu.
+    [SerializeField]
+    string walkInAnimation, walkOutAnimation;
+    bool startedPrestentation = false;
 
     void Start()
     {
         if(an == null)
-            an = ClientObject.GetComponent<Animation>();
+            an = ClientObject.GetComponent<Animator>();
         if(di == null)
             di = ClientObject.GetComponent <DialogueInteractor>();
-        spriteRenderer= gameObject.GetComponent<SpriteRenderer>();
+        if(spriteRenderer == null)
+            spriteRenderer= ClientObject.GetComponent<SpriteRenderer>();
     }
+
+    /// <summary>
+    /// Create client data from templeate
+    /// </summary>
+    /// <param name="template"></param>
     public void generateClientFromtTemplate(ClientTemplate template) {
         clients.Add(new ClientData(template));
     }
+
+    /// <summary>
+    /// Find the client by name (Not suggested to use)
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public ClientData getClient(string name) {
         foreach (ClientData c in clients) {
             if (name.ToLower() == c.clientName.ToLower()) {
@@ -38,6 +56,12 @@ public class ClientManager : MonoBehaviour
         return null;
     }
 
+
+    /// <summary>
+    /// get the client with the index and if the index is more than the current length of client a new client is createde
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
     public ClientData getClient(int index)
     {
         Debug.Log("Index: " + index + " client count: " + clients.Count);
@@ -63,15 +87,27 @@ public class ClientManager : MonoBehaviour
         return clients[index];
     }
 
+    /// <summary>
+    /// Create a new client
+    /// </summary>
+    /// <returns></returns>
     public ClientData getNewClient() {
         return getClient(clients.Count);
     }
 
+    /// <summary>
+    /// use to introuduce a client
+    /// </summary>
+    /// <param name="c"></param>
     public void startClientIntro(ClientData c) {
         spriteRenderer.sprite = c.sprite;
         if (an != null)
         {
-            an.Play("WalkIn");
+            an.Play(walkInAnimation);
+            Debug.Log("Prestentation of client\nPlease Add the dialog starter her\nexample of how is here");
+            startedPrestentation= true;
+            //when the dialog is done please do this:
+            an.SetBool("WalkOut", true);
         }
         else {
             Debug.LogError("Could no find Animation");
@@ -84,6 +120,12 @@ public class ClientManager : MonoBehaviour
     }
     void Update()
     {
+        //Check if the cut out have waleked out and if it is done it rest the stuff
+        /*if (startedPrestentation&& !(an.GetCurrentAnimatorClipInfo(0)[0].clip.name == walkOutAnimation|| an.GetCurrentAnimatorClipInfo(0)[0].clip.name == walkInAnimation)) {
+            an.SetBool("WalkOut", false);
+            startedPrestentation = false;
+        }*/
+
         //TODO: FUCKING FIX::..... vi skifter til animatoren i stedet og tjekker navnet (gidder ikke at løse)
        /* if (ClientObject.transform.position.x == -12 && !an.isPlaying) //GRIM LØSNING, IKKE RØR ANIMATIONEN HVOR DEN GÅR UD FØR DET HER ER FIKSET!
         {

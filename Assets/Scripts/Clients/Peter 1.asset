@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
   m_Name: Peter 1
   m_EditorClassIdentifier: 
-  clientName: Peter2
+  clientName: "l\xF8ve"
   age: 22
   job: Rizzler
   city: riz city
-  maritalStatus: Lavede din mor
+  maritalStatus: 0
   caseDescription: ib bab
-  chacterSprite: {fileID: 21300000, guid: dbcdfe8d60655104fb4feb222abdcd4c, type: 3}
+  chacterSprite: {fileID: 21300000, guid: 7c6b25b313c1231449db162391177c2e, type: 3}
   monthlyIncome: 1
   monthlyExpenses: 0.5
   monthlySavings: 0

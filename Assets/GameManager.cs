@@ -7,39 +7,71 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] ClientManager cm;
+    //forslag:
+    //[SerializeField]
+    //GameObject[] incidentsPrefab;
+    //Incidents currentIncident
+
     //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
     public int monthNumber = 0;
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
-            //
-            monthNumber++;
-            Debug.Log("#######################" +
-                "\nmounth: " + monthNumber);
-
-            int turnTypeIndex = decideWhatShouldHappend();
-            if (turnType[turnTypeIndex].type == TurnType.New_customer)
-            {
-                newCustomer();
-            }
-            else if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer)
-            { 
-                clientMeeting();
-            }
-            else if (turnType[turnTypeIndex].type == TurnType.Evnet)
-            {
-                Incident();
-            }
-            else if (turnType[turnTypeIndex].type == TurnType.None)
-            {
-                //call the next round;
-            }
+        if (Input.GetMouseButtonDown(0))
+        {
+            nextMounth();
         }
     }
 
+    private void Start()
+    {
+        
+    }
 
+
+    /// <summary>
+    /// This function change the mounth and clear out the old
+    /// </summary>
+    public void nextMounth() {
+        //Log what needs to be logged
+
+        //discard the old mounth
+
+        //Change the mounth
+        newMounth();
+    }
+
+    /// <summary>
+    /// Decides what should happend this mounth
+    /// </summary>
+    void newMounth() {
+        monthNumber++;
+        Debug.Log("#######################" +
+            "\nmounth: " + monthNumber);
+
+        int turnTypeIndex = decideWhatShouldHappend();
+        if (turnType[turnTypeIndex].type == TurnType.New_customer)
+        {
+            newCustomer();
+        }
+        else if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer)
+        {
+            clientMeeting();
+        }
+        else if (turnType[turnTypeIndex].type == TurnType.Evnet)
+        {
+            Incident();
+        }
+        else if (turnType[turnTypeIndex].type == TurnType.None)
+        {
+            //call the next round;
+        }
+    }
+
+    /// <summary>
+    /// This functions adds a new customoer
+    /// </summary>
     void newCustomer() {
         Debug.Log("New customer");
         if(cm != null)
@@ -50,6 +82,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This functions apply and incident
+    /// </summary>
     void Incident()
     {
         Debug.Log("A racing incident");
@@ -57,6 +92,9 @@ public class GameManager : MonoBehaviour
         //kør incident
     }
 
+    /// <summary>
+    /// This function starts a meeting with the clients
+    /// </summary>
     void clientMeeting()
     {
         Debug.Log("Client meeting have startede");
@@ -66,7 +104,11 @@ public class GameManager : MonoBehaviour
         //Client gør som player siger
     }
 
-
+    /// <summary>
+    /// This function decide what should happend this mount
+    /// TODO: Make it smarter so it does not chooese random. fx if a loan have expired it should start a meeting
+    /// </summary>
+    /// <returns></returns>
     int decideWhatShouldHappend() {
         int turnTypeIndex = 0;
         if (monthNumber == 1)
@@ -89,6 +131,10 @@ public class GameManager : MonoBehaviour
         return turnTypeIndex;
     } 
 }
+
+/// <summary>
+/// This enum is the different types of event that can happend each mouth
+/// </summary>
 [Serializable]
 public enum TurnType {
     New_customer,
@@ -96,6 +142,10 @@ public enum TurnType {
     Evnet,
     None
 }
+
+/// <summary>
+/// This is the calls that have all the infomation about the different event of each mounth
+/// </summary>
 [Serializable]
 public class TurnEvent {
     public string name;
