@@ -7,16 +7,11 @@ using UnityEngine.Rendering.Universal;
 
 public class CoverageOfIncomst : actionsDisplay
 {
-    [SerializeField]
-    TMP_Text header;
-    [SerializeField]
-    TMP_Text describtion;
-    [SerializeField]
-    TMP_InputField answerFeild;
-    [SerializeField]
-    GameObject button;
-    [SerializeField]
-    TMP_Text wrongAnswer;
+    [SerializeField] TMP_Text header;
+    [SerializeField] TMP_Text describtion;
+    [SerializeField] TMP_InputField answerFeild;
+    [SerializeField] GameObject button;
+    [SerializeField] TMP_Text wrongAnswer;
     [SerializeField]
     string[] tags = {
         "[Tjener]",
@@ -24,8 +19,9 @@ public class CoverageOfIncomst : actionsDisplay
         "[Gældsfaktor]",
         "[PengeTilUdbetaling]",
     };
-    [SerializeField]
-    float correctAnswer = 0;
+    [SerializeField] float correctAnswer = 0;
+    internal ClientInfo client;
+
 
     public override void fillOutDisplay()
     {
