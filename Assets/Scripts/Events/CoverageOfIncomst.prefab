@@ -698,7 +698,21 @@ MonoBehaviour:
   description: 
   isDone: 0
   originalAction: {fileID: 11400000, guid: 530227740370a8746972af06906c00d0, type: 2}
-  client: {fileID: 0}
+  clientIndex: -1
+  actionClient:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
   header: {fileID: 5995286795277012406}
   describtion: {fileID: 6091984062384728167}
   answerFeild: {fileID: 5755844711286401356}
