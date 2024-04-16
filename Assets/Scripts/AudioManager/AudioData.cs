@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class AudioData
 {
+	//This class is to store all the Audio properties.
 	public string name;
 
 	public AudioClip clip;

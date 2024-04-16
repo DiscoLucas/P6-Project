@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HelpMe : MonoBehaviour
 {
+    //This script is only to support the Audio Manager in new sceens
     public void Play(string name)
     {
         AudioManager.instance.Play(name);

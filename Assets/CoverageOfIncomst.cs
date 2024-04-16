@@ -55,11 +55,13 @@ public class CoverageOfIncomst : actionsDisplay
             Debug.Log("This to check " + answer);
             if (answer == correctAnswer)
             {
+                AudioManager.instance.Play("Correct");
                 isDone = true;
                 updateActions();
             }
             else
             {
+                AudioManager.instance.Play("Wrong");
                 wrongAnswer.gameObject.SetActive(true);
             }
         }
