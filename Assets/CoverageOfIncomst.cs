@@ -25,9 +25,9 @@ public class CoverageOfIncomst : actionsDisplay
 
     public override void fillOutDisplay()
     {
-        float monthlyIncome = client.monthlyIncome;
+        float monthlyIncome = actionClient.Finance.monthlyIncome;
         header.text = aName;
-        string[] values = { client.monthlyIncome.ToString(), client.name };
+        string[] values = { actionClient.Finance.monthlyIncome.ToString(), actionClient.clientName };
         string des = originalAction.replaceString(description, tags, values);
         describtion.text = des;
         correctAnswer = ((100000 * 100) / ((monthlyIncome * 12 * 4) + 100000));
