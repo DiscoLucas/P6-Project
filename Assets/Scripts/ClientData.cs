@@ -29,8 +29,7 @@ public class ClientData
         city = template.city;
         maritalStatus = template.maritalStatus;
         sprite = template.chacterSprite;
-        Finance = new FinanceData(template);
-
+        Finance = new FinanceData(template);  
     }
 }
 [System.Serializable]

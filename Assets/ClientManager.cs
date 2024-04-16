@@ -10,12 +10,12 @@ public class ClientManager : MonoBehaviour
     
     public GameObject ClientObject; // Client er det client gameobject vi har lige nu.
     [SerializeField]
-    Animation an;
+    public Animation an;
     DialogueInteractor di;
     [SerializeField]
     SpriteRenderer spriteRenderer;
 
-    bool hastalked = false;
+    public bool hastalked = false;
 
     void Start()
     {
