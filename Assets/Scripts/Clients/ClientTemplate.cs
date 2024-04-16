@@ -1,6 +1,9 @@
 using UnityEngine;
 [CreateAssetMenu(fileName = "Client Template", menuName = "Clients/SpawnClientTemplate", order = 0)]
 
+/// <summary>
+/// This class is used to create an object that can be filled out with the information of a client
+/// </summary>
 public class ClientTemplate : ScriptableObject
 {
     [Header("Client Info")]
@@ -18,18 +21,4 @@ public class ClientTemplate : ScriptableObject
     public float monthlySavings;
     public float totalSavings;
     public float neededLoan;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Not used for now, but it will be used to generate the Wiener process noise (brownian).
 public class Wiener : MonoBehaviour
 {
 
