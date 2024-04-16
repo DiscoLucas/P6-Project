@@ -55,11 +55,7 @@ public class DialogueManager : MonoBehaviour
     {
         this.dialoguec = dialogue;
         animator.SetBool("IsOpen", true); //This is for controlling the animaton state of the dialogue canvas.
-        //Debug.Log("Srat " + dialogue.name);
-
-        Debug.Log(clientData.clientName);
-        //dialogue.name = clientData.clientName; //This replaces the "Name" text field on the dialogue canvas.
-        nameText.text = clientData.clientName;
+        nameText.text = clientData.clientName;  //This replaces the "Name" text field on the dialogue canvas.
 
         sentensis.Clear();
 
