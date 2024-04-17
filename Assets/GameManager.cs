@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     [SerializeField] ClientManager cm;
     //forslag:
     //[SerializeField]
@@ -16,6 +17,22 @@ public class GameManager : MonoBehaviour
     public int startType = 0;
     public TurnEvent[] turnType;
     public int monthNumber = 0;
+
+    private void Awake()
+    {
+        //Singleton pattern
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
