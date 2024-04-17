@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796450211801068777}
   - component: {fileID: 7876590447810124933}
+  - component: {fileID: 7013967350456804574}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -45,13 +46,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Diatext: {fileID: 0}
-  char_name: {fileID: 0}
+  nameText: {fileID: 0}
+  clietntTemp: {fileID: 11400000, guid: 8132364d0ffcb1d44b5d89e7b49242d8, type: 2}
+  clientData:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
+    minPitch: 1.6
+    maxPitch: 0.6
+  clientInfo: {fileID: 0}
   animator: {fileID: 0}
   textFreq: 1
+  TypeSpeed: 0.04
   dialoguec:
-    name: 
     VoiceClip: []
-    TypeSpeed: 0.04
     minPitch: -0.5
     maxPitch: 1.5
-    sentensis: []
+    sentencis: []
+    hasRun: 0
+  dialogueRegistry: {fileID: 7013967350456804574}
+  VoiceClip:
+  - AlbertFan1
+  - AlbertFan2
+  - AlbertFan3
+--- !u!114 &7013967350456804574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399696808897675706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b754dbb9614b0ee49bc1a8635393bcf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags:
+  - '[Tjener]'
+  - '[Navn]'
+  sentinces:
+  - 'Hej jeg hedder [Navn] '
+  - "Jeg [tjener] om m\xE5neden\t"
+  - Jeg tilbeder Albert hver dag
+  - Jeg har adskelige shrines til Albert
+  - "Albert er det eneste jeg kan t\xE6nke p\xE5"

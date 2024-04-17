@@ -18,7 +18,7 @@ public class Dialogue
     [SerializeField] public float maxPitch = 1.5f;
     [Tooltip("This is where to write the sentinces a charector is saying")]
     [TextArea(3, 10)]
-    public string[] sentensis;
+    public string[] sentencis;
 
     public bool hasRun = false;
 }
