@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563021c459101f546bd112274462c978, type: 3}
   m_Name: BananaLoan
   m_EditorClassIdentifier: 
-  loanID: 
-  Issuer: 0
-  startingValue: 0
-  interestRate: 0
-  expirationDate: 0
-  recieveDate: 0
-  currentValue: 0
+  loanID: Banana
+  Issuer: Albert Bank
+  faceValue: 0
+  interestRate: 3.5
+  recieveDate: 2018-06-25
+  expirationDate: 2048-06-25
+  yieldValue: 0

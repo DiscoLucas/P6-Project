@@ -79,7 +79,7 @@ public class ClientManager : MonoBehaviour
         }
         if (index >= clients.Count)
         {
-            Debug.LogError("The given index more than the length of the list");
+            Debug.LogError("The given index exceeds the length of the list");
             return clients[1];
         }
 
@@ -96,7 +96,7 @@ public class ClientManager : MonoBehaviour
     }
 
     /// <summary>
-    /// use to introuduce a client
+    /// Introuduces a client
     /// </summary>
     /// <param name="c"></param>
     public void startClientIntro(ClientData c) {
@@ -104,13 +104,13 @@ public class ClientManager : MonoBehaviour
         if (an != null)
         {
             an.Play(walkInAnimation);
-            Debug.Log("Prestentation of client\nPlease Add the dialog starter her\nexample of how is here");
+            Debug.Log("Prestentation of client\nPlease Add the dialog starter here\nexample of how is here");
             startedPrestentation= true;
             //when the dialog is done please do this:
             an.SetBool("WalkOut", true);
         }
         else {
-            Debug.LogError("Could no find Animation");
+            Debug.LogError("Could not find Animation");
         }
 
     }
@@ -120,37 +120,6 @@ public class ClientManager : MonoBehaviour
     }
     void Update()
     {
-        //Check if the cut out have waleked out and if it is done it rest the stuff
-        /*if (startedPrestentation&& !(an.GetCurrentAnimatorClipInfo(0)[0].clip.name == walkOutAnimation|| an.GetCurrentAnimatorClipInfo(0)[0].clip.name == walkInAnimation)) {
-            an.SetBool("WalkOut", false);
-            startedPrestentation = false;
-        }*/
 
-        //TODO: FUCKING FIX::..... vi skifter til animatoren i stedet og tjekker navnet (gidder ikke at løse)
-       /* if (ClientObject.transform.position.x == -12 && !an.isPlaying) //GRIM LØSNING, IKKE RØR ANIMATIONEN HVOR DEN GÅR UD FØR DET HER ER FIKSET!
-        {
-            ClientObject.SetActive(false);
-            Event_manager.instance.turns[Event_manager.instance.turnIndex].currentActionDisplay.gameObject.SetActive(true);
-        }*/
-
-        /*if (!an.isPlaying && !hastalked && ClientObject.activeInHierarchy) //When client has walked in
-        {
-            hastalked= true;
-            di.TiggerDialogue();
-        }
-
-        
-
-        if (Input.GetKeyDown("up")) //Det her if statment skal bare byttes ud med hvad end conditionen for at en client kommer IND.
-        {
-            hastalked = false;
-            ClientObject.SetActive(true);
-            an.Play("WalkIn");
-        }
-
-        if (Input.GetKeyDown("down")) //Det her if statment skal bare byttes ud med hvad end conditionen for at en client kommer UD.
-        {
-            an.Play("WalkOut");
-        }*/
     }
 }
