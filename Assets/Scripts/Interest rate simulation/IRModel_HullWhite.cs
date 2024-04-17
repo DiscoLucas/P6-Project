@@ -26,7 +26,7 @@ public class IRModel_HullWhite
             double drift = meanReversion * (longTermRate - currentRate) * dt;
 
             //Calculate Diffusion
-            double diffusion = volatility * Mathf.Sqrt(dt) * generateRandomNumberFromNormalDistribution();
+            double diffusion = volatility * BrownianNoise(dt);
 
             // Update Interest Rates
             currentRate += drift + diffusion;
@@ -35,10 +35,11 @@ public class IRModel_HullWhite
 
         return interestRates;
     }
-
-    private double generateRandomNumberFromNormalDistribution()
-    {
-        // Generate a random number from a standard normal distribution
-        return UnityEngine.Random.Range(0f, 1f);
+    /// <summary>
+    /// Generate a random number from a standard normal distribution
+    /// </summary>
+    /// <returns></returns>
+    private double BrownianNoise(float dt)
+    {        return Mathf.Sqrt(dt) * UnityEngine.Random.Range(-1f, 1f);
     }
 }

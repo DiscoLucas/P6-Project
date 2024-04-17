@@ -5,16 +5,14 @@ using XCharts.Runtime;
 /// </summary>
 public class Interest_Rate_Predictor : MonoBehaviour
 {
-    [SerializeField]
-    BaseChart chart;
-    [SerializeField]
-    string seriesName = "Bond_James_bond";
+    [SerializeField] BaseChart chart;
+    [SerializeField] string seriesName = "Bond_James_bond";
     IRModel_HullWhite model;
-    [SerializeField]
-    int shownAmount = 10;
-    [SerializeField]
-    float dt = 0.5f;
-    // Start is called before the first frame update
+    [SerializeField] int shownAmount = 10;
+    [SerializeField][Tooltip("time interval increments, in years")] float dt = 1f / 12f;
+    [SerializeField][Tooltip("Length of the calculated loan, in years")] float timeHorizon = 1f;
+    [Tooltip("e")] public float Volatility;
+    
 
     private void Awake()
     {
@@ -27,23 +25,13 @@ public class Interest_Rate_Predictor : MonoBehaviour
 
         updateGraph();
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void updateGraph()
     {
         //chart.ClearSerieData();
         //chart.ClearData();
         chart.RemoveData();
-        double[] predicData = model.predictIRforTimeInterval(dt, shownAmount);
+        double[] predicData = model.predictIRforTimeInterval(dt, timeHorizon);
         chart.AddSerie<Line>(seriesName);
         for (int i = 0; i < shownAmount; i++)
         {
