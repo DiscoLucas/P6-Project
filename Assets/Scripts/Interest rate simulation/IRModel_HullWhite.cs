@@ -17,7 +17,7 @@ public class IRModel_HullWhite
 
     public double[] predictIRforTimeInterval(float dt, float timeHorizon, double longTermRate = 0.5)
     {
-        int steps = (int)(timeHorizon / dt);
+        int steps = (int)(timeHorizon / dt); //
         double[] interestRates = new double[steps];
 
         for (int i = 0; i < steps; i++)
@@ -41,5 +41,10 @@ public class IRModel_HullWhite
     /// <returns></returns>
     private double BrownianNoise(float dt)
     {        return Mathf.Sqrt(dt) * UnityEngine.Random.Range(-1f, 1f);
+    }
+
+    public void UpdateVolatility(double newVolatility)
+    {
+        volatility = newVolatility;
     }
 }
