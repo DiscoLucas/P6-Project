@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using System;
 
 public class Paper_work : MonoBehaviour
 {
+    private const string wrongAnswer = "Wrong answer";
+    private const string correctAnswer = "Correct answer";
+    private float answerValueFloat;
     private float annualIncome;
     private float debtFactor;
     private float debtFactorLoan;
     private float downPayment = 0.05f;
     private float maxLoan;
     private float clientSavings;
-    private float currentAswer;
+    private float currentAnswer;
 
     [SerializeField]
     public TMP_Text canvasText;
@@ -36,22 +41,37 @@ public class Paper_work : MonoBehaviour
         maxLoan = debtFactorLoan + clientSavings;
     }
 
-    //Game relatet code
-    private void solutionChecker()
+    private TMP_Text GetWorldText()
     {
-        float wtNumber = float.Parse(worldText.text);
-        if (currentAswer == wtNumber) 
-        { 
-            
+        return worldText;
+    }
+
+    //Game relatet code
+
+    private void Update()
+    {
+        currentAnswer = annualIncome;
+    }
+    public void solutionChecker()
+    {
+        answerValueFloat = float.Parse(worldText.text);
+        if (currentAnswer == answerValueFloat) 
+        {
+            canvasText.text = correctAnswer;
         }
         else
         {
-
+            canvasText.text = wrongAnswer;
         }
+
+        Debug.Log(answerValueFloat);
     }
 
-    private void currentQuestion()
+    public void Checker()
     {
-        currentAswer = annualIncome;
+        float answerValueFloat = float.Parse(worldText.text);
+        Debug.Log(answerValueFloat);
+        Debug.Log(worldText.text);
     }
+    
 }
