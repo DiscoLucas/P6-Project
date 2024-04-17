@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public enum MaterialStatus {
+public enum MaritalStatus {
     Single,
-    Marragie,
+    Married,
     Partner
 }
 
@@ -15,7 +15,7 @@ public class ClientData
     public int age;
     public string job;
     public string city;
-    public MaterialStatus maritalStatus;
+    public MaritalStatus maritalStatus;
     public FinanceData Finance;
     public Sprite sprite;
     public bool haveBeenPresented = false;
