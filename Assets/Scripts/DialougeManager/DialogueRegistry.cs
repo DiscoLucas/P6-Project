@@ -30,6 +30,11 @@ public class DialogueRegistry : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This funktion takes an int that selects the coresponding element from the Sentince[]
+    /// </summary>
+    /// <param name="index"></param>
+    /// <returns></returns>
     public string GetSentincesIndex(int index)
     {
         if (index >= 0 && index < sentinces.Length) //Vi skal ændre index til at blive sent fra ClientData? eller et andet sted fra?

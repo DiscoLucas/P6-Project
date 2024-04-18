@@ -85,6 +85,10 @@ public class AudioManager : MonoBehaviour
 
     //To call:
     // AudioManager.instance.Play("clip_name");
+    /// <summary>
+    /// This function is for selecting a specific audio clip in the Sounds catagory of the AudioManager. Input the name of a given Element.
+    /// </summary>
+    /// <param name="name"></param>
     public void Play(string name)
     {
         Sound s = Array.Find(soundsArray, soundsArray => soundsArray.name == name);
@@ -98,6 +102,10 @@ public class AudioManager : MonoBehaviour
     }
 
     // AudioManager.instance.PlayVoice("clip_name");
+    /// <summary>
+    /// This function is for selecting a specific audio clip in the Voice catagory of the AudioManager. Input the name of a given Element.
+    /// </summary>
+    /// <param name="name"></param>
     public void PlayVoice(string name)
     {
         Voice v = Array.Find(voiceArray, voiceArray => voiceArray.name == name);
@@ -112,6 +120,10 @@ public class AudioManager : MonoBehaviour
 
 
     // AudioManager.instance.PlayMusic("clip_name");
+    /// <summary>
+    /// This function is for selecting a specific audio clip in the Music catagory of the AudioManager. Input the name of a given Element.
+    /// </summary>
+    /// <param name="name"></param>
     public void PlayMusic(string name)
     {
         Music m = Array.Find(musicArray, musicArray => musicArray.name == name);
@@ -125,6 +137,10 @@ public class AudioManager : MonoBehaviour
     }
 
     // AudioManager.instance.DisableAudioSource("clip_name");
+    /// <summary>
+    /// This funktion takes a name and disables that spicific Element if it is playing
+    /// </summary>
+    /// <param name="audioSourceName"></param>
     public void DisableAudioSource(string audioSourceName)
     {
         // Find the sound with the specified name

@@ -53,7 +53,10 @@ public class DialogueManager : MonoBehaviour
     }
 
     // DialogueManager.instance.StartDia("dialogue name")
-
+    /// <summary>
+    /// The StartDia() takes an int it uses to find the correct string in the DialogueRegistry.sentinsis[] array that contains the dialogue options
+    /// </summary>
+    /// <param name="registryIndex"></param>
     public void StartDia(int registryIndex)
     {
         if (registryIndex < 0 || registryIndex >= DialogueRegistry.instance.sentinces.Length)
@@ -96,9 +99,27 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextScentence()
     {
+        if (sentensis.Count == 0) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
+        {
+            dialoguec.hasRun = true;
+            EndDialogue();
+            return;
+        }
 
+        string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
+        StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
+        Debug.Log(sentince);
+        StartCoroutine(TypeDia(sentince, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
+
+        //Debug.Log("Next Sentince");
     }
 
+    /// <summary>
+    /// This function takes a string it inserts in to a Coroutine that writes the dialogue. It is also here the Dialogue box UI opens via an animator,
+    /// ClientName is set to be displayed on the correct place on the UI.
+    /// The coroutine takes TypeSpeed from the DialogueManager, VoiceClip set on the DialougManager, and Max + Min Pitch set in the ClientData
+    /// </summary>
+    /// <param name="sentinceToDisplay"></param>
     public void DisplayOneSentince(string sentinceToDisplay)
     {
         animator.SetBool("IsOpen", true);
@@ -106,10 +127,21 @@ public class DialogueManager : MonoBehaviour
         //string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
         //string sentinceToDisplay;
         StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
-        Debug.Log(sentinceToDisplay);
+        //Debug.Log(sentinceToDisplay);
         StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
     }
 
+    /// <summary>
+    /// This Coroutine takes multible paramiters, a sting: sentence, a TypeSpeed that is used to set how fast each letter appears on the UI, 
+    /// an array of voice clips a second corutine uses along with max + min pitch.
+    /// The Display Text is set to be ___ and a loop creates an array for each letter in the sentince. This loop adds 1 letter each time, and waits for "Typespeed" seconds before looping.
+    /// </summary>
+    /// <param name="sentence"></param>
+    /// <param name="TypeSpeed"></param>
+    /// <param name="VoiceClip"></param>
+    /// <param name="maxPitch"></param>
+    /// <param name="minPitch"></param>
+    /// <returns></returns>
     IEnumerator TypeDia (string sentence, float TypeSpeed, string[] VoiceClip, float maxPitch, float minPitch) 
     {
         Diatext.text = ""; //Creates a blank text space when the DiaText starts.
@@ -140,10 +172,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Thus function is to close the dialogue UI
+    /// </summary>
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
         animator.SetBool("IsOpen", false);
-        //Debug.Log("End");
     }
 }
 
