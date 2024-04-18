@@ -4527,10 +4527,10 @@ MonoBehaviour:
   seriesName: Bond_James_bond
   shownAmount: 10
   dt: 1
-  timeHorizon: 12
-  volatility: 1
+  timeHorizon: 48
+  volatility: 0.21
   newVolatility: 2
-  currentRate: 5
+  currentRate: 10
   addTimeHorizon: 24
 --- !u!1 &696849031
 GameObject:
