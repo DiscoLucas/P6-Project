@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,13 +132,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8984664}
+  - component: {fileID: 8984665}
   m_Layer: 5
   m_Name: Mail
   m_TagString: Page
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8984664
 RectTransform:
   m_ObjectHideFlags: 0
@@ -160,6 +161,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8984665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mail:
+    Reciever: 
+    Sender: 
+    Subject: 
+    info: 'akflkadf
+
+      asdfsad
+
+      sdfsdf'
+    test: {fileID: 0}
 --- !u!1 &11068306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1346,7 @@ GameObject:
   - component: {fileID: 188730992}
   - component: {fileID: 188730991}
   - component: {fileID: 188730990}
+  - component: {fileID: 188730993}
   m_Layer: 5
   m_Name: Mail_1
   m_TagString: Tab
@@ -1456,6 +1480,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188730988}
   m_CullTransparentMesh: 1
+--- !u!114 &188730993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188730988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mail:
+    Reciever: 
+    Sender: 
+    Subject: 
+    info: 
+    test: {fileID: 0}
 --- !u!1 &219958680
 GameObject:
   m_ObjectHideFlags: 0
@@ -9326,7 +9368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1534293842
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12525,6 +12567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2101722702}
+  - component: {fileID: 2101722703}
   m_Layer: 5
   m_Name: Mail_Functionality
   m_TagString: Untagged
@@ -12553,6 +12596,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 778.5303, y: 322.9793}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2101722703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101722701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mail:
+    Reciever: 
+    Sender: 
+    Subject: 
+    info: 
+    test: {fileID: 0}
 --- !u!1 &2104217949
 GameObject:
   m_ObjectHideFlags: 0
