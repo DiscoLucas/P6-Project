@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
 using XCharts.Runtime;
 using Random = UnityEngine.Random;
 /// <summary>
@@ -35,29 +34,17 @@ public class Interest_Rate_Predictor : MonoBehaviour
 
     public void StartGraph()
     {
-        //chart.ClearSerieData();
-        //chart.ClearData();
-        var xAxis = chart.EnsureChartComponent<XAxis>();
-        xAxis.splitNumber = 10;
-        xAxis.boundaryGap = true;
-        xAxis.type = Axis.AxisType.Category;
-
-        var yAxis = chart.EnsureChartComponent<YAxis>();
-        yAxis.type = Axis.AxisType.Value;
         chart.RemoveData();
         double[] predictData = model.predictIRforTimeInterval(dt, timeHorizon);
         chart.AddSerie<Line>(seriesName);
-        chart.ClearData();
-        chart.AddXAxisData("5");
-        chart.AddData(0, 42);
-        /*for (int i = 0; i < shownAmount; i++)
+        for (int i = 0; i < shownAmount; i++)
         {
             double d = predictData[i];
             chart.AddXAxisData("Month" + i.ToString());
             chart.AddData(0, d);
             
         }
-        Debug.Log(predictData.Length);*/
+        Debug.Log(predictData.Length);
     }
     
 
