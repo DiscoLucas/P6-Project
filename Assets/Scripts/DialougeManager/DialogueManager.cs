@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
     public Dialogue dialoguec;
     public DialogueRegistry dialogueRegistry;
     [SerializeField] private string[] VoiceClip;
+    public bool hasRun = false;
 
 
 
@@ -59,12 +60,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="registryIndex"></param>
     public void StartDia(int registryIndex)
     {
-        if (registryIndex < 0 || registryIndex >= DialogueRegistry.instance.sentinces.Length)
-        {
-            Debug.LogWarning("Invalid dialogue registry index!");
-            return;
-        }
-
+        DialogueRegistry.instance.GetSentincesIndex(registryIndex);
         string sentince = DialogueRegistry.instance.sentinces[registryIndex]; // Get the tag from DialogueRegistry
         //Debug.Log(sentince);
         //string[] sentinces = (registryIndex, DialogueRegistry.instance.sentinces);
@@ -93,25 +89,25 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayCaseSummary()
     {
-        sentensis.Enqueue(clientInfo.caseDescription);
-        DisplayNextScentence();
+        string caseSum = clientInfo.caseDescription;
+        DisplayOneSentince(caseSum);
     }
 
     public void DisplayNextScentence()
     {
-        if (sentensis.Count == 0) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
+        if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
-            dialoguec.hasRun = true;
-            EndDialogue();
+            DialogueRegistry.instance.GetSentincesIndex(DialogueRegistry.instance.GetIndex());
+            string newSentence = DialogueRegistry.instance.sentinces[DialogueRegistry.instance.GetIndex()];
+            DisplayOneSentince(newSentence);
             return;
         }
-
-        string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
-        StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
-        Debug.Log(sentince);
-        StartCoroutine(TypeDia(sentince, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
-
-        //Debug.Log("Next Sentince");
+        else if (hasRun)
+        {
+            DisplayCaseSummary();
+            hasRun = true;
+            return;
+        }
     }
 
     /// <summary>
@@ -124,8 +120,6 @@ public class DialogueManager : MonoBehaviour
     {
         animator.SetBool("IsOpen", true);
         nameText.text = clientData.clientName;
-        //string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
-        //string sentinceToDisplay;
         StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
         //Debug.Log(sentinceToDisplay);
         StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
@@ -218,5 +212,14 @@ public void StartDia(DialogueRegistry dialogue)
     StartCoroutine(TypeDia(sentince, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
 
     //Debug.Log("Next Sentince");
+
+
+
+        string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
+        StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
+        Debug.Log(sentince);
+        StartCoroutine(TypeDia(sentince, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
+
+        //Debug.Log("Next Sentince");
 }
 */

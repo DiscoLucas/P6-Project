@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1651054290955173573
 Transform:
   m_ObjectHideFlags: 0
@@ -45,15 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-    name: Albert Fan
     VoiceClip:
     - AlbertFan1
     - AlbertFan2
     - AlbertFan3
-    TypeSpeed: 0.04
     minPitch: 0.6
     maxPitch: 1.3
-    sentensis:
-    - Alber er gud
-    - Albert er konge
-    - "Alber er alt jeg t\xE6nker p\xE5"
+    sentencis: []
+    hasRun: 0
+  dialogueRegistry: {fileID: 0}

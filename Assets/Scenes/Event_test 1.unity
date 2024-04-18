@@ -960,11 +960,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Albert Fan
       objectReference: {fileID: 0}
-    - target: {fileID: 4154083473294809427, guid: 85cf845f142c4b04ab6e6895ec5b384b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5642715120013242202, guid: 85cf845f142c4b04ab6e6895ec5b384b,
         type: 3}
       propertyPath: dialogueRegistry
