@@ -254,7 +254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402356f16de36c64494ae02fe234f8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answerValue: 
   canvasText: {fileID: 6816456784156352766}
   worldText: {fileID: 2241312896813025696}
   clientIncome: 10000
@@ -1913,7 +1912,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 757981839}
         m_TargetAssemblyTypeName: Paper_work, Assembly-CSharp
-        m_MethodName: Checker
+        m_MethodName: solutionChecker
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField] ClientManager cm;
+
     //forslag:
     //[SerializeField]
-    //GameObject[] incidentsPrefab;
     //Incidents currentIncident
 
+    [SerializeField]
+    GameObject[] clientMeetingPrefabs;
     //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
@@ -64,8 +66,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void newMounth() {
         monthNumber++;
-        Debug.Log("#######################" +
-            "\nmounth: " + monthNumber);
+        Debug.Log("#######################");
 
         int turnTypeIndex = decideWhatShouldHappend();
         if (turnType[turnTypeIndex].type == TurnType.New_customer)
@@ -83,7 +84,10 @@ public class GameManager : MonoBehaviour
         else if (turnType[turnTypeIndex].type == TurnType.None)
         {
             //call the next round;
+            newMounth();
         }
+        //Make the somthing that shows what mounth the user are in
+        Debug.Log("Mounth: " + monthNumber);
     }
 
     /// <summary>
@@ -115,7 +119,7 @@ public class GameManager : MonoBehaviour
     void clientMeeting()
     {
         Debug.Log("Client meeting have startede");
-        //client walks in, like in newCustomer function
+        //Client walks in, like in newCustomer function
         //Client choses speech that revolves around getting update to bonds "Hey jeg har fået bedre arbejde lol"
         //Player gets to fill out the correct paper work - Dette slutter af med en ja/nej
         //Client gør som player siger
