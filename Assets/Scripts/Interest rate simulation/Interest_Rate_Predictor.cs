@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 using XCharts.Runtime;
 using Random = UnityEngine.Random;
 /// <summary>
@@ -7,28 +8,28 @@ using Random = UnityEngine.Random;
 /// </summary>
 public class Interest_Rate_Predictor : MonoBehaviour
 {
-    [SerializeField] BaseChart chart;
+    [SerializeField] LineChart chart;
     [SerializeField] string seriesName = "Bond_James_bond";
     IRModel_HullWhite model;
     [SerializeField] int shownAmount = 10;
     [SerializeField][Tooltip("time interval increments, in years")] float dt = 1f / 12f;
     [SerializeField][Tooltip("Length of the calculated loan, in years")] float timeHorizon = 1f;
-    [Tooltip("e")] public double volatility;
+    [Tooltip("How unstable the bond is")] public double volatility;
     public double newVolatility;
+    public double currentRate;
     public float addTimeHorizon = 1f;
     
 
     private void Awake()
     {
-        model = new IRModel_HullWhite((double)Random.Range(1f, 100f), (double)Random.Range(0.01f, 0.05f), volatility);
-        if (chart == null)
-        {
-            Debug.LogError("The Chart is not been added to the componet");
-            chart = gameObject.GetComponent<LineChart>();
-        }
+        model = new IRModel_HullWhite(currentRate, (double)Random.Range(0.01f, 0.05f), volatility);
+        //chart = gameObject.GetComponent<LineChart>();
+        
         // TODO: fix this.
         // when the graph is started, the last entry is always wildly different from the rest.
         // this doesn't seem to happend when StartGraph is called from the Start button.
+
+        shownAmount = (int)(timeHorizon / dt);
         StartGraph();
     }
 
@@ -36,17 +37,29 @@ public class Interest_Rate_Predictor : MonoBehaviour
     {
         //chart.ClearSerieData();
         //chart.ClearData();
+        var xAxis = chart.EnsureChartComponent<XAxis>();
+        xAxis.splitNumber = 10;
+        xAxis.boundaryGap = true;
+        xAxis.type = Axis.AxisType.Category;
+
+        var yAxis = chart.EnsureChartComponent<YAxis>();
+        yAxis.type = Axis.AxisType.Value;
         chart.RemoveData();
-        double[] predicData = model.predictIRforTimeInterval(dt, timeHorizon);
+        double[] predictData = model.predictIRforTimeInterval(dt, timeHorizon);
         chart.AddSerie<Line>(seriesName);
-        for (int i = 0; i < shownAmount; i++)
+        chart.ClearData();
+        chart.AddXAxisData("5");
+        chart.AddData(0, 42);
+        /*for (int i = 0; i < shownAmount; i++)
         {
-            double d = predicData[i];
-            chart.AddXAxisData(i.ToString());
+            double d = predictData[i];
+            chart.AddXAxisData("Month" + i.ToString());
             chart.AddData(0, d);
-            Debug.Log(i);
+            
         }
+        Debug.Log(predictData.Length);*/
     }
+    
 
     public void UpdateGraph() 
         // TODO: fix the graph update
@@ -61,7 +74,7 @@ public class Interest_Rate_Predictor : MonoBehaviour
         double[] predicData = model.predictIRforTimeInterval(dt, timeHorizon);
         for (int i = shownAmount; i < shownAmount + (int)(addTimeHorizon / dt); i++)
         {
-            double d = predicData[i - shownAmount];
+            double d = predicData[i];
             chart.AddXAxisData(i.ToString());
             chart.AddData(0, d);
             Debug.Log(i);

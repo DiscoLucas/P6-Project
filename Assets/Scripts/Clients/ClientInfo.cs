@@ -36,6 +36,5 @@ public class ClientInfo : MonoBehaviour
         monthlySavings = clientObject.monthlySavings;
         totalSavings = clientObject.totalSavings;
         neededLoan = clientObject.neededLoan;
-        Debug.Log("clientName: " + clientName);
     }
 }

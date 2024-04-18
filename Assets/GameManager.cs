@@ -146,7 +146,12 @@ public class GameManager : MonoBehaviour
             }
         }
         return turnTypeIndex;
-    } 
+    }
+
+    public void Method()
+    {
+        throw new System.NotImplementedException();
+    }
 }
 
 /// <summary>
