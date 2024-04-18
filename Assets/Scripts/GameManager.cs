@@ -164,12 +164,9 @@ public class GameManager : MonoBehaviour
         }
         return turnTypeIndex;
     }
-
-<<<<<<< HEAD:Assets/GameManager.cs
     public void Method()
     {
-        throw new System.NotImplementedException();
-=======
+        throw new System.NotImplementedException(); }
     /// <summary>
     /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed
     /// </summary>
@@ -209,7 +206,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentClientMeeting.gameObject);
         }
->>>>>>> ec0f9a9040306947afffd2547d14d8b3cc096748:Assets/Scripts/GameManager.cs
     }
 }
 
