@@ -15,6 +15,5 @@ public class DialogueInteractor : MonoBehaviour
     public void TiggerDialogue()
     {
         DialogueManager.instance.StartDia(DialogueRegistry.instance.GetIndex());
-        //DialogueRegistry.instance.GetSentincesIndex(DialogueRegistry.instance.GetIndex());
     }
 }

@@ -9,6 +9,7 @@ public class DialogueRegistry : MonoBehaviour
     string[] tags = {
         "[Tjener]",
         "[Navn]",
+        "[Lån på]",
     };
 
     [TextArea(3, 10)]
