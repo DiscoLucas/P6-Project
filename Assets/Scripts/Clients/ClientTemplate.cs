@@ -11,7 +11,7 @@ public class ClientTemplate : ScriptableObject
     public int age;
     public string job;
     public string city;
-    public MaterialStatus maritalStatus;
+    public MaritalStatus maritalStatus;
     public string caseDescription;
     public Sprite chacterSprite;
 

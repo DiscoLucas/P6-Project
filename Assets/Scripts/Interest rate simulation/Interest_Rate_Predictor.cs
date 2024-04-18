@@ -1,57 +1,76 @@
 using UnityEngine;
 using XCharts.Runtime;
+using Random = UnityEngine.Random;
 /// <summary>
 /// Using Hull-White model
 /// </summary>
 public class Interest_Rate_Predictor : MonoBehaviour
 {
-    [SerializeField]
-    BaseChart chart;
-    [SerializeField]
-    string seriesName = "Bond_James_bond";
+    [SerializeField] LineChart chart;
+    [SerializeField] string seriesName = "Bond_James_bond";
     IRModel_HullWhite model;
-    [SerializeField]
-    int shownAmount = 10;
-    [SerializeField]
-    float dt = 0.5f;
-    // Start is called before the first frame update
+    [SerializeField] int shownAmount = 10;
+    [SerializeField][Tooltip("time interval increments, in months")] float dt = 1f;
+    [SerializeField][Tooltip("Length of the calculated loan, in months")] float timeHorizon = 12f;
+    [Tooltip("How unstable the bond is")] public double volatility;
+    public double newVolatility;
+    public double currentRate;
+    public float addTimeHorizon = 12f;
+    
 
     private void Awake()
     {
-        model = new IRModel_HullWhite((double)Random.Range(1f, 100f), (double)Random.Range(0.01f, 0.05f), (double)Random.Range(0.01f, 0.1f));
-        if (chart == null)
-        {
-            Debug.LogError("The Chart is not been added to the componet");
-            chart = gameObject.GetComponent<LineChart>();
-        }
+        model = new IRModel_HullWhite(currentRate, (double)Random.Range(0.01f, 0.05f), volatility);
+        //chart = gameObject.GetComponent<LineChart>();
+        
+        // TODO: fix this.
+        // when the graph is started, the last entry is always wildly different from the rest.
+        // this doesn't seem to happend when StartGraph is called from the Start button.
 
-        updateGraph();
-    }
-    void Start()
-    {
-
+        shownAmount = (int)(timeHorizon / dt);
+        StartGraph();
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Initializes the graph with the current interest rate and the predicted interest rates for the time horizon.
+    /// </summary>
+    public void StartGraph()
     {
-
-    }
-
-    public void updateGraph()
-    {
-        //chart.ClearSerieData();
-        //chart.ClearData();
         chart.RemoveData();
-        double[] predicData = model.predictIRforTimeInterval(dt, shownAmount);
+        double[] predictData = model.predictIRforTimeInterval(dt, timeHorizon);
         chart.AddSerie<Line>(seriesName);
         for (int i = 0; i < shownAmount; i++)
+        {
+            double d = predictData[i];
+            chart.AddXAxisData("Month" + i.ToString());
+            chart.AddData(0, d);
+            
+        }
+        Debug.Log(predictData.Length);
+    }
+    
+    /// <summary>
+    /// Continues the simulation and sets new input values for the model.
+    /// </summary>
+    public void UpdateGraph() 
+        // TODO: Make this method acceept input values as parameters.
+    {
+        model.SetVolatility(newVolatility);
+
+        timeHorizon += addTimeHorizon; //add more time to the time horizon
+        double sum = 0;
+        double[] predicData = model.predictIRforTimeInterval(dt, timeHorizon);
+        for (int i = shownAmount; i < shownAmount + (int)(addTimeHorizon / dt); i++)
         {
             double d = predicData[i];
             chart.AddXAxisData(i.ToString());
             chart.AddData(0, d);
             Debug.Log(i);
+            sum += d;
         }
+        Debug.Log("average: " + sum / predicData.Length);
+        shownAmount += (int)(addTimeHorizon / dt);
+        
     }
 }
 
