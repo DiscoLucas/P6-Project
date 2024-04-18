@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using XCharts.Runtime;
 using Random = UnityEngine.Random;
@@ -11,12 +10,12 @@ public class Interest_Rate_Predictor : MonoBehaviour
     [SerializeField] string seriesName = "Bond_James_bond";
     IRModel_HullWhite model;
     [SerializeField] int shownAmount = 10;
-    [SerializeField][Tooltip("time interval increments, in years")] float dt = 1f / 12f;
-    [SerializeField][Tooltip("Length of the calculated loan, in years")] float timeHorizon = 1f;
+    [SerializeField][Tooltip("time interval increments, in months")] float dt = 1f;
+    [SerializeField][Tooltip("Length of the calculated loan, in months")] float timeHorizon = 12f;
     [Tooltip("How unstable the bond is")] public double volatility;
     public double newVolatility;
     public double currentRate;
-    public float addTimeHorizon = 1f;
+    public float addTimeHorizon = 12f;
     
 
     private void Awake()
@@ -32,6 +31,9 @@ public class Interest_Rate_Predictor : MonoBehaviour
         StartGraph();
     }
 
+    /// <summary>
+    /// Initializes the graph with the current interest rate and the predicted interest rates for the time horizon.
+    /// </summary>
     public void StartGraph()
     {
         chart.RemoveData();
@@ -47,14 +49,13 @@ public class Interest_Rate_Predictor : MonoBehaviour
         Debug.Log(predictData.Length);
     }
     
-
+    /// <summary>
+    /// Continues the simulation and sets new input values for the model.
+    /// </summary>
     public void UpdateGraph() 
-        // TODO: fix the graph update
-        // Curently the update is not working as expected
-        // When the graph is updated, the first entry is very different.
-        // but the following the entrys look stable like it's following the previous volatility value.
+        // TODO: Make this method acceept input values as parameters.
     {
-        model.UpdateVolatility(newVolatility);
+        model.SetVolatility(newVolatility);
 
         timeHorizon += addTimeHorizon; //add more time to the time horizon
         double sum = 0;
@@ -69,6 +70,7 @@ public class Interest_Rate_Predictor : MonoBehaviour
         }
         Debug.Log("average: " + sum / predicData.Length);
         shownAmount += (int)(addTimeHorizon / dt);
+        
     }
 }
 

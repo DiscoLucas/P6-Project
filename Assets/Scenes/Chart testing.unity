@@ -724,7 +724,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 696464546}
         m_TargetAssemblyTypeName: Interest_Rate_Predictor, Assembly-CSharp
         m_MethodName: UpdateGraph
         m_Mode: 1
@@ -4526,7 +4526,7 @@ MonoBehaviour:
   chart: {fileID: 810326989}
   seriesName: Bond_James_bond
   shownAmount: 10
-  dt: 0.083333336
+  dt: 1
   timeHorizon: 12
   volatility: 1
   newVolatility: 2
@@ -9668,9 +9668,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 696464546}
         m_TargetAssemblyTypeName: Interest_Rate_Predictor, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: StartGraph
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
