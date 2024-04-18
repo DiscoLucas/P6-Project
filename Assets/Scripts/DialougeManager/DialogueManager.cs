@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 
 
 //This Manager is inspired by Bakyes at https://www.youtube.com/watch?v=_nRzoTzeyxU
 public class DialogueManager : MonoBehaviour
 {
+    public UnityEvent dialogDone;
     public TMP_Text Diatext;
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
@@ -34,12 +36,14 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        
         clientData = new ClientData(clietntTemp);
         //Singleton pattern
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            dialogDone = new UnityEvent();
         }
         else
         {
@@ -171,6 +175,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
+        dialogDone.Invoke();
         animator.SetBool("IsOpen", false);
     }
 }
