@@ -1,17 +1,20 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ClientManager : MonoBehaviour
 {
+    
     [SerializeField]
     ClientTemplate[] templates;
     [SerializeField]
     List<ClientData> clients;
-    
+    [SerializeField]
+    int precentationIndex = 0;
     DialogueInteractor di;
     [SerializeField]
-
-    public bool hastalked = false; 
+    ClientPresState clientPresState = ClientPresState.none;
 
     [Header("Animation/Visuals")]
     [SerializeField]
@@ -21,7 +24,11 @@ public class ClientManager : MonoBehaviour
     public GameObject ClientObject; // Client er det client gameobject vi har lige nu.
     [SerializeField]
     string walkInAnimation, walkOutAnimation;
+
+    [SerializeField]
     bool startedPrestentation = false;
+    public bool hastalked = false;
+
 
     void Start()
     {
@@ -31,6 +38,9 @@ public class ClientManager : MonoBehaviour
             di = ClientObject.GetComponent <DialogueInteractor>();
         if(spriteRenderer == null)
             spriteRenderer= ClientObject.GetComponent<SpriteRenderer>();
+        DialogueManager.instance.dialogDone.AddListener(clientDoneTalking);
+        GameManager.instance.clientMeetingDone.AddListener(stopMeeting);
+
     }
 
     /// <summary>
@@ -104,10 +114,8 @@ public class ClientManager : MonoBehaviour
         if (an != null)
         {
             an.Play(walkInAnimation);
-            Debug.Log("Prestentation of client\nPlease Add the dialog starter here\nexample of how is here");
-            startedPrestentation= true;
             //when the dialog is done please do this:
-            an.SetBool("WalkOut", true);
+            //an.SetBool("WalkOut", true);
         }
         else {
             Debug.LogError("Could not find Animation");
@@ -116,10 +124,39 @@ public class ClientManager : MonoBehaviour
     }
 
     public void havePresentedeClient() {
-        Event_manager.instance.turns[Event_manager.instance.turnIndex].currentActionDisplay.gameObject.SetActive(true);
+        //Event_manager.instance.turns[Event_manager.instance.turnIndex].currentActionDisplay.gameObject.SetActive(true);
     }
-    void Update()
-    {
 
+    public void changeClientPresState(ClientPresState cps) {
+        clientPresState = cps;
     }
+    public void clientStartTalking()
+    {
+        if (clientPresState == ClientPresState.talking) {
+            DialogueManager.instance.StartDia(precentationIndex);
+        }
+    }
+    public void clientDoneTalking() {
+        if (clientPresState == ClientPresState.talking)
+        {
+            clientPresState = ClientPresState.filling;
+            GameManager.instance.createClientMeeting();
+        }
+    }
+
+    public void stopMeeting() {
+        if (clientPresState == ClientPresState.filling) {
+            clientPresState = ClientPresState.none;
+            an.Play(walkOutAnimation);
+        }
+    }
+
+}
+[Serializable]
+public enum ClientPresState {
+    walkin,
+    talking,
+    filling,
+    walkingOut,
+    none
 }

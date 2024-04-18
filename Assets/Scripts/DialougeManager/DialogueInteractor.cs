@@ -9,10 +9,11 @@ public class DialogueInteractor : MonoBehaviour
     [Tooltip("Input the Character Name to be displayed on the UI, Set the number of text elements the character and white the diffrent dialogue boxes")]
     public Dialogue dialogue;
     private bool InDialogue = false;
+    public DialogueRegistry dialogueRegistry;
 
 
     public void TiggerDialogue()
     {
-        DialogueManager.instance.StartDia(dialogue);
+        DialogueManager.instance.StartDia(DialogueRegistry.instance.GetIndex());
     }
 }

@@ -69,6 +69,18 @@ MonoBehaviour:
     mixerGroup: {fileID: 4398597937258103469, guid: 81162b1295328e74cadabef0ec739904,
       type: 2}
     mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
+  - name: Click
+    clip: {fileID: 8300000, guid: 00879361b852c134b947628e2214d148, type: 3}
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    spatialize: 0
+    loop: 0
+    doblerEffect: 0
+    source: {fileID: 0}
+    mixerGroup: {fileID: 4398597937258103469, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   voiceArray:
   - name: AlbertFan1
     clip: {fileID: 8300000, guid: 9ebaca72d8c8d6d429c8aa418ea982da, type: 3}

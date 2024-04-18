@@ -3,16 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    public UnityEvent clientMeetingDone;
     public static GameManager instance;
     [SerializeField] ClientManager cm;
+
     //forslag:
     //[SerializeField]
-    //GameObject[] incidentsPrefab;
     //Incidents currentIncident
 
+    [SerializeField]
+    GameObject[] clientMeetingPrefabs;
+    [SerializeField]
+    public ClientMeeting currentClientMeeting;
+    [SerializeField] Transform clientMeetingTransform;
     //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
@@ -25,6 +32,7 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            clientMeetingDone = new UnityEvent();
         }
         else
         {
@@ -35,17 +43,23 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
+        if (Input.GetKeyDown("space")) {
             nextMounth();
         }
     }
 
     private void Start()
     {
-        
+        nextMounth();
     }
 
+    /// <summary>
+    /// This functions update the current turn;
+    /// </summary>
+    public void updateTurn() {
+        //change to the next event
+        nextMounth();
+    }
 
     /// <summary>
     /// This function change the mounth and clear out the old
@@ -53,7 +67,6 @@ public class GameManager : MonoBehaviour
     public void nextMounth() {
         //Log what needs to be logged
 
-        //discard the old mounth
 
         //Change the mounth
         newMounth();
@@ -64,8 +77,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void newMounth() {
         monthNumber++;
-        Debug.Log("#######################" +
-            "\nmounth: " + monthNumber);
+        Debug.Log("#######################");
 
         int turnTypeIndex = decideWhatShouldHappend();
         if (turnType[turnTypeIndex].type == TurnType.New_customer)
@@ -83,7 +95,10 @@ public class GameManager : MonoBehaviour
         else if (turnType[turnTypeIndex].type == TurnType.None)
         {
             //call the next round;
+            newMounth();
         }
+        //Make the somthing that shows what mounth the user are in
+        Debug.Log("Mounth: " + monthNumber);
     }
 
     /// <summary>
@@ -97,6 +112,7 @@ public class GameManager : MonoBehaviour
             cm.startClientIntro(client);
 
         }
+        //createClientMeeting(clientMeetingPrefabs[0]);
     }
 
     /// <summary>
@@ -115,7 +131,8 @@ public class GameManager : MonoBehaviour
     void clientMeeting()
     {
         Debug.Log("Client meeting have startede");
-        //client walks in, like in newCustomer function
+        createClientMeeting(clientMeetingPrefabs[UnityEngine.Random.Range(0,clientMeetingPrefabs.Length)]);
+        //Client walks in, like in newCustomer function
         //Client choses speech that revolves around getting update to bonds "Hey jeg har fået bedre arbejde lol"
         //Player gets to fill out the correct paper work - Dette slutter af med en ja/nej
         //Client gør som player siger
@@ -148,9 +165,51 @@ public class GameManager : MonoBehaviour
         return turnTypeIndex;
     }
 
+<<<<<<< HEAD:Assets/GameManager.cs
     public void Method()
     {
         throw new System.NotImplementedException();
+=======
+    /// <summary>
+    /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed
+    /// </summary>
+    public void setCurrentClientMeeting(ClientMeeting clientMeeting) {
+        
+        currentClientMeeting = clientMeeting;
+    }
+    /// <summary>
+    /// Takes the client meeting prefab and create a client meeting from it
+    /// </summary>
+    /// <param name="prefab"></param>
+    public void createClientMeeting(GameObject prefab) {
+        destoryCurrentClientMeeting();
+        GameObject obj = Instantiate(prefab,Vector3.zero,quaternion.identity);
+        obj.transform.parent = clientMeetingTransform;
+
+    }
+
+    public void closeMeeting() {
+        destoryCurrentClientMeeting();
+        clientMeetingDone.Invoke();
+    }
+
+    public void createClientMeeting()
+    {
+
+        createClientMeeting(clientMeetingPrefabs[0]);
+
+    }
+
+
+    void destoryCurrentClientMeeting() {
+        //Log what is need to be logged
+
+        //Destory the current object
+        if (currentClientMeeting != null)
+        {
+            Destroy(currentClientMeeting.gameObject);
+        }
+>>>>>>> ec0f9a9040306947afffd2547d14d8b3cc096748:Assets/Scripts/GameManager.cs
     }
 }
 

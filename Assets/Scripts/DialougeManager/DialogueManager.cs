@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
 
 
 
 //This Manager is inspired by Bakyes at https://www.youtube.com/watch?v=_nRzoTzeyxU
 public class DialogueManager : MonoBehaviour
 {
+    public UnityEvent dialogDone;
     public TMP_Text Diatext;
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
@@ -26,17 +28,22 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float TypeSpeed = 0.04f;
     [HideInInspector]
     public Dialogue dialoguec;
+    public DialogueRegistry dialogueRegistry;
+    [SerializeField] private string[] VoiceClip;
+    public bool hasRun = false;
 
 
 
     private void Awake()
     {
+        
         clientData = new ClientData(clietntTemp);
         //Singleton pattern
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            dialogDone = new UnityEvent();
         }
         else
         {
@@ -47,54 +54,92 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        sentensis = new Queue<string>(); //This creates the "List" of dialogue on a given NPC
+        sentensis = new Queue<string>();
     }
 
     // DialogueManager.instance.StartDia("dialogue name")
-    public void StartDia(Dialogue dialogue)
+    /// <summary>
+    /// The StartDia() takes an int it uses to find the correct string in the DialogueRegistry.sentinsis[] array that contains the dialogue options
+    /// </summary>
+    /// <param name="registryIndex"></param>
+    public void StartDia(int registryIndex)
     {
-        this.dialoguec = dialogue;
-        animator.SetBool("IsOpen", true); //This is for controlling the animaton state of the dialogue canvas.
-        nameText.text = clientData.clientName;  //This replaces the "Name" text field on the dialogue canvas.
+        DialogueRegistry.instance.GetSentincesIndex(registryIndex);
+        string sentince = DialogueRegistry.instance.sentinces[registryIndex]; // Get the tag from DialogueRegistry
+        //Debug.Log(sentince);
+        //string[] sentinces = (registryIndex, DialogueRegistry.instance.sentinces);
+        //string[] sentinces = DialogueRegistry.instance.sentinces; // Get the sentences array based on the tag
+        //StartDialogue(sentinces);
+        //Debug.Log(sentinces);
+        DisplayOneSentince(sentince);
+
+    }
+
+    // Method to start dialogue with the given sentences
+    public void StartDialogue(string[] sentences)
+    {
+        animator.SetBool("IsOpen", true);
+        nameText.text = clientData.clientName;
 
         sentensis.Clear();
 
-        if (dialoguec.hasRun)
+        foreach (string sentence in sentences)
         {
-            DisplayCaseSummary();
-            return;
+            sentensis.Enqueue(sentence);
         }
 
-        foreach (string sentince in dialogue.sentensis) //Takes each sentince variable in "sentinsis" array from the dialogue class and Enqueues them.
-        {
-            sentensis.Enqueue(sentince);
-        }
-        
         DisplayNextScentence();
     }
 
     private void DisplayCaseSummary()
     {
-        sentensis.Enqueue(clientInfo.caseDescription);
-        DisplayNextScentence();
+        string caseSum = clientInfo.caseDescription;
+        DisplayOneSentince(caseSum);
     }
 
     public void DisplayNextScentence()
     {
-        if (sentensis.Count == 0) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
+        if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
-            dialoguec.hasRun = true;
-            EndDialogue();
+            DialogueRegistry.instance.GetSentincesIndex(DialogueRegistry.instance.GetIndex());
+            string newSentence = DialogueRegistry.instance.sentinces[DialogueRegistry.instance.GetIndex()];
+            DisplayOneSentince(newSentence);
             return;
         }
-
-        string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
-        StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
-        StartCoroutine(TypeDia(sentince, TypeSpeed, dialoguec.VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
-        //Debug.Log(sentince);
-        Debug.Log("Next Sentince");
+        else if (hasRun)
+        {
+            DisplayCaseSummary();
+            hasRun = true;
+            return;
+        }
     }
 
+    /// <summary>
+    /// This function takes a string it inserts in to a Coroutine that writes the dialogue. It is also here the Dialogue box UI opens via an animator,
+    /// ClientName is set to be displayed on the correct place on the UI.
+    /// The coroutine takes TypeSpeed from the DialogueManager, VoiceClip set on the DialougManager, and Max + Min Pitch set in the ClientData
+    /// </summary>
+    /// <param name="sentinceToDisplay"></param>
+    public void DisplayOneSentince(string sentinceToDisplay)
+    {
+        animator.SetBool("IsOpen", true);
+        nameText.text = clientData.clientName;
+        StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
+        //Debug.Log(sentinceToDisplay);
+        StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
+    }
+
+    /// <summary>
+    /// This Coroutine takes multible paramiters, a sting: sentence, a TypeSpeed that is used to set how fast each letter appears on the UI, 
+    /// an array of voice clips a second corutine uses along with max + min pitch.
+    /// The Display Text is set to be ___ and a loop creates an array for each letter in the sentince. This loop adds 1 letter each time, and waits for "Typespeed" seconds before looping.
+    /// </summary>
+    /// <param name="sentence"></param>
+    /// <param name="TypeSpeed"></param>
+    /// <param name="VoiceClip"></param>
+    /// <param name="maxPitch"></param>
+    /// <param name="minPitch"></param>
+    /// <returns></returns>
     IEnumerator TypeDia (string sentence, float TypeSpeed, string[] VoiceClip, float maxPitch, float minPitch) 
     {
         Diatext.text = ""; //Creates a blank text space when the DiaText starts.
@@ -115,6 +160,7 @@ public class DialogueManager : MonoBehaviour
         {
             string vClip = VoiceClip[Random.Range(0, VoiceClip.Length)];
             AudioManager.instance.DisableAudioSource(vClip);
+            //Debug.Log(vClip);
 
             float randomPitch = Random.Range(clientData.minPitch, clientData.maxPitch);
             Voice v = AudioManager.instance.GetVoiceClip(vClip);
@@ -124,9 +170,61 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Thus function is to close the dialogue UI
+    /// </summary>
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
+        dialogDone.Invoke();
         animator.SetBool("IsOpen", false);
-        //Debug.Log("End");
     }
 }
+
+
+/*
+public void StartDia(DialogueRegistry dialogue)
+{
+    this.dialogueRegistry = dialogue;
+    animator.SetBool("IsOpen", true); //This is for controlling the animaton state of the dialogue canvas.
+    nameText.text = clientData.clientName;  //This replaces the "Name" text field on the dialogue canvas.
+    DialogueRegistry.instance.GetSentincesIndex(DialogueRegistry.instance.GetIndex());
+
+    sentensis.Clear();
+
+    if (dialoguec.hasRun)
+    {
+        DisplayCaseSummary();
+        return;
+    }
+
+    foreach (string sentince in dialogueRegistry.sentinces) //Takes each sentince variable in "sentinsis" array from the dialogue class and Enqueues them.
+    {
+        sentensis.Enqueue(sentince);
+    }
+
+    DisplayNextScentence();
+
+        if (sentensis.Count == 0) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
+    {
+        dialoguec.hasRun = true;
+        EndDialogue();
+        return;
+    }
+
+    string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
+    StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
+    Debug.Log(sentince);
+    StartCoroutine(TypeDia(sentince, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
+
+    //Debug.Log("Next Sentince");
+
+
+
+        string sentince = sentensis.Dequeue(); //Dequeues the "sentinsis" array so it goes further down.
+        StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
+        Debug.Log(sentince);
+        StartCoroutine(TypeDia(sentince, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
+
+        //Debug.Log("Next Sentince");
+}
+*/
