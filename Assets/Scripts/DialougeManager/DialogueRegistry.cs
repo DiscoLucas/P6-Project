@@ -5,15 +5,18 @@ using UnityEngine;
 public class DialogueRegistry : MonoBehaviour
 {
     public static DialogueRegistry instance;
-    [SerializeField]
-    string[] tags = {
-        "[Tjener]",
-        "[Navn]",
-        "[Lån på]",
-    };
 
     [TextArea(3, 10)]
     public string[] sentinces;
+    //[SerializeField]
+    public string[] tags = {
+        "[Tjener]",
+        "[Navn]",
+    };
+    public string[] values =
+    {
+        "[value1]",
+    };
 
     private void Awake()
     {
@@ -46,6 +49,25 @@ public class DialogueRegistry : MonoBehaviour
             Debug.LogWarning("Index out of range!");
             return null;
         }
+    }
+
+    public string replaceString(string message, string[] tags, string[] values)
+    {
+        string output = message;
+        if (tags.Length != values.Length)
+        {
+            Debug.LogError("Tags length and " + values + " does not macht");
+            return message;
+        }
+
+        for (int i = 0; i < tags.Length; i++)
+        {
+            Debug.Log(tags[i] += values[i]);
+            output = output.Replace(tags[i], values[i]);
+
+        }
+
+        return output;
     }
 
     public int GetIndex()

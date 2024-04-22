@@ -17,7 +17,6 @@ public class DialogueManager : MonoBehaviour
     public ClientData clientData;
     public ClientInfo clientInfo;
 
-
     public Animator animator;
 
     private Queue<string> sentensis;
@@ -54,14 +53,14 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        gameObject_continue.SetActive(true);
-        gameObject_end.SetActive(false);
     }
 
     void Start()
     {
         sentensis = new Queue<string>();
+
+        gameObject_continue.SetActive(true);
+        gameObject_end.SetActive(false);
     }
 
     // DialogueManager.instance.StartDia("dialogue name")
@@ -71,8 +70,11 @@ public class DialogueManager : MonoBehaviour
     /// <param name="registryIndex"></param>
     public void StartDia(int registryIndex)
     {
-        DialogueRegistry.instance.GetSentincesIndex(registryIndex);
-        string sentince = DialogueRegistry.instance.sentinces[registryIndex]; // Get the tag from DialogueRegistry
+        
+        //DialogueRegistry.instance.GetSentincesIndex(registryIndex);
+        //string sent = DialogueRegistry.instance.sentinces[registryIndex]; // Get the tag from DialogueRegistry
+        //string sentince = DialogueRegistry.instance.replaceString(sent, dialogueRegistry.tags, dialogueRegistry.values);
+        string sentince = thisSentince(registryIndex);
         DisplayOneSentince(sentince);
 
     }
@@ -99,12 +101,23 @@ public class DialogueManager : MonoBehaviour
         DisplayOneSentince(caseSum);
     }
 
+    public string thisSentince(int intdex)
+    {
+        DialogueRegistry.instance.GetSentincesIndex(intdex);
+        string sent = DialogueRegistry.instance.sentinces[intdex]; // Get the tag from DialogueRegistry
+        string sentince = DialogueRegistry.instance.replaceString(sent, dialogueRegistry.tags, dialogueRegistry.values);
+
+        return sentince;
+    }
+
+
     public void DisplayNextScentence()
     {
         if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
-            DialogueRegistry.instance.GetSentincesIndex(DialogueRegistry.instance.GetIndex());
-            string newSentence = DialogueRegistry.instance.sentinces[DialogueRegistry.instance.GetIndex()];
+            //DialogueRegistry.instance.GetSentincesIndex(DialogueRegistry.instance.GetIndex());
+            //string newSentence = DialogueRegistry.instance.sentinces[DialogueRegistry.instance.GetIndex()];
+            string newSentence = thisSentince(DialogueRegistry.instance.GetIndex());
             DisplayOneSentince(newSentence);
             return;
         }
@@ -124,7 +137,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="sentinceToDisplay"></param>
     public void DisplayOneSentince(string sentinceToDisplay)
     {
-        if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
+        if (hasRun == false)
         {
             gameObject_continue.SetActive(true);
             gameObject_end.SetActive(false);
@@ -136,9 +149,8 @@ public class DialogueManager : MonoBehaviour
         }
         animator.SetBool("IsOpen", true);
         nameText.text = clientData.clientName;
-        StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
-        //Debug.Log(sentinceToDisplay);
-        StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch)); //Runs the IEnumerator TypeDia for the text writing animation.
+        StopAllCoroutines();
+        StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch));
     }
 
     /// <summary>

@@ -1055,6 +1055,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[0]
+      value: "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[1]
+      value: "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[2]
+      value: "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 2"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[3]
+      value: "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 3"
+      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: Diatext
