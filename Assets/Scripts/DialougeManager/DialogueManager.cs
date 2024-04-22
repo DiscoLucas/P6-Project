@@ -70,13 +70,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="registryIndex"></param>
     public void StartDia(int registryIndex)
     {
-        
-        //DialogueRegistry.instance.GetSentincesIndex(registryIndex);
-        //string sent = DialogueRegistry.instance.sentinces[registryIndex]; // Get the tag from DialogueRegistry
-        //string sentince = DialogueRegistry.instance.replaceString(sent, dialogueRegistry.tags, dialogueRegistry.values);
         string sentince = thisSentince(registryIndex);
         DisplayOneSentince(sentince);
-
     }
 
     // Method to start dialogue with the given sentences
@@ -115,8 +110,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
-            //DialogueRegistry.instance.GetSentincesIndex(DialogueRegistry.instance.GetIndex());
-            //string newSentence = DialogueRegistry.instance.sentinces[DialogueRegistry.instance.GetIndex()];
             string newSentence = thisSentince(DialogueRegistry.instance.GetIndex());
             DisplayOneSentince(newSentence);
             return;
