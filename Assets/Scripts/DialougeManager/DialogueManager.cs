@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject gameObject_continue;
     [SerializeField] private GameObject gameObject_end;
 
-
+    public int nextSentince;
 
 
     private void Awake()
@@ -110,7 +110,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
-            string newSentence = thisSentince(DialogueRegistry.instance.GetIndex());
+            string newSentence = thisSentince(nextSentince);
             DisplayOneSentince(newSentence);
             return;
         }
