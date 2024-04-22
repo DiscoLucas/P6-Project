@@ -171,6 +171,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &148123627 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3026369095205015477, guid: e78d1e0f7334c264f8ccefbc83b052b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6039929296161158385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &374103643 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3003741260565196824, guid: e78d1e0f7334c264f8ccefbc83b052b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6039929296161158385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &529513936 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5526435967446520984, guid: e78d1e0f7334c264f8ccefbc83b052b2,
@@ -772,6 +784,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1365250739}
+    - target: {fileID: 1182396056704326756, guid: e78d1e0f7334c264f8ccefbc83b052b2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 703553505}
+    - target: {fileID: 1182396056704326756, guid: e78d1e0f7334c264f8ccefbc83b052b2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1365250739}
     - target: {fileID: 3168298296315719572, guid: e78d1e0f7334c264f8ccefbc83b052b2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1048,6 +1070,16 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 709988565}
+    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: gameObject_end
+      value: 
+      objectReference: {fileID: 148123627}
+    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: gameObject_continue
+      value: 
+      objectReference: {fileID: 374103643}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -32,6 +32,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string[] VoiceClip;
     public bool hasRun = false;
 
+    [SerializeField] private GameObject gameObject_continue;
+    [SerializeField] private GameObject gameObject_end;
+
+
 
 
     private void Awake()
@@ -50,6 +54,9 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        gameObject_continue.SetActive(true);
+        gameObject_end.SetActive(false);
     }
 
     void Start()
@@ -66,11 +73,6 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueRegistry.instance.GetSentincesIndex(registryIndex);
         string sentince = DialogueRegistry.instance.sentinces[registryIndex]; // Get the tag from DialogueRegistry
-        //Debug.Log(sentince);
-        //string[] sentinces = (registryIndex, DialogueRegistry.instance.sentinces);
-        //string[] sentinces = DialogueRegistry.instance.sentinces; // Get the sentences array based on the tag
-        //StartDialogue(sentinces);
-        //Debug.Log(sentinces);
         DisplayOneSentince(sentince);
 
     }
@@ -122,6 +124,16 @@ public class DialogueManager : MonoBehaviour
     /// <param name="sentinceToDisplay"></param>
     public void DisplayOneSentince(string sentinceToDisplay)
     {
+        if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
+        {
+            gameObject_continue.SetActive(true);
+            gameObject_end.SetActive(false);
+        }
+        else if (hasRun)
+        {
+            gameObject_continue.SetActive(false);
+            gameObject_end.SetActive(true);
+        }
         animator.SetBool("IsOpen", true);
         nameText.text = clientData.clientName;
         StopAllCoroutines(); //This stpos Coroutines so that the animation text writing animation dosen't break.
