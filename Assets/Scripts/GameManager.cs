@@ -7,9 +7,11 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("References")]
     public UnityEvent clientMeetingDone;
     public static GameManager instance;
     [SerializeField] ClientManager cm;
+    LoanManager loanManager;
 
     //forslag:
     //[SerializeField]
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        loanManager = FindObjectOfType<LoanManager>();
     }
 
     private void Update()
@@ -185,7 +188,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void closeMeeting() {
+    public void closeMeeting() 
+    {
+        //TODO: let the player create a loan if they want to, through the Loan class.
+        //loanManager.CreateLoan(currentClientMeeting.currentClient.clientName, 12);
         destoryCurrentClientMeeting();
         clientMeetingDone.Invoke();
     }
