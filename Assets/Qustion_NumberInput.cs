@@ -11,15 +11,17 @@ public class Qustion_NumberInput : Qustion
     [SerializeField]
     float answerPrecents = 5;
     [SerializeField]
-    float correctAnswer = 1;
+    protected float correctAnswer = 1;
     float calcProcent() {
         return correctAnswer * (correctAnswer / 100);
     }
     public override void setAnswer()
     {
         float answer = stringToNumber(answerFeild.text);
-        Debug.Log("given answer: " + answer);
-        if (correctAnswer - calcProcent() <= answer && correctAnswer + calcProcent() >= answer)
+        float minAnswer = correctAnswer - calcProcent();
+        float maxAnswer = correctAnswer + calcProcent();
+        Debug.Log("given answer: " + answer + " Min answer: " + minAnswer + " max answer: " + maxAnswer);
+        if (minAnswer <= answer && maxAnswer >= answer)
         {
             isCorrect = true;
             Debug.Log("IT is correct");
@@ -44,7 +46,7 @@ public class Qustion_NumberInput : Qustion
                 string normalizedText = givenAnswer.Replace(',', '.');
                 if (!float.TryParse(normalizedText, NumberStyles.Float, CultureInfo.InvariantCulture, out answerValueFloat))
                 {
-                    Debug.LogError("Failed to parse float value from input text: " + givenAnswer);
+                    Debug.LogError(gameObject.name +  "Failed to parse float value from input text: " + givenAnswer);
                     return -111111;
                 }
             }
@@ -56,7 +58,7 @@ public class Qustion_NumberInput : Qustion
                 int intValue;
                 if (!int.TryParse(GetNumbers(givenAnswer), out intValue))
                 {
-                    Debug.LogError("Failed to parse float value from input text: " + givenAnswer);
+                    Debug.LogError(gameObject.name + " Failed to parse float value from input text: " + givenAnswer);
                     return -111111;
                 }
                 answerValueFloat = (float)intValue;
