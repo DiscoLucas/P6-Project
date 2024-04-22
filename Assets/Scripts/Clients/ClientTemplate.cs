@@ -21,4 +21,5 @@ public class ClientTemplate : ScriptableObject
     public float monthlySavings;
     public float totalSavings;
     public float neededLoan;
+    public float debt;
 }

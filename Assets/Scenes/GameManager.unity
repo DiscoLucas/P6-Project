@@ -362,7 +362,7 @@ MonoBehaviour:
       m_Calls: []
   cm: {fileID: 1181538538}
   clientMeetingPrefabs:
-  - {fileID: 6063510723452162348, guid: ece04f66681058f40a464fd2bed79d51, type: 3}
+  - {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93, type: 3}
   currentClientMeeting: {fileID: 0}
   clientMeetingTransform: {fileID: 448629446}
   startType: 3
@@ -595,6 +595,16 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 6767996632902498774}
+    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: gameObject_end
+      value: 
+      objectReference: {fileID: 2740362037997529226}
+    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: gameObject_continue
+      value: 
+      objectReference: {fileID: 1509338196154320239}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -799,6 +809,25 @@ MonoBehaviour:
   templates:
   - {fileID: 11400000, guid: ff2e5fdb1f452d24585258ea9b98c3b8, type: 2}
   clients: []
+  currentClient:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      yearlyIncome: 0
+      debt: 0
+      debtFactor: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
+    minPitch: 0
+    maxPitch: 0
   precentationIndex: 0
   clientPresState: 4
   an: {fileID: 1043708559}
@@ -1345,7 +1374,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.2
+  m_fontSize: 18
   m_fontSizeBase: 14.74
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -39,6 +39,9 @@ public class FinanceData
     public float monthlyExpenses;
     public float monthlySavings;
     public float totalSavings;
+    public float yearlyIncome;
+    public float debt;
+    public float debtFactor = 4;
     public float neededLoan;
 
     public FinanceData(ClientTemplate template)
@@ -48,5 +51,6 @@ public class FinanceData
         totalSavings= template.totalSavings;
         neededLoan= template.neededLoan;
         monthlyIncome= template.monthlyIncome;
+        debt= template.debt;
     }
 }

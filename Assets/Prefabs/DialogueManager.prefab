@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d9036ce39ee974a90a0f01a001cb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogDone:
+    m_PersistentCalls:
+      m_Calls: []
   Diatext: {fileID: 0}
   nameText: {fileID: 0}
   clietntTemp: {fileID: 11400000, guid: 8132364d0ffcb1d44b5d89e7b49242d8, type: 2}
@@ -59,6 +62,9 @@ MonoBehaviour:
       monthlyExpenses: 0
       monthlySavings: 0
       totalSavings: 0
+      yearlyIncome: 0
+      debt: 0
+      debtFactor: 0
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
@@ -79,6 +85,9 @@ MonoBehaviour:
   - AlbertFan1
   - AlbertFan2
   - AlbertFan3
+  hasRun: 0
+  gameObject_continue: {fileID: 0}
+  gameObject_end: {fileID: 0}
 --- !u!114 &7013967350456804574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,12 +100,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b754dbb9614b0ee49bc1a8635393bcf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tags:
-  - '[Tjener]'
-  - '[Navn]'
   sentinces:
   - 'Hej jeg hedder [Navn] '
-  - "Jeg [tjener] om m\xE5neden\t"
-  - Jeg tilbeder Albert hver dag
-  - Jeg har adskelige shrines til Albert
-  - "Albert er det eneste jeg kan t\xE6nke p\xE5"
+  - "Jeg [Tjener] om m\xE5neden\t"
+  - Jeg tilbeder Albert hver dag [Alder]
+  - Jeg har adskelige shrines til Albert [By]
+  - "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
+  tags:
+  - '[Navn]'
+  - '[Alder]'
+  - '[Job]'
+  - '[By]'
+  - '[Forhold]'
+  - '[Tjener]'
+  - '[Udgifter]'
+  - "[M\xE5nedligOpsaring]"
+  - '[FuldOpsparing]'
+  - "[G\xE6ld]"
+  - "[G\xE6ldFaktor]"
+  values:
+  - '[value1]'

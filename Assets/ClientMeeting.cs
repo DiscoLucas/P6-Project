@@ -16,12 +16,14 @@ public class ClientMeeting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.instance.setCurrentClientMeeting(this);
+        currentClient = GameManager.instance.setCurrentClientMeeting(this);
         foreach (Transform child in qutionsParrent)
         {
             Qustion q = child.GetComponent<Qustion>();
             if (q != null) {
                 q.manager = this;
+                q.client = currentClient;
+                q.init();
                 qustions.Add(q);
             }
         }
