@@ -2452,10 +2452,9 @@ MonoBehaviour:
     - AlbertFan3
     minPitch: -0.5
     maxPitch: 1.5
-    sentensis:
-    - Hej jeg er Peter
-    - Jeg er meget sej
+    sentencis: []
     hasRun: 0
+  dialogueRegistry: {fileID: 0}
 --- !u!114 &393942535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4527,10 +4526,10 @@ MonoBehaviour:
   seriesName: Bond_James_bond
   shownAmount: 10
   dt: 1
-  timeHorizon: 48
-  volatility: 0.21
+  timeHorizon: 24
+  volatility: 0.06
   newVolatility: 2
-  currentRate: 10
+  currentRate: 5
   addTimeHorizon: 24
 --- !u!1 &696849031
 GameObject:

@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
-    public int monthNumber = 0;
+    public int monthNumber = 0; // <- can we make this static?
 
     private void Awake()
     {
