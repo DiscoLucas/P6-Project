@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class ClientManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class ClientManager : MonoBehaviour
     ClientTemplate[] templates;
     [SerializeField]
     List<ClientData> clients;
+    public ClientData currentClient;
     [SerializeField]
     int precentationIndex = 0;
     DialogueInteractor di;
@@ -111,6 +113,7 @@ public class ClientManager : MonoBehaviour
     /// <param name="c"></param>
     public void startClientIntro(ClientData c) {
         spriteRenderer.sprite = c.sprite;
+        currentClient = c;
         if (an != null)
         {
             an.Play(walkInAnimation);
@@ -122,6 +125,14 @@ public class ClientManager : MonoBehaviour
         }
 
     }
+
+    /// <summary>
+    /// Gets a random client from the createde clients
+    /// </summary>
+    public ClientData getrRandomClient() {
+        return clients[Random.Range(0, clients.Count)];
+    }
+
 
     public void havePresentedeClient() {
         //Event_manager.instance.turns[Event_manager.instance.turnIndex].currentActionDisplay.gameObject.SetActive(true);

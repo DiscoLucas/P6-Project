@@ -12,7 +12,8 @@ public class Qustion : MonoBehaviour
     TMP_Text header;
     [SerializeField]
     TMP_Text describtion;
-
+    [SerializeField]
+    public ClientData client;
     public ClientMeeting manager;
     [SerializeField]
     public bool isCorrect = false;
@@ -21,10 +22,10 @@ public class Qustion : MonoBehaviour
     }
 
     public virtual void fillOutHeaderAndDescribtion() { 
-        header.text = header_text;
-        describtion.text = describtion_text;
+        header.text = DialogueRegistry.instance.replaceString(header_text,client);
+        describtion.text = DialogueRegistry.instance.replaceString(describtion_text, client);
     }
-    private void Awake()
+    public void init()
     {
         fillOutHeaderAndDescribtion();
         calcCorrectAnswer();

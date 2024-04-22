@@ -34,7 +34,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject gameObject_continue;
     [SerializeField] private GameObject gameObject_end;
 
-
+    public int nextSentince;
 
 
     private void Awake()
@@ -99,8 +99,9 @@ public class DialogueManager : MonoBehaviour
     public string thisSentince(int intdex)
     {
         DialogueRegistry.instance.GetSentincesIndex(intdex);
+        clientData = GameManager.instance.cm.currentClient;
         string sent = DialogueRegistry.instance.sentinces[intdex]; // Get the tag from DialogueRegistry
-        string sentince = DialogueRegistry.instance.replaceString(sent, dialogueRegistry.tags, dialogueRegistry.values);
+        string sentince = DialogueRegistry.instance.replaceString(sent, clientData);
 
         return sentince;
     }
@@ -110,7 +111,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
         {
-            string newSentence = thisSentince(DialogueRegistry.instance.GetIndex());
+            string newSentence = thisSentince(nextSentince);
             DisplayOneSentince(newSentence);
             return;
         }
