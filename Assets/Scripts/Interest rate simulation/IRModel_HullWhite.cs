@@ -18,8 +18,8 @@ public class IRModel_HullWhite
         
     }
 
-    public double[] predictIRforTimeInterval(float dt, float timeHorizon, double longTermRate = 0.5)
-    {
+    public double[] PredictIRforTimeInterval(float dt, float timeHorizon, double longTermRate = 0.5)
+    {//TODO: standardize dt and timeHorizon, and replace with months input.
         int steps = (int)(timeHorizon / dt); //
         double[] interestRates = new double[steps];
 
@@ -35,7 +35,6 @@ public class IRModel_HullWhite
             currentRate += drift + diffusion;
             interestRates[i] = currentRate;
         }
-
         return interestRates;
     }
     /// <summary>
@@ -51,9 +50,9 @@ public class IRModel_HullWhite
     /// A higher volatility means that the interest rate is more unstable.
     /// </summary>
     /// <param name="newVolatility"></param>
-    public void SetVolatility(double newVolatility)
+    public double SetVolatility(double newVolatility)
     {
-        volatility = newVolatility;
+        return volatility = newVolatility;
     }
 
     /// <summary>
@@ -61,20 +60,20 @@ public class IRModel_HullWhite
     /// Be aware that changing this value will change the prediction of the future interest rates.
     /// </summary>
     /// <param name="newRate">The rate should be a positive number</param>
-    public void SetCurrentRate(double newRate)
+    public double SetCurrentRate(double newRate)
     {
-        currentRate = newRate;
+        return currentRate = newRate;
     }
     /// <summary>
     /// This skews the interest rate towards the mean.
     /// </summary>
     /// <param name="newMeanReversion"></param>
-    public void SetMeanReversion(double newMeanReversion)
+    public double SetMeanReversion(double newMeanReversion)
     {
-        meanReversion = newMeanReversion;
+        return meanReversion = newMeanReversion;
     }
-    public void SetLongTermRate(double newLongTermRate)
+    public double SetLongTermRate(double newLongTermRate)
     {
-        longTermRate = newLongTermRate;
+        return longTermRate = newLongTermRate;
     }
 }

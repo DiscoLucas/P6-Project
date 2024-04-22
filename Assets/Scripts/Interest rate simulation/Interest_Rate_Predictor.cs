@@ -37,7 +37,7 @@ public class Interest_Rate_Predictor : MonoBehaviour
     public void StartGraph()
     {
         chart.RemoveData();
-        double[] predictData = model.predictIRforTimeInterval(dt, timeHorizon);
+        double[] predictData = model.PredictIRforTimeInterval(dt, timeHorizon);
         chart.AddSerie<Line>(seriesName);
         for (int i = 0; i < shownAmount; i++)
         {
@@ -46,7 +46,7 @@ public class Interest_Rate_Predictor : MonoBehaviour
             chart.AddData(0, d);
             
         }
-        Debug.Log(predictData.Length);
+        
     }
     
     /// <summary>
@@ -59,7 +59,7 @@ public class Interest_Rate_Predictor : MonoBehaviour
 
         timeHorizon += addTimeHorizon; //add more time to the time horizon
         double sum = 0;
-        double[] predicData = model.predictIRforTimeInterval(dt, timeHorizon);
+        double[] predicData = model.PredictIRforTimeInterval(dt, timeHorizon);
         for (int i = shownAmount; i < shownAmount + (int)(addTimeHorizon / dt); i++)
         {
             double d = predicData[i];
