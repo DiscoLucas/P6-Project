@@ -187,4 +187,17 @@ public class AudioManager : MonoBehaviour
         Debug.LogError("Clip not found");
         return null;
     }
+
+    public Sound GetSoundClip(string name)
+    {
+        foreach (Sound s in soundsArray)
+        {
+            if (name == s.name)
+            {
+                return s;
+            }
+        }
+        Debug.LogError("Clip not found");
+        return null;
+    }
 }
