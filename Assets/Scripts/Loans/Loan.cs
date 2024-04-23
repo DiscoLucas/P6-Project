@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Loan : MonoBehaviour // TODO: remove MonoBehaviour
+public class Loan // TODO: remove MonoBehaviour
 {
     internal double loanAmount { get; set; }
     internal double interestRate { get; set; }

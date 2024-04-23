@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class LoanManager : Loan
 {
-    // Start is called before the first frame update
+    /*
     void Awake()
     {
         LowTierGod();
@@ -21,7 +21,7 @@ public class LoanManager : Loan
         {
             Destroy(gameObject);
         }
-    }
+    }*/
     /// <summary>
     /// Dictionary to store loans, with the client name as the key
     /// </summary>
@@ -34,7 +34,7 @@ public class LoanManager : Loan
          double volatility,
          double longTermRate)
     {
-        Loan loan = new Loan();
+        Loan loan = new();
         loan.clientName = clientName;
         loan.loanTerm = loanTerm;
         loan.loanAmount = loanAmount;
