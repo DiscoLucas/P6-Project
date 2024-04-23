@@ -19,9 +19,12 @@ public class ClientData
     public FinanceData Finance;
     public Sprite sprite;
     public bool haveBeenPresented = false;
+    public int startMeet;
     [Header("Audio properties")]
     public float minPitch;
     public float maxPitch;
+    [Header("Case Discription")]
+    public string caseDiscription;
     public ClientData(ClientTemplate template) {
         clientName = template.clientName;
         age = template.age;
@@ -29,7 +32,11 @@ public class ClientData
         city = template.city;
         maritalStatus = template.maritalStatus;
         sprite = template.chacterSprite;
-        Finance = new FinanceData(template);  
+        Finance = new FinanceData(template);
+        caseDiscription = template.caseDescription;
+        minPitch = template.minPitch;
+        maxPitch = template.maxPitch;
+        startMeet = template.startMeet;
     }
 }
 [System.Serializable]
@@ -39,6 +46,9 @@ public class FinanceData
     public float monthlyExpenses;
     public float monthlySavings;
     public float totalSavings;
+    public float yearlyIncome;
+    public float debt;
+    public float debtFactor = 4;
     public float neededLoan;
 
     public FinanceData(ClientTemplate template)
@@ -48,5 +58,6 @@ public class FinanceData
         totalSavings= template.totalSavings;
         neededLoan= template.neededLoan;
         monthlyIncome= template.monthlyIncome;
+        debt= template.debt;
     }
 }

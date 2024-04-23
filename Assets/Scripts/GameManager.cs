@@ -7,9 +7,11 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("References")]
     public UnityEvent clientMeetingDone;
     public static GameManager instance;
-    [SerializeField] ClientManager cm;
+    [SerializeField] public ClientManager cm;
+    LoanManager loanManager;
 
     //forslag:
     //[SerializeField]
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        loanManager = FindObjectOfType<LoanManager>();
     }
 
     private void Update()
@@ -110,7 +113,7 @@ public class GameManager : MonoBehaviour
         {
             ClientData client = cm.getNewClient();
             cm.startClientIntro(client);
-
+            cm.currentClient= client;
         }
         //createClientMeeting(clientMeetingPrefabs[0]);
     }
@@ -121,8 +124,8 @@ public class GameManager : MonoBehaviour
     void Incident()
     {
         Debug.Log("A racing incident");
-        //træk incident fra incident list
-        //kør incident
+        //trï¿½k incident fra incident list
+        //kï¿½r incident
     }
 
     /// <summary>
@@ -131,11 +134,12 @@ public class GameManager : MonoBehaviour
     void clientMeeting()
     {
         Debug.Log("Client meeting have startede");
-        createClientMeeting(clientMeetingPrefabs[UnityEngine.Random.Range(0,clientMeetingPrefabs.Length)]);
+        createClientMeeting(clientMeetingPrefabs[UnityEngine.Random.Range(0,clientMeetingPrefabs.Length)],cm.getrRandomClient());
+        
         //Client walks in, like in newCustomer function
-        //Client choses speech that revolves around getting update to bonds "Hey jeg har fået bedre arbejde lol"
+        //Client choses speech that revolves around getting update to bonds "Hey jeg har fï¿½et bedre arbejde lol"
         //Player gets to fill out the correct paper work - Dette slutter af med en ja/nej
-        //Client gør som player siger
+        //Client gï¿½r som player siger
     }
 
     /// <summary>
@@ -168,24 +172,29 @@ public class GameManager : MonoBehaviour
     {
         throw new System.NotImplementedException(); }
     /// <summary>
-    /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed
+    /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed and return the currentClient
     /// </summary>
-    public void setCurrentClientMeeting(ClientMeeting clientMeeting) {
+    public ClientData setCurrentClientMeeting(ClientMeeting clientMeeting) {
         
         currentClientMeeting = clientMeeting;
+        return cm.currentClient;
     }
     /// <summary>
     /// Takes the client meeting prefab and create a client meeting from it
     /// </summary>
     /// <param name="prefab"></param>
-    public void createClientMeeting(GameObject prefab) {
+    public void createClientMeeting(GameObject prefab, ClientData cClient) {
         destoryCurrentClientMeeting();
+        cm.currentClient = cClient;
         GameObject obj = Instantiate(prefab,Vector3.zero,quaternion.identity);
         obj.transform.parent = clientMeetingTransform;
 
     }
 
-    public void closeMeeting() {
+    public void closeMeeting() 
+    {
+        //TODO: let the player create a loan if they want to, through the Loan class.
+        //loanManager.CreateLoan(currentClientMeeting.currentClient.clientName, 12);
         destoryCurrentClientMeeting();
         clientMeetingDone.Invoke();
     }
@@ -193,7 +202,7 @@ public class GameManager : MonoBehaviour
     public void createClientMeeting()
     {
 
-        createClientMeeting(clientMeetingPrefabs[0]);
+        createClientMeeting(clientMeetingPrefabs[0], cm.getrRandomClient());
 
     }
 
@@ -206,6 +215,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentClientMeeting.gameObject);
         }
+
+        if (cm.currentClient != null)
+            cm.currentClient = null;
     }
 }
 

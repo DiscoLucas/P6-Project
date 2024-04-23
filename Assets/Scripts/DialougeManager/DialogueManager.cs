@@ -11,6 +11,7 @@ using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour
 {
     public UnityEvent dialogDone;
+    public UnityEvent sentinceDone;
     public TMP_Text Diatext;
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             dialogDone = new UnityEvent();
+            sentinceDone = new UnityEvent();
         }
         else
         {
@@ -92,15 +94,16 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayCaseSummary()
     {
-        string caseSum = clientInfo.caseDescription;
+        string caseSum = clientData.caseDiscription;
         DisplayOneSentince(caseSum);
     }
 
     public string thisSentince(int intdex)
     {
         DialogueRegistry.instance.GetSentincesIndex(intdex);
+        clientData = GameManager.instance.cm.currentClient;
         string sent = DialogueRegistry.instance.sentinces[intdex]; // Get the tag from DialogueRegistry
-        string sentince = DialogueRegistry.instance.replaceString(sent, dialogueRegistry.tags, dialogueRegistry.values);
+        string sentince = DialogueRegistry.instance.replaceString(sent, clientData);
 
         return sentince;
     }
@@ -134,6 +137,7 @@ public class DialogueManager : MonoBehaviour
         {
             gameObject_continue.SetActive(true);
             gameObject_end.SetActive(false);
+            sentinceDone.Invoke();
         }
         else if (hasRun)
         {

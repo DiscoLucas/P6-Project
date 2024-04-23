@@ -14,6 +14,9 @@ public class ClientTemplate : ScriptableObject
     public MaritalStatus maritalStatus;
     public string caseDescription;
     public Sprite chacterSprite;
+    public float minPitch;
+    public float maxPitch;
+    public int startMeet = 0;
 
     [Header("Client financial info")]
     public float monthlyIncome;
@@ -21,4 +24,5 @@ public class ClientTemplate : ScriptableObject
     public float monthlySavings;
     public float totalSavings;
     public float neededLoan;
+    public float debt;
 }

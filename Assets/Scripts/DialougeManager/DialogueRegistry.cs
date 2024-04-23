@@ -50,20 +50,36 @@ public class DialogueRegistry : MonoBehaviour
             return null;
         }
     }
+    public string replaceString(string message, ClientData client) {
+        string[] values = {
+            client.clientName,
+            client.age.ToString() ,
+            client.job.ToString() ,
+            client.city.ToString() ,
+            client.maritalStatus.ToString() ,
+            client.Finance.monthlyIncome.ToString() ,
+            client.Finance.monthlyExpenses.ToString() ,
+            client.Finance.monthlySavings.ToString() ,
+            client.Finance.totalSavings.ToString(),
+            client.Finance.debt.ToString() ,
+            client.Finance.debtFactor.ToString()
+        };
 
-    public string replaceString(string message, string[] tags, string[] values)
+        return replaceString(message, tags, values);
+        
+    }
+    public string replaceString(string message, string[] t, string[] v)
     {
         string output = message;
-        if (tags.Length != values.Length)
+        if (t.Length != v.Length)
         {
-            Debug.LogError("Tags length and " + values + " does not macht");
+            Debug.LogError("Tags length and " + v + " does not macht");
             return message;
         }
 
         for (int i = 0; i < tags.Length; i++)
         {
-            Debug.Log(tags[i] += values[i]);
-            output = output.Replace(tags[i], values[i]);
+            output = output.Replace(t[i], v[i]);
 
         }
 
