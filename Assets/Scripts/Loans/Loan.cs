@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Loan : MonoBehaviour
+public class Loan : MonoBehaviour // TODO: remove MonoBehaviour
 {
     internal double loanAmount { get; set; }
     internal double interestRate { get; set; }
-    internal double volatility;
-    internal double longTermRate;
-    internal string clientName;
-    [Tooltip("the length of the loan in months")] internal int loanTerm;
+    internal double volatility { get; set; }
+    internal double longTermRate { get; set; }
+    internal string clientName { get; set; }
+    [Tooltip("the length of the loan in months")] internal int loanTerm { get; set; }
 
     // Start is called before the first frame update
     void Start()
