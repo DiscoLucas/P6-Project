@@ -2182,7 +2182,15 @@ MonoBehaviour:
     eventsEffect: Boligpriser stiger med 1%
   - eventsDescription: "D\xE5rlig \xF8konomi"
     eventsEffect: Boligpriser falder med 3%
-  - eventsDescription: "D\xE5rlig \xF8konomi"
+  - eventsDescription: Lavkonjuktur
+    eventsEffect: Boligpriser falder med 1%
+  - eventsDescription: "Humanit\xE6r krise"
+    eventsEffect: Volatilitet stiger med 5%
+  - eventsDescription: Folk shorter GME aktier igen
+    eventsEffect: Volatilitet stiger med 1%
+  - eventsDescription: Markedsregulationer
+    eventsEffect: Volatilitet falder med 5%
+  - eventsDescription: Optimisme i markedet
     eventsEffect: Boligpriser falder med 1%
 --- !u!1 &3226763775274595140
 GameObject:
