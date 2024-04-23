@@ -365,8 +365,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 423236806549802607}
   m_HandleRect: {fileID: 732567194498446546}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 1.0000005
+  m_Size: 0.5300236
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -542,7 +542,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: -17, y: 0.000030518}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &4268686458301968794
 CanvasRenderer:
@@ -1213,7 +1213,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.000004351139, y: -0.00008510879}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 573.92}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1328244345133649859
 GameObject:
@@ -1916,8 +1916,10 @@ MonoBehaviour:
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
+    startMeet: 0
     minPitch: 0
     maxPitch: 0
+    caseDiscription: 
   qutionsParrent: {fileID: 4926318485075358155}
   qustions: []
   allneedTobecorrect: 1
@@ -2725,7 +2727,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8012611001788619056}
   m_HandleRect: {fileID: 5036498240049948935}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3654,8 +3656,10 @@ MonoBehaviour:
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
+    startMeet: 0
     minPitch: 0
     maxPitch: 0
+    caseDiscription: 
   manager: {fileID: 0}
   isCorrect: 0
   answerFeild: {fileID: 1996183705195228943}
@@ -3939,8 +3943,10 @@ MonoBehaviour:
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
+    startMeet: 0
     minPitch: 0
     maxPitch: 0
+    caseDiscription: 
   manager: {fileID: 0}
   isCorrect: 0
   answerFeild: {fileID: 7085849672994120330}
@@ -4481,8 +4487,10 @@ MonoBehaviour:
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
+    startMeet: 0
     minPitch: 0
     maxPitch: 0
+    caseDiscription: 
   manager: {fileID: 0}
   isCorrect: 0
   answerFeild: {fileID: 8956398090094417711}
@@ -4728,8 +4736,10 @@ MonoBehaviour:
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
+    startMeet: 0
     minPitch: 0
     maxPitch: 0
+    caseDiscription: 
   manager: {fileID: 0}
   isCorrect: 0
   answerFeild: {fileID: 8090625393851618429}
@@ -5404,7 +5414,7 @@ RectTransform:
   m_Father: {fileID: 9194646289973566864}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

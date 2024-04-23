@@ -580,6 +580,54 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: tags.Array.size
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: tags.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[0]
+      value: "Hej, jeg hedder [Navn]. Jeg er her for at se om jeg kan f\xE5 mig et
+        l\xE5n."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[1]
+      value: "Jeg er [alder] \xE5r, og [Forhold]. Jeg er lige blevet f\xE6rdig med
+        min udanelse og kigger efter at anskaffe mig en ejerbolig."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[2]
+      value: "I mit studiejob har jeg sammen tj\xE6nt [FuldOpsparing] sammen med
+        lidt fra min b\xF8rneopsparing."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[3]
+      value: "Lige nu p\xE5 min nye stillinger tjener jeg [Tjener] f\xF8r skat."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[4]
+      value: Jeg har adskelige shrines til Albert [By]
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.Array.data[5]
+      value: "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
+      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: Diatext
@@ -595,6 +643,16 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 6767996632902498774}
+    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: textFreq
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: TypeSpeed
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: gameObject_end
@@ -777,6 +835,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 1181538538}
+  clientTalks:
+  - index: 0
+    sentinces: 00000000010000000200000003000000
 --- !u!1 &1181538537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,7 +1980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.3480835, y: -9.087997}
+  m_AnchoredPosition: {x: 4.3480835, y: -9.088013}
   m_SizeDelta: {x: -19.303772, y: -39.4665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4097553901859600845
@@ -2444,7 +2505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 319.3, y: -38.3}
+  m_AnchoredPosition: {x: 319.3, y: -38.30005}
   m_SizeDelta: {x: -649.2626, y: -94.255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &8098372071906042849
