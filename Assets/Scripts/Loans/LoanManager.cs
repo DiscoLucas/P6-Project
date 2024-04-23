@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoanManager : Loan
+public class LoanManager : Loan // TODO: Make function for setting/updating loan properties.
 {
     /*
     void Awake()
