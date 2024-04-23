@@ -44,16 +44,34 @@ public class LoanManager : Loan
 
         loanDict[clientName] = loan;
     }
-    public double GetInterestRate(string clientName)
+
+    /// <summary>
+    /// Retrieves a property of a given client's loan
+    /// </summary>
+    /// <param name="clientName"></param>
+    /// <param name="propertyName">The name of the property to retrieve. Valid values are: 
+    /// "interestRate", "volatility", "longTermRate", "loanAmount".</param>
+    /// <returns>The value of the specified property of the client's loan</returns>
+    /// <exception cref="ArgumentException">Thrown when the client name is not found or the property name is invalid.</exception>
+    public double GetLoanProperty(string clientName, string propertyName)
     {
         if (loanDict.TryGetValue(clientName, out Loan loan))
         {
-            return loan.interestRate;
+            var property = typeof(Loan).GetProperty(propertyName);
+            if (property != null && property.PropertyType == typeof(double))
+            {
+                return (double)property.GetValue(loan);
+            }
+            else
+            {
+                throw new ArgumentException(propertyName + " is not a double property of Loan");
+            }
         }
-        return loanDict[clientName].interestRate;
+        else throw new ArgumentException("No loan found for client: " + clientName);
     }
 
-    
+
+    #region Test implementations
     public void CreateTestLoanPeter()
     {
         loanAmount = 1000000;
@@ -77,13 +95,11 @@ public class LoanManager : Loan
 
     public void PeterTestPrint()
     {
-        Debug.Log("Peter's interest rate is: " + GetInterestRate("Peter"));
+        Debug.Log("Peter's interest rate is: " + GetLoanProperty("Peter", "interestRate"));
     }
     public void LøveTestPrint()
     {
-        Debug.Log("Løve's interest rate is: " + GetInterestRate("Løve"));
-        Debug.Log("Løve's loan amount is: " + loanDict["Løve"].loanAmount);
-        Debug.Log("Løve's loan term is: " + loanDict["Løve"].loanTerm);
-        
+        Debug.Log("Løve's interest rate is: " + GetLoanProperty("Løve", "interestRate"));
     }
+    #endregion
 }
