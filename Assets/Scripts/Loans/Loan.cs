@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Loan : MonoBehaviour
 {
-    internal double loanAmount;
-    internal double interestRate;
+    internal double loanAmount { get; set; }
+    internal double interestRate { get; set; }
     internal double volatility;
     internal double longTermRate;
     internal string clientName;
@@ -17,9 +17,14 @@ public class Loan : MonoBehaviour
 
     }
 
-    public void CreateLoan(string clientName, int loanTerm)
+    /*public double GetIR()
     {
+        return interestRate;
+    }*/
+    /*
+    public void GetLøveIR()
+    {
+        Debug.Log("Løve's interest rate is: " + loanDict["Løve"].interestRate);
+    }*/
 
-    }
-    
 }
