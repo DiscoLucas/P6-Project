@@ -11,6 +11,7 @@ using UnityEngine.Events;
 public class DialogueManager : MonoBehaviour
 {
     public UnityEvent dialogDone;
+    public UnityEvent sentinceDone;
     public TMP_Text Diatext;
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             dialogDone = new UnityEvent();
+            sentinceDone = new UnityEvent();
         }
         else
         {
@@ -135,6 +137,7 @@ public class DialogueManager : MonoBehaviour
         {
             gameObject_continue.SetActive(true);
             gameObject_end.SetActive(false);
+            sentinceDone.Invoke();
         }
         else if (hasRun)
         {
