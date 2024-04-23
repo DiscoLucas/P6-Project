@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayCaseSummary()
     {
-        string caseSum = clientInfo.caseDescription;
+        string caseSum = clientData.caseDiscription;
         DisplayOneSentince(caseSum);
     }
 
