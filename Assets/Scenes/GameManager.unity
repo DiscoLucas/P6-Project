@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -361,9 +361,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   cm: {fileID: 1181538538}
-  mm: {fileID: 0}
+  mm: {fileID: 3097740107927630391}
   clientMeetingPrefabs:
   - {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93, type: 3}
+  - {fileID: 6063510723452162348, guid: ece04f66681058f40a464fd2bed79d51, type: 3}
   currentClientMeeting: {fileID: 0}
   clientMeetingTransform: {fileID: 448629446}
   startType: 3
@@ -949,7 +950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 1181538538}
-  clientTalks: []
+  clientTalks:
+  - index: 0
+    sentinces: 00000000010000000200000003000000
 --- !u!1 &1181538537
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,6 +984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   templates:
   - {fileID: 11400000, guid: ff2e5fdb1f452d24585258ea9b98c3b8, type: 2}
+  - {fileID: 11400000, guid: 8132364d0ffcb1d44b5d89e7b49242d8, type: 2}
   clients: []
   currentClient:
     clientName: 
@@ -1088,7 +1092,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: fd5549fcd202f15489ffd336d0731044, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1096,7 +1100,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2.28
 --- !u!222 &1211247878
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1376,7 +1380,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 162ce04dbbb793f45827a3f583e32d50, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1384,7 +1388,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2.66
 --- !u!114 &659901063735341773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1537,7 +1541,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2182,7 +2186,15 @@ MonoBehaviour:
     eventsEffect: Boligpriser stiger med 1%
   - eventsDescription: "D\xE5rlig \xF8konomi"
     eventsEffect: Boligpriser falder med 3%
-  - eventsDescription: "D\xE5rlig \xF8konomi"
+  - eventsDescription: Lavkonjuktur
+    eventsEffect: Boligpriser falder med 1%
+  - eventsDescription: "Humanit\xE6r krise"
+    eventsEffect: Volatilitet stiger med 5%
+  - eventsDescription: Folk shorter GME aktier igen
+    eventsEffect: Volatilitet stiger med 1%
+  - eventsDescription: Markedsregulationer
+    eventsEffect: Volatilitet falder med 5%
+  - eventsDescription: Optimisme i markedet
     eventsEffect: Boligpriser falder med 1%
 --- !u!1 &3226763775274595140
 GameObject:
@@ -3344,7 +3356,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 18
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
