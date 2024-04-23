@@ -328,87 +328,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!224 &445302367 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1314062006686153218, guid: 7d347c556ae3ac549a2ae8e6b209c072,
-    type: 3}
-  m_PrefabInstance: {fileID: 2469903992097631847}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1224402735
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1224402736}
-  - component: {fileID: 1224402738}
-  - component: {fileID: 1224402737}
-  m_Layer: 0
-  m_Name: Background (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1224402736
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224402735}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 445302367}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 10}
-  m_SizeDelta: {x: 350, y: 130}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1224402737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224402735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c11c17b90446634ca944ce12a64f1f9, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1224402738
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224402735}
-  m_CullTransparentMesh: 1
 --- !u!1001 &2469903992097631847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -467,56 +386,135 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1106549681098993996, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_fontSize
-      value: 30.4
+      propertyPath: eventsEffectList.Array.size
+      value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 1106549681098993996, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_margin.x
-      value: 13.577133
+      propertyPath: eventsEffectList.Array.data[0]
+      value: Renten stiger med 3%
       objectReference: {fileID: 0}
-    - target: {fileID: 1106549681098993996, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_margin.z
-      value: 16.045837
+      propertyPath: eventsEffectList.Array.data[1]
+      value: Renten stiger med 1%
       objectReference: {fileID: 0}
-    - target: {fileID: 1106549681098993996, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
+      propertyPath: eventsEffectList.Array.data[2]
+      value: Renten falder med 3%
       objectReference: {fileID: 0}
-    - target: {fileID: 2103938491711022676, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: eventsEffectList.Array.data[3]
+      value: Renten falder med 1%
       objectReference: {fileID: 0}
-    - target: {fileID: 3770689138167368745, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0
+      propertyPath: eventsEffectList.Array.data[4]
+      value: Boligpriser stiger med 3%
       objectReference: {fileID: 0}
-    - target: {fileID: 5389077405877161862, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: eventsEffectList.Array.data[5]
+      value: Boligpriser stiger med 1%
       objectReference: {fileID: 0}
-    - target: {fileID: 7106441699933344726, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 110
+      propertyPath: eventsEffectList.Array.data[6]
+      value: Boligpriser falder med 3%
       objectReference: {fileID: 0}
-    - target: {fileID: 7350197225265355930, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 3834fb2b8b772084b9eccc675d9db4c5,
+      propertyPath: eventsEffectList.Array.data[7]
+      value: Boligpriser falder med 1%
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-    - target: {fileID: 7607395537777586105, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+      propertyPath: eventsEffectList.Array.data[8]
+      value: Volatilitet stiger med 3%
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -80
+      propertyPath: eventsEffectList.Array.data[9]
+      value: Volatilitet stiger med 1%
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsEffectList.Array.data[10]
+      value: Volatilitet falder med 3%
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsEffectList.Array.data[11]
+      value: Volatilitet falder med 1%
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[0]
+      value: Frygt for inflation
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[1]
+      value: "Pres p\xE5 den danske krone"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[2]
+      value: "Uro p\xE5 finansielle markeder"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[3]
+      value: Bekymringer for recession
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[4]
+      value: Forbrugertillid stiger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[5]
+      value: Politiske beslutninger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[6]
+      value: "D\xE5rlig \xF8konomi"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[7]
+      value: Lavkonjuktur
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[8]
+      value: "Humanit\xE6r krise"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[9]
+      value: Folk shorter GME aktier
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[10]
+      value: Markedsregulationer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: eventsDescriptionList.Array.data[11]
+      value: Optimisme i markedet
       objectReference: {fileID: 0}
     - target: {fileID: 8061770259794444509, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
@@ -525,11 +523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1314062006686153218, guid: 7d347c556ae3ac549a2ae8e6b209c072,
-        type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1224402736}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d347c556ae3ac549a2ae8e6b209c072, type: 3}
 --- !u!1660057539 &9223372036854775807

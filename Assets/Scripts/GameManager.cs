@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        loanManager = FindObjectOfType<LoanManager>();
+        //loanManager = FindObjectOfType<LoanManager>();
     }
 
     private void Update()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -361,8 +361,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   cm: {fileID: 1181538538}
-  mm: {fileID: 3097740107927630391}
-  loanManager: {fileID: 0}
+  mm: {fileID: 0}
   clientMeetingPrefabs:
   - {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93, type: 3}
   currentClientMeeting: {fileID: 0}
@@ -950,9 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 1181538538}
-  clientTalks:
-  - index: 0
-    sentinces: 00000000010000000200000003000000
+  clientTalks: []
 --- !u!1 &1181538537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,10 +2168,22 @@ MonoBehaviour:
   eventEffect: {fileID: 8829260218923036551}
   Popup: {fileID: 400033225}
   markedEvents:
-  - eventsDescription: "Albert har lortede i buskerne vilkede har \xF8dlagt spillet"
-    eventsEffect: Extra lort igang
-  - eventsDescription: "Albert kysser m\xE6nd med lange n\xE6se h\xE5r"
-    eventsEffect: "lange n\xE6seh\xE5r er nu p\xE5 mode"
+  - eventsDescription: Frygt for inflation
+    eventsEffect: Renten stiger med 3%
+  - eventsDescription: "Pres p\xE5 den danske krone"
+    eventsEffect: Renten stiger med 1%
+  - eventsDescription: "Uro p\xE5 finansielle markeder"
+    eventsEffect: Renten falder med 3%
+  - eventsDescription: Bekymringer om recession
+    eventsEffect: Renten falder med 1%
+  - eventsDescription: Forbrugertillid stiger
+    eventsEffect: Boligpriser stiger med 3%
+  - eventsDescription: Politiske beslutninger
+    eventsEffect: Boligpriser stiger med 1%
+  - eventsDescription: "D\xE5rlig \xF8konomi"
+    eventsEffect: Boligpriser falder med 3%
+  - eventsDescription: "D\xE5rlig \xF8konomi"
+    eventsEffect: Boligpriser falder med 1%
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,12 +3344,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.3
+  m_fontSize: 32
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 32
   m_fontStyle: 2
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -3371,7 +3380,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.700745, y: -7.960354, z: 83.74643, w: 15.521185}
+  m_margin: {x: 64.244934, y: 21.88478, z: 83.74643, w: 15.521185}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
