@@ -19,9 +19,12 @@ public class ClientData
     public FinanceData Finance;
     public Sprite sprite;
     public bool haveBeenPresented = false;
+    public int startMeet;
     [Header("Audio properties")]
     public float minPitch;
     public float maxPitch;
+    [Header("Case Discription")]
+    public string caseDiscription;
     public ClientData(ClientTemplate template) {
         clientName = template.clientName;
         age = template.age;
@@ -29,7 +32,11 @@ public class ClientData
         city = template.city;
         maritalStatus = template.maritalStatus;
         sprite = template.chacterSprite;
-        Finance = new FinanceData(template);  
+        Finance = new FinanceData(template);
+        caseDiscription = template.caseDescription;
+        minPitch = template.minPitch;
+        maxPitch = template.maxPitch;
+        startMeet = template.startMeet;
     }
 }
 [System.Serializable]

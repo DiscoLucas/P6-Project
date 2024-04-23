@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClientCutOutController : MonoBehaviour
 {
+    public List<int[]> clientDialogueInt;
     public ClientManager cm;
 
     public void updateState(ClientPresState state) {

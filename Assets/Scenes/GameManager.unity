@@ -826,8 +826,10 @@ MonoBehaviour:
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
+    startMeet: 0
     minPitch: 0
     maxPitch: 0
+    caseDiscription: 
   precentationIndex: 0
   clientPresState: 4
   an: {fileID: 1043708559}
@@ -1519,7 +1521,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 23.1
   m_fontSizeBase: 14.74
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2422,7 +2424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0325, y: 0.034461465}
   m_AnchorMax: {x: 0.96375, y: 0.3314615}
-  m_AnchoredPosition: {x: 358.1624, y: 83.94617}
+  m_AnchoredPosition: {x: 320.67, y: 14}
   m_SizeDelta: {x: -662.1011, y: -8.043228}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7981244760060922574
@@ -2512,7 +2514,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 43.7
+  m_fontSize: 72
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1
