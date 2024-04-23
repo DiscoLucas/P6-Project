@@ -25,6 +25,7 @@ public class ClientData
     public float maxPitch;
     [Header("Case Discription")]
     public string caseDiscription;
+    public int introductionIndex;
     public ClientData(ClientTemplate template) {
         clientName = template.clientName;
         age = template.age;
@@ -36,6 +37,7 @@ public class ClientData
         caseDiscription = template.caseDescription;
         minPitch = template.minPitch;
         maxPitch = template.maxPitch;
+        introductionIndex = template.introductionIndex;
         startMeet = template.startMeet;
     }
 }

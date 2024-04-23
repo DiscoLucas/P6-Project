@@ -1,32 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
-public class popper : MonoBehaviour
+public class MarketManager : MonoBehaviour
 {
     public int eventID;
     public TextMeshProUGUI eventDescription;
     public TextMeshProUGUI eventEffect;
     public GameObject Popup;
 
-    public string[] eventsDescriptionList;
-    public string[] eventsEffectList;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public markedEvents[] markedEvents;
+    public void showMarkedEvent() {
+        Popup.SetActive(true);
+        eventID = UnityEngine.Random.Range(0, markedEvents.Length);
+        eventDescription.text = markedEvents[eventID].eventsDescription;
+        eventEffect.text = markedEvents[eventID].eventsEffect;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown("up")){
-            eventID = Random.Range(0, eventsDescriptionList.Length);
+    public void endMarkedEvent() {
+        Popup.SetActive(false);
+        GameManager.instance.updateTurn();
+    }
+}
 
-            eventDescription.text = eventsDescriptionList[eventID];
-            eventEffect.text = eventsEffectList[eventID];
-        }
+[Serializable]
+public class markedEvents {
+    public string eventsDescription;
+    public string eventsEffect;
+
+    public markedEvents(string eventsDescription, string eventsEffect) { 
+        this.eventsDescription = eventsDescription;
+        this.eventsEffect = eventsEffect;
     }
 }

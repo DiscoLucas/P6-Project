@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     public UnityEvent clientMeetingDone;
     public static GameManager instance;
     [SerializeField] public ClientManager cm;
-    LoanManager loanManager;
-
+    [SerializeField] 
+    MarketManager mm;
+    [SerializeField]
+    private LoanManager loanManager;
     //forslag:
     //[SerializeField]
     //Incidents currentIncident
@@ -80,8 +82,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void newMounth() {
         monthNumber++;
-        Debug.Log("#######################");
-
         int turnTypeIndex = decideWhatShouldHappend();
         if (turnType[turnTypeIndex].type == TurnType.New_customer)
         {
@@ -93,22 +93,20 @@ public class GameManager : MonoBehaviour
         }
         else if (turnType[turnTypeIndex].type == TurnType.Evnet)
         {
-            Incident();
+            markedEvent();
         }
-        else if (turnType[turnTypeIndex].type == TurnType.None)
+        else
         {
             //call the next round;
             newMounth();
         }
-        //Make the somthing that shows what mounth the user are in
-        Debug.Log("Mounth: " + monthNumber);
     }
 
     /// <summary>
     /// This functions adds a new customoer
     /// </summary>
     void newCustomer() {
-        Debug.Log("New customer");
+        Debug.Log("New customer" + " Mounth: " + monthNumber);
         if(cm != null)
         {
             ClientData client = cm.getNewClient();
@@ -121,9 +119,10 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This functions apply and incident
     /// </summary>
-    void Incident()
+    void markedEvent()
     {
-        Debug.Log("A racing incident");
+        Debug.Log("MArked event " + " Mounth: " + monthNumber);
+        mm.showMarkedEvent();
         //tr�k incident fra incident list
         //k�r incident
     }
@@ -133,9 +132,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void clientMeeting()
     {
-        Debug.Log("Client meeting have startede");
-        createClientMeeting(clientMeetingPrefabs[UnityEngine.Random.Range(0,clientMeetingPrefabs.Length)],cm.getrRandomClient());
-        
+        Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
+        ClientData client = cm.getrRandomClient();
+        cm.startClientIntro(client);
+        cm.currentClient = client;
+
         //Client walks in, like in newCustomer function
         //Client choses speech that revolves around getting update to bonds "Hey jeg har f�et bedre arbejde lol"
         //Player gets to fill out the correct paper work - Dette slutter af med en ja/nej
@@ -216,8 +217,14 @@ public class GameManager : MonoBehaviour
             Destroy(currentClientMeeting.gameObject);
         }
 
-        if (cm.currentClient != null)
+        if (cm.currentClient != null) {
             cm.currentClient = null;
+        }
+
+        if (!cm.ClientObject.active) {
+            updateTurn();        
+        }
+            
     }
 }
 

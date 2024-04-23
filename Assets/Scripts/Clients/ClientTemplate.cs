@@ -25,4 +25,7 @@ public class ClientTemplate : ScriptableObject
     public float totalSavings;
     public float neededLoan;
     public float debt;
+
+    [Header("Convenations")]
+    public int introductionIndex = 0;
 }
