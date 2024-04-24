@@ -23,8 +23,9 @@ MonoBehaviour:
   maxPitch: 1.6
   startMeet: 0
   monthlyIncome: 28000
-  monthlyExpenses: 2000
-  monthlySavings: 20000
+  monthlyExpenses: 0
+  monthlySavings: 0
   totalSavings: 100000
-  neededLoan: 0
+  neededLoan: 1344000
   debt: 0
+  introductionIndex: 0
