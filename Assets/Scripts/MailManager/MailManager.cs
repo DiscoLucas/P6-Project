@@ -14,19 +14,25 @@ public class MailManager : MonoBehaviour
 
     public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
 
+    public int clientData;
+
     [SerializeField] public TMP_Text reciver;
     [SerializeField] public TMP_Text sender;
     [SerializeField] public TMP_Text subject;
     [SerializeField] public TMP_Text info;
 
+    public DialogueRegistry dialogueRegistry;
+
     // Start for testing :)
     private void Start()
     {
-        //NewMail();
+        NewMail(clientData);
     }
 
-    void NewMail(ClientData clientData = null)
+    void NewMail(int clientData)
     {
+
+
         Mail clientMail = new Mail();
         reciver.text = clientMail.Reciever;
         sender.text = clientMail.Sender;
@@ -36,6 +42,12 @@ public class MailManager : MonoBehaviour
 
         // Gem denne mail som en ny mail
         mailList.Add(clientMail);
+    }
+
+    public void UpdateMailInfo()
+    {
+        info.text = DialogueManager.instance.thisSentince(clientData);
+        Debug.Log(DialogueManager.instance.thisSentince(clientData));
     }
 
     /*ChatGPT Attempt
