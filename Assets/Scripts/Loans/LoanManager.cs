@@ -23,7 +23,7 @@ public class LoanManager : Loan // TODO: Make function for setting/updating loan
     /// <summary>
     /// Dictionary to store loans, with the client name as the key
     /// </summary>
-    private Dictionary<string, Loan> loanDict = new Dictionary<string, Loan>();
+    public readonly Dictionary<string, Loan> loanDict = new Dictionary<string, Loan>();
 
     public void CreateLoan(string clientName,
          int loanTerm,

@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +25,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public ClientMeeting currentClientMeeting;
     [SerializeField] Transform clientMeetingTransform;
+
+    [Tooltip("The amount of time that passes on every turn. each unit is 1 month")] 
+    public readonly static float timeHorizon = 1f;
+    [Tooltip("Time increments calculated in each time horizon.")] 
+    public readonly static float dt = timeHorizon / 4f;
 
     [Header("References")]
     //forslag:
@@ -65,9 +72,35 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This functions update the current turn;
     /// </summary>
-    public void updateTurn() {
+    public void updateTurn() 
+    {
+        SimulateIR();
+
         //change to the next event
         nextMounth();
+    }
+
+    private void SimulateIR() // Todo: handle case where loan is fixed or paid off
+    {
+        // iterate over each loan and update the interest rate
+        foreach (var kvp in loanManager.loanDict)
+        {
+            string clientName = kvp.Key;
+            Loan loan = kvp.Value;
+
+            // if the the interest history is not empty, use the last value as the current rate
+            if (loan.IRForTime.Count != 0 )
+            {
+                IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last(), loan.volatility, loan.longTermRate);
+                loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
+            }
+            else // if the interest history is empty, use the initial interest rate
+            {
+                IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate, loan.volatility, loan.longTermRate); // TODO: add market modifier to the parameters
+                loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
+            }
+            
+        }
     }
 
     /// <summary>
