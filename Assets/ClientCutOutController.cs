@@ -6,7 +6,6 @@ using System;
 public class ClientCutOutController : MonoBehaviour
 {
     public ClientManager cm;
-    public sentinceList[] clientTalks;
     private void Start()
     {
         DialogueManager.instance.sentinceDone.AddListener(dialogueDone);
@@ -15,8 +14,7 @@ public class ClientCutOutController : MonoBehaviour
         cm.changeClientPresState(state);
         Debug.LogAssertion("ALLO MAND OBJECT ER" + (GameManager.instance.currentClientMeeting != null ));
         if (state == ClientPresState.talking) {
-            clientTalks[cm.currentClient.introductionIndex].index = 0;
-            DialogueManager.instance.nextSentince = clientTalks[cm.currentClient.introductionIndex].returnSentince();
+            DialogueManager.instance.nextSentince = GameManager.instance.clientMeetingsTemplates[GameManager.instance.clientMeetIndex].returnSentince();
             Debug.Log("startTalking");
             cm.clientStartTalking();
         }
@@ -28,25 +26,15 @@ public class ClientCutOutController : MonoBehaviour
 
     public void dialogueDone()
     {
-        clientTalks[0].index++;
-        if (clientTalks[0].index < clientTalks[0].sentinces.Length)
+        
+        if (GameManager.instance.clientMeetingsTemplates[GameManager.instance.clientMeetIndex].updateSenIndex())
         {
-            DialogueManager.instance.nextSentince = clientTalks[0].sentinces[clientTalks[0].index];
+            DialogueManager.instance.nextSentince = GameManager.instance.clientMeetingsTemplates[GameManager.instance.clientMeetIndex].returnSentince();
         }
         else
         {
             DialogueManager.instance.hasRun = true;
         }
         
-    }
-}
-[Serializable]
-public class sentinceList
-{
-    public int index=0;
-    public int[] sentinces;
-
-    public int returnSentince() {
-        return sentinces[index];
     }
 }

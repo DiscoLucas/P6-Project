@@ -362,9 +362,13 @@ MonoBehaviour:
       m_Calls: []
   cm: {fileID: 1181538538}
   mm: {fileID: 3097740107927630391}
-  clientMeetingPrefabs:
-  - {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93, type: 3}
-  - {fileID: 6063510723452162348, guid: ece04f66681058f40a464fd2bed79d51, type: 3}
+  clientMeetingsTemplates:
+  - meetingId: "Maximum L\xE5n"
+    meetingPrefab: {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93,
+      type: 3}
+    sentinces: 00000000010000000200000003000000
+    senIndex: 0
+  clientMeetIndex: -1
   currentClientMeeting: {fileID: 0}
   clientMeetingTransform: {fileID: 448629446}
   startType: 3
@@ -950,9 +954,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 1181538538}
-  clientTalks:
-  - index: 0
-    sentinces: 00000000010000000200000003000000
 --- !u!1 &1181538537
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,8 +984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   templates:
-  - {fileID: 11400000, guid: ff2e5fdb1f452d24585258ea9b98c3b8, type: 2}
-  - {fileID: 11400000, guid: 8132364d0ffcb1d44b5d89e7b49242d8, type: 2}
+  - {fileID: 11400000, guid: d2162486cf55d5344951b97b41450c8b, type: 2}
   clients: []
   currentClient:
     clientName: 
@@ -1007,7 +1007,7 @@ MonoBehaviour:
     minPitch: 0
     maxPitch: 0
     caseDiscription: 
-    introductionIndex: 0
+    firstCaseIndex: 0
   precentationIndex: 0
   clientPresState: 4
   an: {fileID: 1043708559}
