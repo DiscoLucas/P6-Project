@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEditor;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
-
+using static UnityEngine.ParticleSystem;
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     [Header("Events")]
@@ -38,8 +40,18 @@ public class GameManager : MonoBehaviour
     //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
-    public int monthNumber = 0; // <- can we make this static?
-
+    [SerializeField]
+    public int monthNumber = 0;
+    private int mn_lastIncedient = -1;
+    [SerializeField]
+    [Tooltip("controlls how much time where nothing can happend ")]
+    private int timeSkipCacth = 12;
+    private TurnType turnT;
+    [SerializeField]
+    GameObject turnCounterObj;
+    [SerializeField]
+    TMP_Text mountCounter;
+    string counterString;
     private void Awake()
     {
         //Singleton pattern
@@ -54,6 +66,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        counterString = mountCounter.text;
         //loanManager = FindObjectOfType<LoanManager>();
     }
 
@@ -74,7 +88,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void updateTurn() 
     {
-        SimulateIR();
 
         //change to the next event
         nextMounth();
@@ -117,10 +130,18 @@ public class GameManager : MonoBehaviour
     public void nextMounth() {
         //Log what needs to be logged
 
-
+        //Update Ir
+        try {
+            SimulateIR();
+        }
+        catch (Exception e) {
+            Debug.LogError(e.ToString());
+        }
         //Change the mounth
         newMounth();
     }
+
+    
 
     /// <summary>
     /// Decides what should happend this mounth
@@ -128,17 +149,28 @@ public class GameManager : MonoBehaviour
     void newMounth() {
         monthNumber++;
         int turnTypeIndex = decideWhatShouldHappend();
-        if (turnType[turnTypeIndex].type == TurnType.New_customer)
+        bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
+        if (turnType[turnTypeIndex].type == TurnType.New_customer && cm.canGenerateMoreClients && !needChange)
         {
-            newCustomer();
+            turnT = TurnType.New_customer;
+            //newCustomer();
+            mn_lastIncedient = monthNumber;
+            showTurnCounter();
         }
-        else if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer)
+        else if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer || needChange)
         {
-            clientMeeting();
+            turnT = TurnType.Change_forCustomer;
+            //clientMeeting();
+            mn_lastIncedient = monthNumber;
+            showTurnCounter();
+
         }
         else if (turnType[turnTypeIndex].type == TurnType.Evnet)
         {
-            markedEvent();
+            turnT = TurnType.Evnet;
+            //markedEvent();
+            mn_lastIncedient = monthNumber;
+            showTurnCounter();
         }
         else
         {
@@ -146,11 +178,49 @@ public class GameManager : MonoBehaviour
             newMounth();
         }
     }
+    /// <summary>
+    /// Show the turn counter to the user
+    /// </summary>
+    void showTurnCounter() {
+        string ageString;
+        if (monthNumber < 12)
+        {
+            ageString = $"{monthNumber} Måned";
+        }
+        else
+        {
+            int years = monthNumber / 12;
+            int remainingMonths = monthNumber % 12;
+            ageString = $"{years} år og {remainingMonths} måneder";
+        }
+
+        mountCounter.text = ageString;
+        turnCounterObj.SetActive(true);
+    }
+
+    /// <summary>
+    /// Shows The user the start of the turn
+    /// </summary>
+    public void showStartTurn() {
+
+        turnCounterObj.SetActive(false);
+        if (turnT == TurnType.Evnet) {
+            markedEvent();
+        } else if (turnT == TurnType.Change_forCustomer) {
+            clientMeeting();
+        } else if (turnT == TurnType.New_customer) {
+            newCustomer();
+        }
+    }
 
     /// <summary>
     /// This functions adds a new customoer
     /// </summary>
     void newCustomer() {
+        if (cm.getClientsTempCount() <= 1)
+        {
+            cm.canGenerateMoreClients = false;
+        }
         Debug.Log("New customer" + " Mounth: " + monthNumber);
         //Decide which client meeting the new customer should start with
         if(cm != null)
@@ -159,6 +229,8 @@ public class GameManager : MonoBehaviour
             clientMeetIndex = client.firstCaseIndex;
             cm.startClientIntro(client);
             cm.currentClient= client;
+            if(!clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
+                clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
         }
         //createClientMeeting(clientMeetingPrefabs[0]);
     }
@@ -179,17 +251,60 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void clientMeeting()
     {
-        clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
         Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
         ClientData client = cm.getrRandomClient();
+        clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
+        getAndSetnewMeetIndex(client, 10);
         cm.startClientIntro(client);
         cm.currentClient = client;
+        if (!clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
+            clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
 
         //Client walks in, like in newCustomer function
         //Client choses speech that revolves around getting update to bonds "Hey jeg har f�et bedre arbejde lol"
         //Player gets to fill out the correct paper work - Dette slutter af med en ja/nej
         //Client g�r som player siger
     }
+
+    public void getAndSetnewMeetIndex(ClientData client, int tryes) {
+        if (tryes < 0)
+        {
+            for (int i = 0; i < clientMeetingsTemplates.Length; i++)
+            {
+                clientMeetIndex = i;
+                if (seeIfClientHaveTriedThisMeetingBefore(client)) {
+                    return;
+                }
+            }
+        }
+        else {
+            clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
+            if (clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
+            {
+                return;
+            }else {
+                if (!seeIfClientHaveTriedThisMeetingBefore(client)) {
+                    getAndSetnewMeetIndex(client, tryes - 1);
+                }
+            }
+        }
+        
+    }
+
+    bool seeIfClientHaveTriedThisMeetingBefore(ClientData client)
+    {
+        bool found = true;
+        for (int i = 0; i < clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Count; i++)
+        {
+            if (clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed[i] == client.clientName)
+            {
+                found = false; break;
+            }
+        }
+
+        return found;
+    }
+
 
     /// <summary>
     /// This function decide what should happend this mount
