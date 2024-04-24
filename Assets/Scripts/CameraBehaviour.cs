@@ -13,12 +13,13 @@ public class CameraBehaviour : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void zoomIn()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("HHHHHHAAAAAAAAAAAAAAA");
-            an.Play("cameraswooper");
-        }
+        an.Play("cameraswooper");
+    }
+
+    public void zoomOut()
+    {
+        an.Play("cameraswooper");
     }
 }

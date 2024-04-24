@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ChristiansDumpTruck : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject light;
+    public CameraBehaviour cb;
+    bool zoomedIn = false;
+    private void OnMouseOver()
     {
-        
+        if (!zoomedIn)
+        {
+            light.SetActive(true);
+            if(Input.GetMouseButtonDown(0)) { 
+                cb.zoomIn();
+                zoomedIn = true;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseExit()
     {
-        
+        light.SetActive(false);
+    }
+
+    public void ZoomOut()
+    {
+        zoomedIn = false;
+        cb.zoomOut();
     }
 }
