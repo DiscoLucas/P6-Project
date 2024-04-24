@@ -1334,12 +1334,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!1 &188730988 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6846700494700126003, guid: f527bc41525219a4ea480dc6618776b2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2909944198064559743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &188730989 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3448345229325155101, guid: f527bc41525219a4ea480dc6618776b2,
     type: 3}
   m_PrefabInstance: {fileID: 2909944198064559743}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &188730994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188730988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af7a53b0cc9b374692225d558fea65e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mailList: []
+  mailPrefab: {fileID: 0}
+  mailInfo: {fileID: 0}
+--- !u!114 &188730995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188730988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mail:
+    Reciever: 
+    Sender: 
+    Subject: 
+    info: 
+    test: {fileID: 0}
 --- !u!1 &219958680
 GameObject:
   m_ObjectHideFlags: 0
@@ -12674,7 +12713,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6846700494700126003, guid: f527bc41525219a4ea480dc6618776b2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 188730995}
+    - targetCorrespondingSourceObject: {fileID: 6846700494700126003, guid: f527bc41525219a4ea480dc6618776b2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 188730994}
   m_SourcePrefab: {fileID: 100100000, guid: f527bc41525219a4ea480dc6618776b2, type: 3}
 --- !u!1001 &5723495972077239060
 PrefabInstance:
