@@ -82,25 +82,33 @@ public class GameManager : MonoBehaviour
 
     private void SimulateIR() // Todo: handle case where loan is fixed or paid off
     {
-        // iterate over each loan and update the interest rate
-        foreach (var kvp in loanManager.loanDict)
+        try
         {
-            string clientName = kvp.Key;
-            Loan loan = kvp.Value;
+            // iterate over each loan and update the interest rate
+            foreach (var kvp in loanManager.loanDict)
+            {
+                string clientName = kvp.Key;
+                Loan loan = kvp.Value;
 
-            // if the the interest history is not empty, use the last value as the current rate
-            if (loan.IRForTime.Count != 0 )
-            {
-                IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last(), loan.volatility, loan.longTermRate);
-                loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
+                // if the the interest history is not empty, use the last value as the current rate
+                if (loan.IRForTime.Count != 0)
+                {
+                    IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last(), loan.volatility, loan.longTermRate);
+                    loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
+                }
+                else // if the interest history is empty, use the initial interest rate
+                {
+                    IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate, loan.volatility, loan.longTermRate); // TODO: add market modifier to the parameters
+                    loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
+                }
+
             }
-            else // if the interest history is empty, use the initial interest rate
-            {
-                IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate, loan.volatility, loan.longTermRate); // TODO: add market modifier to the parameters
-                loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
-            }
-            
         }
+        catch (Exception e)
+        {
+            Debug.LogWarning("Error in SimulateIR, there probably wasn't any loans in the dictionary: " + e.Message);
+        }
+        
     }
 
     /// <summary>
