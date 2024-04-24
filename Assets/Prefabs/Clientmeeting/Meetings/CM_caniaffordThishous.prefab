@@ -1384,7 +1384,7 @@ MonoBehaviour:
     firstCaseIndex: 0
   qutionsParrent: {fileID: 1328540014920611526}
   qustions: []
-  allneedTobecorrect: 1
+  allneedTobecorrect: 0
 --- !u!1 &3436344434152887941
 GameObject:
   m_ObjectHideFlags: 0

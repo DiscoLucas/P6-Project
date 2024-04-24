@@ -39,7 +39,7 @@ public class HouseData {
             houseNumber = UnityEngine.Random.Range(1, 30);
         nameT.text = name;
         sqmT.text = sqm + "Kvadrat meter";
-        adres.text = adres.text + houseNumber;
+        adres.text = addresse + houseNumber;
         priceT.text = price + " KR";
         image.texture = houseImage.texture;
     }
