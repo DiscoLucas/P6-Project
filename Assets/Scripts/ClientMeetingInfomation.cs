@@ -7,6 +7,9 @@ using System;
 public class ClientMeetingInfomation
 {
     [SerializeField]
+    public bool canBeUsedMoreThanOnes = true;
+    public List<string> clientThatHaveUsed;
+    [SerializeField]
     private string meetingId;
     [SerializeField]
     public GameObject meetingPrefab;
