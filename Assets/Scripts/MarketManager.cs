@@ -64,7 +64,7 @@ public class MarketManager : MonoBehaviour
 public class markedEvents {
     public string eventsDescription;
     public string eventsEffect;
-    public MarketEventType eventType;
+    public MarketManager.MarketEventType eventType;
 
     public markedEvents(string eventsDescription, string eventsEffect) { 
         this.eventsDescription = eventsDescription;
