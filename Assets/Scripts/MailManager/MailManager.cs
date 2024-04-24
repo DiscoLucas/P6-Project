@@ -14,6 +14,11 @@ public class MailManager : MonoBehaviour
 
     public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
 
+    [SerializeField] public TMP_Text reciver;
+    [SerializeField] public TMP_Text sender;
+    [SerializeField] public TMP_Text subject;
+    [SerializeField] public TMP_Text info;
+
     // Start for testing :)
     private void Start()
     {
@@ -23,11 +28,11 @@ public class MailManager : MonoBehaviour
     void NewMail(ClientData clientData = null)
     {
         Mail clientMail = new Mail();
-        clientMail.Reciever = "Dig";
-        clientMail.Sender = "BossMand";
-        clientMail.Subject = "Håber du har en god dag :)"; // Opdater nok til clientData.clientName
+        reciver.Text = clientMail.Reciever;
+        sender.Text = clientMail.Sender;
+        subject.Text = clientMail.Subject; // Opdater nok til clientData.clientName
 
-        clientMail.info = "Mange lange meget info\n\nUndestøtter flere linjer Ö";
+        info.Text = clientMail.info;
 
         // Gem denne mail som en ny mail
         mailList.Add(clientMail);

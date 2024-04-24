@@ -27,14 +27,14 @@ RectTransform:
   m_GameObject: {fileID: 10946010088468166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9029501, y: 0.93813, z: 0.93813}
+  m_LocalScale: {x: 0.5866432, y: 0.5626148, z: 0.6251276}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3448345229325155101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.8, y: 5}
+  m_AnchoredPosition: {x: 15.8, y: 1.8}
   m_SizeDelta: {x: 144.203, y: 17.968}
   m_Pivot: {x: 0.4999998, y: 0.49999994}
 --- !u!222 &4228185043164479400
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 101.2331, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -161,7 +161,7 @@ RectTransform:
   m_GameObject: {fileID: 2128525765047197139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.58024573, y: 0.81438, z: 0.81438}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3448345229325155101}
@@ -295,14 +295,14 @@ RectTransform:
   m_GameObject: {fileID: 5950378212806170096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.62617505, y: 0.726, z: 0.726}
+  m_LocalScale: {x: 0.38336003, y: 0.7901784, z: 0.7901784}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3448345229325155101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 6, y: -10.6}
+  m_AnchoredPosition: {x: 6, y: -16.3}
   m_SizeDelta: {x: -11.167, y: -44.298}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &537944016195193520
@@ -415,6 +415,8 @@ GameObject:
   - component: {fileID: 7492342271728776232}
   - component: {fileID: 2565322724360340617}
   - component: {fileID: 2439962581921035565}
+  - component: {fileID: 7783823977427779773}
+  - component: {fileID: 6241281187119653249}
   m_Layer: 5
   m_Name: AMail
   m_TagString: Tab
@@ -431,7 +433,7 @@ RectTransform:
   m_GameObject: {fileID: 6846700494700126003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7076793, y: 0.17312601, z: 0.88050836}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3067402047050620170}
@@ -568,3 +570,36 @@ MonoBehaviour:
     Subject: 
     info: 
     test: {fileID: 0}
+--- !u!114 &7783823977427779773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846700494700126003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mail:
+    Reciever: 
+    Sender: 
+    Subject: 
+    info: 
+    test: {fileID: 0}
+--- !u!114 &6241281187119653249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6846700494700126003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af7a53b0cc9b374692225d558fea65e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mailList: []
+  mailPrefab: {fileID: 0}
+  mailInfo: {fileID: 0}
