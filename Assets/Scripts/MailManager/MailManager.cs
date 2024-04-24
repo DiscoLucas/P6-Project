@@ -28,11 +28,11 @@ public class MailManager : MonoBehaviour
     void NewMail(ClientData clientData = null)
     {
         Mail clientMail = new Mail();
-        reciver.Text = clientMail.Reciever;
-        sender.Text = clientMail.Sender;
-        subject.Text = clientMail.Subject; // Opdater nok til clientData.clientName
+        reciver.text = clientMail.Reciever;
+        sender.text = clientMail.Sender;
+        subject.text = clientMail.Subject; // Opdater nok til clientData.clientName
 
-        info.Text = clientMail.info;
+        info.text = clientMail.info;
 
         // Gem denne mail som en ny mail
         mailList.Add(clientMail);
