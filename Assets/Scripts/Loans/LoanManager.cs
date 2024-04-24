@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class LoanManager : Loan // TODO: Make function for setting/updating loan properties.
 {
@@ -35,7 +33,7 @@ public class LoanManager : Loan // TODO: Make function for setting/updating loan
          double longTermRate)
     {
         Loan loan = new();
-        loan.clientName = clientName;
+        loan.ClientName = clientName;
         loan.loanTerm = loanTerm;
         loan.loanAmount = loanAmount;
         loan.interestRate = interestRate;
@@ -69,37 +67,32 @@ public class LoanManager : Loan // TODO: Make function for setting/updating loan
         }
         else throw new ArgumentException("No loan found for client: " + clientName);
     }
-
-
-    #region Test implementations
-    public void CreateTestLoanPeter()
+    public List<double> GetIRHistory(string clientName)
     {
-        loanAmount = 1000000;
-        interestRate = 0.05;
-        volatility = 0.01;
-        longTermRate = 0.05;
-        clientName = "Peter";
-        loanTerm = 12;
-        CreateLoan(clientName, loanTerm, loanAmount, interestRate, volatility, longTermRate);
-    }
-    public void CreateTestLoanLøve()
-    {
-        loanAmount = 3500000;
-        interestRate = 0.03;
-        volatility = 0.01;
-        longTermRate = 0.05;
-        clientName = "Løve";
-        loanTerm = 24;
-        CreateLoan(clientName, loanTerm, loanAmount, interestRate, volatility, longTermRate);
+        if (loanDict.TryGetValue(clientName, out Loan loan))
+        {
+            return loan.IRForTime;
+        }
+        else throw new ArgumentException("No loan found for client: " + clientName);
     }
 
-    public void PeterTestPrint()
+    /// <summary>
+    /// Add new interest rates to a client's loan
+    /// </summary>
+    /// <param name="clientName"></param>
+    /// <param name="newInterest"></param>
+    /// <exception cref="ArgumentException"></exception>
+    public void UpdateIR(string clientName, double[] newInterest)
     {
-        Debug.Log("Peter's interest rate is: " + GetLoanProperty("Peter", "interestRate"));
+        if (loanDict.TryGetValue(clientName, out Loan loan))
+        {
+            // Add each new interest rate to the loan's IRForTime list
+            foreach (double ir in newInterest)
+            {
+                loan.IRForTime.Add(ir);
+            }
+        }
+        else throw new ArgumentException("No loan found for client: " + clientName);
     }
-    public void LøveTestPrint()
-    {
-        Debug.Log("Løve's interest rate is: " + GetLoanProperty("Løve", "interestRate"));
-    }
-    #endregion
+    
 }

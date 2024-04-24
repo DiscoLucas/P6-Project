@@ -10,8 +10,11 @@ public class Loan
     internal double interestRate { get; set; }
     internal double volatility { get; set; }
     internal double longTermRate { get; set; }
-    internal string clientName { get; set; }
+    internal string ClientName { get; set; }
     [Tooltip("the length of the loan in months")] internal int loanTerm { get; set; }
+    internal double RemainingLoanAmount { get; set; }
+    internal double MonthlyPayment { get; set; }
+    internal List<double> IRForTime { get; set; }
 
     
 }
