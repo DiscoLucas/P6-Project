@@ -6,9 +6,9 @@ using Random = UnityEngine.Random;
 
 public class ClientManager : MonoBehaviour
 {
-    
+    public bool canGenerateMoreClients = true;
     [SerializeField]
-    ClientTemplate[] templates;
+    List<ClientTemplate> templates;
     [SerializeField]
     List<ClientData> clients;
     public ClientData currentClient;
@@ -44,6 +44,13 @@ public class ClientManager : MonoBehaviour
         GameManager.instance.clientMeetingDone.AddListener(stopMeeting);
 
     }
+    /// <summary>
+    /// The the amount of clients generatede
+    /// </summary>
+    /// <param name="template"></param>
+    public int getClientsTempCount() {
+        return templates.Count;
+    }
 
     /// <summary>
     /// Create client data from templeate
@@ -78,10 +85,12 @@ public class ClientManager : MonoBehaviour
     {
         Debug.Log("Index: " + index + " client count: " + clients.Count);
         if (clients.Count == 0 || clients.Count >= index) {
-            ClientTemplate template = templates[Random.Range(0, templates.Length)];
+            int i = Random.Range(0, templates.Count);
+            ClientTemplate template = templates[i];
             ClientData c = new ClientData(template);
             clients.Add(c);
             Debug.Log("UPDATEDE:Index: " + index + " client count: " + clients.Count);
+            templates.RemoveAt(i);
             return c;
         }
 
