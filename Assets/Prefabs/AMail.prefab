@@ -416,7 +416,7 @@ GameObject:
   - component: {fileID: 2565322724360340617}
   - component: {fileID: 2439962581921035565}
   m_Layer: 5
-  m_Name: Mail_1
+  m_Name: AMail
   m_TagString: Tab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
