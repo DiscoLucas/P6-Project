@@ -81,9 +81,33 @@ MonoBehaviour:
     mixerGroup: {fileID: 4398597937258103469, guid: 81162b1295328e74cadabef0ec739904,
       type: 2}
     mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
+  - name: Fax
+    clip: {fileID: 8300000, guid: 7707e6685d003754d820942a5674b275, type: 3}
+    volume: 0.2
+    pitch: 1
+    spatialBlend: 0
+    spatialize: 0
+    loop: 0
+    doblerEffect: 0
+    source: {fileID: 0}
+    mixerGroup: {fileID: 4398597937258103469, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
+  - name: Electic
+    clip: {fileID: 8300000, guid: 44b23ee739799654690c2b5cd1dcad24, type: 3}
+    volume: 0.2
+    pitch: 1
+    spatialBlend: 0
+    spatialize: 0
+    loop: 1
+    doblerEffect: 0
+    source: {fileID: 0}
+    mixerGroup: {fileID: 4398597937258103469, guid: 81162b1295328e74cadabef0ec739904,
+      type: 2}
+    mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   voiceArray:
   - name: AlbertFan1
-    clip: {fileID: 8300000, guid: 9ebaca72d8c8d6d429c8aa418ea982da, type: 3}
+    clip: {fileID: 8300000, guid: 5e90649bb4a77a040bf8765d9c2b0e75, type: 3}
     volume: 1
     pitch: 1
     spatialBlend: 0
@@ -95,7 +119,7 @@ MonoBehaviour:
       type: 2}
     mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   - name: AlbertFan2
-    clip: {fileID: 8300000, guid: 37f87273ad1131243bf4d26bee62d56f, type: 3}
+    clip: {fileID: 8300000, guid: a89fabf3884b3fa4f874958647d00445, type: 3}
     volume: 1
     pitch: 1
     spatialBlend: 0
@@ -107,7 +131,7 @@ MonoBehaviour:
       type: 2}
     mixer: {fileID: 24100000, guid: 81162b1295328e74cadabef0ec739904, type: 2}
   - name: AlbertFan3
-    clip: {fileID: 8300000, guid: 287847574067cbb42aae15c31930fa59, type: 3}
+    clip: {fileID: 8300000, guid: 95e1211957558f548a52d0cab0517e76, type: 3}
     volume: 1
     pitch: 1
     spatialBlend: 0

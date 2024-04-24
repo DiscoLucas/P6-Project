@@ -48,9 +48,12 @@ MonoBehaviour:
   dialogDone:
     m_PersistentCalls:
       m_Calls: []
+  sentinceDone:
+    m_PersistentCalls:
+      m_Calls: []
   Diatext: {fileID: 0}
   nameText: {fileID: 0}
-  clietntTemp: {fileID: 11400000, guid: 8132364d0ffcb1d44b5d89e7b49242d8, type: 2}
+  clietntTemp: {fileID: 11400000, guid: d2162486cf55d5344951b97b41450c8b, type: 2}
   clientData:
     clientName: 
     age: 0
@@ -68,8 +71,11 @@ MonoBehaviour:
       neededLoan: 0
     sprite: {fileID: 0}
     haveBeenPresented: 0
+    startMeet: 0
     minPitch: 1.6
     maxPitch: 0.6
+    caseDiscription: 
+    introductionIndex: 0
   clientInfo: {fileID: 0}
   animator: {fileID: 0}
   textFreq: 1
@@ -88,6 +94,7 @@ MonoBehaviour:
   hasRun: 0
   gameObject_continue: {fileID: 0}
   gameObject_end: {fileID: 0}
+  nextSentince: 0
 --- !u!114 &7013967350456804574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,11 +108,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentinces:
-  - 'Hej jeg hedder [Navn] '
-  - "Jeg [Tjener] om m\xE5neden\t"
-  - Jeg tilbeder Albert hver dag [Alder]
-  - Jeg har adskelige shrines til Albert [By]
-  - "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
+  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden."
+  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 1"
+  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 2"
+  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 3"
+  - Hej jeg er din assistent.
+  - "Jeg er her for at hj\xE6lpe dig."
+  - Du er god.
   tags:
   - '[Navn]'
   - '[Alder]'

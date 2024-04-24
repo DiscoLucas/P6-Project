@@ -7,23 +7,27 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Events")]
     public UnityEvent clientMeetingDone;
+    [Header("Managers (Karen Moment)")]
     public static GameManager instance;
     [SerializeField] public ClientManager cm;
     [SerializeField] 
     MarketManager mm;
     [SerializeField]
     private LoanManager loanManager;
-    //forslag:
-    //[SerializeField]
-    //Incidents currentIncident
-
+    [Header("Client Meeting")]
     [SerializeField]
-    GameObject[] clientMeetingPrefabs;
+    public ClientMeetingInfomation[] clientMeetingsTemplates;
+    public int clientMeetIndex = -1;
     [SerializeField]
     public ClientMeeting currentClientMeeting;
     [SerializeField] Transform clientMeetingTransform;
+
+    [Header("References")]
+    //forslag:
+    //[SerializeField]
+    //Incidents currentInciden
     //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
@@ -107,9 +111,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void newCustomer() {
         Debug.Log("New customer" + " Mounth: " + monthNumber);
+        //Decide which client meeting the new customer should start with
         if(cm != null)
         {
             ClientData client = cm.getNewClient();
+            clientMeetIndex = client.firstCaseIndex;
             cm.startClientIntro(client);
             cm.currentClient= client;
         }
@@ -132,6 +138,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void clientMeeting()
     {
+        clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
         Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
         ClientData client = cm.getrRandomClient();
         cm.startClientIntro(client);
@@ -202,8 +209,7 @@ public class GameManager : MonoBehaviour
 
     public void createClientMeeting()
     {
-
-        createClientMeeting(clientMeetingPrefabs[0], cm.getrRandomClient());
+        createClientMeeting(clientMeetingsTemplates[clientMeetIndex].meetingPrefab, cm.getrRandomClient());
 
     }
 
@@ -220,6 +226,7 @@ public class GameManager : MonoBehaviour
         if (cm.currentClient != null) {
             cm.currentClient = null;
         }
+        clientMeetIndex = -1;
 
         if (!cm.ClientObject.active) {
             updateTurn();        

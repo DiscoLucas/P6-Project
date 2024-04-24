@@ -78,7 +78,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        //Play("Theme");
+        Play("Electic");
         //Debug.Log("Start is working");
         //PlayVoice("Narrative");
     }

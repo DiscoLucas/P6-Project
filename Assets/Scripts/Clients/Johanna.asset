@@ -10,22 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
-  m_Name: Peter Nielsen
+  m_Name: Johanna
   m_EditorClassIdentifier: 
-  clientName: Peter
-  age: 25
-  job: "L\xE6re"
+  clientName: Johanna
+  age: 27
+  job: Sygeplejerske
   city: "K\xF8benhavn"
-  maritalStatus: 0
-  caseDescription: "Peter vil gerne k\xF8be en ejer lejlighed. Han har 100.000 kr "
-  chacterSprite: {fileID: 21300000, guid: 7c6b25b313c1231449db162391177c2e, type: 3}
-  minPitch: 0.6
-  maxPitch: 1.4
+  maritalStatus: 2
+  caseDescription: "Jeg s\xF8ger nybolig, og har 150000 til udbetalig og en m\xE5nedsl\xF8n
+    p\xE5 360000 f\xF8r skat."
+  chacterSprite: {fileID: 21300000, guid: 910c8da25e439164eb2b71a00e5ea672, type: 3}
+  minPitch: 1
+  maxPitch: 1.6
   startMeet: 0
-  monthlyIncome: 28000
+  monthlyIncome: 36000
   monthlyExpenses: 0
   monthlySavings: 0
-  totalSavings: 100000
-  neededLoan: 1344000
+  totalSavings: 150000
+  neededLoan: 1878000
   debt: 0
   introductionIndex: 0

@@ -28,5 +28,5 @@ public class ClientTemplate : ScriptableObject
     public float debt;
 
     [Header("Convenations")]
-    public int introductionIndex = 0;
+    public int startClientmeeting = 0;
 }
