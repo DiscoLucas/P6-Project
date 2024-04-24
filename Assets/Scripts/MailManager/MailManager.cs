@@ -12,7 +12,7 @@ public class MailManager : MonoBehaviour
 
     public GameObject mailPrefab; // Assign this to the AMail button prefab
 
-    public GameObject mailInfo    // Assign this to the Mail RawImage prefab
+    public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
 
     // Start for testing :)
     private void Start()
