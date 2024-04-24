@@ -10,7 +10,9 @@ public class MailManager : MonoBehaviour
 
     private string baseMessage = "To {0}\nFrom: {1}\nSubject: {2}";
 
-    [SerializeField] public GameObject mailPrefab; // Assign this to the mail button prefab
+    public GameObject mailPrefab; // Assign this to the AMail button prefab
+
+    public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
 
     // Start for testing :)
     private void Start()

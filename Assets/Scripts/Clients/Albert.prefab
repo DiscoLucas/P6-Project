@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6717328503421305980}
   - component: {fileID: 805053994002990058}
   - component: {fileID: 97913378011513985}
+  - component: {fileID: 7095076634058197816}
   m_Layer: 0
   m_Name: Albert
   m_TagString: ClientTag
@@ -98,6 +99,20 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: e6dd3a6edb5d51d48b551e236976a4e1, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &7095076634058197816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884194875180618394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c715af21df696154b8800c8a6cee4198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walk: {fileID: 97913378011513985}
+  dialoguToSay: 4
