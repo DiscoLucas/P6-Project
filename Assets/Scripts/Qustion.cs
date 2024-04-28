@@ -27,8 +27,8 @@ public class Qustion : MonoBehaviour
     }
     public void init()
     {
-        fillOutHeaderAndDescribtion();
         calcCorrectAnswer();
+        fillOutHeaderAndDescribtion();
     }
     public virtual void calcCorrectAnswer() { 
     
