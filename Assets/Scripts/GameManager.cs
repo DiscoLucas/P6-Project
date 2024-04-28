@@ -52,6 +52,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TMP_Text mountCounter;
     string counterString;
+
+    [Header("Menu Stuff")]
+    public GameObject action_Menu;
+    public GameObject talkClient_BTN, checkComputer_Btn, AskforHelp_btn;
+
     private void Awake()
     {
         //Singleton pattern
@@ -204,15 +209,33 @@ public class GameManager : MonoBehaviour
     public void showStartTurn() {
 
         turnCounterObj.SetActive(false);
-        if (turnT == TurnType.Evnet) {
+        if (turnT == TurnType.Evnet)
+        {
             markedEvent();
-        } else if (turnT == TurnType.Change_forCustomer) {
+        }
+        else if (turnT == TurnType.Change_forCustomer || turnT == TurnType.New_customer)
+        {
+            action_Menu.SetActive(true);
+            talkClient_BTN.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// This function is called from the action menu and start the clietn talked 
+    /// It is controlled by the turnT if it should be a client introduction or client metting
+    /// </summary>
+    public void startConviencation() {
+        action_Menu.SetActive(false);
+        talkClient_BTN.SetActive(false);
+        if (turnT == TurnType.Change_forCustomer)
+        {
             clientMeeting();
         } else if (turnT == TurnType.New_customer) {
             newCustomer();
         }
     }
 
+    
     /// <summary>
     /// This functions adds a new customoer
     /// </summary>
@@ -249,7 +272,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This function starts a meeting with the clients
     /// </summary>
-    void clientMeeting()
+    public void clientMeeting()
     {
         Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
         ClientData client = cm.getrRandomClient();

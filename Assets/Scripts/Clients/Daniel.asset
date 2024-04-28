@@ -19,7 +19,7 @@ MonoBehaviour:
   maritalStatus: 1
   caseDescription: "Daniel s\xF8ger efter at k\xF8be et sommerhus, han vil gerne
     vide hvor mange penge han kan have til r\xE5dighed"
-  chacterSprite: {fileID: 21300000, guid: fdee6e2d3ced41444b027ec72a5a6656, type: 3}
+  chacterSprite: {fileID: 21300000, guid: 5858f8262f4b7e042a32cf7d9093f2bc, type: 3}
   minPitch: 0.6
   maxPitch: 1.2
   startMeet: 0
