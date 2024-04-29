@@ -44,6 +44,11 @@ public class MailManager : MonoBehaviour
         mailList.Add(clientMail);
     }
 
+    public void MailSetActive()
+    {
+
+    }
+
     public void UpdateMailInfo()
     {
         info.text = DialogueManager.instance.thisSentince(clientData);
