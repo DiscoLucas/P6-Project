@@ -181,6 +181,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
+        type: 3}
+      propertyPath: musicArray.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
+        type: 3}
+      propertyPath: musicArray.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 211c1cd0edd397342b64c6786fda5783, type: 3}
+    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
+        type: 3}
+      propertyPath: musicArray.Array.data[0].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
+        type: 3}
+      propertyPath: musicArray.Array.data[0].name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
+        type: 3}
+      propertyPath: musicArray.Array.data[0].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
+        type: 3}
+      propertyPath: musicArray.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4295334656664349406, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
         type: 3}
       propertyPath: m_Name
@@ -375,7 +405,9 @@ MonoBehaviour:
   cm: {fileID: 1181538538}
   mm: {fileID: 3097740107927630391}
   clientMeetingsTemplates:
-  - meetingId: 
+  - canBeUsedMoreThanOnes: 1
+    clientThatHaveUsed: []
+    meetingId: 
     meetingPrefab: {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93,
       type: 3}
     sentinces: 00000000010000000200000003000000
@@ -402,6 +434,13 @@ MonoBehaviour:
     disable: 0
     type: 0
   monthNumber: 0
+  timeSkipCacth: 12
+  turnCounterObj: {fileID: 0}
+  mountCounter: {fileID: 0}
+  action_Menu: {fileID: 0}
+  talkClient_BTN: {fileID: 0}
+  checkComputer_Btn: {fileID: 0}
+  AskforHelp_btn: {fileID: 0}
 --- !u!4 &305047533
 Transform:
   m_ObjectHideFlags: 0
@@ -854,6 +893,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 805053994002990058, guid: c07cc4845619b3e40a219955d87b3950,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95c1d0b7dbfb561428da8918e5ec4455,
+        type: 3}
     - target: {fileID: 2884194875180618394, guid: c07cc4845619b3e40a219955d87b3950,
         type: 3}
       propertyPath: m_Name
@@ -1063,6 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923c5597de8321346b47eadaca78c863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canGenerateMoreClients: 1
   templates:
   - {fileID: 11400000, guid: d2162486cf55d5344951b97b41450c8b, type: 2}
   clients: []
@@ -2180,28 +2226,40 @@ MonoBehaviour:
   markedEvents:
   - eventsDescription: Frygt for inflation
     eventsEffect: Renten stiger med 3%
+    eventType: 0
   - eventsDescription: "Pres p\xE5 den danske krone"
     eventsEffect: Renten stiger med 1%
+    eventType: 0
   - eventsDescription: "Uro p\xE5 finansielle markeder"
     eventsEffect: Renten falder med 3%
+    eventType: 0
   - eventsDescription: Bekymringer om recession
     eventsEffect: Renten falder med 1%
+    eventType: 0
   - eventsDescription: Forbrugertillid stiger
     eventsEffect: Boligpriser stiger med 3%
+    eventType: 0
   - eventsDescription: Politiske beslutninger
     eventsEffect: Boligpriser stiger med 1%
+    eventType: 0
   - eventsDescription: "D\xE5rlig \xF8konomi"
     eventsEffect: Boligpriser falder med 3%
+    eventType: 0
   - eventsDescription: Lavkonjuktur
     eventsEffect: Boligpriser falder med 1%
+    eventType: 0
   - eventsDescription: "Humanit\xE6r krise"
     eventsEffect: Volatilitet stiger med 5%
+    eventType: 0
   - eventsDescription: Folk shorter GME aktier igen
     eventsEffect: Volatilitet stiger med 1%
+    eventType: 0
   - eventsDescription: Markedsregulationer
     eventsEffect: Volatilitet falder med 5%
+    eventType: 0
   - eventsDescription: Optimisme i markedet
     eventsEffect: Boligpriser falder med 1%
+    eventType: 0
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0
