@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
 /// This class is used to store the property values of a loan.
 /// </summary>
+[Serializable]
 public class Loan
 {
+    [SerializeField]
     internal double loanAmount { get; set; }
     internal double interestRate { get; set; }
     internal double volatility { get; set; }

@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class LoanManager : Loan // TODO: Make function for setting/updating loan properties.
+[Serializable] public class LoanManager : Loan // TODO: Make function for setting/updating loan properties.
 {
     /*
     void Awake()

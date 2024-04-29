@@ -4,22 +4,20 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
 using static UnityEngine.ParticleSystem;
 using TMPro;
+using XCharts;
+using XCharts.Runtime;
+using Unity.VisualScripting;
+
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     [Header("Events")]
     public UnityEvent clientMeetingDone;
-    [Header("Managers (Karen Moment)")]
-    public static GameManager instance;
-    [SerializeField] public ClientManager cm;
-    [SerializeField] 
-    MarketManager mm;
-    [SerializeField]
-    public LoanManager loanManager;
+
     [Header("Client Meeting")]
     [SerializeField]
     public ClientMeetingInfomation[] clientMeetingsTemplates;
@@ -56,6 +54,13 @@ public class GameManager : MonoBehaviour
     [Header("Menu Stuff")]
     public GameObject action_Menu;
     public GameObject talkClient_BTN, checkComputer_Btn, AskforHelp_btn;
+    public Transform graphContainer;
+    public GameObject graphPrefab;
+
+    [Header("Managers (Karen Moment)")]
+    public ClientManager cm;
+    public MarketManager mm;
+    public LoanManager loanManager;
 
     private void Awake()
     {
@@ -65,6 +70,7 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             clientMeetingDone = new UnityEvent();
+            loanManager = new LoanManager();
         }
         else
         {
@@ -79,13 +85,14 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown("space")) {
-            nextMounth();
+            createLoan();
         }
     }
 
     private void Start()
     {
         nextMounth();
+        createLoan();
     }
 
     /// <summary>
@@ -167,7 +174,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
+    public void createLoan() {
+        string clientName = "Test" +Time.deltaTime.ToString();
+        loanManager.CreateLoan(clientName, 1, 100, 0.05, 0.4, 0.04, 1);
+        //double ir = loanManager.GetLoanProperty(clientName, typeof(double), "interestRate");
+        var graphObj = Instantiate(graphPrefab, graphContainer);
+    }
 
     /// <summary>
     /// This function change the mounth and clear out the old

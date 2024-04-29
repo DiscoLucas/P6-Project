@@ -7,7 +7,7 @@ public class IRVisualizer : MonoBehaviour
 {
     [Header("References")]
     GameManager gameManager;
-    public LineChart LineChart { get {  return LineChart; } }
+    public LineChart LineChart;
 
     string chartTitle;
 
@@ -15,6 +15,7 @@ public class IRVisualizer : MonoBehaviour
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        LineChart = GetComponent<LineChart>();
     }
 
     /// <summary>
