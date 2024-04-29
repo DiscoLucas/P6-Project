@@ -44,6 +44,15 @@ public class MailManager : MonoBehaviour
         mailList.Add(clientMail);
     }
 
+    public void MailSetActive()
+    {
+        mailPrefab.SetActive(true);
+        GameObject newMailObject = Instantiate(mailPrefab);
+        Vector3 originalMailPosition = mailPrefab.transform.position;
+        newMailObject.transform.position = originalMailPosition;
+        newMailObject.SetActive(true);
+    }
+
     public void UpdateMailInfo()
     {
         info.text = DialogueManager.instance.thisSentince(clientData);
