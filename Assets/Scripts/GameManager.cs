@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] 
     MarketManager mm;
     [SerializeField]
-    private LoanManager loanManager;
+    public LoanManager loanManager;
     [Header("Client Meeting")]
     [SerializeField]
     public ClientMeetingInfomation[] clientMeetingsTemplates;

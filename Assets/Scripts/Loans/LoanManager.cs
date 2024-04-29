@@ -30,11 +30,13 @@ public class LoanManager : Loan // TODO: Make function for setting/updating loan
          double loanAmount,
          double interestRate,
          double volatility,
-         double longTermRate)
+         double longTermRate, 
+         int curentMonth)
     {
         Loan loan = new();
         loan.ClientName = clientName;
-        loan.loanTerm = loanTerm;
+        loan.LoanTerm = loanTerm;
+        loan.InitialMonth = curentMonth;
         loan.loanAmount = loanAmount;
         loan.interestRate = interestRate;
         loan.volatility = volatility;
@@ -47,23 +49,32 @@ public class LoanManager : Loan // TODO: Make function for setting/updating loan
     /// Retrieves a property of a given client's loan
     /// </summary>
     /// <param name="clientName"></param>
-    /// <param name="propertyName">The name of the property to retrieve. Valid values are: 
-    /// "interestRate", "volatility", "longTermRate", "loanAmount".</param>
+    /// <param name="type">The type of the property to retrieve. Valid values are: typeof(double), typeof(int)</param>
+    /// <param name="propertyName">The name of the property to retrieve. Valid values can be seen in <see cref="Loan"/>:
     /// <returns>The value of the specified property of the client's loan</returns>
     /// <exception cref="ArgumentException">Thrown when the client name is not found or the property name is invalid.</exception>
-    public double GetLoanProperty(string clientName, string propertyName)
+    public double GetLoanProperty(string clientName, Type type, string propertyName)
     {
         if (loanDict.TryGetValue(clientName, out Loan loan))
         {
             var property = typeof(Loan).GetProperty(propertyName);
-            if (property != null && property.PropertyType == typeof(double))
+            if (property != null)
             {
-                return (double)property.GetValue(loan);
+                if (type == typeof(double) && property.PropertyType == typeof(double))
+                {
+                    return (double)property.GetValue(loan);
+                }
+                else if (type == typeof(int) && property.PropertyType == typeof(int))
+                {
+                    return (int)property.GetValue(loan);
+                }
+                else
+                {
+                    throw new ArgumentException(propertyName + " is not a " + type.Name + "property of Loan");
+                }
             }
-            else
-            {
-                throw new ArgumentException(propertyName + " is not a double property of Loan");
-            }
+            else throw new ArgumentException("Property: " + propertyName + "not found in loan");
+            
         }
         else throw new ArgumentException("No loan found for client: " + clientName);
     }
