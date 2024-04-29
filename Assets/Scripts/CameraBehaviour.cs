@@ -5,6 +5,8 @@ using UnityEngine;
 public class CameraBehaviour : MonoBehaviour
 {
     Animation an;
+    [SerializeField]
+    string intro = "cameraswooper", outro = "cameraSwooperOut";
 
     // Start is called before the first frame update
     void Start()
@@ -15,11 +17,11 @@ public class CameraBehaviour : MonoBehaviour
     // Update is called once per frame
     public void zoomIn()
     {
-        an.Play("cameraswooper");
+        an.Play(intro);
     }
 
     public void zoomOut()
     {
-        an.Play("cameraswooper");
+        an.Play(outro);
     }
 }
