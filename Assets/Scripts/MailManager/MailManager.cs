@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 public class MailManager : MonoBehaviour
 {
     [SerializeField]
     private List<Mail> mailList = new List<Mail>();
-
+    [SerializeField]
+    ScrollRect scrollViewViewport;
     private string baseMessage = "To {0}\nFrom: {1}\nSubject: {2}";
 
     public GameObject mailPrefab; // Assign this to the AMail button prefab
 
     public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
 
-    public Transform parentObject, MailAnchorPostion;
+    public Transform parentObject;
     
     public int clientData;
 
@@ -49,16 +51,19 @@ public class MailManager : MonoBehaviour
 
     public void MailSetActive()
     {
-        
-        GameObject newMailObject = Instantiate(mailPrefab, parentObject,false);
-        Vector3 originalMailPosition = MailAnchorPostion.position ;
+        GameObject newMailObject = Instantiate(mailPrefab, parentObject, false);
         MailSystem mailSystem = newMailObject.GetComponent<MailSystem>();
+
         if (mailSystem == null)
+        {
             Debug.LogError("Mail system not found");
-        newMailObject.transform.position = originalMailPosition- (mailSystem.rect.rect.height*mailList.Count)*Vector3.up;
+            return;
+        }
 
         mailList.Add(null);
     }
+
+
 
     public void UpdateMailInfo()
     {
