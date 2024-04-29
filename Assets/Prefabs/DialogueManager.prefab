@@ -75,11 +75,11 @@ MonoBehaviour:
     minPitch: 1.6
     maxPitch: 0.6
     caseDiscription: 
-    introductionIndex: 0
+    firstCaseIndex: 0
   clientInfo: {fileID: 0}
   animator: {fileID: 0}
-  textFreq: 1
-  TypeSpeed: 0.04
+  textFreq: 3
+  TypeSpeed: 0.03
   dialoguec:
     VoiceClip: []
     minPitch: -0.5
@@ -88,9 +88,11 @@ MonoBehaviour:
     hasRun: 0
   dialogueRegistry: {fileID: 7013967350456804574}
   VoiceClip:
-  - AlbertFan1
-  - AlbertFan2
-  - AlbertFan3
+  - Voice1
+  - Voice2
+  - Voice3
+  - Voice4
+  - Voice5
   hasRun: 0
   gameObject_continue: {fileID: 0}
   gameObject_end: {fileID: 0}
@@ -108,13 +110,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentinces:
-  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden."
-  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 1"
-  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 2"
-  - "Hej jeg hedder [Navn] jeg tjener [value1] om m\xE5neden. 3"
-  - Hej jeg er din assistent.
-  - "Jeg er her for at hj\xE6lpe dig."
-  - Du er god.
+  - "Hej, jeg hedder [Navn]. Jeg er her for at se om jeg kan f\xE5 mig et l\xE5n."
+  - "Jeg er [Alder]  \xE5r, og [Forhold]. Jeg er lige blevet f\xE6rdig med min udanelse
+    og kigger efter at anskaffe mig en ejerbolig."
+  - "I mit studiejob har jeg sammen tj\xE6nt [FuldOpsparing] kr sammen med lidt fra
+    min b\xF8rneopsparing."
+  - "Lige nu p\xE5 min nye stillinger tjener jeg [Tjener]  kr f\xF8r skat."
+  - Jeg har adskelige shrines til Albert [By]
+  - "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
   tags:
   - '[Navn]'
   - '[Alder]'
