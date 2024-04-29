@@ -181,36 +181,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
-        type: 3}
-      propertyPath: musicArray.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
-        type: 3}
-      propertyPath: musicArray.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 211c1cd0edd397342b64c6786fda5783, type: 3}
-    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
-        type: 3}
-      propertyPath: musicArray.Array.data[0].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
-        type: 3}
-      propertyPath: musicArray.Array.data[0].name
-      value: Music
-      objectReference: {fileID: 0}
-    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
-        type: 3}
-      propertyPath: musicArray.Array.data[0].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1026442716686832373, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
-        type: 3}
-      propertyPath: musicArray.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4295334656664349406, guid: f8d5e51b8b551294eb43319ecbbe5ac1,
         type: 3}
       propertyPath: m_Name
@@ -678,54 +648,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: tags.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: tags.Array.data[11]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[0]
-      value: "Hej, jeg hedder [Navn]. Jeg er her for at se om jeg kan f\xE5 mig et
-        l\xE5n."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[1]
-      value: "Jeg er [Alder]  \xE5r, og [Forhold]. Jeg er lige blevet f\xE6rdig med
-        min udanelse og kigger efter at anskaffe mig en ejerbolig."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[2]
-      value: "I mit studiejob har jeg sammen tj\xE6nt [FuldOpsparing] kr sammen med
-        lidt fra min b\xF8rneopsparing."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[3]
-      value: "Lige nu p\xE5 min nye stillinger tjener jeg [Tjener]  kr f\xF8r skat."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[4]
-      value: Jeg har adskelige shrines til Albert [By]
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[5]
-      value: "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
-      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: Diatext
@@ -741,16 +663,6 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 6767996632902498774}
-    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: textFreq
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: TypeSpeed
-      value: 0.03
-      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: gameObject_end
@@ -2223,43 +2135,7 @@ MonoBehaviour:
   eventDescription: {fileID: 1865791334039506422}
   eventEffect: {fileID: 8829260218923036551}
   Popup: {fileID: 400033225}
-  markedEvents:
-  - eventsDescription: Frygt for inflation
-    eventsEffect: Renten stiger med 3%
-    eventType: 0
-  - eventsDescription: "Pres p\xE5 den danske krone"
-    eventsEffect: Renten stiger med 1%
-    eventType: 0
-  - eventsDescription: "Uro p\xE5 finansielle markeder"
-    eventsEffect: Renten falder med 3%
-    eventType: 0
-  - eventsDescription: Bekymringer om recession
-    eventsEffect: Renten falder med 1%
-    eventType: 0
-  - eventsDescription: Forbrugertillid stiger
-    eventsEffect: Boligpriser stiger med 3%
-    eventType: 0
-  - eventsDescription: Politiske beslutninger
-    eventsEffect: Boligpriser stiger med 1%
-    eventType: 0
-  - eventsDescription: "D\xE5rlig \xF8konomi"
-    eventsEffect: Boligpriser falder med 3%
-    eventType: 0
-  - eventsDescription: Lavkonjuktur
-    eventsEffect: Boligpriser falder med 1%
-    eventType: 0
-  - eventsDescription: "Humanit\xE6r krise"
-    eventsEffect: Volatilitet stiger med 5%
-    eventType: 0
-  - eventsDescription: Folk shorter GME aktier igen
-    eventsEffect: Volatilitet stiger med 1%
-    eventType: 0
-  - eventsDescription: Markedsregulationer
-    eventsEffect: Volatilitet falder med 5%
-    eventType: 0
-  - eventsDescription: Optimisme i markedet
-    eventsEffect: Boligpriser falder med 1%
-    eventType: 0
+  marketEvents: []
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0

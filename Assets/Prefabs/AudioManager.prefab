@@ -91,27 +91,45 @@ MonoBehaviour:
     doblerEffect: 0
     source: {fileID: 0}
   voiceArray:
-  - name: AlbertFan1
-    clip: {fileID: 8300000, guid: 5e90649bb4a77a040bf8765d9c2b0e75, type: 3}
-    volume: 1
+  - name: Voice1
+    clip: {fileID: 8300000, guid: 920848acfa45da64a9626301d6d54b49, type: 3}
+    volume: 0.7
     pitch: 1
     spatialBlend: 0
     spatialize: 0
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-  - name: AlbertFan2
-    clip: {fileID: 8300000, guid: a89fabf3884b3fa4f874958647d00445, type: 3}
-    volume: 1
+  - name: Voice2
+    clip: {fileID: 8300000, guid: b47a7caf43f3e014fa1eb72ef1f0b925, type: 3}
+    volume: 0.7
     pitch: 1
     spatialBlend: 0
     spatialize: 0
     loop: 0
     doblerEffect: 0
     source: {fileID: 0}
-  - name: AlbertFan3
-    clip: {fileID: 8300000, guid: 95e1211957558f548a52d0cab0517e76, type: 3}
-    volume: 1
+  - name: Voice3
+    clip: {fileID: 8300000, guid: b787c17b549fee249b71ef476263a684, type: 3}
+    volume: 0.7
+    pitch: 1
+    spatialBlend: 0
+    spatialize: 0
+    loop: 0
+    doblerEffect: 0
+    source: {fileID: 0}
+  - name: Voice4
+    clip: {fileID: 8300000, guid: 47122c64557f5124299a1eda5c10cc5f, type: 3}
+    volume: 0.7
+    pitch: 1
+    spatialBlend: 0
+    spatialize: 0
+    loop: 0
+    doblerEffect: 0
+    source: {fileID: 0}
+  - name: Voice5
+    clip: {fileID: 8300000, guid: 7593fc5b6ca40bd49b83cc87bea99b8a, type: 3}
+    volume: 0.7
     pitch: 1
     spatialBlend: 0
     spatialize: 0
