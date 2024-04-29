@@ -8,6 +8,7 @@ TagManager:
   - Button
   - Tab
   - Page
+  - MailText
   layers:
   - Default
   - TransparentFX
