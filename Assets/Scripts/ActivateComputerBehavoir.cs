@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class ChristiansDumpTruck : MonoBehaviour
+public class ActivateComputerBehavoir : MonoBehaviour
 {
     public GameObject light;
     public CameraBehaviour cb;
