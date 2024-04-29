@@ -9,12 +9,17 @@ public class ChristiansDumpTruck : MonoBehaviour
     public GameObject light;
     public CameraBehaviour cb;
     bool zoomedIn = false;
+    public GameObject ComputerScreen;
+    public GameObject OtherCanvas; //Måske gør det her en liste, så den kan have flere other canvasses?
     private void OnMouseOver()
     {
         if (!zoomedIn)
         {
             light.SetActive(true);
-            if(Input.GetMouseButtonDown(0)) { 
+            if(Input.GetMouseButtonDown(0)) { //WHEN IT CLICK
+                OtherCanvas.SetActive(false);
+                ComputerScreen.SetActive(true);
+                light.SetActive(false);
                 cb.zoomIn();
                 zoomedIn = true;
             }
@@ -28,6 +33,8 @@ public class ChristiansDumpTruck : MonoBehaviour
 
     public void ZoomOut()
     {
+        ComputerScreen.SetActive(false);
+        OtherCanvas.SetActive(true);
         zoomedIn = false;
         cb.zoomOut();
     }
