@@ -56,6 +56,7 @@ public class MailManager : MonoBehaviour
         if (mailSystem == null)
             Debug.LogError("Mail system not found");
         newMailObject.transform.position = originalMailPosition- (mailSystem.rect.rect.height*mailList.Count)*Vector3.up;
+        Debug.Log("Højde " + mailSystem.rect.rect.height + " count " + mailList.Count);
 
         mailList.Add(null);
     }
