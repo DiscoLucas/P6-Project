@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4323,41 +4323,53 @@ MonoBehaviour:
   Popup: {fileID: 400033225}
   markedEvents:
   - eventsDescription: Frygt for inflation
-    eventsEffect: Renten stiger med 3%
-    eventType: 0
+    eventsEffect: Renten stiger med
+    eventType: 1
+    rateModifier: 3
   - eventsDescription: "Pres p\xE5 den danske krone"
-    eventsEffect: Renten stiger med 1%
-    eventType: 0
+    eventsEffect: Renten stiger med
+    eventType: 1
+    rateModifier: 1
   - eventsDescription: "Uro p\xE5 finansielle markeder"
-    eventsEffect: Renten falder med 3%
-    eventType: 0
+    eventsEffect: Renten falder med
+    eventType: 1
+    rateModifier: -3
   - eventsDescription: Bekymringer om recession
-    eventsEffect: Renten falder med 1%
-    eventType: 0
+    eventsEffect: Renten falder med
+    eventType: 1
+    rateModifier: -1
   - eventsDescription: Forbrugertillid stiger
-    eventsEffect: Boligpriser stiger med 3%
-    eventType: 0
+    eventsEffect: Boligpriser stiger med
+    eventType: 3
+    rateModifier: 3
   - eventsDescription: Politiske beslutninger
-    eventsEffect: Boligpriser stiger med 1%
-    eventType: 0
+    eventsEffect: Boligpriser stiger med
+    eventType: 3
+    rateModifier: 3
   - eventsDescription: "D\xE5rlig \xF8konomi"
-    eventsEffect: Boligpriser falder med 3%
-    eventType: 0
+    eventsEffect: Boligpriser falder med
+    eventType: 3
+    rateModifier: -3
   - eventsDescription: Lavkonjuktur
-    eventsEffect: Boligpriser falder med 1%
-    eventType: 0
+    eventsEffect: Boligpriser falder med
+    eventType: 3
+    rateModifier: -1
   - eventsDescription: "Humanit\xE6r krise"
-    eventsEffect: Volatilitet stiger med 5%
-    eventType: 0
+    eventsEffect: Volatilitet stiger med
+    eventType: 2
+    rateModifier: 5
   - eventsDescription: Folk shorter GME aktier igen
-    eventsEffect: Volatilitet stiger med 1%
-    eventType: 0
+    eventsEffect: Volatilitet stiger med
+    eventType: 2
+    rateModifier: 1
   - eventsDescription: Markedsregulationer
-    eventsEffect: Volatilitet falder med 5%
-    eventType: 0
+    eventsEffect: Volatilitet falder med
+    eventType: 2
+    rateModifier: -5
   - eventsDescription: Optimisme i markedet
-    eventsEffect: Boligpriser falder med 1%
-    eventType: 0
+    eventsEffect: Boligpriser falder med
+    eventType: 3
+    rateModifier: -1
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0
@@ -6430,7 +6442,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 732567192991716649}
   m_Direction: 2
   m_Value: 1.0000002
-  m_Size: 0.5300236
+  m_Size: 0.5300235
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7079,7 +7091,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.4
+  m_fontSize: 18
   m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 1

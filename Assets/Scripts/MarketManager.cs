@@ -11,7 +11,7 @@ public class MarketManager : MonoBehaviour
     public TextMeshProUGUI eventEffect;
     public GameObject Popup;
 
-    public markedEvents[] markedEvents;
+    public MarketEvents[] marketEvents;
 
     private void Awake()
     {
@@ -49,14 +49,24 @@ public class MarketManager : MonoBehaviour
         }
     }*/
 
-    public int showMarkedEvent() {
+    public void showMarkedEvent() 
+    {
         Popup.SetActive(true);
-        eventID = UnityEngine.Random.Range(0, markedEvents.Length);
-        eventDescription.text = markedEvents[eventID].eventsDescription;
-        eventEffect.text = markedEvents[eventID].eventsEffect;
-        return eventID;
+        eventID = UnityEngine.Random.Range(0, marketEvents.Length);
+        eventDescription.text = marketEvents[eventID].eventsDescription;
+        marketEvents[eventID].OverideText(eventEffect);
     }
+    public MarketEvents GetMarketEvent()
+    {
+        if (eventID == -1)
+        {
+            return null;
+        }
 
+        MarketEvents me = marketEvents[eventID];
+        eventID = -1;
+        return me;
+    }
 
     public void endMarkedEvent() {
         Popup.SetActive(false);
@@ -65,23 +75,26 @@ public class MarketManager : MonoBehaviour
 }
 
 [Serializable]
-public class markedEvents {
+public class MarketEvents {
     public string eventsDescription;
     public string eventsEffect;
     public MarketEventType eventType;
-    public double interestRateModifier;
-    public double volatilityModifier;
-    public double housingPriceModifier;
+    public double rateModifier;
 
-    public markedEvents(
+    public MarketEvents(
         string eventsDescription,
         MarketEventType eventType,
-        double interestRateModifier,
-        double volatilityModifier,
-        double housingPriceModifier) 
+        double rateModifier) 
     {
         this.eventsDescription = eventsDescription;
         this.eventType = eventType;
+        this.rateModifier = rateModifier;
         
+    }
+
+    public void OverideText(TextMeshProUGUI eventDescription)
+    {
+        eventDescription.text = eventsEffect + " " + Math.Abs(rateModifier) + "%";
+
     }
 }
