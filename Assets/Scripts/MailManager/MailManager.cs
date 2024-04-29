@@ -46,7 +46,11 @@ public class MailManager : MonoBehaviour
 
     public void MailSetActive()
     {
-
+        mailPrefab.SetActive(true);
+        GameObject newMailObject = Instantiate(mailPrefab);
+        Vector3 originalMailPosition = mailPrefab.transform.position;
+        newMailObject.transform.position = originalMailPosition;
+        newMailObject.SetActive(true);
     }
 
     public void UpdateMailInfo()
