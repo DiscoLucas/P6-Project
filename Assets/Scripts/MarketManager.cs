@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using static MarketManager;
 public class MarketManager : MonoBehaviour
 {
     public int eventID;
@@ -21,7 +21,10 @@ public class MarketManager : MonoBehaviour
     public enum MarketEventType
     {
         None,
-        FrygtForInflation,
+        InterestRateChange,
+        VolatilityChange,
+        HousingPriceChange
+        /*FrygtForInflation,
         PresPÂDenDanskeKrone,
         UroPÂFinansMarkedet,
         BekymringForRecession,
@@ -35,7 +38,7 @@ public class MarketManager : MonoBehaviour
         MarkedetErIStabilVÊkst,
         MarkedetErIStabilRecession,
         MarkedetErIStabilStagnation,
-        OptimismePÂMarkedet,
+        OptimismePÂMarkedet,*/
     }
     /*
     public double GetMarketModifier(int eventID)
@@ -46,11 +49,12 @@ public class MarketManager : MonoBehaviour
         }
     }*/
 
-    public void showMarkedEvent() {
+    public int showMarkedEvent() {
         Popup.SetActive(true);
         eventID = UnityEngine.Random.Range(0, markedEvents.Length);
         eventDescription.text = markedEvents[eventID].eventsDescription;
         eventEffect.text = markedEvents[eventID].eventsEffect;
+        return eventID;
     }
 
 
@@ -64,10 +68,20 @@ public class MarketManager : MonoBehaviour
 public class markedEvents {
     public string eventsDescription;
     public string eventsEffect;
-    public MarketManager.MarketEventType eventType;
+    public MarketEventType eventType;
+    public double interestRateModifier;
+    public double volatilityModifier;
+    public double housingPriceModifier;
 
-    public markedEvents(string eventsDescription, string eventsEffect) { 
+    public markedEvents(
+        string eventsDescription,
+        MarketEventType eventType,
+        double interestRateModifier,
+        double volatilityModifier,
+        double housingPriceModifier) 
+    {
         this.eventsDescription = eventsDescription;
-        this.eventsEffect = eventsEffect;
+        this.eventType = eventType;
+        
     }
 }
