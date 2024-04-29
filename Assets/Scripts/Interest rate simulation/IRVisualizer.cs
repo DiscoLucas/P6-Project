@@ -41,7 +41,7 @@ public class IRVisualizer : MonoBehaviour
         // convert interest rate list to array
         double[] interestRates = gameManager.loanManager.GetIRHistory(clientName).ToArray();
 
-        for (int i = 0; i < interestRates.Length; i++)
+        for (int i = 0; i < TimeStepsSinceLastTurn(clientName); i++)
         {
             LineChart.AddXAxisData("Måned " + (i + 1));
             LineChart.AddData(0, interestRates[i]);
@@ -54,8 +54,10 @@ public class IRVisualizer : MonoBehaviour
     /// <returns></returns>
     int TimeStepsSinceLastTurn(string clientName)
     {
+        // Calculate the months since the loan was created
         int timeSteps = (sbyte)(gameManager.monthNumber - gameManager.loanManager.GetLoanProperty(clientName, typeof(int), "InitialMonth"));
-        return timeSteps;
+        // return the average time steps between each interest rate update
+        return timeSteps / gameManager.loanManager.GetIRHistory(clientName).Count;
     }
     
 }
