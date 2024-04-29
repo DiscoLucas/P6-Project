@@ -14,8 +14,8 @@ public class MailManager : MonoBehaviour
 
     public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
 
-    public Transform parentObject;
-
+    public Transform parentObject, MailAnchorPostion;
+    
     public int clientData;
 
     [SerializeField] public TMP_Text reciver;
@@ -29,7 +29,7 @@ public class MailManager : MonoBehaviour
     private void Start()
     {
         mailPrefab.SetActive(true);
-        NewMail(clientData);
+        //NewMail(clientData);
     }
 
     void NewMail(int clientData)
@@ -50,17 +50,20 @@ public class MailManager : MonoBehaviour
     public void MailSetActive()
     {
         
-        GameObject newMailObject = Instantiate(mailPrefab);
-        Vector3 originalMailPosition = mailPrefab.transform.position;
-        newMailObject.transform.position = originalMailPosition;
-        newMailObject.transform.parent = parentObject;
-        newMailObject.SetActive(true);
+        GameObject newMailObject = Instantiate(mailPrefab, parentObject,false);
+        Vector3 originalMailPosition = MailAnchorPostion.position ;
+        MailSystem mailSystem = newMailObject.GetComponent<MailSystem>();
+        if (mailSystem == null)
+            Debug.LogError("Mail system not found");
+        newMailObject.transform.position = originalMailPosition- (mailSystem.rect.rect.height*mailList.Count)*Vector3.up;
+
+        mailList.Add(null);
     }
 
     public void UpdateMailInfo()
     {
-        info.text = DialogueManager.instance.thisSentince(clientData);
-        Debug.Log(DialogueManager.instance.thisSentince(clientData));
+        /*info.text = DialogueManager.instance.thisSentince(clientData);
+        Debug.Log(DialogueManager.instance.thisSentince(clientData));*/
     }
 
     /*ChatGPT Attempt
