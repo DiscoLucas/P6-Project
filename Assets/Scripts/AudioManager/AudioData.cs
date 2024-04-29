@@ -29,6 +29,6 @@ public class AudioData
 	[HideInInspector]
 	public AudioSource source;
 
-	public AudioMixerGroup mixerGroup;
-	public AudioMixer mixer;
+	//public AudioMixerGroup mixerGroup;
+	//public AudioMixer mixer;
 }

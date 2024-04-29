@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
             //Only here to disable dopplerLevel
             s.source.dopplerLevel = s.doblerEffect;
 
-            s.source.outputAudioMixerGroup = s.mixerGroup;
+            //s.source.outputAudioMixerGroup = s.mixerGroup;
         }
 
         foreach (Voice v in voiceArray)
@@ -56,7 +56,7 @@ public class AudioManager : MonoBehaviour
             //Only here to disable dopplerLevel
             v.source.dopplerLevel = v.doblerEffect;
 
-            v.source.outputAudioMixerGroup = v.mixerGroup;
+            //v.source.outputAudioMixerGroup = v.mixerGroup;
         }
 
         foreach (Music m in musicArray)
@@ -72,7 +72,7 @@ public class AudioManager : MonoBehaviour
             //Only here to disable dopplerLevel
             m.source.dopplerLevel = m.doblerEffect;
 
-            m.source.outputAudioMixerGroup = m.mixerGroup;
+            //m.source.outputAudioMixerGroup = m.mixerGroup;
         }
     }
 
@@ -199,5 +199,54 @@ public class AudioManager : MonoBehaviour
         }
         Debug.LogError("Clip not found");
         return null;
+    }
+
+    public Music GetMusicTrack(string name)
+    {
+        foreach (Music m in musicArray)
+        {
+            if (name == m.name)
+            {
+                return m;
+            }
+        }
+        Debug.LogError("Clip not found");
+        return null;
+    }
+
+    // Play a sound with random pitch within a specified range
+    public void playSoundRandomPitch(string sClip, float min, float max)
+    {
+        float randomPitch = UnityEngine.Random.Range(min, max);
+        Sound s = GetSoundClip(sClip);
+        s.source.pitch = randomPitch;
+        Play(sClip);
+    }
+
+    // Check if a sound clip is currently playing
+    public bool isPlayingBool(string sClipPlay)
+    {
+        Sound s = GetSoundClip(sClipPlay);
+        if (s == null)
+        {
+            return false;
+
+        }
+        else if (s.source.isPlaying)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    // Get a random sound clip from an array of sound clip names
+    public string randomClipFromSoundArray(string[] soundClips)
+    {
+        string oneSoundClip = soundClips[UnityEngine.Random.Range(0, soundClips.Length)];
+        Debug.LogWarning(oneSoundClip + "can not be found");
+        return oneSoundClip;
     }
 }

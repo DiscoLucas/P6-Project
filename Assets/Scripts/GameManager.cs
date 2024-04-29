@@ -102,66 +102,67 @@ public class GameManager : MonoBehaviour
     {
 
             var marketEvent = mm.GetMarketEvent();
+            double volatility = 1;
+            double interestRateChange = 1;
+            double housingMarked =1;
             if (marketEvent != null)
             {
                 // Switch between modifiers based on the event type
                 switch (marketEvent.eventType)
                 {
                     case MarketManager.MarketEventType.InterestRateChange:
-
+                        interestRateChange = updateModifer(marketEvent.rateModifier);
                         break;
 
                     case MarketManager.MarketEventType.VolatilityChange:
-
+                        volatility = updateModifer(marketEvent.rateModifier);
                         break;
 
                     case MarketManager.MarketEventType.HousingPriceChange:
-
+                        housingMarked = updateModifer(marketEvent.rateModifier);
                         break;
                 }
             }
-            else
+
+            try
             {
-                try
+                // iterate over each loan and update the interest rate
+                foreach (var kvp in loanManager.loanDict)
                 {
-                    // iterate over each loan and update the interest rate
-                    foreach (var kvp in loanManager.loanDict)
-                    {
-                        string clientName = kvp.Key;
-                        Loan loan = kvp.Value;
+                    string clientName = kvp.Key;
+                    Loan loan = kvp.Value;
+                    IRModifierUpdater(clientName, loan, volatility,interestRateChange,housingMarked);
 
-                        // if the the interest history is not empty, use the last value as the current rate
-                        if (loan.IRForTime.Count != 0)
-                        {
-                            IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last(), loan.volatility, loan.longTermRate);
-                            loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
-                        }
-                        else // if the interest history is empty, use the initial interest rate
-                        {
-                            IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate, loan.volatility, loan.longTermRate); // TODO: add market modifier to the parameters
-                            loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
-                        }
-
-                    }
-                }
-                catch (Exception e)
-                {
-                    Debug.LogWarning("Error in SimulateIR, there probably wasn't any loans in the dictionary: " + e.Message);
                 }
             }
+            catch (Exception e)
+            {
+                Debug.LogWarning("Error in SimulateIR, there probably wasn't any loans in the dictionary: " + e.Message);
+            }
+            
     }
 
-    void IRNoModifierUpdater(string clientName, Loan loan)
+    double updateModifer(double percentechange) {
+        if (percentechange > 0)
+        {
+            return (percentechange / 100) + 1;
+        }
+        else {
+            return 1-(percentechange / 100);
+        }
+    }
+
+    void IRModifierUpdater(string clientName, Loan loan,double volatility,double interestRateChange, double housingMarked)
     {
         // if the the interest history is not empty, use the last value as the current rate
         if (loan.IRForTime.Count != 0)
         {
-            IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last(), loan.volatility, loan.longTermRate);
+            IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last()* interestRateChange, loan.volatility*volatility, loan.longTermRate);
             loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
         }
         else // if the interest history is empty, use the initial interest rate
         {
-            IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate, loan.volatility, loan.longTermRate); // TODO: add market modifier to the parameters
+            IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate * interestRateChange, loan.volatility * volatility, loan.longTermRate); // TODO: add market modifier to the parameters
             loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
         }
     }

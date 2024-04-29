@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UIElements;
+using UnityEngine.UI;
 public class MailManager : MonoBehaviour
 {
     [SerializeField]
     private List<Mail> mailList = new List<Mail>();
-
+    [SerializeField]
+    ScrollRect scrollViewViewport;
     private string baseMessage = "To {0}\nFrom: {1}\nSubject: {2}";
 
     public GameObject mailPrefab; // Assign this to the AMail button prefab
 
     public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
 
+    public Transform parentObject;
+    
     public int clientData;
 
     [SerializeField] public TMP_Text reciver;
@@ -26,7 +30,8 @@ public class MailManager : MonoBehaviour
     // Start for testing :)
     private void Start()
     {
-        NewMail(clientData);
+        mailPrefab.SetActive(true);
+        //NewMail(clientData);
     }
 
     void NewMail(int clientData)
@@ -46,17 +51,24 @@ public class MailManager : MonoBehaviour
 
     public void MailSetActive()
     {
-        mailPrefab.SetActive(true);
-        GameObject newMailObject = Instantiate(mailPrefab);
-        Vector3 originalMailPosition = mailPrefab.transform.position;
-        newMailObject.transform.position = originalMailPosition;
-        newMailObject.SetActive(true);
+        GameObject newMailObject = Instantiate(mailPrefab, parentObject, false);
+        MailSystem mailSystem = newMailObject.GetComponent<MailSystem>();
+
+        if (mailSystem == null)
+        {
+            Debug.LogError("Mail system not found");
+            return;
+        }
+
+        mailList.Add(null);
     }
+
+
 
     public void UpdateMailInfo()
     {
-        info.text = DialogueManager.instance.thisSentince(clientData);
-        Debug.Log(DialogueManager.instance.thisSentince(clientData));
+        /*info.text = DialogueManager.instance.thisSentince(clientData);
+        Debug.Log(DialogueManager.instance.thisSentince(clientData));*/
     }
 
     /*ChatGPT Attempt
