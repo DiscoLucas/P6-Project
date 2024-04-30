@@ -36,4 +36,8 @@ public class Qustion : MonoBehaviour
     public virtual void setAnswer() {
     
     }
+
+    public virtual void closeMeeting() {
+        
+    }
 }

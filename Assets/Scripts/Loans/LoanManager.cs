@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable] public class LoanManager : Loan // TODO: Make function for setting/updating loan properties.
+[Serializable] public class LoanManager  // TODO: Make function for setting/updating loan properties.
 {
+    //public List<IRVisualizer> graphVisualizers = new List<IRVisualizer>();
     /*
     void Awake()
     {
@@ -24,9 +25,9 @@ using UnityEngine;
     /// <summary>
     /// Dictionary to store loans, with the client name as the key
     /// </summary>
-    public readonly Dictionary<string, Loan> loanDict = new Dictionary<string, Loan>();
+    //public readonly Dictionary<string, Loan> loanDict = new Dictionary<string, Loan>();
 
-    public void CreateLoan(string clientName,
+    /*public Loan CreateLoan(string clientName,
          int loanTerm,
          double loanAmount,
          double interestRate,
@@ -44,17 +45,19 @@ using UnityEngine;
         loan.longTermRate = longTermRate;
 
         loanDict[clientName] = loan;
-    }
+
+        return loan;
+    }*/
 
     /// <summary>
     /// Retrieves a property of a given client's loan
     /// </summary>
-    /// <param name="clientName"></param>
-    /// <param name="type">The type of the property to retrieve. Valid values are: typeof(double), typeof(int)</param>
-    /// <param name="propertyName">The name of the property to retrieve. Valid values can be seen in <see cref="Loan"/>:
+    /// <param //name="clientName"></param>
+    /// <param //name="type">The type of the property to retrieve. Valid values are: typeof(double), typeof(int)</param>
+    /// <param //name="propertyName">The name of the property to retrieve. Valid values can be seen in <see cref="Loan"/>:
     /// <returns>The value of the specified property of the client's loan</returns>
-    /// <exception cref="ArgumentException">Thrown when the client name is not found or the property name is invalid.</exception>
-    public double GetLoanProperty(string clientName, Type type, string propertyName)
+    /// <exception //cref="ArgumentException">Thrown when the client name is not found or the property name is invalid.</exception>
+  /*  public double GetLoanProperty(string clientName, Type type, string propertyName)
     {
         if (loanDict.TryGetValue(clientName, out Loan loan))
         {
@@ -105,6 +108,6 @@ using UnityEngine;
             }
         }
         else throw new ArgumentException("No loan found for client: " + clientName);
-    }
+    }*/
     
 }
