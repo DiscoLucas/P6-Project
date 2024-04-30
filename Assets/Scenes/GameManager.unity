@@ -2479,7 +2479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &270603310
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10610,7 +10610,7 @@ MonoBehaviour:
   m_text: '{0}'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0a1d1f4fd75b1c049ae074fc741f3e3b, type: 2}
-  m_sharedMaterial: {fileID: 3100910538179768088, guid: 3de49113025a21f44898d66d4cc66647,
+  m_sharedMaterial: {fileID: 6111224533404082560, guid: 0a1d1f4fd75b1c049ae074fc741f3e3b,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -13080,7 +13080,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0, y: 3.3124}
-  m_SizeDelta: {x: 832.0375, y: 388.1776}
+  m_SizeDelta: {x: 2000, y: 2000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1673691862
 MonoBehaviour:
@@ -15445,7 +15445,8 @@ MonoBehaviour:
   m_text: "Forts\xE6t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7753ceacf120605429619b4f9470d432, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -5389572428881513649, guid: 7753ceacf120605429619b4f9470d432,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
