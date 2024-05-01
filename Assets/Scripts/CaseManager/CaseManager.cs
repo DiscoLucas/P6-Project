@@ -7,6 +7,14 @@ public class CaseManager : MonoBehaviour
     public static CaseManager instance;
     public Case _case;
 
+    [Header("Client Meeting")]
+    [SerializeField]
+    public Case[] clientMeetingsTemplates;
+    public int clientMeetIndex = -1;
+    [SerializeField]
+    public ClientMeeting currentClientMeeting;
+    [SerializeField] public Transform clientMeetingTransform;
+
     private void Awake()
     {
         //Singleton pattern
@@ -22,7 +30,7 @@ public class CaseManager : MonoBehaviour
         }
     }
 
-    public void PlaseHolder()
+    public void Uga()
     {
 
     }
