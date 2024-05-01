@@ -3512,6 +3512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f3604b5a6fd2bf409d6a69ff0f257e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intro: cameraswooper
+  outro: cameraSwooperOut
 --- !u!1 &305047531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3901,7 +3903,7 @@ RectTransform:
   m_Father: {fileID: 1794790645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.98741436, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7358,9 +7360,9 @@ RectTransform:
   m_Father: {fileID: 1539504875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20.276, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &801022888
 MonoBehaviour:
@@ -7463,12 +7465,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clientData:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      yearlyIncome: 0
+      debt: 0
+      debtFactor: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
+    startMeet: 0
+    minPitch: 0
+    maxPitch: 0
+    caseDiscription: 
+    firstCaseIndex: 0
   mail:
     Reciever: 
     Sender: 
     Subject: 
     info: 
     test: {fileID: 0}
+  rect: {fileID: 0}
+  clientInfo: {fileID: 0}
 --- !u!1 &819423102
 GameObject:
   m_ObjectHideFlags: 0
@@ -7932,8 +7958,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1500298389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5592324}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9188,7 +9214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.1090012, y: -126.86136}
+  m_AnchoredPosition: {x: 3.1090012, y: -126.86198}
   m_SizeDelta: {x: 176.481, y: 453.7018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1043708556
@@ -10877,7 +10903,7 @@ RectTransform:
   m_Father: {fileID: 1297620077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 473}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11109,9 +11135,9 @@ RectTransform:
   m_Father: {fileID: 1539504875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20.276, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1448008997
 MonoBehaviour:
@@ -11156,7 +11182,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348096965}
   m_HandleRect: {fileID: 348096964}
   m_Direction: 0
-  m_Value: -0.899673
+  m_Value: -0.8996696
   m_Size: 0.98741436
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -11901,7 +11927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 17.890697, y: -49.999996}
+  m_AnchoredPosition: {x: 17.890697, y: -49.999985}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543018568
@@ -12105,8 +12131,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 882463830}
   m_HandleRect: {fileID: 882463829}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.44076818
+  m_Value: 1.0000025
+  m_Size: 0.44077212
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12840,6 +12866,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clientData:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      yearlyIncome: 0
+      debt: 0
+      debtFactor: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
+    startMeet: 0
+    minPitch: 0
+    maxPitch: 0
+    caseDiscription: 
+    firstCaseIndex: 0
   mail:
     Reciever: 
     Sender: 
@@ -12850,6 +12898,8 @@ MonoBehaviour:
 
       sdfsdf'
     test: {fileID: 0}
+  rect: {fileID: 0}
+  clientInfo: {fileID: 0}
 --- !u!224 &1689742219
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15349,7 +15399,7 @@ GameObject:
   - component: {fileID: 1961451385}
   - component: {fileID: 1961451384}
   m_Layer: 0
-  m_Name: Belighter
+  m_Name: Monitor Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18142,79 +18192,7 @@ MonoBehaviour:
   eventDescription: {fileID: 1865791334039506422}
   eventEffect: {fileID: 8829260218923036551}
   Popup: {fileID: 400033225}
-  markedEvents:
-  - eventsDescription: Frygt for inflation
-    eventsEffect: Renten stiger med 3%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: "Pres p\xE5 den danske krone"
-    eventsEffect: Renten stiger med 1%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: "Uro p\xE5 finansielle markeder"
-    eventsEffect: Renten falder med 3%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: Bekymringer om recession
-    eventsEffect: Renten falder med 1%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: Forbrugertillid stiger
-    eventsEffect: Boligpriser stiger med 3%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: Politiske beslutninger
-    eventsEffect: Boligpriser stiger med 1%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: "D\xE5rlig \xF8konomi"
-    eventsEffect: Boligpriser falder med 3%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: Lavkonjuktur
-    eventsEffect: Boligpriser falder med 1%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: "Humanit\xE6r krise"
-    eventsEffect: Volatilitet stiger med 5%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: Folk shorter GME aktier igen
-    eventsEffect: Volatilitet stiger med 1%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: Markedsregulationer
-    eventsEffect: Volatilitet falder med 5%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
-  - eventsDescription: Optimisme i markedet
-    eventsEffect: Boligpriser falder med 1%
-    eventType: 0
-    interestRateModifier: 0
-    volatilityModifier: 0
-    housingPriceModifier: 0
+  marketEvents: []
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0
@@ -18762,13 +18740,14 @@ GameObject:
   - component: {fileID: 1000027271371997737}
   - component: {fileID: 487593994415017410}
   - component: {fileID: 8719378474215368761}
+  - component: {fileID: 8719378474215368762}
   m_Layer: 5
   m_Name: Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &4256909712838781751
 Animator:
   serializedVersion: 5
@@ -20570,7 +20549,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: -0.38671103, z: 0, w: 0.922201}
   m_LocalPosition: {x: 0, y: 0, z: -2.633}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1678864758}
   - {fileID: 496268982}
@@ -21425,6 +21404,27 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &8719378474215368762
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4229783253630438797}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4584694802ba82c48b48a053b45b48d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8738940964373386809
 GameObject:
   m_ObjectHideFlags: 0

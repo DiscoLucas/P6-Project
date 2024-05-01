@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
+  m_Name: Musa
+  m_EditorClassIdentifier: 
+  clientName: Mansa Musa
+  age: 44
+  job: Forretningsmand
+  city: "Niv\xE5"
+  maritalStatus: 1
+  caseDescription: "Efter at have taget til en overd\xE5dig fest, der finansielt
+    runerede mig, har jeg ikke r\xE5d til at bo i min ekstremt dyre lejebolig l\xE6ngere.
+    Jeg s\xF8ger derfor l\xE5n til en ny ejerbolig."
+  chacterSprite: {fileID: 21300000, guid: 94d6833330780b147ace6afa4e14e58b, type: 3}
+  minPitch: 0.3
+  maxPitch: 0.7
+  startMeet: 0
+  monthlyIncome: 60000
+  monthlyExpenses: 15000
+  monthlySavings: 15000
+  totalSavings: 500000
+  neededLoan: 2500000
+  debt: 100000
+  startClientmeeting: 0
