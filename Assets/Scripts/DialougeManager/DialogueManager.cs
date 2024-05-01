@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     public DialogueRegistry dialogueRegistry;
     [SerializeField] private string[] VoiceClip;
     public bool hasRun = false;
+    public bool isWorking = false;
 
     [SerializeField] private GameObject gameObject_continue;
     [SerializeField] private GameObject gameObject_end;
@@ -72,6 +73,7 @@ public class DialogueManager : MonoBehaviour
     /// <param name="registryIndex"></param>
     public void StartDia(int registryIndex)
     {
+        isWorking = true;
         string sentince = thisSentince(registryIndex);
         DisplayOneSentince(sentince);
     }
@@ -197,6 +199,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
         dialogDone.Invoke();
+        isWorking= false;
         animator.SetBool("IsOpen", false);
     }
 }
