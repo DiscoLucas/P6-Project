@@ -60,4 +60,17 @@ public class ScoreManager : MonoBehaviour
         targetScore += newProgress;
         slider.value = targetScore;
     }
+
+    public void MinusPoint()
+    {
+        score -= addedScore;
+        scoreText.text = score.ToString() + "Percents";
+        Backtrack(FillSpeed);
+    }
+
+    public void Backtrack(float newProgress)
+    {
+        targetScore -= newProgress;
+        slider.value = targetScore;
+    }
 }

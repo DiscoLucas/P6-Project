@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestScoreScript : MonoBehaviour
+public class TestScoreScriptPos : MonoBehaviour
 {
    //To test if the slider score thing works
    public void TestButton()
