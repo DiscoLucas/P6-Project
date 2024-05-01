@@ -14,7 +14,6 @@ using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
     [Header("Events")]
     public UnityEvent clientMeetingDone;
 
@@ -63,11 +62,6 @@ public class GameManager : MonoBehaviour
     [Header("Menu Stuff")]
     public GameObject action_Menu;
     public GameObject talkClient_BTN, checkComputer_Btn, AskforHelp_btn;
-
-    [Header("Managers (Karen Moment)")]
-    public ClientManager cm;
-    public MarketManager mm;
-    public LoanManager loanManager;
 
     private void Awake()
     {
@@ -135,7 +129,6 @@ public class GameManager : MonoBehaviour
         bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
 
         mm.simulateIR();
-        if (turnType[turnTypeIndex].type == TurnType.New_customer && cm.canGenerateMoreClients && !needChange)
 
         if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
         {
