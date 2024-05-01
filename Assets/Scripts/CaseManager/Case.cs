@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class ClientMeetingInfomation
+public class Case
 {
     [SerializeField]
     public bool canBeUsedMoreThanOnes = true;

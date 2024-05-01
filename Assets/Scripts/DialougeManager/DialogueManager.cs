@@ -103,7 +103,7 @@ public class DialogueManager : MonoBehaviour
     public string thisSentince(int intdex)
     {
         DialogueRegistry.instance.GetSentincesIndex(intdex);
-        clientData = GameManager.instance.cm.currentClient;
+        clientData = GameManager.instance.clm.currentClient;
         string sent = DialogueRegistry.instance.sentinces[intdex]; // Get the tag from DialogueRegistry
         string sentince = DialogueRegistry.instance.replaceString(sent, clientData);
 

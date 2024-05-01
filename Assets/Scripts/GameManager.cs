@@ -19,12 +19,24 @@ public class GameManager : MonoBehaviour
     public UnityEvent clientMeetingDone;
 
     [Header("Client Meeting")]
+    [Header("Managers (Karen Moment)")]
+    public static GameManager instance;
+    [SerializeField] public ClientManager clm;
+    [SerializeField] 
+    MarketManager mm;
+    [SerializeField]
+    private LoanManager loanManager;
+
+    CaseManager csm;
+
+    //DET HER SKAL FIKSES - Case manager skal integreres bedre.
+    /*[Header("Client Meeting")]
     [SerializeField]
     public ClientMeetingInfomation[] clientMeetingsTemplates;
     public int clientMeetIndex = -1;
     [SerializeField]
     public ClientMeeting currentClientMeeting;
-    [SerializeField] Transform clientMeetingTransform;
+    [SerializeField] Transform clientMeetingTransform;*/
 
     [Header("References")]
     public int startType = 0;
@@ -117,6 +129,7 @@ public class GameManager : MonoBehaviour
         bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
         mm.simulateIR();
         if (turnType[turnTypeIndex].type == TurnType.New_customer && cm.canGenerateMoreClients && !needChange)
+        if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
         {
             turnT = TurnType.New_customer;
             //newCustomer();
@@ -201,20 +214,20 @@ public class GameManager : MonoBehaviour
     /// This functions adds a new customoer
     /// </summary>
     void newCustomer() {
-        if (cm.getClientsTempCount() <= 1)
+        if (clm.getClientsTempCount() <= 1)
         {
-            cm.canGenerateMoreClients = false;
+            clm.canGenerateMoreClients = false;
         }
         Debug.Log("New customer" + " Mounth: " + monthNumber);
         //Decide which client meeting the new customer should start with
-        if(cm != null)
+        if(clm != null)
         {
-            ClientData client = cm.getNewClient();
-            clientMeetIndex = client.firstCaseIndex;
-            cm.startClientIntro(client);
-            cm.currentClient= client;
-            if(!clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
-                clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
+            ClientData client = clm.getNewClient();
+            csm.clientMeetIndex = client.firstCaseIndex;
+            clm.startClientIntro(client);
+            clm.currentClient= client;
+            if(!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
+                csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
         }
         //createClientMeeting(clientMeetingPrefabs[0]);
     }
@@ -236,13 +249,13 @@ public class GameManager : MonoBehaviour
     public void clientMeeting()
     {
         Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
-        ClientData client = cm.getrRandomClient();
-        clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
+        ClientData client = clm.getrRandomClient();
+        csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
         getAndSetnewMeetIndex(client, 10);
-        cm.startClientIntro(client);
-        cm.currentClient = client;
-        if (!clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
-            clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
+        clm.startClientIntro(client);
+        clm.currentClient = client;
+        if (!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
+            csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
 
         //Client walks in, like in newCustomer function
         //Client choses speech that revolves around getting update to bonds "Hey jeg har f�et bedre arbejde lol"
@@ -253,17 +266,17 @@ public class GameManager : MonoBehaviour
     public void getAndSetnewMeetIndex(ClientData client, int tryes) {
         if (tryes < 0)
         {
-            for (int i = 0; i < clientMeetingsTemplates.Length; i++)
+            for (int i = 0; i < csm.clientMeetingsTemplates.Length; i++)
             {
-                clientMeetIndex = i;
+                csm.clientMeetIndex = i;
                 if (seeIfClientHaveTriedThisMeetingBefore(client)) {
                     return;
                 }
             }
         }
         else {
-            clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
-            if (clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
+            csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
+            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
             {
                 return;
             }else {
@@ -278,9 +291,9 @@ public class GameManager : MonoBehaviour
     bool seeIfClientHaveTriedThisMeetingBefore(ClientData client)
     {
         bool found = true;
-        for (int i = 0; i < clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Count; i++)
+        for (int i = 0; i < csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Count; i++)
         {
-            if (clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed[i] == client.clientName)
+            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed[i] == client.clientName)
             {
                 found = false; break;
             }
@@ -333,9 +346,9 @@ public class GameManager : MonoBehaviour
     /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed and return the currentClient
     /// </summary>
     public ClientData setCurrentClientMeeting(ClientMeeting clientMeeting) {
-        
-        currentClientMeeting = clientMeeting;
-        return cm.currentClient;
+
+        csm.currentClientMeeting = clientMeeting;
+        return clm.currentClient;
     }
     /// <summary>
     /// Takes the client meeting prefab and create a client meeting from it
@@ -343,9 +356,9 @@ public class GameManager : MonoBehaviour
     /// <param name="prefab"></param>
     public void createClientMeeting(GameObject prefab, ClientData cClient) {
         destoryCurrentClientMeeting();
-        cm.currentClient = cClient;
+        clm.currentClient = cClient;
         GameObject obj = Instantiate(prefab,Vector3.zero,quaternion.identity);
-        obj.transform.parent = clientMeetingTransform;
+        obj.transform.parent = csm.clientMeetingTransform;
 
     }
 
@@ -359,7 +372,7 @@ public class GameManager : MonoBehaviour
 
     public void createClientMeeting()
     {
-        createClientMeeting(clientMeetingsTemplates[clientMeetIndex].meetingPrefab, cm.getrRandomClient());
+        createClientMeeting(csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab, clm.getrRandomClient());
 
     }
 
@@ -368,17 +381,17 @@ public class GameManager : MonoBehaviour
         //Log what is need to be logged
 
         //Destory the current object
-        if (currentClientMeeting != null)
+        if (csm.currentClientMeeting != null)
         {
-            Destroy(currentClientMeeting.gameObject);
+            Destroy(csm.currentClientMeeting.gameObject);
         }
 
-        if (cm.currentClient != null) {
-            cm.currentClient = null;
+        if (clm.currentClient != null) {
+            clm.currentClient = null;
         }
-        clientMeetIndex = -1;
+        csm.clientMeetIndex = -1;
 
-        if (!cm.ClientObject.active) {
+        if (!clm.ClientObject.active) {
             updateTurn();        
         }
             
