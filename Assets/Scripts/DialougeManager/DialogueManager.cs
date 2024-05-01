@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 
@@ -64,6 +65,10 @@ public class DialogueManager : MonoBehaviour
 
         gameObject_continue.SetActive(true);
         gameObject_end.SetActive(false);
+        
+        //check if the the script is running in the "Updated UI" scene
+        //if (SceneManager.GetActiveScene().name == "Updated UI")
+        //    StartDia(0); Debug.Log("aaaa");
     }
 
     // DialogueManager.instance.StartDia("dialogue name")

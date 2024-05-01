@@ -1151,11 +1151,11 @@ MonoBehaviour:
   clientMeetingDone:
     m_PersistentCalls:
       m_Calls: []
-  clm: {fileID: 0}
+  clm: {fileID: 1181538538}
   mm: {fileID: 3097740107927630391}
   csm: {fileID: 0}
   guim: {fileID: 0}
-  dlm: {fileID: 0}
+  dlm: {fileID: 419886079}
   startType: 3
   turnType:
   - name: Nothing
@@ -1633,7 +1633,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Diatext
       value: 
-      objectReference: {fileID: 8209087883786494447}
+      objectReference: {fileID: 1982617325}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: animator
@@ -1643,7 +1643,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 6767996632902498774}
+      objectReference: {fileID: 686375100}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: textFreq
@@ -1663,7 +1663,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameObject_continue
       value: 
-      objectReference: {fileID: 1509338196154320239}
+      objectReference: {fileID: 1535332864}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7140,6 +7140,7 @@ GameObject:
   - component: {fileID: 1535332865}
   - component: {fileID: 1535332866}
   - component: {fileID: 1535332867}
+  - component: {fileID: 1535332868}
   m_Layer: 5
   m_Name: Dialog UI
   m_TagString: Untagged
@@ -7250,6 +7251,27 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &1535332868
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535332864}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 461595ed845bd3741aa1ddd7f1e8dc08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1535381169
 GameObject:
   m_ObjectHideFlags: 0
