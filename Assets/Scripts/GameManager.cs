@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
     public ClientMeeting currentClientMeeting;
     [SerializeField] Transform clientMeetingTransform;*/
 
+
+    [Tooltip("The amount of time that passes on every turn. each unit is 1 month")] 
+    public readonly static float timeHorizon = 1f;
+    [Tooltip("Time increments calculated in each time horizon.")] 
+    public readonly static float dt = timeHorizon / 4f;
+
     [Header("References")]
     public int startType = 0;
     public TurnEvent[] turnType;
@@ -127,8 +133,10 @@ public class GameManager : MonoBehaviour
         monthNumber++;
         int turnTypeIndex = decideWhatShouldHappend();
         bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
+
         mm.simulateIR();
         if (turnType[turnTypeIndex].type == TurnType.New_customer && cm.canGenerateMoreClients && !needChange)
+
         if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
         {
             turnT = TurnType.New_customer;
