@@ -94,6 +94,7 @@ MonoBehaviour:
   - Voice4
   - Voice5
   hasRun: 0
+  isWorking: 0
   gameObject_continue: {fileID: 0}
   gameObject_end: {fileID: 0}
   nextSentince: 0
@@ -110,14 +111,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentinces:
-  - "Hej, jeg hedder [Navn]. Jeg er her for at se om jeg kan f\xE5 mig et l\xE5n."
+  - "Hej, jeg mit navn er [Navn]. Jeg er her i dag for at se hvor stort et l\xE5n
+    jeg kan f\xE5. Og forh\xE5benligt anskaffe det l\xE5n."
   - "Jeg er [Alder]  \xE5r, og [Forhold]. Jeg er lige blevet f\xE6rdig med min udanelse
     og kigger efter at anskaffe mig en ejerbolig."
+  - "Lige nu p\xE5 min nye stillinger tjener jeg [Tjener]  kr f\xF8r skat."
   - "I mit studiejob har jeg sammen tj\xE6nt [FuldOpsparing] kr sammen med lidt fra
     min b\xF8rneopsparing."
-  - "Lige nu p\xE5 min nye stillinger tjener jeg [Tjener]  kr f\xF8r skat."
-  - Jeg har adskelige shrines til Albert [By]
-  - "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
+  - "Jeg er [Alder] \xE5r, og [Forhold]. Jeg leder efter at anskaffe mig et sommerhus."
+  - "Jeg har lige f\xE5et mig en ny forfremelse hvor jeg [Tjener] kr om m\xE5neden
+    f\xF8r skat."
+  - "I mit studiejob har jeg sammen tj\xE6nt [FuldOpsparing] kr sammen med lidt fra
+    min b\xF8rneopsparing."
+  - "Jeg er [Alder] \xE5r, og [Forhold]. Jeg har boet i lejlighed i en god h\xE5ndful
+    \xE5r nu og ser p\xE5 at k\xF8be et hus."
+  - "Hvert m\xE5nede tjener jeg [Tjener] kr f\xF8r skat, og er sikker i min stilling."
+  - Jeg har opsparet [FuldOpsparing] kr, gennem min arbejds tid.
   tags:
   - '[Navn]'
   - '[Alder]'

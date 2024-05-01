@@ -65,6 +65,9 @@ public class ClientMeeting : MonoBehaviour
         }
     }
     public virtual void close() {
+        foreach (Qustion q in qustions) { 
+            q.closeMeeting();
+        }
         GameManager.instance.closeMeeting();
     }
 }

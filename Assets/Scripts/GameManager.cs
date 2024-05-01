@@ -4,29 +4,35 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
 using static UnityEngine.ParticleSystem;
 using TMPro;
+using XCharts;
+using XCharts.Runtime;
+using Unity.VisualScripting;
+
 public class GameManager : MonoBehaviour
 {
     [Header("Events")]
     public UnityEvent clientMeetingDone;
-    [Header("Managers (Karen Moment)")]
+    [Header("Managers")]
     public static GameManager instance;
-    [SerializeField] public ClientManager cm;
-    [SerializeField] 
-    MarketManager mm;
-    [SerializeField]
-    private LoanManager loanManager;
-    [Header("Client Meeting")]
+    public ClientManager clm;
+    public MarketManager mm;
+    public CaseManager csm;
+    public GUIManager guim;
+    public DialogueManager dlm;
+
+    //DET HER SKAL FIKSES - Case manager skal integreres bedre.
+    /*[Header("Client Meeting")]
     [SerializeField]
     public ClientMeetingInfomation[] clientMeetingsTemplates;
     public int clientMeetIndex = -1;
     [SerializeField]
     public ClientMeeting currentClientMeeting;
-    [SerializeField] Transform clientMeetingTransform;
+    [SerializeField] Transform clientMeetingTransform;*/
+
 
     [Tooltip("The amount of time that passes on every turn. each unit is 1 month")] 
     public readonly static float timeHorizon = 1f;
@@ -34,10 +40,6 @@ public class GameManager : MonoBehaviour
     public readonly static float dt = timeHorizon / 4f;
 
     [Header("References")]
-    //forslag:
-    //[SerializeField]
-    //Incidents currentInciden
-    //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
     [SerializeField]
@@ -53,10 +55,6 @@ public class GameManager : MonoBehaviour
     TMP_Text mountCounter;
     string counterString;
 
-    [Header("Menu Stuff")]
-    public GameObject action_Menu;
-    public GameObject talkClient_BTN, checkComputer_Btn, AskforHelp_btn;
-
     private void Awake()
     {
         //Singleton pattern
@@ -71,21 +69,20 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        dlm = DialogueManager.instance;
         counterString = mountCounter.text;
-        //loanManager = FindObjectOfType<LoanManager>();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown("space")) {
-            nextMounth();
+            //createLoan();
         }
     }
 
     private void Start()
     {
-        nextMounth();
+        updateTurn();
     }
 
     /// <summary>
@@ -94,99 +91,8 @@ public class GameManager : MonoBehaviour
     public void updateTurn() 
     {
 
-        //change to the next event
-        nextMounth();
-    }
-
-    private void SimulateIR() // Todo: handle case where loan is fixed or paid off
-    {
-
-            var marketEvent = mm.GetMarketEvent();
-            double volatility = 1;
-            double interestRateChange = 1;
-            double housingMarked =1;
-            if (marketEvent != null)
-            {
-                // Switch between modifiers based on the event type
-                switch (marketEvent.eventType)
-                {
-                    case MarketManager.MarketEventType.InterestRateChange:
-                        interestRateChange = updateModifer(marketEvent.rateModifier);
-                        break;
-
-                    case MarketManager.MarketEventType.VolatilityChange:
-                        volatility = updateModifer(marketEvent.rateModifier);
-                        break;
-
-                    case MarketManager.MarketEventType.HousingPriceChange:
-                        housingMarked = updateModifer(marketEvent.rateModifier);
-                        break;
-                }
-            }
-
-            try
-            {
-                // iterate over each loan and update the interest rate
-                foreach (var kvp in loanManager.loanDict)
-                {
-                    string clientName = kvp.Key;
-                    Loan loan = kvp.Value;
-                    IRModifierUpdater(clientName, loan, volatility,interestRateChange,housingMarked);
-
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.LogWarning("Error in SimulateIR, there probably wasn't any loans in the dictionary: " + e.Message);
-            }
-            
-    }
-
-    double updateModifer(double percentechange) {
-        if (percentechange > 0)
-        {
-            return (percentechange / 100) + 1;
-        }
-        else {
-            return 1-(percentechange / 100);
-        }
-    }
-
-    void IRModifierUpdater(string clientName, Loan loan,double volatility,double interestRateChange, double housingMarked)
-    {
-        // if the the interest history is not empty, use the last value as the current rate
-        if (loan.IRForTime.Count != 0)
-        {
-            IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last()* interestRateChange, loan.volatility*volatility, loan.longTermRate);
-            loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
-        }
-        else // if the interest history is empty, use the initial interest rate
-        {
-            IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate * interestRateChange, loan.volatility * volatility, loan.longTermRate); // TODO: add market modifier to the parameters
-            loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
-        }
-    }
-
-    
-
-    /// <summary>
-    /// This function change the mounth and clear out the old
-    /// </summary>
-    public void nextMounth() {
-        //Log what needs to be logged
-
-        //Update Ir
-        try {
-            SimulateIR();
-        }
-        catch (Exception e) {
-            Debug.LogError(e.ToString());
-        }
-        //Change the mounth
         newMounth();
     }
-
-    
 
     /// <summary>
     /// Decides what should happend this mounth
@@ -195,7 +101,10 @@ public class GameManager : MonoBehaviour
         monthNumber++;
         int turnTypeIndex = decideWhatShouldHappend();
         bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
-        if (turnType[turnTypeIndex].type == TurnType.New_customer && cm.canGenerateMoreClients && !needChange)
+
+        mm.simulateIR();
+
+        if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
         {
             turnT = TurnType.New_customer;
             //newCustomer();
@@ -255,23 +164,8 @@ public class GameManager : MonoBehaviour
         }
         else if (turnT == TurnType.Change_forCustomer || turnT == TurnType.New_customer)
         {
-            action_Menu.SetActive(true);
-            talkClient_BTN.SetActive(true);
-        }
-    }
+            guim.showActionMenu();
 
-    /// <summary>
-    /// This function is called from the action menu and start the clietn talked 
-    /// It is controlled by the turnT if it should be a client introduction or client metting
-    /// </summary>
-    public void startConviencation() {
-        action_Menu.SetActive(false);
-        talkClient_BTN.SetActive(false);
-        if (turnT == TurnType.Change_forCustomer)
-        {
-            clientMeeting();
-        } else if (turnT == TurnType.New_customer) {
-            newCustomer();
         }
     }
 
@@ -279,21 +173,21 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This functions adds a new customoer
     /// </summary>
-    void newCustomer() {
-        if (cm.getClientsTempCount() <= 1)
+    public void newCustomer() {
+        if (clm.getClientsTempCount() <= 1)
         {
-            cm.canGenerateMoreClients = false;
+            clm.canGenerateMoreClients = false;
         }
         Debug.Log("New customer" + " Mounth: " + monthNumber);
         //Decide which client meeting the new customer should start with
-        if(cm != null)
+        if(clm != null)
         {
-            ClientData client = cm.getNewClient();
-            clientMeetIndex = client.firstCaseIndex;
-            cm.startClientIntro(client);
-            cm.currentClient= client;
-            if(!clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
-                clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
+            ClientData client = clm.getNewClient();
+            csm.clientMeetIndex = client.firstCaseIndex;
+            clm.startClientIntro(client);
+            clm.currentClient= client;
+            if(!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
+                csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
         }
         //createClientMeeting(clientMeetingPrefabs[0]);
     }
@@ -315,13 +209,13 @@ public class GameManager : MonoBehaviour
     public void clientMeeting()
     {
         Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
-        ClientData client = cm.getrRandomClient();
-        clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
+        ClientData client = clm.getrRandomClient();
+        csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
         getAndSetnewMeetIndex(client, 10);
-        cm.startClientIntro(client);
-        cm.currentClient = client;
-        if (!clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
-            clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
+        clm.startClientIntro(client);
+        clm.currentClient = client;
+        if (!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
+            csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
 
         //Client walks in, like in newCustomer function
         //Client choses speech that revolves around getting update to bonds "Hey jeg har f�et bedre arbejde lol"
@@ -332,17 +226,17 @@ public class GameManager : MonoBehaviour
     public void getAndSetnewMeetIndex(ClientData client, int tryes) {
         if (tryes < 0)
         {
-            for (int i = 0; i < clientMeetingsTemplates.Length; i++)
+            for (int i = 0; i < csm.clientMeetingsTemplates.Length; i++)
             {
-                clientMeetIndex = i;
+                csm.clientMeetIndex = i;
                 if (seeIfClientHaveTriedThisMeetingBefore(client)) {
                     return;
                 }
             }
         }
         else {
-            clientMeetIndex = UnityEngine.Random.Range(0, clientMeetingsTemplates.Length);
-            if (clientMeetingsTemplates[clientMeetIndex].canBeUsedMoreThanOnes)
+            csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
+            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
             {
                 return;
             }else {
@@ -357,9 +251,9 @@ public class GameManager : MonoBehaviour
     bool seeIfClientHaveTriedThisMeetingBefore(ClientData client)
     {
         bool found = true;
-        for (int i = 0; i < clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed.Count; i++)
+        for (int i = 0; i < csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Count; i++)
         {
-            if (clientMeetingsTemplates[clientMeetIndex].clientThatHaveUsed[i] == client.clientName)
+            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed[i] == client.clientName)
             {
                 found = false; break;
             }
@@ -382,7 +276,17 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < turnType.Length; i++)
+            Loan loan = mm.checkIfTimeIsUpForLoan();
+            if (loan != null) {
+                Debug.Log("Change For Loan");
+                if (loan.loanAmount == 360) {
+                    Debug.Log("Loan Done");
+                }
+                return turnType.Length - 1;
+            }
+
+
+            for (int i = 0; i < turnType.Length-1; i++)
             {
                 float guessValue = UnityEngine.Random.Range(0, 100);
 
@@ -395,16 +299,13 @@ public class GameManager : MonoBehaviour
         }
         return turnTypeIndex;
     }
-    public void Method()
-    {
-        throw new System.NotImplementedException(); }
     /// <summary>
     /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed and return the currentClient
     /// </summary>
     public ClientData setCurrentClientMeeting(ClientMeeting clientMeeting) {
-        
-        currentClientMeeting = clientMeeting;
-        return cm.currentClient;
+
+        csm.currentClientMeeting = clientMeeting;
+        return clm.currentClient;
     }
     /// <summary>
     /// Takes the client meeting prefab and create a client meeting from it
@@ -412,9 +313,9 @@ public class GameManager : MonoBehaviour
     /// <param name="prefab"></param>
     public void createClientMeeting(GameObject prefab, ClientData cClient) {
         destoryCurrentClientMeeting();
-        cm.currentClient = cClient;
+        clm.currentClient = cClient;
         GameObject obj = Instantiate(prefab,Vector3.zero,quaternion.identity);
-        obj.transform.parent = clientMeetingTransform;
+        obj.transform.parent = csm.clientMeetingTransform;
 
     }
 
@@ -428,7 +329,8 @@ public class GameManager : MonoBehaviour
 
     public void createClientMeeting()
     {
-        createClientMeeting(clientMeetingsTemplates[clientMeetIndex].meetingPrefab, cm.getrRandomClient());
+        Debug.Log("Create client meeting " + csm.clientMeetIndex + " " + csm.clientMeetingsTemplates + " " + csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab + " " + clm.getrRandomClient());
+        createClientMeeting(csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab, clm.getrRandomClient());
 
     }
 
@@ -437,20 +339,25 @@ public class GameManager : MonoBehaviour
         //Log what is need to be logged
 
         //Destory the current object
-        if (currentClientMeeting != null)
+        if (csm.currentClientMeeting != null)
         {
-            Destroy(currentClientMeeting.gameObject);
+            Destroy(csm.currentClientMeeting.gameObject);
         }
 
-        if (cm.currentClient != null) {
-            cm.currentClient = null;
+        if (clm.currentClient != null) {
+            clm.currentClient = null;
         }
-        clientMeetIndex = -1;
+        csm.clientMeetIndex = -1;
 
-        if (!cm.ClientObject.active) {
+        if (!clm.ClientObject.active) {
             updateTurn();        
         }
             
+    }
+
+    internal TurnType getCurrentTurnType()
+    {
+        return turnT;
     }
 }
 

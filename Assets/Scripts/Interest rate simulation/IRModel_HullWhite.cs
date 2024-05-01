@@ -20,7 +20,7 @@ public class IRModel_HullWhite
 
     public double[] PredictIRforTimeInterval(float dt, float timeHorizon, double longTermRate = 0.5)
     {//TODO: standardize dt and timeHorizon, and replace with months input.
-        int steps = (int)(timeHorizon / dt); //
+        int steps = (int)(timeHorizon / dt); 
         double[] interestRates = new double[steps];
 
         for (int i = 0; i < steps; i++)
