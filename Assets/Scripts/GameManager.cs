@@ -183,13 +183,10 @@ public class GameManager : MonoBehaviour
         if(clm != null)
         {
             ClientData client = clm.getNewClient();
-            csm.clientMeetIndex = client.firstCaseIndex;
+            csm.createCase(client);
             clm.startClientIntro(client);
             clm.currentClient= client;
-            if(!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
-                csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
         }
-        //createClientMeeting(clientMeetingPrefabs[0]);
     }
 
     /// <summary>
@@ -210,54 +207,40 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
         ClientData client = clm.getrRandomClient();
-        csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
+        csm.currentCaseIndex = UnityEngine.Random.Range(0, csm.currentCases.Count);
         getAndSetnewMeetIndex(client, 10);
         clm.startClientIntro(client);
         clm.currentClient = client;
-        if (!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
-            csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
-
-        //Client walks in, like in newCustomer function
-        //Client choses speech that revolves around getting update to bonds "Hey jeg har f�et bedre arbejde lol"
-        //Player gets to fill out the correct paper work - Dette slutter af med en ja/nej
-        //Client g�r som player siger
     }
 
     public void getAndSetnewMeetIndex(ClientData client, int tryes) {
         if (tryes < 0)
         {
-            for (int i = 0; i < csm.clientMeetingsTemplates.Length; i++)
+            for (int i = 0; i < csm.currentCases.Count; i++)
             {
-                csm.clientMeetIndex = i;
+                csm.currentCaseIndex = i;
                 if (seeIfClientHaveTriedThisMeetingBefore(client)) {
                     return;
                 }
             }
         }
         else {
-            csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
-            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
-            {
-                return;
-            }else {
+            csm.currentCaseIndex = UnityEngine.Random.Range(0, csm.currentCases.Count);
                 if (!seeIfClientHaveTriedThisMeetingBefore(client)) {
                     getAndSetnewMeetIndex(client, tryes - 1);
                 }
-            }
         }
         
     }
 
+    /// <summary>
+    /// TODO:FIX
+    /// </summary>
+    /// <param name="client"></param>
+    /// <returns></returns>
     bool seeIfClientHaveTriedThisMeetingBefore(ClientData client)
     {
         bool found = true;
-        for (int i = 0; i < csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Count; i++)
-        {
-            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed[i] == client.clientName)
-            {
-                found = false; break;
-            }
-        }
 
         return found;
     }
@@ -329,8 +312,7 @@ public class GameManager : MonoBehaviour
 
     public void createClientMeeting()
     {
-        Debug.Log("Create client meeting " + csm.clientMeetIndex + " " + csm.clientMeetingsTemplates + " " + csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab + " " + clm.getrRandomClient());
-        createClientMeeting(csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab, clm.getrRandomClient());
+        createClientMeeting(csm.currentCases[csm.currentCaseIndex].getCurrentMeeting().meetingPrefab, clm.getrRandomClient());
 
     }
 
@@ -341,13 +323,12 @@ public class GameManager : MonoBehaviour
         //Destory the current object
         if (csm.currentClientMeeting != null)
         {
-            Destroy(csm.currentClientMeeting.gameObject);
+            csm.endMeeting();
         }
 
         if (clm.currentClient != null) {
             clm.currentClient = null;
         }
-        csm.clientMeetIndex = -1;
 
         if (!clm.ClientObject.active) {
             updateTurn();        

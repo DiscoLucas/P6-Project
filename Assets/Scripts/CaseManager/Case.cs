@@ -6,36 +6,58 @@ using System;
 [Serializable]
 public class Case
 {
-    [SerializeField]
-    public bool canBeUsedMoreThanOnes = true;
-    public List<string> clientThatHaveUsed;
-    [SerializeField]
-    private string meetingId;
-    [SerializeField]
-    public GameObject meetingPrefab;
-    public int[] sentinces;
-    public int senIndex = 0;
+    public string caseName = "_case";
+    public MeetingCollection[] meetings;
+    [Tooltip("The type of customer who can partake in these meetings")] public CustomerType type;
+    public ClientData client;
+    public float loanAmount;
+    public float ovenAmount;
+    [Tooltip("Which meeting they need to be in")]public int meetingIndex = 0;
+    public int sentincesIndex = 0;
+    public bool caseClosed = false;
+    public string caseDiscription;
+
+    public Case(CaseTemplate template,ClientData _client) {
+        caseName = template.caseName;
+        meetings= template.meetings;
+        client = _client;
+        type= template.customerType;
+        caseDiscription = template.caseDiscription;
+    }
     public string getMeetingId() {
-        return meetingId;
+        return caseName;
     }
 
-    public void resetSentinces() { 
-        senIndex= 0;
+
+    public MeetingCollection getCurrentMeeting() {
+        return meetings[meetingIndex];
+    }
+    public bool checkIfDoneTalking() {
+        return (sentincesIndex < meetings[meetingIndex].meetingSentences.Length);
     }
 
-    public bool updateSenIndex() {
-        senIndex++;
-
-        if (senIndex >= sentinces.Length) {
-            resetSentinces();
-            return false;
-        }
-
-        return true;
+    public bool checkIfCaseIsDone() {
+        caseClosed = (meetingIndex >= meetings.Length);
+        return caseClosed;
     }
+
+    public void goToNextClientMeeting() { 
+        meetingIndex++;
+    }
+
     public int returnSentince()
     {
-        return sentinces[senIndex];
+        int i = meetings[meetingIndex].meetingSentences[sentincesIndex];
+        sentincesIndex++;
+        return i;
     }
 
 }
+[Serializable]
+public struct MeetingCollection {
+    public string name;
+    public bool haveEncountered;
+    public GameObject meetingPrefab;
+    public int[] meetingSentences;
+}
+
