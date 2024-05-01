@@ -16,17 +16,13 @@ public class GameManager : MonoBehaviour
 {
     [Header("Events")]
     public UnityEvent clientMeetingDone;
-
-    [Header("Client Meeting")]
-    [Header("Managers (Karen Moment)")]
+    [Header("Managers")]
     public static GameManager instance;
-    [SerializeField] public ClientManager clm;
-    [SerializeField] 
-    MarketManager mm;
-    [SerializeField]
-    private LoanManager loanManager;
-
-    CaseManager csm;
+    public ClientManager clm;
+    public MarketManager mm;
+    public CaseManager csm;
+    public GUIManager guim;
+    public DialogueManager dlm;
 
     //DET HER SKAL FIKSES - Case manager skal integreres bedre.
     /*[Header("Client Meeting")]
@@ -59,10 +55,6 @@ public class GameManager : MonoBehaviour
     TMP_Text mountCounter;
     string counterString;
 
-    [Header("Menu Stuff")]
-    public GameObject action_Menu;
-    public GameObject talkClient_BTN, checkComputer_Btn, AskforHelp_btn;
-
     private void Awake()
     {
         //Singleton pattern
@@ -71,16 +63,14 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             clientMeetingDone = new UnityEvent();
-            loanManager = new LoanManager();
         }
         else
         {
             Destroy(gameObject);
             return;
         }
-
+        dlm = DialogueManager.instance;
         counterString = mountCounter.text;
-        //loanManager = FindObjectOfType<LoanManager>();
     }
 
     private void Update()
@@ -92,8 +82,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        nextMounth();
-        //createLoan();
+        updateTurn();
     }
 
     /// <summary>
@@ -102,23 +91,8 @@ public class GameManager : MonoBehaviour
     public void updateTurn() 
     {
 
-        //change to the next event
-        nextMounth();
-    }
-
-    /// <summary>
-    /// This function change the mounth and clear out the old 
-    /// #TODO: SKRIVES IND I UPDATE TURN
-    /// </summary>
-    public void nextMounth() {
-        //Log what needs to be logged
-        //Change the mounth
         newMounth();
-        
     }
-
-
-
 
     /// <summary>
     /// Decides what should happend this mounth
@@ -190,23 +164,8 @@ public class GameManager : MonoBehaviour
         }
         else if (turnT == TurnType.Change_forCustomer || turnT == TurnType.New_customer)
         {
-            action_Menu.SetActive(true);
-            talkClient_BTN.SetActive(true);
-        }
-    }
+            guim.showActionMenu();
 
-    /// <summary>
-    /// This function is called from the action menu and start the clietn talked 
-    /// It is controlled by the turnT if it should be a client introduction or client metting
-    /// </summary>
-    public void startConviencation() {
-        action_Menu.SetActive(false);
-        talkClient_BTN.SetActive(false);
-        if (turnT == TurnType.Change_forCustomer)
-        {
-            clientMeeting();
-        } else if (turnT == TurnType.New_customer) {
-            newCustomer();
         }
     }
 
@@ -214,7 +173,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This functions adds a new customoer
     /// </summary>
-    void newCustomer() {
+    public void newCustomer() {
         if (clm.getClientsTempCount() <= 1)
         {
             clm.canGenerateMoreClients = false;
@@ -318,7 +277,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Loan loan = mm.checkIfTimeIsUpForLoan();
-            if (loan == null) {
+            if (loan != null) {
                 Debug.Log("Change For Loan");
                 if (loan.loanAmount == 360) {
                     Debug.Log("Loan Done");
@@ -340,9 +299,6 @@ public class GameManager : MonoBehaviour
         }
         return turnTypeIndex;
     }
-    public void Method()
-    {
-        throw new System.NotImplementedException(); }
     /// <summary>
     /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed and return the currentClient
     /// </summary>
@@ -373,6 +329,7 @@ public class GameManager : MonoBehaviour
 
     public void createClientMeeting()
     {
+        Debug.Log("Create client meeting " + csm.clientMeetIndex + " " + csm.clientMeetingsTemplates + " " + csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab + " " + clm.getrRandomClient());
         createClientMeeting(csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab, clm.getrRandomClient());
 
     }
@@ -396,6 +353,11 @@ public class GameManager : MonoBehaviour
             updateTurn();        
         }
             
+    }
+
+    internal TurnType getCurrentTurnType()
+    {
+        return turnT;
     }
 }
 

@@ -12,9 +12,14 @@ public class ClientCutOutController : MonoBehaviour
     }
     public void updateState(ClientPresState state) {
         cm.changeClientPresState(state);
-        Debug.LogAssertion("ALLO MAND OBJECT ER" + (GameManager.instance.currentClientMeeting != null ));
+        Debug.LogAssertion("ALLO MAND OBJECT ER" + (GameManager.instance.csm.currentClientMeeting != null ));
         if (state == ClientPresState.talking) {
-            DialogueManager.instance.nextSentince = GameManager.instance.clientMeetingsTemplates[GameManager.instance.clientMeetIndex].returnSentince();
+            DialogueManager.instance.nextSentince = 
+                GameManager.instance.csm.clientMeetingsTemplates[
+                    GameManager.instance.csm.clientMeetIndex
+                    ]
+                .returnSentince();
+
             Debug.Log("startTalking");
             cm.clientStartTalking();
         }
@@ -27,9 +32,9 @@ public class ClientCutOutController : MonoBehaviour
     public void dialogueDone()
     {
         
-        if (GameManager.instance.clientMeetingsTemplates[GameManager.instance.clientMeetIndex].updateSenIndex())
+        if (GameManager.instance.csm.clientMeetingsTemplates[GameManager.instance.csm.clientMeetIndex].updateSenIndex())
         {
-            DialogueManager.instance.nextSentince = GameManager.instance.clientMeetingsTemplates[GameManager.instance.clientMeetIndex].returnSentince();
+            DialogueManager.instance.nextSentince = GameManager.instance.csm.clientMeetingsTemplates[GameManager.instance.csm.clientMeetIndex].returnSentince();
         }
         else
         {

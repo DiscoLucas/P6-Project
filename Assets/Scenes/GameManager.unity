@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2684,26 +2684,11 @@ MonoBehaviour:
   clientMeetingDone:
     m_PersistentCalls:
       m_Calls: []
-  cm: {fileID: 1181538538}
+  clm: {fileID: 1181538538}
   mm: {fileID: 3097740107927630391}
-  clientMeetingsTemplates:
-  - canBeUsedMoreThanOnes: 0
-    clientThatHaveUsed: []
-    meetingId: "Maximum L\xE5n"
-    meetingPrefab: {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93,
-      type: 3}
-    sentinces: 00000000010000000200000003000000
-    senIndex: 0
-  - canBeUsedMoreThanOnes: 1
-    clientThatHaveUsed: []
-    meetingId: "Kan jeg k\xF8be dette"
-    meetingPrefab: {fileID: 3301004322246205049, guid: 6ee4f33b6a839704499b7c92a032f13f,
-      type: 3}
-    sentinces: 03000000
-    senIndex: 0
-  clientMeetIndex: -1
-  currentClientMeeting: {fileID: 0}
-  clientMeetingTransform: {fileID: 448629446}
+  csm: {fileID: 346325563}
+  guim: {fileID: 2069508408}
+  dlm: {fileID: 0}
   startType: 3
   turnType:
   - name: Nothing
@@ -2726,10 +2711,6 @@ MonoBehaviour:
   timeSkipCacth: 12
   turnCounterObj: {fileID: 270603309}
   mountCounter: {fileID: 1243945937}
-  action_Menu: {fileID: 497196692}
-  talkClient_BTN: {fileID: 1423768828}
-  checkComputer_Btn: {fileID: 0}
-  AskforHelp_btn: {fileID: 0}
 --- !u!4 &305047533
 Transform:
   m_ObjectHideFlags: 0
@@ -3217,6 +3198,68 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &346325561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 346325562}
+  - component: {fileID: 346325563}
+  m_Layer: 0
+  m_Name: CaseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &346325562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346325561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1739639539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &346325563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346325561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d3eaf745a150548986561aa100d626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _case:
+    canBeUsedMoreThanOnes: 1
+    clientThatHaveUsed: []
+    meetingId: 
+    meetingPrefab: {fileID: 638569465}
+    sentinces: 000000000100000002000000
+    senIndex: 0
+  clientMeetingsTemplates:
+  - canBeUsedMoreThanOnes: 0
+    clientThatHaveUsed: []
+    meetingId: ABE
+    meetingPrefab: {fileID: 3301004322246205049, guid: ee340e8af53d86e49b2311ff350bc7eb,
+      type: 3}
+    sentinces: 000000000000000000000000
+    senIndex: 0
+  clientMeetIndex: 0
+  currentClientMeeting: {fileID: 0}
+  clientMeetingTransform: {fileID: 448629446}
 --- !u!1 &362612810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4863,6 +4906,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 595346307}
   m_CullTransparentMesh: 1
+--- !u!1 &638569465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6063510723452162348, guid: ece04f66681058f40a464fd2bed79d51,
+    type: 3}
+  m_PrefabInstance: {fileID: 3385953013273117095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &641713309
 GameObject:
   m_ObjectHideFlags: 0
@@ -11048,9 +11097,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 305047532}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 346325563}
+        m_TargetAssemblyTypeName: CaseManager, Assembly-CSharp
         m_MethodName: startConviencation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2069508408}
+        m_TargetAssemblyTypeName: GUIManager, Assembly-CSharp
+        m_MethodName: hideActionMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13124,6 +13185,8 @@ Transform:
   - {fileID: 2042248361}
   - {fileID: 1607089600}
   - {fileID: 1248115456592116052}
+  - {fileID: 346325562}
+  - {fileID: 2069508407}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747782030
@@ -15914,6 +15977,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063792580}
   m_CullTransparentMesh: 1
+--- !u!1 &2069508406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069508407}
+  - component: {fileID: 2069508408}
+  m_Layer: 0
+  m_Name: GUIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2069508407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069508406}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1739639539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069508408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069508406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b91d639946a693e44ba995b3cf318e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action_Menu: {fileID: 497196692}
+  talkClient_BTN: {fileID: 1423768828}
 --- !u!1 &2070113923
 GameObject:
   m_ObjectHideFlags: 0
@@ -17976,7 +18085,19 @@ MonoBehaviour:
   eventDescription: {fileID: 1865791334039506422}
   eventEffect: {fileID: 8829260218923036551}
   Popup: {fileID: 400033225}
-  marketEvents: []
+  marketEvents:
+  - eventsDescription: MArket er cool
+    eventsEffect: hokus poskus
+    eventType: 2
+    rateModifier: 3
+  loanTypes: []
+  loans: []
+  timeHorizon: 1
+  dt: 0
+  step: 0
+  btnContainer: {fileID: 0}
+  graphPrefab: {fileID: 0}
+  visualizerController: {fileID: 0}
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0

@@ -157,8 +157,10 @@ public class ClientManager : MonoBehaviour
         }
     }
     public void clientDoneTalking() {
+        Debug.Log("DoneTalking");
         if (clientPresState == ClientPresState.talking)
         {
+            Debug.Log("Starting shit");
             clientPresState = ClientPresState.filling;
             GameManager.instance.createClientMeeting();
         }
