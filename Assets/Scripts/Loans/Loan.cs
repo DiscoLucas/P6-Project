@@ -9,30 +9,20 @@ using UnityEngine;
 public class Loan
 {
     [SerializeField]
-    internal double loanAmount { get; set; }
-    internal double interestRate { get; set; }
-    internal double volatility { get; set; }
+    [Tooltip("The amount that have been loaned")] internal double loanAmount { get; set; }
+    [Tooltip("The first interest rate and what is used as a start for the simulation")] internal double interestRate { get; set; }
+    [Tooltip("The voliatility of the loan (How much the price change)")] internal double volatility { get; set; }
     internal double longTermRate { get; set; }
-    public ClientData clientData;
+    [Tooltip("The client that have the loan")] public ClientData clientData;
     [Tooltip("the length of the loan in months")] public int LoanTerm;
     [Tooltip("The month that the loan was started")] internal int initialMonth { get; set; }
-    internal double RemainingLoanAmount { get; set; }
-    internal double MonthlyPayment { get; set; }
+    [Tooltip("[Not in use] The mount that still need to be payed")] internal double RemainingLoanAmount { get; set; }
+    [Tooltip("[Not in use] How much the client pay per mounth ")] internal double MonthlyPayment { get; set; }
 
     [SerializeField]
-    internal List<double> IRForTime = new List<double>();
+    [Tooltip("The intersate rates that is calulatede over time ")] internal List<double> IRForTime = new List<double>();
 
-    public bool installment = false;
-
-    /*
-     loan.ClientName = clientName;
-        loan.LoanTerm = loanTerm;
-        loan.InitialMonth = curentMonth;
-        loan.loanAmount = loanAmount;
-        loan.interestRate = interestRate;
-        loan.volatility = volatility;
-        loan.longTermRate = longTermRate;
-     */
+    [Tooltip("Do the loan have installment")] public bool installment = false;
     public Loan(ClientData client,int LoanTerm, double loanAmount, double interestRate, double volatility, double longTermRate, int startMount,bool installment)
     {
         this.clientData = client;
@@ -44,10 +34,18 @@ public class Loan
         this.initialMonth = startMount;
         this.installment = installment;
     }
+    /// <summary>
+    /// Return all the interest rate over time
+    /// </summary>
+    /// <returns></returns>
     public List<double> getInterestRate() {
         return IRForTime;
     }
 
+    /// <summary>
+    /// Return the first interestrate
+    /// </summary>
+    /// <returns></returns>
     public double getFirstInterestRate() {
         return interestRate;
     }

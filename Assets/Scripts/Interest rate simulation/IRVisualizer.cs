@@ -3,23 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using XCharts;
 using XCharts.Runtime;
+/// <summary>
+/// The class that controlls the graphs of the different loans
+/// </summary>
 public class IRVisualizer : MonoBehaviour
 {
-    [Header("References")]
+    [Header("Managers")]
     GameManager gameManager;
-    public LineChart LineChartIR;
+    [Header("Loan")]
+    public Loan currentShowedLoan;
+    [Header("Headers/other visual elements strings")]
     public string headerIR,headerPrice;
     public string typeSubfiix = "år", loanFast = "Fast";
-    public LineChart LineChartPrice;
-    public Loan currentShowedLoan;
     string seriesName;
     string subfix = "s lån";
-    string xAxis = "M ",secondXAxis = " D ";
+    string xAxis = "M ", secondXAxis = " D ";
+    [Header("UI elements")]
+    public LineChart LineChartPrice;
+    public LineChart LineChartIR;
     public GameObject graphArea, NoDataArea;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
 
     /// <summary>
     /// Create the initial chart with the current interest rate.
@@ -35,15 +37,27 @@ public class IRVisualizer : MonoBehaviour
         LineChartIR.AddData(0, interestRate);
     }
 
+    /// <summary>
+    /// Update the current loans
+    /// </summary>
+    /// <param name="loan"></param>
     public void setCurrentShownLoan(Loan loan) {
         currentShowedLoan = loan;
     }
 
+    /// <summary>
+    /// set the correct graph active
+    /// </summary>
     public void showGraph()
     {
         graphArea.SetActive(true);
         NoDataArea.SetActive(false);
     }
+
+    /// <summary>
+    /// Update the line chart infomation and the bool controls if it  which graph should be used
+    /// </summary>
+    /// <param name="isIR"></param>
     public void UpdateRateLineChart(bool isIR)
     {
         LineChart lineChart;
@@ -65,44 +79,12 @@ public class IRVisualizer : MonoBehaviour
             lineChart.AddXAxisData(xAxis + GameManager.instance.monthNumber + secondXAxis + (i+1));
             lineChart.AddData(0, data[i]);
         }
-        
-       /* LineChart.AddData(0, );
-
-        // convert interest rate list to array
-        double[] interestRates = gameManager.loanManager.GetIRHistory(clientName).ToArray();
-
-        for (int i = 0; i < TimeStepsSinceLastTurn(clientName); i++)
-        {
-            LineChart.AddXAxisData(xAxis + (i + 1));
-            LineChart.AddData(0, interestRates[i]);
-        }*/
     }
     public void CreateLineChart(LineChart lineChart) {
         lineChart.RemoveData();
         lineChart.AddSerie<Line>(currentShowedLoan.clientData.clientName + subfix);
         lineChart.AddXAxisData(xAxis + 0);
         lineChart.AddData(0, currentShowedLoan.getFirstInterestRate());
-    }
-
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <returns></returns>
-    /*int TimeStepsSinceLastTurn(string clientName)
-    {
-        // Calculate the months since the loan was created
-        int timeSteps = (sbyte)(gameManager.monthNumber - gameManager.loanManager.GetLoanProperty(clientName, typeof(int), "InitialMonth"));
-        // return the average time steps between each interest rate update
-        return timeSteps / gameManager.loanManager.GetIRHistory(clientName).Count;
-    }*/
-
-    int TimeStepsSinceLastTurn(Loan loan)
-    {
-        // Calculate the months since the loan was created
-        int timeSteps = GameManager.instance.monthNumber - loan.initialMonth;
-        // return the average time steps between each interest rate update
-        return timeSteps / loan.getInterestRate().Count;
     }
 
 }

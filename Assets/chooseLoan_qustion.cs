@@ -12,7 +12,7 @@ public class chooseLoan_qustion : Qustion_FeildInput
         //vælg rigigte lån type
 
         //sæt i rigtigt svar
-        loanTypes[] lt = GameManager.instance.mm.loanTypes;
+        LoanTypes[] lt = GameManager.instance.mm.loanTypes;
         wrongAnsers = Array.ConvertAll(lt, x => x.name);
         correctAnswer = wrongAnsers[0];
         //tag de fokerte låntyper og put i liste med forkerte svar
@@ -27,8 +27,8 @@ public class chooseLoan_qustion : Qustion_FeildInput
     public override void closeMeeting()
     {
         //sæt clienten til at have dette lån
-        loanTypes lt = null;
-        foreach (loanTypes loanT in GameManager.instance.mm.loanTypes)
+        LoanTypes lt = null;
+        foreach (LoanTypes loanT in GameManager.instance.mm.loanTypes)
         {
             if (loanT.name == answerFeild.options[answerFeild.value].text)
             {

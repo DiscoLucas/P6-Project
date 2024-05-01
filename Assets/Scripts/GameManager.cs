@@ -27,10 +27,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform clientMeetingTransform;
 
     [Header("References")]
-    //forslag:
-    //[SerializeField]
-    //Incidents currentInciden
-    //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
     [SerializeField]
