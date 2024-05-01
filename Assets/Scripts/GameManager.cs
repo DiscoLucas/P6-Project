@@ -4,15 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using UnityEditor;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Events;
 using static UnityEngine.ParticleSystem;
 using TMPro;
+using XCharts;
+using XCharts.Runtime;
+using Unity.VisualScripting;
+
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     [Header("Events")]
     public UnityEvent clientMeetingDone;
+
+    [Header("Client Meeting")]
     [Header("Managers (Karen Moment)")]
     public static GameManager instance;
     [SerializeField] public ClientManager clm;
@@ -32,16 +38,13 @@ public class GameManager : MonoBehaviour
     public ClientMeeting currentClientMeeting;
     [SerializeField] Transform clientMeetingTransform;*/
 
+
     [Tooltip("The amount of time that passes on every turn. each unit is 1 month")] 
     public readonly static float timeHorizon = 1f;
     [Tooltip("Time increments calculated in each time horizon.")] 
     public readonly static float dt = timeHorizon / 4f;
 
     [Header("References")]
-    //forslag:
-    //[SerializeField]
-    //Incidents currentInciden
-    //[SerializeField] List<Incident> Incidents incidents;
     public int startType = 0;
     public TurnEvent[] turnType;
     [SerializeField]
@@ -61,6 +64,11 @@ public class GameManager : MonoBehaviour
     public GameObject action_Menu;
     public GameObject talkClient_BTN, checkComputer_Btn, AskforHelp_btn;
 
+    [Header("Managers (Karen Moment)")]
+    public ClientManager cm;
+    public MarketManager mm;
+    public LoanManager loanManager;
+
     private void Awake()
     {
         //Singleton pattern
@@ -69,6 +77,7 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
             clientMeetingDone = new UnityEvent();
+            loanManager = new LoanManager();
         }
         else
         {
@@ -83,13 +92,14 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown("space")) {
-            nextMounth();
+            //createLoan();
         }
     }
 
     private void Start()
     {
         nextMounth();
+        //createLoan();
     }
 
     /// <summary>
@@ -102,95 +112,19 @@ public class GameManager : MonoBehaviour
         nextMounth();
     }
 
-    private void SimulateIR() // Todo: handle case where loan is fixed or paid off
-    {
-
-            var marketEvent = mm.GetMarketEvent();
-            double volatility = 1;
-            double interestRateChange = 1;
-            double housingMarked =1;
-            if (marketEvent != null)
-            {
-                // Switch between modifiers based on the event type
-                switch (marketEvent.eventType)
-                {
-                    case MarketManager.MarketEventType.InterestRateChange:
-                        interestRateChange = updateModifer(marketEvent.rateModifier);
-                        break;
-
-                    case MarketManager.MarketEventType.VolatilityChange:
-                        volatility = updateModifer(marketEvent.rateModifier);
-                        break;
-
-                    case MarketManager.MarketEventType.HousingPriceChange:
-                        housingMarked = updateModifer(marketEvent.rateModifier);
-                        break;
-                }
-            }
-
-            try
-            {
-                // iterate over each loan and update the interest rate
-                foreach (var kvp in loanManager.loanDict)
-                {
-                    string clientName = kvp.Key;
-                    Loan loan = kvp.Value;
-                    IRModifierUpdater(clientName, loan, volatility,interestRateChange,housingMarked);
-
-                }
-            }
-            catch (Exception e)
-            {
-                Debug.LogWarning("Error in SimulateIR, there probably wasn't any loans in the dictionary: " + e.Message);
-            }
-            
-    }
-
-    double updateModifer(double percentechange) {
-        if (percentechange > 0)
-        {
-            return (percentechange / 100) + 1;
-        }
-        else {
-            return 1-(percentechange / 100);
-        }
-    }
-
-    void IRModifierUpdater(string clientName, Loan loan,double volatility,double interestRateChange, double housingMarked)
-    {
-        // if the the interest history is not empty, use the last value as the current rate
-        if (loan.IRForTime.Count != 0)
-        {
-            IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last()* interestRateChange, loan.volatility*volatility, loan.longTermRate);
-            loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
-        }
-        else // if the interest history is empty, use the initial interest rate
-        {
-            IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate * interestRateChange, loan.volatility * volatility, loan.longTermRate); // TODO: add market modifier to the parameters
-            loanManager.UpdateIR(clientName, model.PredictIRforTimeInterval(dt, timeHorizon));
-        }
-    }
-
-    
-
     /// <summary>
-    /// This function change the mounth and clear out the old
+    /// This function change the mounth and clear out the old 
+    /// #TODO: SKRIVES IND I UPDATE TURN
     /// </summary>
     public void nextMounth() {
         //Log what needs to be logged
-
-        //Update Ir
-        try {
-            SimulateIR();
-        }
-        catch (Exception e) {
-            Debug.LogError(e.ToString());
-        }
         //Change the mounth
         newMounth();
+        
     }
 
-    
+
+
 
     /// <summary>
     /// Decides what should happend this mounth
@@ -199,6 +133,10 @@ public class GameManager : MonoBehaviour
         monthNumber++;
         int turnTypeIndex = decideWhatShouldHappend();
         bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
+
+        mm.simulateIR();
+        if (turnType[turnTypeIndex].type == TurnType.New_customer && cm.canGenerateMoreClients && !needChange)
+
         if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
         {
             turnT = TurnType.New_customer;
@@ -386,7 +324,17 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < turnType.Length; i++)
+            Loan loan = mm.checkIfTimeIsUpForLoan();
+            if (loan == null) {
+                Debug.Log("Change For Loan");
+                if (loan.loanAmount == 360) {
+                    Debug.Log("Loan Done");
+                }
+                return turnType.Length - 1;
+            }
+
+
+            for (int i = 0; i < turnType.Length-1; i++)
             {
                 float guessValue = UnityEngine.Random.Range(0, 100);
 

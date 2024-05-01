@@ -51,7 +51,7 @@ public class FinanceData
     public float yearlyIncome;
     public float debt;
     public float debtFactor = 4;
-    public float neededLoan;
+    public float neededLoan = 1;
 
     public FinanceData(ClientTemplate template)
     {

@@ -5,11 +5,11 @@ using TMPro;
 public class Qustion_FeildInput : Qustion
 {
     [SerializeField]
-    TMP_Dropdown answerFeild;
+    protected TMP_Dropdown answerFeild;
     [SerializeField]
-    string[] wrongAnsers;
+    protected string[] wrongAnsers;
     [SerializeField]
-    string correctAnswer;
+    protected string correctAnswer;
 
 
 
