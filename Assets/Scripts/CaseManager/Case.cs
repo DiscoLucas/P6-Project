@@ -15,14 +15,16 @@ public class Case
     [Tooltip("Which meeting they need to be in")]public int meetingIndex = 0;
     public int sentincesIndex = 0;
     public bool caseClosed = false;
+    public bool needLoan;
     public string caseDiscription;
-
+    public int nextImportenTurn = -1;
     public Case(CaseTemplate template,ClientData _client) {
         caseName = template.caseName;
         meetings= template.meetings;
         client = _client;
         type= template.customerType;
         caseDiscription = template.caseDiscription;
+        needLoan= template.needLoan;
     }
     public string getMeetingId() {
         return caseName;
@@ -38,11 +40,13 @@ public class Case
 
     public bool checkIfCaseIsDone() {
         caseClosed = (meetingIndex >= meetings.Length);
+        Debug.Log("Meeting Done and there are more : " + !caseClosed);
         return caseClosed;
     }
 
     public void goToNextClientMeeting() { 
         meetingIndex++;
+        sentincesIndex = 0;
     }
 
     public int returnSentince()

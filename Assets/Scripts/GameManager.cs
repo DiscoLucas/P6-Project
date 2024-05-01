@@ -99,30 +99,54 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void newMounth() {
         monthNumber++;
-        int turnTypeIndex = decideWhatShouldHappend();
         bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
-
         mm.simulateIR();
 
-        if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
-        {
-            turnT = TurnType.New_customer;
-            //newCustomer();
-            mn_lastIncedient = monthNumber;
-            showTurnCounter();
-        }
-        else if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer || needChange)
+        Case @case = csm.getCasesThatNeedUpdate(monthNumber);
+        int turnTypeIndex = 0;
+        if (@case != null)
         {
             turnT = TurnType.Change_forCustomer;
-            //clientMeeting();
             mn_lastIncedient = monthNumber;
             showTurnCounter();
+            return;
+        }
+        else {
+            turnTypeIndex = decideWhatShouldHappend();
+        }
+        
 
+        if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer || needChange)
+        {
+            turnT = TurnType.Change_forCustomer;
+            Case c = csm.getCasesThatCanUpdate();
+            if (c == null)
+            {
+                if (clm.canGenerateMoreClients)
+                {
+                    turnT = TurnType.New_customer;
+                    mn_lastIncedient = monthNumber;
+                    showTurnCounter();
+                }
+                else
+                {
+                    newMounth();
+                }
+            }
+            else {
+                mn_lastIncedient = monthNumber;
+                showTurnCounter();
+            }
+
+        }else if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
+        {
+            turnT = TurnType.New_customer;
+            mn_lastIncedient = monthNumber;
+            showTurnCounter();
         }
         else if (turnType[turnTypeIndex].type == TurnType.Evnet)
         {
             turnT = TurnType.Evnet;
-            //markedEvent();
             mn_lastIncedient = monthNumber;
             showTurnCounter();
         }
@@ -205,45 +229,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void clientMeeting()
     {
-        Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
-        ClientData client = clm.getrRandomClient();
-        csm.currentCaseIndex = UnityEngine.Random.Range(0, csm.currentCases.Count);
-        getAndSetnewMeetIndex(client, 10);
-        clm.startClientIntro(client);
-        clm.currentClient = client;
+        Case c = csm.getCurrentCase();
+        clm.currentClient = c.client;
+        clm.startClientIntro(c.client);
     }
 
-    public void getAndSetnewMeetIndex(ClientData client, int tryes) {
-        if (tryes < 0)
-        {
-            for (int i = 0; i < csm.currentCases.Count; i++)
-            {
-                csm.currentCaseIndex = i;
-                if (seeIfClientHaveTriedThisMeetingBefore(client)) {
-                    return;
-                }
-            }
-        }
-        else {
-            csm.currentCaseIndex = UnityEngine.Random.Range(0, csm.currentCases.Count);
-                if (!seeIfClientHaveTriedThisMeetingBefore(client)) {
-                    getAndSetnewMeetIndex(client, tryes - 1);
-                }
-        }
-        
-    }
-
-    /// <summary>
-    /// TODO:FIX
-    /// </summary>
-    /// <param name="client"></param>
-    /// <returns></returns>
-    bool seeIfClientHaveTriedThisMeetingBefore(ClientData client)
-    {
-        bool found = true;
-
-        return found;
-    }
 
 
     /// <summary>

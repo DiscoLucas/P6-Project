@@ -15,9 +15,7 @@ public class ClientCutOutController : MonoBehaviour
         Debug.LogAssertion("ALLO MAND OBJECT ER" + (GameManager.instance.csm.currentClientMeeting != null ));
         if (state == ClientPresState.talking) {
             DialogueManager.instance.nextSentince = 
-                GameManager.instance.csm.currentCases[
-                    GameManager.instance.csm.currentCaseIndex
-                    ]
+                GameManager.instance.csm.getCurrentCase()
                 .returnSentince();
 
             Debug.Log("startTalking");

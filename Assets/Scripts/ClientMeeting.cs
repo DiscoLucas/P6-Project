@@ -8,10 +8,6 @@ public class ClientMeeting : MonoBehaviour
     public Transform qutionsParrent;
     public List<Qustion> qustions= new List<Qustion>();
     public bool allneedTobecorrect = false;
-    public void Awake()
-    {
-        
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +16,7 @@ public class ClientMeeting : MonoBehaviour
         foreach (Transform child in qutionsParrent)
         {
             Qustion q = child.GetComponent<Qustion>();
+            Debug.Log("Checking For Qustion in: " + child.name + " Qustion exits: " + (q != null));
             if (q != null) {
                 q.manager = this;
                 q.client = currentClient;

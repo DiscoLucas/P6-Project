@@ -45,11 +45,20 @@ public class ClientManager : MonoBehaviour
 
     }
     /// <summary>
-    /// The the amount of clients generatede
+    /// The the amount of clients templates
     /// </summary>
     /// <param name="template"></param>
     public int getClientsTempCount() {
         return templates.Count;
+    }
+
+    /// <summary>
+    /// The the amount of clients generatede
+    /// </summary>
+    /// <param name="template"></param>
+    public int getClientsCount()
+    {
+        return clients.Count;
     }
 
     /// <summary>
@@ -106,6 +115,10 @@ public class ClientManager : MonoBehaviour
 
 
         return clients[index];
+    }
+
+    public void cantCreateMore() {
+        canGenerateMoreClients = false;
     }
 
     /// <summary>

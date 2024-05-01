@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.ParticleSystem;
 
@@ -43,6 +44,8 @@ public class CaseManager : MonoBehaviour
         CaseTemplate ct = templates[Random.Range(0, count)];
         Case c = new Case(ct, clientData);
         currentCases.Add(c);
+        if (needClosedCases >= (closedCases + GameManager.instance.clm.getClientsCount()))
+            GameManager.instance.clm.cantCreateMore();
         currentCaseIndex = currentCases.Count - 1;
         
     }
@@ -68,5 +71,39 @@ public class CaseManager : MonoBehaviour
         {
             GameManager.instance.newCustomer();
         }
+    }
+
+
+    public Case getCasesThatCanUpdate()
+    {
+        Case c = null;
+        for (int i = 0; i < currentCases.Count; i++) {
+            Case cas = currentCases[i];
+            if (!cas.needLoan)
+            {
+                currentCaseIndex = i;
+                c = cas;
+                break;
+            }
+        }
+        return c;   
+    }
+    /// <summary>
+    /// Give the case that need to be opdatede
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public Case getCasesThatNeedUpdate(int mountCounter) {
+        Debug.LogWarning("THIS METHOD IS NOT IMPLEMENTEDE YET!");
+        Case c = null;
+        for (int i = 0; i < currentCases.Count; i++)
+        {
+            Case cas = currentCases[i];
+            if (cas.nextImportenTurn >= mountCounter)
+            {
+                c = cas;
+            }
+        }
+        return c;
     }
 }
