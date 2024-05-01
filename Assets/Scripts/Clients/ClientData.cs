@@ -7,6 +7,11 @@ public enum MaritalStatus {
     Married,
     Partner
 }
+[System.Serializable]
+public enum CustomerType {
+    Young,
+    Older
+}
 
 [System.Serializable]
 public class ClientData
@@ -24,8 +29,8 @@ public class ClientData
     public float minPitch;
     public float maxPitch;
     [Header("Case Discription")]
-    public string caseDiscription;
     public int firstCaseIndex;
+    public CustomerType customerType;
     public ClientData(ClientTemplate template) {
         clientName = template.clientName;
         age = template.age;
@@ -34,11 +39,11 @@ public class ClientData
         maritalStatus = template.maritalStatus;
         sprite = template.chacterSprite;
         Finance = new FinanceData(template);
-        caseDiscription = template.caseDescription;
         minPitch = template.minPitch;
         maxPitch = template.maxPitch;
         firstCaseIndex = template.startClientmeeting;
         startMeet = template.startMeet;
+        customerType = template.customerType;
     }
 }
 [System.Serializable]

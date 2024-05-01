@@ -12,8 +12,7 @@ public class ClientTemplate : ScriptableObject
     public string job;
     public string city;
     public MaritalStatus maritalStatus;
-    [TextArea(3, 10)]
-    public string caseDescription;
+    public CustomerType customerType;
     public Sprite chacterSprite;
     public float minPitch;
     public float maxPitch;

@@ -99,30 +99,54 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void newMounth() {
         monthNumber++;
-        int turnTypeIndex = decideWhatShouldHappend();
         bool needChange = (MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth);
-
         mm.simulateIR();
 
-        if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
-        {
-            turnT = TurnType.New_customer;
-            //newCustomer();
-            mn_lastIncedient = monthNumber;
-            showTurnCounter();
-        }
-        else if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer || needChange)
+        Case @case = csm.getCasesThatNeedUpdate(monthNumber);
+        int turnTypeIndex = 0;
+        if (@case != null)
         {
             turnT = TurnType.Change_forCustomer;
-            //clientMeeting();
             mn_lastIncedient = monthNumber;
             showTurnCounter();
+            return;
+        }
+        else {
+            turnTypeIndex = decideWhatShouldHappend();
+        }
+        
 
+        if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer || needChange)
+        {
+            turnT = TurnType.Change_forCustomer;
+            Case c = csm.getCasesThatCanUpdate();
+            if (c == null)
+            {
+                if (clm.canGenerateMoreClients)
+                {
+                    turnT = TurnType.New_customer;
+                    mn_lastIncedient = monthNumber;
+                    showTurnCounter();
+                }
+                else
+                {
+                    newMounth();
+                }
+            }
+            else {
+                mn_lastIncedient = monthNumber;
+                showTurnCounter();
+            }
+
+        }else if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
+        {
+            turnT = TurnType.New_customer;
+            mn_lastIncedient = monthNumber;
+            showTurnCounter();
         }
         else if (turnType[turnTypeIndex].type == TurnType.Evnet)
         {
             turnT = TurnType.Evnet;
-            //markedEvent();
             mn_lastIncedient = monthNumber;
             showTurnCounter();
         }
@@ -183,13 +207,10 @@ public class GameManager : MonoBehaviour
         if(clm != null)
         {
             ClientData client = clm.getNewClient();
-            csm.clientMeetIndex = client.firstCaseIndex;
+            csm.createCase(client);
             clm.startClientIntro(client);
             clm.currentClient= client;
-            if(!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
-                csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
         }
-        //createClientMeeting(clientMeetingPrefabs[0]);
     }
 
     /// <summary>
@@ -208,59 +229,11 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void clientMeeting()
     {
-        Debug.Log("Client meeting have startede" + " Mounth: " + monthNumber);
-        ClientData client = clm.getrRandomClient();
-        csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
-        getAndSetnewMeetIndex(client, 10);
-        clm.startClientIntro(client);
-        clm.currentClient = client;
-        if (!csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
-            csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Add(client.clientName);
-
-        //Client walks in, like in newCustomer function
-        //Client choses speech that revolves around getting update to bonds "Hey jeg har f�et bedre arbejde lol"
-        //Player gets to fill out the correct paper work - Dette slutter af med en ja/nej
-        //Client g�r som player siger
+        Case c = csm.getCurrentCase();
+        clm.currentClient = c.client;
+        clm.startClientIntro(c.client);
     }
 
-    public void getAndSetnewMeetIndex(ClientData client, int tryes) {
-        if (tryes < 0)
-        {
-            for (int i = 0; i < csm.clientMeetingsTemplates.Length; i++)
-            {
-                csm.clientMeetIndex = i;
-                if (seeIfClientHaveTriedThisMeetingBefore(client)) {
-                    return;
-                }
-            }
-        }
-        else {
-            csm.clientMeetIndex = UnityEngine.Random.Range(0, csm.clientMeetingsTemplates.Length);
-            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].canBeUsedMoreThanOnes)
-            {
-                return;
-            }else {
-                if (!seeIfClientHaveTriedThisMeetingBefore(client)) {
-                    getAndSetnewMeetIndex(client, tryes - 1);
-                }
-            }
-        }
-        
-    }
-
-    bool seeIfClientHaveTriedThisMeetingBefore(ClientData client)
-    {
-        bool found = true;
-        for (int i = 0; i < csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed.Count; i++)
-        {
-            if (csm.clientMeetingsTemplates[csm.clientMeetIndex].clientThatHaveUsed[i] == client.clientName)
-            {
-                found = false; break;
-            }
-        }
-
-        return found;
-    }
 
 
     /// <summary>
@@ -329,8 +302,7 @@ public class GameManager : MonoBehaviour
 
     public void createClientMeeting()
     {
-        Debug.Log("Create client meeting " + csm.clientMeetIndex + " " + csm.clientMeetingsTemplates + " " + csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab + " " + clm.getrRandomClient());
-        createClientMeeting(csm.clientMeetingsTemplates[csm.clientMeetIndex].meetingPrefab, clm.getrRandomClient());
+        createClientMeeting(csm.currentCases[csm.currentCaseIndex].getCurrentMeeting().meetingPrefab, clm.getrRandomClient());
 
     }
 
@@ -341,13 +313,12 @@ public class GameManager : MonoBehaviour
         //Destory the current object
         if (csm.currentClientMeeting != null)
         {
-            Destroy(csm.currentClientMeeting.gameObject);
+            csm.endMeeting();
         }
 
         if (clm.currentClient != null) {
             clm.currentClient = null;
         }
-        csm.clientMeetIndex = -1;
 
         if (!clm.ClientObject.active) {
             updateTurn();        

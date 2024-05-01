@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
-  m_Name: Albert
+  m_Name: Ana De Armas
   m_EditorClassIdentifier: 
-  clientName: Albert
-  age: 36
-  job: "Lastbilchauff\xF8r"
-  city: Ballerup
-  maritalStatus: 1
-  customerType: 1
-  chacterSprite: {fileID: 21300000, guid: 9ea3e3aee2ed6cc46a835ceaeea045d5, type: 3}
-  minPitch: 0.4
-  maxPitch: 0.8
+  clientName: Ana
+  age: 28
+  job: Skuespiller
+  city: "K\xF8benhavn"
+  maritalStatus: 0
+  caseDescription: 
+  chacterSprite: {fileID: 21300000, guid: 3f8f6fb3540bddc4eaef4b05cc5d6da0, type: 3}
+  minPitch: 1.1
+  maxPitch: 1.5
   startMeet: 0
-  monthlyIncome: 30000
-  monthlyExpenses: 5000
-  monthlySavings: 20000
-  totalSavings: 500000
+  monthlyIncome: 35000
+  monthlyExpenses: 0
+  monthlySavings: 0
+  totalSavings: 50000
   neededLoan: 0
-  debt: 1500000
+  debt: 0
   startClientmeeting: 0

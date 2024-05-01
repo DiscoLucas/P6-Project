@@ -17,9 +17,7 @@ MonoBehaviour:
   job: Forretningsmand
   city: "Niv\xE5"
   maritalStatus: 1
-  caseDescription: "Efter at have taget til en overd\xE5dig fest, der finansielt
-    runerede mig, har jeg ikke r\xE5d til at bo i min ekstremt dyre lejebolig l\xE6ngere.
-    Jeg s\xF8ger derfor l\xE5n til en ny ejerbolig."
+  customerType: 1
   chacterSprite: {fileID: 21300000, guid: 94d6833330780b147ace6afa4e14e58b, type: 3}
   minPitch: 0.3
   maxPitch: 0.7

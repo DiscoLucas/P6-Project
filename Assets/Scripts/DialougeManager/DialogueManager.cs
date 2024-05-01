@@ -101,7 +101,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayCaseSummary()
     {
-        string caseSum = clientData.caseDiscription;
+        string caseSum = GameManager.instance.csm.getCurrentCase().caseDiscription;
         DisplayOneSentince(caseSum);
     }
 
