@@ -9,6 +9,9 @@ TagManager:
   - Tab
   - Page
   - MailText
+  - Dialog Box
+  - Main Canvas
+  - GUI Manager
   layers:
   - Default
   - TransparentFX

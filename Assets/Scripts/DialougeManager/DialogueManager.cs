@@ -20,8 +20,8 @@ public class DialogueManager : MonoBehaviour
     public ClientInfo clientInfo;
 
     public Animator animator;
+    GUIManager guiManager;
 
-    private Queue<string> sentensis;
     public static DialogueManager instance;
 
     [Range(1, 3)]
@@ -42,7 +42,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        
+        if (guiManager == null) guiManager = GameObject.FindWithTag("GUI Manager").GetComponent<GUIManager>();
+        else throw new System.Exception("There is either more than one GUIManager in the scene, or none");
+
         clientData = new ClientData(clietntTemp);
         //Singleton pattern
         if (instance == null)
@@ -61,7 +63,6 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        sentensis = new Queue<string>();
 
         gameObject_continue.SetActive(true);
         gameObject_end.SetActive(false);
@@ -78,26 +79,17 @@ public class DialogueManager : MonoBehaviour
     /// <param name="registryIndex"></param>
     public void StartDia(int registryIndex)
     {
+        if (hasRun)
+        {
+            DisplayCaseSummary();
+            return;
+        }
         isWorking = true;
         string sentince = thisSentince(registryIndex);
         DisplayOneSentince(sentince);
+        
     }
 
-    // Method to start dialogue with the given sentences
-    public void StartDialogue(string[] sentences)
-    {
-        animator.SetBool("IsOpen", true);
-        nameText.text = clientData.clientName;
-
-        sentensis.Clear();
-
-        foreach (string sentence in sentences)
-        {
-            sentensis.Enqueue(sentence);
-        }
-
-        DisplayNextScentence();
-    }
 
     private void DisplayCaseSummary()
     {
@@ -118,7 +110,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextScentence()
     {
-        if (hasRun == false) //if the queue created by Endqueue() reaches 0 EndDialogue() is called.
+        if (hasRun == false)
         {
             string newSentence = thisSentince(nextSentince);
             DisplayOneSentince(newSentence);
@@ -126,6 +118,7 @@ public class DialogueManager : MonoBehaviour
         }
         else if (hasRun)
         {
+            EndDialogue();
             DisplayCaseSummary();
             hasRun = true;
             return;
@@ -142,8 +135,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (hasRun == false)
         {
-            gameObject_continue.SetActive(true);
-            gameObject_end.SetActive(false);
             sentinceDone.Invoke();
         }
         else if (hasRun)
