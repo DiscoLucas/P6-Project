@@ -77,9 +77,7 @@ public class ClientMeeting : MonoBehaviour
                 commentSystem.NegComment();
             }
         }
-        points /= qustions.Count;
         qustions[0]._case.canMoveToNext = canProcede;
-        GameManager.instance.points = points;
         GameManager.instance.closeMeeting();
     }
 }

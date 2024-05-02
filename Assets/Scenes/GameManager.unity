@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -488,7 +488,7 @@ MonoBehaviour:
   csm: {fileID: 346325563}
   guim: {fileID: 2069508408}
   dlm: {fileID: 0}
-  cm: {fileID: 751422406}
+  cm: {fileID: 0}
   startType: 3
   turnType:
   - name: Nothing
@@ -745,9 +745,18 @@ MonoBehaviour:
       IRPForTime: []
       installment: 0
       fixedIR: 0
+      lastPeriod: 0
+      loanTypes:
+        name: 
+        loanTime: 0
+        installment: 0
+        interssetRate: 0
+        volatility: 0
+        longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
+    canMoveToNext: 0
     needLoan: 0
     caseDiscription: 
     nextImportenTurn: 0
@@ -1428,25 +1437,13 @@ PrefabInstance:
     - target: {fileID: 5156919227113765190, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f288332e4eccdcb41a52aa9a76709d1f, type: 3}
---- !u!114 &751422406 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6108045764348232812, guid: f288332e4eccdcb41a52aa9a76709d1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 751422405}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e02c08cadee8a41aef84ed3257e59d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1043708556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,9 +1596,6 @@ MonoBehaviour:
   canGenerateMoreClients: 1
   templates:
   - {fileID: 11400000, guid: d2162486cf55d5344951b97b41450c8b, type: 2}
-  - {fileID: 11400000, guid: 48c2b5ebf71a8f442b22365650c10810, type: 2}
-  - {fileID: 11400000, guid: 4cc1830e2a09381428ba3aa64d9d3241, type: 2}
-  - {fileID: 11400000, guid: 7b880f7bb5ecb154883d57fec4004c47, type: 2}
   clients: []
   currentClient:
     clientName: 
@@ -2179,6 +2173,12 @@ Transform:
 --- !u!1 &1449455392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5156919227113765190, guid: f288332e4eccdcb41a52aa9a76709d1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 751422405}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1593094858 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3183970717710616683, guid: f288332e4eccdcb41a52aa9a76709d1f,
     type: 3}
   m_PrefabInstance: {fileID: 751422405}
   m_PrefabAsset: {fileID: 0}
@@ -3790,7 +3790,7 @@ MonoBehaviour:
   step: 0
   priceInterestRateMultiplyer: 10
   installWithoutmentMultiplyer: 0.03
-  btnContainer: {fileID: 0}
+  btnContainer: {fileID: 1593094858}
   graphPrefab: {fileID: 3054240563043014080, guid: 3a7e2b8fa2c85fb4aa8ae2e4ee740826,
     type: 3}
   visualizerController: {fileID: 0}
