@@ -28,30 +28,15 @@ public class ScoreManager : MonoBehaviour
         slider = gameObject.GetComponent<Slider>();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //To test if the ProgressWorks works:
-        //ProgressWorks(0.75f);
-
-        scoreText.text = score.ToString() + "Percents";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (slider.value < targetScore)
-        {
-            slider.value += FillSpeed * Time.deltaTime;
-        }
-            
-    }
-
     public void AddPoint()
     {
         score += addedScore;
-        scoreText.text = score.ToString() + "Percents";
         ProgressWorks(FillSpeed);
+    }
+    public void MinusPoint()
+    {
+        score -= addedScore;
+        Backtrack(FillSpeed);
     }
 
     //Add Score to the bar
@@ -59,13 +44,6 @@ public class ScoreManager : MonoBehaviour
     {
         targetScore += newProgress;
         slider.value = targetScore;
-    }
-
-    public void MinusPoint()
-    {
-        score -= addedScore;
-        scoreText.text = score.ToString() + "Percents";
-        Backtrack(FillSpeed);
     }
 
     public void Backtrack(float newProgress)

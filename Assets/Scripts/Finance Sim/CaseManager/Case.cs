@@ -70,6 +70,13 @@ public class Case
         return i;
     }
 
+    public int assistantSentinceReturn()
+    {
+        int i = meetings[meetingIndex].assistantSaulSentensis[sentincesIndex];
+        sentincesIndex++;
+        return i;
+    }
+
 }
 [Serializable]
 public struct MeetingCollection {
@@ -78,5 +85,6 @@ public struct MeetingCollection {
     public GameObject meetingPrefab;
     public int[] meetingSentences;
     public bool needToFinnishToProgress;
+    public int[] assistantSaulSentensis;
 }
 

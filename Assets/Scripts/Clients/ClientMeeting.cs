@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ClientMeeting : MonoBehaviour
 {
+    CommentSystem commentSystem;
     public ClientData currentClient;
     public Case currentCase;
     public Transform qutionsParrent;
@@ -13,6 +14,7 @@ public class ClientMeeting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        commentSystem = GameManager.instance.cm;
         currentCase = GameManager.instance.setCurrentCase(this);
         currentClient = currentCase.client;
         foreach (Transform child in qutionsParrent)
@@ -65,11 +67,15 @@ public class ClientMeeting : MonoBehaviour
         }
     }
     public virtual void close() {
-        float points = 0;
         foreach (Qustion q in qustions) { 
             q.closeMeeting();
-            if(q.isCorrect)
-                points++;
+            if (q.isCorrect) {
+                commentSystem.PosComment();
+            }
+            else
+            {
+                commentSystem.NegComment();
+            }
         }
         points /= qustions.Count;
         qustions[0]._case.canMoveToNext = canProcede;
