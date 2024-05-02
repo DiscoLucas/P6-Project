@@ -17,6 +17,8 @@ public class Qustion : MonoBehaviour
     public ClientMeeting manager;
     [SerializeField]
     public bool isCorrect = false;
+    public Case _case;
+
     public bool checkAnswer() {
         return isCorrect;
     }

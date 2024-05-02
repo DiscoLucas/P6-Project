@@ -11,6 +11,7 @@ using TMPro;
 using XCharts;
 using XCharts.Runtime;
 using Unity.VisualScripting;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     TMP_Text mountCounter;
     string counterString;
+    public float points = 0;
 
     private void Awake()
     {
@@ -275,10 +277,10 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed and return the currentClient
     /// </summary>
-    public ClientData setCurrentClientMeeting(ClientMeeting clientMeeting) {
+    public Case setCurrentCase(ClientMeeting clientMeeting) {
 
         csm.currentClientMeeting = clientMeeting;
-        return clm.currentClient;
+        return csm.currentCases[csm.currentCaseIndex];
     }
     /// <summary>
     /// Takes the client meeting prefab and create a client meeting from it
