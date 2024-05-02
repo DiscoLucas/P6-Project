@@ -5633,8 +5633,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   header_text: "Realkreditl\xE5n "
   describtion_text: "Et realkreditl\xE5n er et l\xE5n, kunden optager til fast ejendom,
-    det vil sige en ejerlejlighed, et hus eller et sommerhus.  Et realkreditl\xE5n
-    m\xE5 h\xF8jst udg\xF8re 80 % af v\xE6rdien af en hel\xE5rsbolig.  Et realkreditl\xE5n
+    det vil sige en ejerlejlighed, et hus eller et sommerhus.  \n\nEt realkreditl\xE5n
+    m\xE5 h\xF8jst udg\xF8re 80 % af v\xE6rdien af en hel\xE5rsbolig.  \n\nEt realkreditl\xE5n
     m\xE5 h\xF8jst udg\xF8re 75 % af v\xE6rdien af et sommerhus. "
   header: {fileID: 1654589422712915080}
   describtion: {fileID: 8856427033258709362}

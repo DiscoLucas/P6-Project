@@ -5,8 +5,10 @@ using TMPro;
 public class Qustion : MonoBehaviour
 {
     [SerializeField]
+    [TextArea(3, 10)]
     string header_text = " ";
     [SerializeField]
+    [TextArea(3, 10)]
     string describtion_text = " ";
     [SerializeField]
     TMP_Text header;
