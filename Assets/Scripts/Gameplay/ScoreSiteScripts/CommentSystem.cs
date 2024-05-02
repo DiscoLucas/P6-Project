@@ -5,26 +5,23 @@ using TMPro;
 
 public class CommentSystem : MonoBehaviour
 {
-    public GameObject commentsInfo;
-    public Transform commentsParent;
+    public TextMeshProUGUI commentText;
+    public TextMeshProUGUI scoreText;
     public string[] commentsPositive; //Array over positive kommentare
     public string[] commentsNegative; //Array over negative kommentare
+    public int score;
 
     public void PosComment()
     {
-        GameObject newComment = Instantiate(commentsInfo, commentsParent);
-
-        TextMeshProUGUI commentText = newComment.GetComponentInChildren<TextMeshProUGUI>();
-
-        commentText.text = commentsPositive[Random.Range(0,commentsPositive.Length)];
+        score += 2;
+        commentText.text = commentsPositive[Random.Range(0, commentsPositive.Length)];
+        scoreText.text = "Score: " + score;
     }
 
     public void NegComment()
     {
-        GameObject newComment = Instantiate(commentsInfo, commentsParent);
-
-        TextMeshProUGUI commentText = newComment.GetComponentInChildren<TextMeshProUGUI>();
-
+        score -= 1;
         commentText.text = commentsNegative[Random.Range(0, commentsNegative.Length)];
+        scoreText.text = "Score: " + score;
     }
 }

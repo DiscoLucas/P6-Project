@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public CaseManager csm;
     public GUIManager guim;
     public DialogueManager dlm;
+    public CommentSystem cm;
 
     //DET HER SKAL FIKSES - Case manager skal integreres bedre.
     /*[Header("Client Meeting")]
