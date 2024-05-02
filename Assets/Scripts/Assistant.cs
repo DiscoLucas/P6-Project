@@ -6,6 +6,7 @@ public class Assistant : MonoBehaviour
 {
     public Animation walk;
     public int dialoguToSay;
+
     // Start is called before the first frame update
 
     private void Update()
@@ -24,7 +25,7 @@ public class Assistant : MonoBehaviour
     public void assistantStartTalk()
     {
         walk.Play();
-        DialogueManager.instance.StartDia(dialoguToSay);
+        DialogueManager.instance.StartDia(GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].assistantSentinceReturn());
     }
 
     public void assistantNewLine()
