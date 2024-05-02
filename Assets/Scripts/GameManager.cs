@@ -254,7 +254,7 @@ public class GameManager : MonoBehaviour
             Loan loan = mm.checkIfTimeIsUpForLoan();
             if (loan != null) {
                 Debug.Log("Change For Loan");
-                if (loan.loanAmount == 360) {
+                if (loan.initialMonth + 360 <= monthNumber) {
                     Debug.Log("Loan Done");
                 }
                 return turnType.Length - 1;

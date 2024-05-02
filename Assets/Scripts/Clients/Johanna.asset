@@ -17,10 +17,9 @@ MonoBehaviour:
   job: Sygeplejerske
   city: "K\xF8benhavn"
   maritalStatus: 2
-  caseDescription: "Jeg s\xF8ger nybolig, og har 150000 til udbetalig og en m\xE5nedsl\xF8n
-    p\xE5 360000 f\xF8r skat."
+  customerType: 0
   chacterSprite: {fileID: 21300000, guid: 910c8da25e439164eb2b71a00e5ea672, type: 3}
-  minPitch: 1
+  minPitch: 1.1
   maxPitch: 1.6
   startMeet: 0
   monthlyIncome: 36000
@@ -29,4 +28,4 @@ MonoBehaviour:
   totalSavings: 150000
   neededLoan: 1878000
   debt: 0
-  introductionIndex: 0
+  startClientmeeting: 0
