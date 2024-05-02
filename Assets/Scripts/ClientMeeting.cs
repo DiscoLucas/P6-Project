@@ -65,9 +65,14 @@ public class ClientMeeting : MonoBehaviour
         }
     }
     public virtual void close() {
+        float points = 0;
         foreach (Qustion q in qustions) { 
             q.closeMeeting();
+            if(q.isCorrect)
+                points++;
         }
+        points /= qustions.Count;
+        GameManager.instance.points = points;
         GameManager.instance.closeMeeting();
     }
 }
