@@ -5,6 +5,7 @@ using UnityEngine;
 public class ClientMeeting : MonoBehaviour
 {
     public ClientData currentClient;
+    public Case currentCase;
     public Transform qutionsParrent;
     public List<Qustion> qustions= new List<Qustion>();
     public bool allneedTobecorrect = false;
@@ -12,7 +13,8 @@ public class ClientMeeting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentClient = GameManager.instance.setCurrentClientMeeting(this);
+        currentCase = GameManager.instance.setCurrentCase(this);
+        currentClient = currentCase.client;
         foreach (Transform child in qutionsParrent)
         {
             Qustion q = child.GetComponent<Qustion>();
@@ -20,6 +22,7 @@ public class ClientMeeting : MonoBehaviour
             if (q != null) {
                 q.manager = this;
                 q.client = currentClient;
+                q._case = currentCase;
                 q.init();
                 qustions.Add(q);
             }

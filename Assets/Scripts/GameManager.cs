@@ -275,10 +275,10 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// This function is called when a clientMeeting have been createde and if there is one already the old on is destoryed and return the currentClient
     /// </summary>
-    public ClientData setCurrentClientMeeting(ClientMeeting clientMeeting) {
+    public Case setCurrentCase(ClientMeeting clientMeeting) {
 
         csm.currentClientMeeting = clientMeeting;
-        return clm.currentClient;
+        return csm.currentCases;
     }
     /// <summary>
     /// Takes the client meeting prefab and create a client meeting from it
