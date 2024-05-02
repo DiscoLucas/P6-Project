@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: Albert
   m_EditorClassIdentifier: 
   clientName: Albert
-  age: 36
-  job: "Lastbilchauff\xF8r"
+  age: 30
+  job: Mekaniker
   city: Ballerup
-  maritalStatus: 1
-  customerType: 1
+  maritalStatus: 0
+  customerType: 0
   chacterSprite: {fileID: 21300000, guid: 9ea3e3aee2ed6cc46a835ceaeea045d5, type: 3}
   minPitch: 0.4
   maxPitch: 0.8
   startMeet: 0
-  monthlyIncome: 30000
+  monthlyIncome: 35000
   monthlyExpenses: 5000
   monthlySavings: 20000
   totalSavings: 500000
