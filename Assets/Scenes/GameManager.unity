@@ -487,8 +487,8 @@ MonoBehaviour:
   mm: {fileID: 3097740107927630391}
   csm: {fileID: 346325563}
   guim: {fileID: 2069508408}
-  dlm: {fileID: 0}
-  cm: {fileID: 0}
+  dlm: {fileID: 419886079}
+  cm: {fileID: 751422406}
   startType: 3
   turnType:
   - name: Nothing
@@ -1444,6 +1444,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f288332e4eccdcb41a52aa9a76709d1f, type: 3}
+--- !u!114 &751422406 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6108045764348232812, guid: f288332e4eccdcb41a52aa9a76709d1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 751422405}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e02c08cadee8a41aef84ed3257e59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1043708556
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class Case
 {
     public string caseName = "_case";
     public MeetingCollection[] meetings;
+    public int convertionMeetingIndex = 1;
     [Tooltip("The type of customer who can partake in these meetings")] public CustomerType type;
     public ClientData client;
     public float loanAmount;
@@ -18,6 +19,7 @@ public class Case
     public bool caseClosed = false;
     public bool canMoveToNext = false;
     public bool needLoan;
+    public bool loanOngoing;
     public string caseDiscription;
     public int nextImportenTurn = -1;
     public Case(CaseTemplate template,ClientData _client) {
@@ -50,17 +52,36 @@ public class Case
         if (meetings[meetingIndex].needToFinnishToProgress)
         {
             meetingIndex++;
+            if (convertionMeetingIndex == meetingIndex) {
+                meetingIndex++;
+            }
             sentincesIndex = 0;
             canMoveToNext = false;
         }
         else {
-            Debug.Log("Kan stop converting " + canMoveToNext);
             if (canMoveToNext) {
                 meetingIndex++;
             }
             sentincesIndex = 0;
             canMoveToNext = false;
         }
+    }
+
+    public bool checkCaseUpdate() { 
+        if(loan != null)
+        {
+            bool update = (GameManager.instance.monthNumber - loan.initialMonth >= 360);
+            
+            if (update) {
+                meetingIndex++;
+                
+                sentincesIndex = 0;
+                canMoveToNext = false;
+            }
+            return update; 
+
+        }
+        return false;
     }
 
     public int returnSentince()

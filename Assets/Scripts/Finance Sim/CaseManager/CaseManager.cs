@@ -79,7 +79,7 @@ public class CaseManager : MonoBehaviour
         Case c = null;
         for (int i = 0; i < currentCases.Count; i++) {
             Case cas = currentCases[i];
-            if (cas.nextImportenTurn >= GameManager.instance.monthNumber)
+            if (cas.nextImportenTurn >= GameManager.instance.monthNumber || cas.checkCaseUpdate())
             {
                 currentCaseIndex = i;
                 c = cas;
