@@ -138,6 +138,9 @@ public class MarketManager : MonoBehaviour
         }
         //Update All loan
         foreach (Loan loan in loans) {
+            //hvis lån er med afdrag: Betal lån tilbage med monthly payment
+            if (loan.installment)
+                loan.payLoan((int)loan.MonthlyPayment);
             IRModifierUpdater(loan,volatility,interestRateChange,housingMarked);
         }
 

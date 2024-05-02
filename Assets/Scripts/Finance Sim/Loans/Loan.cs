@@ -19,7 +19,7 @@ public class Loan
     [Tooltip("The month that the loan was started")] internal int initialMonth { get; set; }
     [Tooltip("The month that the loan currentPeriodStarted")] internal int periodStartMonth { get; set; }
     [Tooltip("[Not in use] The mount that still need to be payed")] internal double RemainingLoanAmount { get; set; }
-    [Tooltip("[Not in use] How much the client pay per mounth ")] internal double MonthlyPayment { get; set; }
+    [Tooltip("How much the client pay per mounth ")] internal double MonthlyPayment { get; set; }
 
     [SerializeField]
     [Tooltip("The intersate rates that is calulatede over time ")] internal List<double> IRForTime = new List<double>();
