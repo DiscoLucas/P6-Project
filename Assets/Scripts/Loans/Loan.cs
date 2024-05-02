@@ -9,18 +9,21 @@ using UnityEngine;
 public class Loan
 {
     [SerializeField]
-    [Tooltip("The amount that have been loaned")] internal double loanAmount { get; set; }
+    [Tooltip("The amount that have been loaned")] internal double loanInitialAmount { get; set; }
+    [Tooltip("The amount that have been loaned and is back")] internal double loanAmount { get; set; }
     [Tooltip("The first interest rate and what is used as a start for the simulation")] internal double interestRate { get; set; }
     [Tooltip("The voliatility of the loan (How much the price change)")] internal double volatility { get; set; }
     internal double longTermRate { get; set; }
     [Tooltip("The client that have the loan")] public ClientData clientData;
     [Tooltip("the length of the loan in months")] public int LoanTerm;
     [Tooltip("The month that the loan was started")] internal int initialMonth { get; set; }
+    [Tooltip("The month that the loan currentPeriodStarted")] internal int periodStartMonth { get; set; }
     [Tooltip("[Not in use] The mount that still need to be payed")] internal double RemainingLoanAmount { get; set; }
     [Tooltip("[Not in use] How much the client pay per mounth ")] internal double MonthlyPayment { get; set; }
 
     [SerializeField]
     [Tooltip("The intersate rates that is calulatede over time ")] internal List<double> IRForTime = new List<double>();
+    public List<double> IRPForTime = new List<double>();
 
     [Tooltip("Do the loan have installment")] public bool installment = false;
     public Loan(ClientData client,int LoanTerm, double loanAmount, double interestRate, double volatility, double longTermRate, int startMount,bool installment)
@@ -32,7 +35,9 @@ public class Loan
         this.volatility = volatility;
         this.longTermRate = longTermRate;
         this.initialMonth = startMount;
+        this.periodStartMonth = startMount;
         this.installment = installment;
+        IRPForTime.Add(100);
     }
     /// <summary>
     /// Return all the interest rate over time
@@ -50,5 +55,34 @@ public class Loan
         return interestRate;
     }
 
-    
+    /// <summary>
+    /// used to pay back some of the loan . the amount is the given variable
+    /// </summary>
+    /// <param name="amount"></param>
+    public void payLoan(int amount) { 
+        loanAmount -= amount;
+    }
+
+    /// <summary>
+    /// Convert the loan into a different type
+    /// </summary>
+    /// <param name="currentMount"></param>
+    /// <param name="LoanTerm"></param>
+    /// <param name="interestRate"></param>
+    /// <param name="volatility"></param>
+    /// <param name="longTermRate"></param>
+    public void convertLoan(int currentMount, int LoanTerm, double interestRate, double volatility) {
+        periodStartMonth = currentMount;
+        this.LoanTerm = LoanTerm;
+        this.interestRate = interestRate;
+        this.volatility = volatility;
+
+    }
+
+
+    public double getPriceRate() {
+        return IRPForTime[IRPForTime.Count-1];
+    }   
+
+
 }

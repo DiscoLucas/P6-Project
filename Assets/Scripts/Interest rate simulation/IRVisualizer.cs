@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XCharts;
 using XCharts.Runtime;
+using TMPro;
 /// <summary>
 /// The class that controlls the graphs of the different loans
 /// </summary>
@@ -12,16 +13,19 @@ public class IRVisualizer : MonoBehaviour
     GameManager gameManager;
     [Header("Loan")]
     public Loan currentShowedLoan;
+    public bool showIR;
     [Header("Headers/other visual elements strings")]
     public string headerIR,headerPrice;
     public string typeSubfiix = "år", loanFast = "Fast";
     string seriesName;
     string subfix = "s lån";
+    string btn_showIR = "Rente", btn_showIRP = "Kurs";
     string xAxis = "M ", secondXAxis = " D ";
     [Header("UI elements")]
     public LineChart LineChartPrice;
     public LineChart LineChartIR;
     public GameObject graphArea, NoDataArea;
+    public TMP_Text buttonText;
 
     /// <summary>
     /// Create the initial chart with the current interest rate.
@@ -54,26 +58,36 @@ public class IRVisualizer : MonoBehaviour
         NoDataArea.SetActive(false);
     }
 
+    public void changeWhatsIsOnGraph() {
+        buttonText.text = (showIR)? btn_showIR: btn_showIRP;
+        UpdateRateLineChart(!showIR);
+    }
+
     /// <summary>
     /// Update the line chart infomation and the bool controls if it  which graph should be used
     /// </summary>
     /// <param name="isIR"></param>
     public void UpdateRateLineChart(bool isIR)
     {
+        showIR = isIR;
         LineChart lineChart;
-        double[] data = currentShowedLoan.getInterestRate().ToArray();
+        double[] data;
+        string whatIsShowen = (showIR) ? btn_showIR : btn_showIRP;
         if (isIR) {
             lineChart = LineChartIR;
+            data = currentShowedLoan.getInterestRate().ToArray();
         }
         else {
             lineChart = LineChartPrice;
+            data = currentShowedLoan.IRPForTime.ToArray();
         }
+
         CreateLineChart(lineChart);
         var title = lineChart.EnsureChartComponent<Title>();
         string loanTerm = currentShowedLoan.LoanTerm/12 + typeSubfiix;
         if (currentShowedLoan.LoanTerm == 360)
             loanTerm = loanFast;
-        title.text = currentShowedLoan.clientData.clientName + " - " + loanTerm;
+        title.text = currentShowedLoan.clientData.clientName + " - " + loanTerm + whatIsShowen;
         for (int i = 0; i < data.Length; i++)
         {
             lineChart.AddXAxisData(xAxis + GameManager.instance.monthNumber + secondXAxis + (i+1));
@@ -82,9 +96,15 @@ public class IRVisualizer : MonoBehaviour
     }
     public void CreateLineChart(LineChart lineChart) {
         lineChart.RemoveData();
+        lineChart.RemoveAllSerie();
         lineChart.AddSerie<Line>(currentShowedLoan.clientData.clientName + subfix);
-        lineChart.AddXAxisData(xAxis + 0);
-        lineChart.AddData(0, currentShowedLoan.getFirstInterestRate());
+
+        if (showIR) {
+            lineChart.AddXAxisData(xAxis + 0);
+            lineChart.AddData(0, currentShowedLoan.getFirstInterestRate());
+        }
+            
+
     }
 
 }

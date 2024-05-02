@@ -49,6 +49,8 @@ public class MarketManager : MonoBehaviour
     /// The step that are simulatede 
     /// </summary>
     public float step;
+
+    public float priceInterestRateMultiplyer = 10;
     /// <summary>
     /// The container that have all the buttons
     /// </summary>
@@ -62,12 +64,18 @@ public class MarketManager : MonoBehaviour
     /// The scrit that controll the visual aspect of the graphs
     /// </summary>
     public IRVisualizer visualizerController;
+
+    [Tooltip("SLET MIG !")]public ClientData testClient;
     private void Awake()
     {
         dt = timeHorizon / 4f;
         step = (int)(timeHorizon / dt);
     }
 
+    private void Start()
+    {
+        createLoan(testClient, 124251, loanTypes[0]);
+    }
     /// <summary>
     /// The different types of market events
     /// </summary>
@@ -149,7 +157,8 @@ public class MarketManager : MonoBehaviour
             if (loan.IRForTime.Count != 0)
             {
                 IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last() * interestRateChange, loan.volatility * volatility, loan.longTermRate);
-                updateIR(loan, model.PredictIRforTimeInterval(dt, timeHorizon));
+                double[] predic = model.PredictIRforTimeInterval(dt, timeHorizon);
+                updateIR(loan, predic);
             }
             else // if the interest history is empty, use the initial interest rate
             {
@@ -191,6 +200,17 @@ public class MarketManager : MonoBehaviour
     /// <param name="newIr"></param>
     public void updateIR(Loan loan, double[] newIr) {
         for (int i = 0; i < newIr.Length; i++) {
+            if (loan.IRForTime.Count == 0)
+            {
+                double currentPrice = loan.IRPForTime[loan.IRPForTime.Count - 1];
+                currentPrice -= (newIr[i]-loan.getFirstInterestRate()) * priceInterestRateMultiplyer;
+                loan.IRPForTime.Add(currentPrice);
+            }
+            else {
+                double currentPrice = loan.IRPForTime[loan.IRPForTime.Count - 1];
+                currentPrice -= (newIr[i] - loan.IRForTime[loan.IRForTime.Count-1])* priceInterestRateMultiplyer;
+                loan.IRPForTime.Add(currentPrice);
+            }
             loan.IRForTime.Add(newIr[i]);
         }
     }
