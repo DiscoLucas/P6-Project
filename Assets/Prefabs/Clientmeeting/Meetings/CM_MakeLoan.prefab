@@ -524,9 +524,46 @@ MonoBehaviour:
       customerType: 0
     loanAmount: 0
     ovenAmount: 0
+    loan:
+      clientData:
+        clientName: 
+        age: 0
+        job: 
+        city: 
+        maritalStatus: 0
+        Finance:
+          monthlyIncome: 0
+          monthlyExpenses: 0
+          monthlySavings: 0
+          totalSavings: 0
+          yearlyIncome: 0
+          debt: 0
+          debtFactor: 0
+          neededLoan: 0
+        sprite: {fileID: 0}
+        haveBeenPresented: 0
+        startMeet: 0
+        minPitch: 0
+        maxPitch: 0
+        firstCaseIndex: 0
+        customerType: 0
+      LoanTerm: 0
+      IRForTime: []
+      IRPForTime: []
+      installment: 0
+      fixedIR: 0
+      lastPeriod: 0
+      loanTypes:
+        name: 
+        loanTime: 0
+        installment: 0
+        interssetRate: 0
+        volatility: 0
+        longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
+    canMoveToNext: 0
     needLoan: 0
     caseDiscription: 
     nextImportenTurn: 0
@@ -887,15 +924,53 @@ MonoBehaviour:
       customerType: 0
     loanAmount: 0
     ovenAmount: 0
+    loan:
+      clientData:
+        clientName: 
+        age: 0
+        job: 
+        city: 
+        maritalStatus: 0
+        Finance:
+          monthlyIncome: 0
+          monthlyExpenses: 0
+          monthlySavings: 0
+          totalSavings: 0
+          yearlyIncome: 0
+          debt: 0
+          debtFactor: 0
+          neededLoan: 0
+        sprite: {fileID: 0}
+        haveBeenPresented: 0
+        startMeet: 0
+        minPitch: 0
+        maxPitch: 0
+        firstCaseIndex: 0
+        customerType: 0
+      LoanTerm: 0
+      IRForTime: []
+      IRPForTime: []
+      installment: 0
+      fixedIR: 0
+      lastPeriod: 0
+      loanTypes:
+        name: 
+        loanTime: 0
+        installment: 0
+        interssetRate: 0
+        volatility: 0
+        longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
+    canMoveToNext: 0
     needLoan: 0
     caseDiscription: 
     nextImportenTurn: 0
   qutionsParrent: {fileID: 3576302445801111038}
   qustions: []
   allneedTobecorrect: 0
+  canProcede: 1
 --- !u!1 &3872973461705054985
 GameObject:
   m_ObjectHideFlags: 0

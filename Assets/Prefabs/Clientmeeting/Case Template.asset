@@ -19,16 +19,19 @@ MonoBehaviour:
     meetingPrefab: {fileID: 3219788146086106611, guid: 82c64d7838ec2a640ac4b2dd63dc13bc,
       type: 3}
     meetingSentences: 00000000
+    needToFinnishToProgress: 1
   - name: "LAV L\xC5N"
     haveEncountered: 0
     meetingPrefab: {fileID: 5675643620597591121, guid: 619e80ed280b5d24081e8907867a6375,
       type: 3}
     meetingSentences: 0200000001000000
+    needToFinnishToProgress: 0
   - name: "Kan dette k\xF8bes"
     haveEncountered: 0
     meetingPrefab: {fileID: 3301004322246205049, guid: 6ee4f33b6a839704499b7c92a032f13f,
       type: 3}
     meetingSentences: 00000000
+    needToFinnishToProgress: 1
   caseDiscription: sdjsjdj
   needLoan: 0
   type: 0

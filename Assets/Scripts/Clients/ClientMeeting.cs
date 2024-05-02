@@ -9,7 +9,7 @@ public class ClientMeeting : MonoBehaviour
     public Transform qutionsParrent;
     public List<Qustion> qustions= new List<Qustion>();
     public bool allneedTobecorrect = false;
-
+    public bool canProcede= true;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +72,7 @@ public class ClientMeeting : MonoBehaviour
                 points++;
         }
         points /= qustions.Count;
+        qustions[0]._case.canMoveToNext = canProcede;
         GameManager.instance.points = points;
         GameManager.instance.closeMeeting();
     }

@@ -16,6 +16,7 @@ public class Case
     [Tooltip("Which meeting they need to be in")]public int meetingIndex = 0;
     public int sentincesIndex = 0;
     public bool caseClosed = false;
+    public bool canMoveToNext = false;
     public bool needLoan;
     public string caseDiscription;
     public int nextImportenTurn = -1;
@@ -45,9 +46,21 @@ public class Case
         return caseClosed;
     }
 
-    public void goToNextClientMeeting() { 
-        meetingIndex++;
-        sentincesIndex = 0;
+    public void goToNextClientMeeting() {
+        if (meetings[meetingIndex].needToFinnishToProgress)
+        {
+            meetingIndex++;
+            sentincesIndex = 0;
+            canMoveToNext = false;
+        }
+        else {
+            Debug.Log("Kan stop converting " + canMoveToNext);
+            if (canMoveToNext) {
+                meetingIndex++;
+            }
+            sentincesIndex = 0;
+            canMoveToNext = false;
+        }
     }
 
     public int returnSentince()
@@ -64,5 +77,6 @@ public struct MeetingCollection {
     public bool haveEncountered;
     public GameObject meetingPrefab;
     public int[] meetingSentences;
+    public bool needToFinnishToProgress;
 }
 

@@ -17,5 +17,6 @@ public class Qustion_konvertion : Qustion_FeildBoolean
         bool startCon = (answerFeild.value == 1);
         Debug.Log("open convert" +startCon.ToString());
         convertionWindow.SetActive(startCon);
+        
     }
 }

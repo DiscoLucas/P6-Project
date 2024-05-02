@@ -38,6 +38,8 @@ public class chooseLoan_qustion : Qustion
         LoanTypes l = loans[inputField.options[inputField.value].text];
         l.installment = installmentToggel.isOn;
         _case.loan = GameManager.instance.mm.createLoan(client, client.Finance.neededLoan, l);
+        Debug.Log("Next mounth somthing happends: " + (GameManager.instance.monthNumber + _case.loan.LoanTerm));
+        _case.nextImportenTurn = GameManager.instance.monthNumber + _case.loan.LoanTerm;
     }
 
     public override void setAnswer()
