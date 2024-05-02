@@ -4,6 +4,7 @@ using UnityEngine;
 using XCharts;
 using XCharts.Runtime;
 using TMPro;
+using System;
 /// <summary>
 /// The class that controlls the graphs of the different loans
 /// </summary>
@@ -76,6 +77,7 @@ public class IRVisualizer : MonoBehaviour
         if (isIR) {
             lineChart = LineChartIR;
             data = currentShowedLoan.getInterestRate().ToArray();
+            
         }
         else {
             lineChart = LineChartPrice;
@@ -91,7 +93,10 @@ public class IRVisualizer : MonoBehaviour
         for (int i = 0; i < data.Length; i++)
         {
             lineChart.AddXAxisData(xAxis + GameManager.instance.monthNumber + secondXAxis + (i+1));
-            lineChart.AddData(0, data[i]);
+            if(isIR)
+                lineChart.AddData(0, data[i]*100);
+            else
+                lineChart.AddData(0, data[i]);
         }
     }
     public void CreateLineChart(LineChart lineChart) {
