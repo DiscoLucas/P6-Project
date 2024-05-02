@@ -26,6 +26,7 @@ public class Loan
     public List<double> IRPForTime = new List<double>();
 
     [Tooltip("Do the loan have installment")] public bool installment = false;
+    public bool fixedIR = false;
     public Loan(ClientData client,int LoanTerm, double loanAmount, double interestRate, double volatility, double longTermRate, int startMount,bool installment)
     {
         this.clientData = client;

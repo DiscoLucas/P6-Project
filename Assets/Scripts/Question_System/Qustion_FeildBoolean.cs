@@ -7,7 +7,7 @@ using System;
 public class Qustion_FeildBoolean : Qustion
 {
     [SerializeField]
-    TMP_Dropdown answerFeild;
+    protected TMP_Dropdown answerFeild;
     [SerializeField]
     protected bool correctAnswer = false;
 

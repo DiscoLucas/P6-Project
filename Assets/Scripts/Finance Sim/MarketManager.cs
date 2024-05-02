@@ -51,6 +51,7 @@ public class MarketManager : MonoBehaviour
     public float step;
 
     public float priceInterestRateMultiplyer = 10;
+    public float installWithoutmentMultiplyer = 0.03f;
     /// <summary>
     /// The container that have all the buttons
     /// </summary>
@@ -155,7 +156,7 @@ public class MarketManager : MonoBehaviour
     /// <param name="housingMarked"></param>
     void IRModifierUpdater( Loan loan, double volatility, double interestRateChange, double housingMarked)
     {
-        if (loan.LoanTerm != 360)
+        if (!loan.fixedIR)
         {
             if (loan.IRForTime.Count != 0)
             {
@@ -169,6 +170,21 @@ public class MarketManager : MonoBehaviour
                 updateIR(loan, model.PredictIRforTimeInterval(dt, timeHorizon));
             }
         }
+        else {
+            int steps = (int)(timeHorizon / dt);
+            if (loan.IRForTime.Count != 0)
+            {
+                double[] predic= new double[steps];
+                Array.Fill(predic, loan.IRForTime.Last());
+                updateIR(loan, predic);
+            }
+            else 
+            {
+                double[] predic = new double[steps];
+                Array.Fill(predic, loan.interestRate);
+                updateIR(loan, predic);
+            }
+        }
     }
 
     /// <summary>
@@ -177,7 +193,7 @@ public class MarketManager : MonoBehaviour
     /// <param name="client"></param>
     /// <param name="loanAmount"></param>
     /// <param name="loanType"></param>
-    public void createLoan(ClientData client, double loanAmount, LoanTypes loanType) {
+    public Loan createLoan(ClientData client, double loanAmount, LoanTypes loanType) {
         Loan nLoan = new Loan(
                                 client,
                                 loanType.loanTime,
@@ -188,12 +204,14 @@ public class MarketManager : MonoBehaviour
                                 GameManager.instance.monthNumber,
                                 loanType.installment
         );
+        nLoan.fixedIR = (loanType.loanTime == 360);
         var graphObj = Instantiate(graphPrefab,btnContainer);
         LoanSelcetor loanS = graphObj.GetComponent<LoanSelcetor>();
         loanS.loan = nLoan;
         loanS.iRVisualizer = visualizerController;
         loanS.fillout();
         loans.Add(nLoan);
+        return nLoan;
     }
 
     /// <summary>
@@ -207,12 +225,17 @@ public class MarketManager : MonoBehaviour
             {
                 double currentPrice = loan.IRPForTime[loan.IRPForTime.Count - 1];
                 currentPrice -= (newIr[i]-loan.getFirstInterestRate()) * priceInterestRateMultiplyer;
+                if (!loan.installment)
+                    currentPrice *= 1-installWithoutmentMultiplyer;
                 loan.IRPForTime.Add(currentPrice);
             }
             else {
                 double currentPrice = loan.IRPForTime[loan.IRPForTime.Count - 1];
                 currentPrice -= (newIr[i] - loan.IRForTime[loan.IRForTime.Count-1])* priceInterestRateMultiplyer;
+                if (!loan.installment)
+                    currentPrice *= 1 - installWithoutmentMultiplyer;
                 loan.IRPForTime.Add(currentPrice);
+
             }
             loan.IRForTime.Add(newIr[i]);
         }
@@ -266,6 +289,19 @@ public class MarketManager : MonoBehaviour
     public void endMarkedEvent() {
         Popup.SetActive(false);
         GameManager.instance.updateTurn();
+    }
+
+    internal Loan convertLoan(ClientData client, float neededLoan, Loan loan, LoanTypes l)
+    {
+        int remaingTime = GameManager.instance.monthNumber - loan.periodStartMonth;
+        int loanTime = l.loanTime;
+        loan.fixedIR = (l.loanTime == 360);
+        if (remaingTime + l.loanTime > 360) {
+            loanTime = 360 - remaingTime;
+        }
+        
+        loan.convertLoan(GameManager.instance.monthNumber, loanTime, l.interssetRate, l.volatility);
+        return loan;
     }
 }
 /// <summary>

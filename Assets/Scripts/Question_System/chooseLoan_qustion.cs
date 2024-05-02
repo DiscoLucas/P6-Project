@@ -2,41 +2,48 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class chooseLoan_qustion : Qustion_FeildInput
+public class chooseLoan_qustion : Qustion
 {
-    public List<LoanTemplate> loanTypes;
+    public TMP_Dropdown inputField;
+    public Toggle installmentToggel;
+    public Dictionary<string, LoanTypes> loans = new Dictionary<string, LoanTypes>();
+    public string sufix = "%",ir_Name = "Rente";
+
     public override void calcCorrectAnswer()
     {
-        //vælg rigigte lån type
+        
+        isCorrect = true;
+        LoanTypes[] lt= GameManager.instance.mm.loanTypes;
+        inputField.ClearOptions();
+        List<string> list= new List<string>();
+        foreach (LoanTypes loant in lt) {
+            string ir = string.Format("{0:N2}", (loant.interssetRate*100).ToString());
+            string key = loant.name + "-" + ir_Name + ":" + ir + sufix;
+            loans.Add(key, loant);
+            list.Add(key);
 
-        //sæt i rigtigt svar
-        LoanTypes[] lt = GameManager.instance.mm.loanTypes;
-        wrongAnsers = Array.ConvertAll(lt, x => x.name);
-        correctAnswer = wrongAnsers[0];
-        //tag de fokerte låntyper og put i liste med forkerte svar
+        }
+        inputField.AddOptions(list);
+    }
 
+
+
+    public override void closeMeeting()
+    {
+ 
+        LoanTypes l = loans[inputField.options[inputField.value].text];
+        l.installment = installmentToggel.isOn;
+        _case.loan = GameManager.instance.mm.createLoan(client, client.Finance.neededLoan, l);
     }
 
     public override void setAnswer()
     {
-        base.setAnswer();
+        
     }
 
-    public override void closeMeeting()
-    {
-        //sæt clienten til at have dette lån
-        LoanTypes lt = null;
-        foreach (LoanTypes loanT in GameManager.instance.mm.loanTypes)
-        {
-            if (loanT.name == answerFeild.options[answerFeild.value].text)
-            {
-                lt = loanT;
-                Debug.Log("Loan: " + loanT.name + " Was created");
-                break;
-            }
-        }
-        GameManager.instance.mm.createLoan(client, client.Finance.neededLoan, lt);
-    }
+
 }
