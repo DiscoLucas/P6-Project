@@ -3312,6 +3312,34 @@ MonoBehaviour:
       customerType: 0
     loanAmount: 0
     ovenAmount: 0
+    loan:
+      clientData:
+        clientName: 
+        age: 0
+        job: 
+        city: 
+        maritalStatus: 0
+        Finance:
+          monthlyIncome: 0
+          monthlyExpenses: 0
+          monthlySavings: 0
+          totalSavings: 0
+          yearlyIncome: 0
+          debt: 0
+          debtFactor: 0
+          neededLoan: 0
+        sprite: {fileID: 0}
+        haveBeenPresented: 0
+        startMeet: 0
+        minPitch: 0
+        maxPitch: 0
+        firstCaseIndex: 0
+        customerType: 0
+      LoanTerm: 0
+      IRForTime: []
+      IRPForTime: []
+      installment: 0
+      fixedIR: 0
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
@@ -3811,6 +3839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
+      propertyPath: values.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
       propertyPath: tags.Array.data[11]
       value: 
       objectReference: {fileID: 0}
@@ -3818,6 +3851,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sentinces.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: values.Array.data[1]
+      value: '[value1]'
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
@@ -11425,6 +11463,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Dialog Box
       objectReference: {fileID: 0}
+    - target: {fileID: 5630242823426143896, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630242823426143896, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.5473633
+      objectReference: {fileID: 0}
     - target: {fileID: 5693355126541440599, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_IsActive
@@ -12806,7 +12854,10 @@ MonoBehaviour:
       customerType: 0
     LoanTerm: 0
     IRForTime: []
+    IRPForTime: []
     installment: 0
+    fixedIR: 0
+  showIR: 0
   headerIR: 
   headerPrice: 
   typeSubfiix: "\xE5r"
@@ -12815,6 +12866,7 @@ MonoBehaviour:
   LineChartIR: {fileID: 1214523704}
   graphArea: {fileID: 228320784}
   NoDataArea: {fileID: 228320784}
+  buttonText: {fileID: 0}
 --- !u!1 &1512749014
 GameObject:
   m_ObjectHideFlags: 0
@@ -18775,10 +18827,34 @@ MonoBehaviour:
   timeHorizon: 1
   dt: 0
   step: 0
+  priceInterestRateMultiplyer: 10
+  installWithoutmentMultiplyer: 0.03
   btnContainer: {fileID: 2112863537}
   graphPrefab: {fileID: 3054240563043014080, guid: 3a7e2b8fa2c85fb4aa8ae2e4ee740826,
     type: 3}
   visualizerController: {fileID: 1497911980}
+  testClient:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      yearlyIncome: 0
+      debt: 0
+      debtFactor: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
+    startMeet: 0
+    minPitch: 0
+    maxPitch: 0
+    firstCaseIndex: 0
+    customerType: 0
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0

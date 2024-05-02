@@ -7,7 +7,7 @@ public class DialogueRegistry : MonoBehaviour
     public static DialogueRegistry instance;
 
     [TextArea(3, 10)]
-    public string[] sentinces;
+    public string[][] sentinces;
     //[SerializeField]
     public string[] tags = {
         "[Tjener]",
@@ -38,11 +38,11 @@ public class DialogueRegistry : MonoBehaviour
     /// </summary>
     /// <param name="index"></param>
     /// <returns></returns>
-    public string GetSentincesIndex(int index)
+    public string GetSentincesIndex(int caseIndex, int dialogueIndex)
     {
-        if (index >= 0 && index < sentinces.Length) //Vi skal ændre index til at blive sent fra ClientData? eller et andet sted fra?
+        if (caseIndex >=0 && caseIndex < sentinces.Length && dialogueIndex >= 0 && dialogueIndex < sentinces[caseIndex].Length)
         {
-            return sentinces[index];
+            return sentinces[caseIndex][dialogueIndex];
         }
         else
         {
