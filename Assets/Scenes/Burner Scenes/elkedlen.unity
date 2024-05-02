@@ -3546,19 +3546,11 @@ MonoBehaviour:
   clientMeetingDone:
     m_PersistentCalls:
       m_Calls: []
-  cm: {fileID: 1181538538}
+  clm: {fileID: 0}
   mm: {fileID: 3097740107927630391}
-  clientMeetingsTemplates:
-  - canBeUsedMoreThanOnes: 1
-    clientThatHaveUsed: []
-    meetingId: "Maximum L\xE5n"
-    meetingPrefab: {fileID: 3242378390414362392, guid: 5da1608a6b6d91747a677336276d1d93,
-      type: 3}
-    sentinces: 00000000010000000200000003000000
-    senIndex: 0
-  clientMeetIndex: -1
-  currentClientMeeting: {fileID: 0}
-  clientMeetingTransform: {fileID: 448629446}
+  csm: {fileID: 0}
+  guim: {fileID: 0}
+  dlm: {fileID: 0}
   startType: 3
   turnType:
   - name: Nothing
@@ -3581,10 +3573,7 @@ MonoBehaviour:
   timeSkipCacth: 12
   turnCounterObj: {fileID: 0}
   mountCounter: {fileID: 0}
-  action_Menu: {fileID: 0}
-  talkClient_BTN: {fileID: 0}
-  checkComputer_Btn: {fileID: 0}
-  AskforHelp_btn: {fileID: 0}
+  points: 0
 --- !u!4 &305047533
 Transform:
   m_ObjectHideFlags: 0
@@ -7485,8 +7474,8 @@ MonoBehaviour:
     startMeet: 0
     minPitch: 0
     maxPitch: 0
-    caseDiscription: 
     firstCaseIndex: 0
+    customerType: 0
   mail:
     Reciever: 
     Sender: 
@@ -9214,7 +9203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.1090012, y: -126.86198}
+  m_AnchoredPosition: {x: 3.1090012, y: -126.8617}
   m_SizeDelta: {x: 176.481, y: 453.7018}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1043708556
@@ -9917,8 +9906,8 @@ MonoBehaviour:
     startMeet: 0
     minPitch: 0
     maxPitch: 0
-    caseDiscription: 
     firstCaseIndex: 0
+    customerType: 0
   precentationIndex: 0
   clientPresState: 4
   an: {fileID: 1043708559}
@@ -11182,7 +11171,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348096965}
   m_HandleRect: {fileID: 348096964}
   m_Direction: 0
-  m_Value: -0.8996696
+  m_Value: -0.899673
   m_Size: 0.98741436
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -12131,8 +12120,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 882463830}
   m_HandleRect: {fileID: 882463829}
   m_Direction: 2
-  m_Value: 1.0000025
-  m_Size: 0.44077212
+  m_Value: 1.0000014
+  m_Size: 0.44076666
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12886,8 +12875,8 @@ MonoBehaviour:
     startMeet: 0
     minPitch: 0
     maxPitch: 0
-    caseDiscription: 
     firstCaseIndex: 0
+    customerType: 0
   mail:
     Reciever: 
     Sender: 
@@ -18193,6 +18182,37 @@ MonoBehaviour:
   eventEffect: {fileID: 8829260218923036551}
   Popup: {fileID: 400033225}
   marketEvents: []
+  loanTypes: []
+  loans: []
+  timeHorizon: 1
+  dt: 0
+  step: 0
+  priceInterestRateMultiplyer: 10
+  btnContainer: {fileID: 0}
+  graphPrefab: {fileID: 0}
+  visualizerController: {fileID: 0}
+  testClient:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      yearlyIncome: 0
+      debt: 0
+      debtFactor: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
+    startMeet: 0
+    minPitch: 0
+    maxPitch: 0
+    firstCaseIndex: 0
+    customerType: 0
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0
