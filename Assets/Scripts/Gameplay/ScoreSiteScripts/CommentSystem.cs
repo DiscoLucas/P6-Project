@@ -7,6 +7,8 @@ public class CommentSystem : MonoBehaviour
 {
     public GameObject commentsInfo;
     public Transform commentsParent;
+    public string[] commentsPositive; //Array over positive kommentare
+    public string[] commentsNegative; //Array over negative kommentare
 
     public void PosComment()
     {
@@ -14,9 +16,7 @@ public class CommentSystem : MonoBehaviour
 
         TextMeshProUGUI commentText = newComment.GetComponentInChildren<TextMeshProUGUI>();
 
-        commentText.text = "Fuck du er dygtig";
-
-        //Debug.Log("Fuck du er dygtig");
+        commentText.text = commentsPositive[Random.Range(0,commentsPositive.Length)];
     }
 
     public void NegComment()
@@ -25,8 +25,6 @@ public class CommentSystem : MonoBehaviour
 
         TextMeshProUGUI commentText = newComment.GetComponentInChildren<TextMeshProUGUI>();
 
-        commentText.text = "Idioten er ikke god til at regne kursen ud";
-
-        //Debug.Log("Idioten er ikke god til at regne kursen ud");
+        commentText.text = commentsNegative[Random.Range(0, commentsNegative.Length)];
     }
 }
