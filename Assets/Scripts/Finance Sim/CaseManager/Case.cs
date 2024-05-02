@@ -12,6 +12,7 @@ public class Case
     public ClientData client;
     public float loanAmount;
     public float ovenAmount;
+    public Loan loan;
     [Tooltip("Which meeting they need to be in")]public int meetingIndex = 0;
     public int sentincesIndex = 0;
     public bool caseClosed = false;
@@ -22,7 +23,7 @@ public class Case
         caseName = template.caseName;
         meetings= template.meetings;
         client = _client;
-        type= template.customerType;
+        type= template.type;
         caseDiscription = template.caseDiscription;
         needLoan= template.needLoan;
     }
