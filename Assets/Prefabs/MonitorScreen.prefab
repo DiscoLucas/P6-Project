@@ -3896,9 +3896,30 @@ MonoBehaviour:
   commentText: {fileID: 2769041124150019623}
   scoreText: {fileID: 8945187717578373452}
   commentsPositive:
-  - Positiv
+  - "Fantastisk service! Min finansr\xE5dgiver var utrolig opm\xE6rksom p\xE5 mine
+    behov og gav mig klar og pr\xE6cis r\xE5dgivning. Jeg f\xF8ler mig nu meget mere
+    sikker p\xE5 mine \xF8konomiske beslutninger."
+  - "Jeg havde en kompliceret \xF8konomisk situation, men min r\xE5dgiver fandt hurtigt
+    en l\xF8sning, der virkede. Jeg s\xE6tter stor pris p\xE5 deres t\xE5lmodighed
+    og evne til at forklare komplekse ting p\xE5 en enkel m\xE5de."
+  - "Super professionel! Min finansr\xE5dgiver hjalp mig med at lave en solid investeringsstrategi.
+    Deres erfaring og indsigt er virkelig imponerende."
+  - "Min finansr\xE5dgiver gjorde processen med at k\xF8be mit hus utrolig nem og
+    ligetil. De var altid tilg\xE6ngelig for sp\xF8rgsm\xE5l og gjorde virkelig en
+    indsats for at sikre, at jeg forstod hvert skridt."
+  - "R\xE5dgivning i topklasse! Min r\xE5dgiver hjalp mig med at optimere min \xF8konomi
+    og gav mig flere gode tips til fremtiden. Jeg f\xF8ler virkelig, at jeg er i
+    gode h\xE6nder."
   commentsNegative:
-  - Negativ
+  - "Min finansr\xE5dgiver var ikke s\xE6rlig hj\xE6lpsom. De virkede distraheret
+    under vores m\xF8de og tog ikke rigtig hensyn til mine specifikke behov."
+  - "Det virkede mere som et salgsm\xF8de end en r\xE5dgivningssession."
+  - "D\xE5rlig kommunikation. "
+  - "Jeg f\xF8lte mig ikke rigtig h\xF8rt. Min r\xE5dgiver havde sine egne id\xE9er
+    og pressede p\xE5 for dem, selvom jeg havde andre \xF8nsker. Det var frustrerende."
+  - "Uprofessionel adf\xE6rd. Min finansr\xE5dgiver var forsinket til vores m\xF8de
+    og virkede slet ikke forberedt. Jeg forventer mere af en professionel i den her
+    branche."
   score: 0
 --- !u!1 &2910893104716602758
 GameObject:
@@ -4232,6 +4253,15 @@ MonoBehaviour:
     IRForTime: []
     IRPForTime: []
     installment: 0
+    fixedIR: 0
+    lastPeriod: 0
+    loanTypes:
+      name: 
+      loanTime: 0
+      installment: 0
+      interssetRate: 0
+      volatility: 0
+      longTermRate: 0.5
   showIR: 0
   headerIR: 
   headerPrice: 
@@ -4363,18 +4393,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: Play
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Click
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActivateComputerBehavoir, Assembly-CSharp
         m_MethodName: ZoomOut
@@ -9269,7 +9287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4923685502799423490
 RectTransform:
   m_ObjectHideFlags: 0
