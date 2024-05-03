@@ -722,6 +722,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cellSize.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cellSize.y
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: Diatext
