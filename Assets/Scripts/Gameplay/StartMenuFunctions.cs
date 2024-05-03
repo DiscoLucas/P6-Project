@@ -13,7 +13,7 @@ public class StartMenuFunctions : MonoBehaviour
     //Root Menu
     public void Play()
     {
-        SceneManager.LoadScene("Scenes/GameManager");
+        //SceneManager.LoadScene("#DEN SCENE VI SKAL LOADE#");
     }
 
     public void Exit()
