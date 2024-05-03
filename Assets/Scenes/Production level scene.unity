@@ -435,14 +435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &8381809
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -488,6 +480,12 @@ RectTransform:
   m_AnchoredPosition: {x: 79.99985, y: 0}
   m_SizeDelta: {x: -160.0003, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &35271577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4829544518432194794, guid: d9fd05ac19458824c911a094beadb407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308846926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &38417416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,11 +1362,11 @@ RectTransform:
   - {fileID: 389771680}
   m_Father: {fileID: 1555920727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362.665, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 725.33, y: -173.66214}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &156788733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,24 +1379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &156788734
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1458,24 +1438,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &160015723
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1533,14 +1495,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &161354521
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -2724,6 +2678,7 @@ MonoBehaviour:
   csm: {fileID: 346325563}
   guim: {fileID: 2069508408}
   dlm: {fileID: 0}
+  cm: {fileID: 0}
   startType: 3
   turnType:
   - name: Nothing
@@ -2744,8 +2699,9 @@ MonoBehaviour:
     type: 0
   monthNumber: 0
   timeSkipCacth: 12
-  turnCounterObj: {fileID: 270603309}
-  mountCounter: {fileID: 1243945937}
+  turnCounterObj: {fileID: 547745183}
+  mountCounter: {fileID: 1308846927}
+  points: 0
 --- !u!4 &305047533
 Transform:
   m_ObjectHideFlags: 0
@@ -2812,24 +2768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &306560748
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3280,6 +3218,7 @@ MonoBehaviour:
   _case:
     caseName: _case
     meetings: []
+    convertionMeetingIndex: 0
     type: 0
     client:
       clientName: 
@@ -3305,10 +3244,48 @@ MonoBehaviour:
       customerType: 0
     loanAmount: 0
     ovenAmount: 0
+    loan:
+      clientData:
+        clientName: 
+        age: 0
+        job: 
+        city: 
+        maritalStatus: 0
+        Finance:
+          monthlyIncome: 0
+          monthlyExpenses: 0
+          monthlySavings: 0
+          totalSavings: 0
+          yearlyIncome: 0
+          debt: 0
+          debtFactor: 0
+          neededLoan: 0
+        sprite: {fileID: 0}
+        haveBeenPresented: 0
+        startMeet: 0
+        minPitch: 0
+        maxPitch: 0
+        firstCaseIndex: 0
+        customerType: 0
+      LoanTerm: 0
+      IRForTime: []
+      IRPForTime: []
+      installment: 0
+      fixedIR: 0
+      lastPeriod: 0
+      loanTypes:
+        name: 
+        loanTime: 0
+        installment: 0
+        interssetRate: 0
+        volatility: 0
+        longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
+    canMoveToNext: 0
     needLoan: 0
+    loanOngoing: 0
     caseDiscription: 
     nextImportenTurn: 0
   caseTemplate:
@@ -3525,24 +3502,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &397115556
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3600,14 +3559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &397560779
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -3708,24 +3659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &405927274
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3804,6 +3737,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
+      propertyPath: values.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
       propertyPath: tags.Array.data[11]
       value: 
       objectReference: {fileID: 0}
@@ -3811,6 +3749,36 @@ PrefabInstance:
         type: 3}
       propertyPath: sentinces.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cellSize.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cellSize.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.gridSize.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: values.Array.data[1]
+      value: '[value1]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces2D.cellSize.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces2D.cellSize.y
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
@@ -3845,21 +3813,87 @@ PrefabInstance:
       propertyPath: sentinces.Array.data[5]
       value: "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
       objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[0].row.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[1].row.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[2].row.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[0].row.Array.data[0]
+      value: case1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[0].row.Array.data[1]
+      value: aegaegea
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[0].row.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[1].row.Array.data[0]
+      value: case2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[1].row.Array.data[1]
+      value: jeg er nr 2!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[1].row.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[2].row.Array.data[0]
+      value: case3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[2].row.Array.data[1]
+      value: jeg er nr 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[2].row.Array.data[2]
+      value: farvel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces2D.cells.Array.data[0].row.Array.data[0]
+      value: "Hej mit navn er [Navn]. jeg er her i dag for at se hvor stort et l\xE5n
+        jeg kan f\xE5, og forh\xE5bentligt anskaffe mig et."
+      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: Diatext
       value: 
-      objectReference: {fileID: 8209087883786494447}
+      objectReference: {fileID: 1308846929}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 4256909712838781751}
+      objectReference: {fileID: 552719395}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: nameText
       value: 
-      objectReference: {fileID: 6767996632902498774}
+      objectReference: {fileID: 1308846928}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: textFreq
@@ -4012,6 +4046,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &456758139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5693355126541440599, guid: d9fd05ac19458824c911a094beadb407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308846926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &469513412
 GameObject:
   m_ObjectHideFlags: 1
@@ -4421,14 +4461,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &517026805
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -4488,24 +4520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &546838351
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4514,6 +4528,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546838348}
   m_CullTransparentMesh: 1
+--- !u!1 &547745183 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3224318680789740332, guid: d9fd05ac19458824c911a094beadb407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308846926}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &552719395 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8958518056700099926, guid: d9fd05ac19458824c911a094beadb407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308846926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &555802553
 GameObject:
   m_ObjectHideFlags: 0
@@ -5182,24 +5208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &668777213
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5714,24 +5722,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &748035150
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6261,14 +6251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &823916775
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -6326,14 +6308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &855734153
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -6391,14 +6365,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &856556648
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -6533,24 +6499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &874417271
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6610,24 +6558,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &875433467
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6794,14 +6724,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &912782794
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -6861,24 +6783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &922386044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7071,11 +6975,11 @@ RectTransform:
   - {fileID: 281502129}
   m_Father: {fileID: 1555920727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 725.33, y: -173.66214}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &964528569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7088,24 +6992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &964528570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7226,11 +7112,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 156788732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2, y: -0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1020942379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7258,7 +7144,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -8384,24 +8270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1171551003
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8710,1485 +8578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f38bd00b4648c448cabfc167538f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_EnableTextMeshPro: 0
-  m_ChartName: 
-  m_Theme:
-    m_Show: 1
-    m_SharedTheme: {fileID: 11400000, guid: e1dc23a10de1e4c5dbfbaf74c4dfd218, type: 2}
-    m_TransparentBackground: 0
-    m_EnableCustomTheme: 0
-    m_CustomFont: {fileID: 0}
-    m_CustomBackgroundColor:
-      serializedVersion: 2
-      rgba: 0
-    m_CustomColorPalette: []
-  m_Settings:
-    m_Show: 1
-    m_MaxPainter: 10
-    m_ReversePainter: 0
-    m_BasePainterMaterial: {fileID: 0}
-    m_SeriePainterMaterial: {fileID: 0}
-    m_UpperPainterMaterial: {fileID: 0}
-    m_TopPainterMaterial: {fileID: 0}
-    m_LineSmoothStyle: 3
-    m_LineSmoothness: 2
-    m_LineSegmentDistance: 3
-    m_CicleSmoothness: 2
-    m_LegendIconLineWidth: 2
-    m_LegendIconCornerRadius:
-    - 0.25
-    - 0.25
-    - 0.25
-    - 0.25
-    m_AxisMaxSplitNumber: 50
-  m_DebugInfo:
-    m_Show: 1
-    m_ShowDebugInfo: 0
-    m_ShowAllChartObject: 0
-    m_FoldSeries: 0
-    m_LabelStyle:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 0.6666667}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_FontSize: 18
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 4
-  m_ChartInited: 1
-  m_AngleAxes: []
-  m_Backgrounds:
-  - m_Show: 1
-    m_Image: {fileID: 0}
-    m_ImageType: 1
-    m_ImageColor: {r: 1, g: 1, b: 1, a: 1}
-    m_ImageWidth: 0
-    m_ImageHeight: 0
-    m_AutoColor: 1
-    m_BorderStyle:
-      m_Show: 1
-      m_BorderWidth: 0
-      m_BorderColor:
-        serializedVersion: 2
-        rgba: 0
-      m_RoundedCorner: 1
-      m_CornerRadius:
-      - 10
-      - 10
-      - 10
-      - 10
-  m_DataZooms: []
-  m_Grids:
-  - m_Show: 1
-    m_LayoutIndex: -1
-    m_Left: 0.11
-    m_Right: 0.08
-    m_Top: 0.22
-    m_Bottom: 0.14
-    m_BackgroundColor:
-      serializedVersion: 2
-      rgba: 0
-    m_ShowBorder: 0
-    m_BorderWidth: 0
-    m_BorderColor:
-      serializedVersion: 2
-      rgba: 0
-  m_GridsLayout: []
-  m_Legends: []
-  m_MarkLines: []
-  m_MarkAreas: []
-  m_Polars: []
-  m_Radars: []
-  m_RadiusAxes: []
-  m_Titles:
-  - m_Show: 1
-    m_Text: Area Line
-    m_SubText: 
-    m_LabelStyle:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 4
-    m_SubLabelStyle:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 4
-    m_ItemGap: 0
-    m_Location:
-      m_Align: 2
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0.03
-      m_Bottom: 0
-  m_Tooltips:
-  - m_Show: 1
-    m_Type: 4
-    m_Trigger: 3
-    m_Position: 0
-    m_ItemFormatter: 
-    m_TitleFormatter: 
-    m_Marker: "\u25CF"
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_MinWidth: 0
-    m_MinHeight: 0
-    m_NumericFormatter: 
-    m_PaddingLeftRight: 10
-    m_PaddingTopBottom: 10
-    m_IgnoreDataShow: 0
-    m_IgnoreDataDefaultContent: '-'
-    m_ShowContent: 1
-    m_AlwayShowContent: 0
-    m_Offset: {x: 18, y: -25}
-    m_BackgroundImage: {fileID: 0}
-    m_BackgroundType: 0
-    m_BackgroundColor: {r: 0, g: 0, b: 0, a: 0}
-    m_BorderWidth: 2
-    m_FixedX: 0
-    m_FixedY: 0.7
-    m_TitleHeight: 25
-    m_ItemHeight: 25
-    m_BorderColor:
-      serializedVersion: 2
-      rgba: 4293322470
-    m_LineStyle:
-      m_Show: 1
-      m_Type: 5
-      m_Color:
-        serializedVersion: 2
-        rgba: 0
-      m_ToColor:
-        serializedVersion: 2
-        rgba: 0
-      m_ToColor2:
-        serializedVersion: 2
-        rgba: 0
-      m_Width: 0
-      m_Length: 0
-      m_Opacity: 1
-      m_DashLength: 4
-      m_DotLength: 2
-      m_GapLength: 2
-    m_TitleLabelStyle:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 3
-    m_ContentLabelStyles:
-    - m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 5
-        m_Left: 0
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 3
-    - m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 20
-        m_Left: 0
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 3
-    - m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 0
-        m_Left: 0
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 5
-  m_VisualMaps: []
-  m_XAxes:
-  - m_Show: 1
-    m_Type: 1
-    m_MinMaxType: 0
-    m_GridIndex: 0
-    m_PolarIndex: 0
-    m_ParallelIndex: 0
-    m_Position: 2
-    m_Offset: 0
-    m_Min: 0
-    m_Max: 0
-    m_SplitNumber: 0
-    m_Interval: 0
-    m_BoundaryGap: 1
-    m_MaxCache: 0
-    m_LogBase: 10
-    m_LogBaseE: 0
-    m_CeilRate: 0
-    m_Inverse: 0
-    m_Clockwise: 1
-    m_InsertDataToHead: 0
-    m_Icons: []
-    m_Data:
-    - x1
-    - x2
-    - x3
-    - x4
-    - x5
-    m_AxisLine:
-      m_Show: 1
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 5
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_OnZero: 1
-      m_ShowArrow: 0
-      m_Arrow:
-        m_Width: 10
-        m_Height: 15
-        m_Offset: 0
-        m_Dent: 3
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-    m_AxisName:
-      m_Show: 0
-      m_Name: axisName
-      m_OnZero: 0
-      m_LabelStyle:
-        m_Show: 1
-        m_Position: 10
-        m_AutoOffset: 0
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_Rotate: 0
-        m_AutoRotate: 0
-        m_Distance: 0
-        m_Formatter: 
-        m_NumericFormatter: 
-        m_Width: 0
-        m_Height: 0
-        m_Icon:
-          m_Show: 0
-          m_Layer: 0
-          m_Align: 1
-          m_Sprite: {fileID: 0}
-          m_Type: 0
-          m_Color: {r: 1, g: 1, b: 1, a: 1}
-          m_Width: 20
-          m_Height: 20
-          m_Offset: {x: 0, y: 0, z: 0}
-          m_AutoHideWhenLabelEmpty: 0
-        m_Background:
-          m_Show: 1
-          m_Sprite: {fileID: 0}
-          m_Type: 0
-          m_AutoColor: 0
-          m_Color: {r: 0, g: 0, b: 0, a: 0}
-          m_Width: 0
-          m_Height: 0
-        m_TextPadding:
-          m_Show: 1
-          m_Top: 0
-          m_Right: 2
-          m_Left: 2
-          m_Bottom: 0
-        m_TextStyle:
-          m_Show: 1
-          m_Font: {fileID: 0}
-          m_AutoWrap: 0
-          m_AutoAlign: 1
-          m_Rotate: 0
-          m_AutoColor: 0
-          m_Color: {r: 0, g: 0, b: 0, a: 0}
-          m_FontSize: 0
-          m_FontStyle: 0
-          m_LineSpacing: 1
-          m_Alignment: 4
-    m_AxisTick:
-      m_Show: 1
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 0
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_AlignWithLabel: 0
-      m_Inside: 0
-      m_ShowStartTick: 1
-      m_ShowEndTick: 1
-      m_Distance: 0
-      m_SplitNumber: 0
-      m_AutoColor: 0
-    m_AxisLabel:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 8
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 4
-      m_Interval: 0
-      m_Inside: 0
-      m_ShowAsPositiveNumber: 0
-      m_OnZero: 0
-      m_ShowStartLabel: 1
-      m_ShowEndLabel: 1
-      m_TextLimit:
-        m_Enable: 1
-        m_MaxWidth: 0
-        m_Gap: 1
-        m_Suffix: ...
-    m_SplitLine:
-      m_Show: 0
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 5
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_Interval: 0
-      m_Distance: 0
-      m_AutoColor: 0
-      m_ShowStartLine: 1
-      m_ShowEndLine: 1
-    m_SplitArea:
-      m_Show: 0
-      m_Color: []
-    m_Animation:
-      m_Show: 1
-      m_Duration: 0
-      m_UnscaledTime: 0
-    m_MinorTick:
-      m_Show: 0
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 0
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_SplitNumber: 5
-      m_AutoColor: 0
-    m_MinorSplitLine:
-      m_Show: 0
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 0
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_Distance: 0
-      m_AutoColor: 0
-    m_IndicatorLabel:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: f2
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 4
-  m_YAxes:
-  - m_Show: 1
-    m_Type: 0
-    m_MinMaxType: 0
-    m_GridIndex: 0
-    m_PolarIndex: 0
-    m_ParallelIndex: 0
-    m_Position: 0
-    m_Offset: 0
-    m_Min: 0
-    m_Max: 0
-    m_SplitNumber: 0
-    m_Interval: 0
-    m_BoundaryGap: 0
-    m_MaxCache: 0
-    m_LogBase: 10
-    m_LogBaseE: 0
-    m_CeilRate: 0
-    m_Inverse: 0
-    m_Clockwise: 1
-    m_InsertDataToHead: 0
-    m_Icons: []
-    m_Data: []
-    m_AxisLine:
-      m_Show: 1
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 5
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_OnZero: 1
-      m_ShowArrow: 0
-      m_Arrow:
-        m_Width: 10
-        m_Height: 15
-        m_Offset: 0
-        m_Dent: 3
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-    m_AxisName:
-      m_Show: 0
-      m_Name: axisName
-      m_OnZero: 0
-      m_LabelStyle:
-        m_Show: 1
-        m_Position: 10
-        m_AutoOffset: 0
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_Rotate: 0
-        m_AutoRotate: 0
-        m_Distance: 0
-        m_Formatter: 
-        m_NumericFormatter: 
-        m_Width: 0
-        m_Height: 0
-        m_Icon:
-          m_Show: 0
-          m_Layer: 0
-          m_Align: 1
-          m_Sprite: {fileID: 0}
-          m_Type: 0
-          m_Color: {r: 1, g: 1, b: 1, a: 1}
-          m_Width: 20
-          m_Height: 20
-          m_Offset: {x: 0, y: 0, z: 0}
-          m_AutoHideWhenLabelEmpty: 0
-        m_Background:
-          m_Show: 1
-          m_Sprite: {fileID: 0}
-          m_Type: 0
-          m_AutoColor: 0
-          m_Color: {r: 0, g: 0, b: 0, a: 0}
-          m_Width: 0
-          m_Height: 0
-        m_TextPadding:
-          m_Show: 1
-          m_Top: 0
-          m_Right: 2
-          m_Left: 2
-          m_Bottom: 0
-        m_TextStyle:
-          m_Show: 1
-          m_Font: {fileID: 0}
-          m_AutoWrap: 0
-          m_AutoAlign: 1
-          m_Rotate: 0
-          m_AutoColor: 0
-          m_Color: {r: 0, g: 0, b: 0, a: 0}
-          m_FontSize: 0
-          m_FontStyle: 0
-          m_LineSpacing: 1
-          m_Alignment: 4
-    m_AxisTick:
-      m_Show: 1
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 0
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_AlignWithLabel: 0
-      m_Inside: 0
-      m_ShowStartTick: 1
-      m_ShowEndTick: 1
-      m_Distance: 0
-      m_SplitNumber: 0
-      m_AutoColor: 0
-    m_AxisLabel:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 8
-      m_Formatter: 
-      m_NumericFormatter: 
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 4
-      m_Interval: 0
-      m_Inside: 0
-      m_ShowAsPositiveNumber: 0
-      m_OnZero: 0
-      m_ShowStartLabel: 1
-      m_ShowEndLabel: 1
-      m_TextLimit:
-        m_Enable: 0
-        m_MaxWidth: 0
-        m_Gap: 1
-        m_Suffix: ...
-    m_SplitLine:
-      m_Show: 1
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 5
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_Interval: 0
-      m_Distance: 0
-      m_AutoColor: 0
-      m_ShowStartLine: 1
-      m_ShowEndLine: 1
-    m_SplitArea:
-      m_Show: 0
-      m_Color: []
-    m_Animation:
-      m_Show: 1
-      m_Duration: 0
-      m_UnscaledTime: 0
-    m_MinorTick:
-      m_Show: 0
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 0
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_SplitNumber: 5
-      m_AutoColor: 0
-    m_MinorSplitLine:
-      m_Show: 0
-      m_LineStyle:
-        m_Show: 1
-        m_Type: 0
-        m_Color:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor:
-          serializedVersion: 2
-          rgba: 0
-        m_ToColor2:
-          serializedVersion: 2
-          rgba: 0
-        m_Width: 0
-        m_Length: 0
-        m_Opacity: 1
-        m_DashLength: 4
-        m_DotLength: 2
-        m_GapLength: 2
-      m_Distance: 0
-      m_AutoColor: 0
-    m_IndicatorLabel:
-      m_Show: 1
-      m_Position: 0
-      m_AutoOffset: 0
-      m_Offset: {x: 0, y: 0, z: 0}
-      m_Rotate: 0
-      m_AutoRotate: 0
-      m_Distance: 0
-      m_Formatter: 
-      m_NumericFormatter: f2
-      m_Width: 0
-      m_Height: 0
-      m_Icon:
-        m_Show: 0
-        m_Layer: 0
-        m_Align: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_Color: {r: 1, g: 1, b: 1, a: 1}
-        m_Width: 20
-        m_Height: 20
-        m_Offset: {x: 0, y: 0, z: 0}
-        m_AutoHideWhenLabelEmpty: 0
-      m_Background:
-        m_Show: 1
-        m_Sprite: {fileID: 0}
-        m_Type: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_Width: 0
-        m_Height: 0
-      m_TextPadding:
-        m_Show: 1
-        m_Top: 0
-        m_Right: 2
-        m_Left: 2
-        m_Bottom: 0
-      m_TextStyle:
-        m_Show: 1
-        m_Font: {fileID: 0}
-        m_AutoWrap: 0
-        m_AutoAlign: 1
-        m_Rotate: 0
-        m_AutoColor: 0
-        m_Color: {r: 0, g: 0, b: 0, a: 0}
-        m_FontSize: 0
-        m_FontStyle: 0
-        m_LineSpacing: 1
-        m_Alignment: 4
-  m_SingleAxes: []
-  m_Parallels: []
-  m_ParallelAxes: []
-  m_Comments: []
-  m_SerieBars: []
-  m_SerieCandlesticks: []
-  m_SerieEffectScatters: []
-  m_SerieHeatmaps: []
-  m_SerieLines:
-  - m_Index: 0
-    m_Show: 1
-    m_CoordSystem: GridCoord
-    m_SerieType: Line
-    m_SerieName: serie0
-    m_State: 0
-    m_ColorBy: 0
-    m_Stack: 
-    m_XAxisIndex: 0
-    m_YAxisIndex: 0
-    m_RadarIndex: 0
-    m_VesselIndex: 0
-    m_PolarIndex: 0
-    m_SingleAxisIndex: 0
-    m_ParallelIndex: 0
-    m_GridIndex: -1
-    m_MinShow: 0
-    m_MaxShow: 0
-    m_MaxCache: 0
-    m_SampleDist: 0
-    m_SampleType: 1
-    m_SampleAverage: 0
-    m_LineType: 0
-    m_SmoothLimit: 0
-    m_BarType: 0
-    m_BarPercentStack: 0
-    m_BarWidth: 0
-    m_BarMaxWidth: 0
-    m_BarGap: 0.1
-    m_BarZebraWidth: 4
-    m_BarZebraGap: 2
-    m_Min: 0
-    m_Max: 0
-    m_MinSize: 0
-    m_MaxSize: 1
-    m_StartAngle: 0
-    m_EndAngle: 0
-    m_MinAngle: 0
-    m_Clockwise: 1
-    m_RoundCap: 0
-    m_SplitNumber: 0
-    m_ClickOffset: 1
-    m_RoseType: 0
-    m_Gap: 0
-    m_Center:
-    - 0.5
-    - 0.46
-    m_Radius:
-    - 0
-    - 0.28
-    m_MinRadius: 0
-    m_MinShowLabel: 0
-    m_MinShowLabelValue: 0
-    m_ShowDataDimension: 2
-    m_ShowDataName: 0
-    m_Clip: 0
-    m_Ignore: 0
-    m_IgnoreValue: 0
-    m_IgnoreLineBreak: 0
-    m_ShowAsPositiveNumber: 0
-    m_Large: 1
-    m_LargeThreshold: 200
-    m_AvoidLabelOverlap: 0
-    m_RadarType: 0
-    m_PlaceHolder: 0
-    m_DataSortType: 2
-    m_Orient: 1
-    m_Align: 0
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-    m_InsertDataToHead: 0
-    m_LineStyle:
-      m_Show: 1
-      m_Type: 0
-      m_Color:
-        serializedVersion: 2
-        rgba: 0
-      m_ToColor:
-        serializedVersion: 2
-        rgba: 0
-      m_ToColor2:
-        serializedVersion: 2
-        rgba: 0
-      m_Width: 0
-      m_Length: 0
-      m_Opacity: 1
-      m_DashLength: 4
-      m_DotLength: 2
-      m_GapLength: 2
-    m_Symbol:
-      m_Show: 1
-      m_Type: 3
-      m_Size: 0
-      m_Gap: 0
-      m_Width: 0
-      m_Height: 0
-      m_Offset: {x: 0, y: 0}
-      m_Image: {fileID: 0}
-      m_ImageType: 0
-      m_Color:
-        serializedVersion: 2
-        rgba: 0
-      m_SizeType: 0
-      m_DataIndex: 1
-      m_DataScale: 1
-      m_StartIndex: 0
-      m_Interval: 0
-      m_ForceShowLast: 0
-      m_Repeat: 0
-      m_MinSize: 0
-      m_MaxSize: 0
-    m_Animation:
-      m_Enable: 1
-      m_Type: 0
-      m_Easting: 0
-      m_Threshold: 2000
-      m_UnscaledTime: 0
-      m_FadeIn:
-        m_Enable: 1
-        m_Reverse: 0
-        m_Delay: 0
-        m_Duration: 1000
-      m_FadeOut:
-        m_Enable: 1
-        m_Reverse: 1
-        m_Delay: 0
-        m_Duration: 1000
-      m_Change:
-        m_Enable: 1
-        m_Reverse: 0
-        m_Delay: 0
-        m_Duration: 500
-      m_Addition:
-        m_Enable: 1
-        m_Reverse: 0
-        m_Delay: 0
-        m_Duration: 500
-      m_Hiding:
-        m_Enable: 1
-        m_Reverse: 0
-        m_Delay: 0
-        m_Duration: 500
-      m_Interaction:
-        m_Enable: 1
-        m_Reverse: 0
-        m_Delay: 0
-        m_Duration: 250
-        m_Width:
-          m_Type: 0
-          m_Value: 1.1
-        m_Radius:
-          m_Type: 0
-          m_Value: 1.5
-        m_Offset:
-          m_Type: 1
-          m_Value: 5
-    m_ItemStyle:
-      m_Show: 1
-      m_Color:
-        serializedVersion: 2
-        rgba: 0
-      m_Color0:
-        serializedVersion: 2
-        rgba: 0
-      m_ToColor:
-        serializedVersion: 2
-        rgba: 0
-      m_ToColor2:
-        serializedVersion: 2
-        rgba: 0
-      m_MarkColor:
-        serializedVersion: 2
-        rgba: 0
-      m_BackgroundColor:
-        serializedVersion: 2
-        rgba: 0
-      m_BackgroundWidth: 0
-      m_CenterColor:
-        serializedVersion: 2
-        rgba: 0
-      m_CenterGap: 0
-      m_BorderWidth: 0
-      m_BorderGap: 0
-      m_BorderColor:
-        serializedVersion: 2
-        rgba: 0
-      m_BorderColor0:
-        serializedVersion: 2
-        rgba: 0
-      m_BorderToColor:
-        serializedVersion: 2
-        rgba: 0
-      m_Opacity: 1
-      m_ItemMarker: 
-      m_ItemFormatter: 
-      m_NumericFormatter: 
-      m_CornerRadius:
-      - 0
-      - 0
-      - 0
-      - 0
-    m_Data:
-    - m_Index: 0
-      m_Name: 
-      m_Id: 
-      m_ParentId: 
-      m_Ignore: 0
-      m_Selected: 0
-      m_Radius: 0
-      m_State: 4
-      m_ItemStyles: []
-      m_Labels: []
-      m_LabelLines: []
-      m_Symbols: []
-      m_LineStyles: []
-      m_AreaStyles: []
-      m_TitleStyles: []
-      m_EmphasisStyles: []
-      m_BlurStyles: []
-      m_SelectStyles: []
-      m_Data:
-      - 0
-      - 37
-    - m_Index: 1
-      m_Name: 
-      m_Id: 
-      m_ParentId: 
-      m_Ignore: 0
-      m_Selected: 0
-      m_Radius: 0
-      m_State: 4
-      m_ItemStyles: []
-      m_Labels: []
-      m_LabelLines: []
-      m_Symbols: []
-      m_LineStyles: []
-      m_AreaStyles: []
-      m_TitleStyles: []
-      m_EmphasisStyles: []
-      m_BlurStyles: []
-      m_SelectStyles: []
-      m_Data:
-      - 1
-      - 47
-    - m_Index: 2
-      m_Name: 
-      m_Id: 
-      m_ParentId: 
-      m_Ignore: 0
-      m_Selected: 0
-      m_Radius: 0
-      m_State: 4
-      m_ItemStyles: []
-      m_Labels: []
-      m_LabelLines: []
-      m_Symbols: []
-      m_LineStyles: []
-      m_AreaStyles: []
-      m_TitleStyles: []
-      m_EmphasisStyles: []
-      m_BlurStyles: []
-      m_SelectStyles: []
-      m_Data:
-      - 2
-      - 58
-    - m_Index: 3
-      m_Name: 
-      m_Id: 
-      m_ParentId: 
-      m_Ignore: 0
-      m_Selected: 0
-      m_Radius: 0
-      m_State: 4
-      m_ItemStyles: []
-      m_Labels: []
-      m_LabelLines: []
-      m_Symbols: []
-      m_LineStyles: []
-      m_AreaStyles: []
-      m_TitleStyles: []
-      m_EmphasisStyles: []
-      m_BlurStyles: []
-      m_SelectStyles: []
-      m_Data:
-      - 3
-      - 18
-    - m_Index: 4
-      m_Name: 
-      m_Id: 
-      m_ParentId: 
-      m_Ignore: 0
-      m_Selected: 0
-      m_Radius: 0
-      m_State: 4
-      m_ItemStyles: []
-      m_Labels: []
-      m_LabelLines: []
-      m_Symbols: []
-      m_LineStyles: []
-      m_AreaStyles: []
-      m_TitleStyles: []
-      m_EmphasisStyles: []
-      m_BlurStyles: []
-      m_SelectStyles: []
-      m_Data:
-      - 4
-      - 39
-    m_Links: []
-    m_Labels: []
-    m_LabelLines: []
-    m_EndLabels: []
-    m_LineArrows: []
-    m_AreaStyles:
-    - m_Show: 1
-      m_Origin: 0
-      m_Color:
-        serializedVersion: 2
-        rgba: 0
-      m_ToColor:
-        serializedVersion: 2
-        rgba: 0
-      m_Opacity: 0.6
-      m_InnerFill: 0
-      m_ToTop: 1
-    m_TitleStyles: []
-    m_EmphasisStyles: []
-    m_BlurStyles: []
-    m_SelectStyles: []
-  m_SeriePies: []
-  m_SerieRadars: []
-  m_SerieRings: []
-  m_SerieScatters: []
-  m_SerieParallels: []
-  m_SerieSimplifiedLines: []
-  m_SerieSimplifiedBars: []
-  m_SerieSimplifiedCandlesticks: []
 --- !u!222 &1214523705
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11090,6 +9479,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 51075344090068363, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 305047532}
+    - target: {fileID: 51075344090068363, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: showStartTurn
+      objectReference: {fileID: 0}
     - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_Pivot.x
@@ -11198,12 +9597,77 @@ PrefabInstance:
     - target: {fileID: 747831546562440357, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisplayNextScentence
+      value: DisplayNextSentence
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093459249597224063, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093459249597224063, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093459249597224063, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093459249597224063, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093459249597224063, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1093459249597224063, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1484060978761017155, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484060978761017155, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_TagString
+      value: Main Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510285370976465358, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510285370976465358, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510285370976465358, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510285370976465358, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510285370976465358, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510285370976465358, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1762400634127276143, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
@@ -11257,25 +9721,85 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 419886079}
+      objectReference: {fileID: 346325563}
+    - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 2069508408}
+    - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartDia
+      value: startConviencation
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: hideActionMenu
       objectReference: {fileID: 0}
     - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DialogueManager, Assembly-CSharp
+      value: CaseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GUIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2379723384657241911, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3016103565650259014, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290049273630925558, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4290049273630925558, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dialog Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630242823426143896, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630242823426143896, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.5473633
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693355126541440599, guid: d9fd05ac19458824c911a094beadb407,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11335,6 +9859,42 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9fd05ac19458824c911a094beadb407, type: 3}
+--- !u!114 &1308846927 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 715926822835326511, guid: d9fd05ac19458824c911a094beadb407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308846926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1308846928 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2053460546105652872, guid: d9fd05ac19458824c911a094beadb407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308846926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1308846929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1459551746135893732, guid: d9fd05ac19458824c911a094beadb407,
+    type: 3}
+  m_PrefabInstance: {fileID: 1308846926}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1339318748
 GameObject:
   m_ObjectHideFlags: 0
@@ -11465,24 +10025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1346506448
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11615,14 +10157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &1368762375
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -12620,7 +11154,18 @@ MonoBehaviour:
       customerType: 0
     LoanTerm: 0
     IRForTime: []
+    IRPForTime: []
     installment: 0
+    fixedIR: 0
+    lastPeriod: 0
+    loanTypes:
+      name: 
+      loanTime: 0
+      installment: 0
+      interssetRate: 0
+      volatility: 0
+      longTermRate: 0.5
+  showIR: 0
   headerIR: 
   headerPrice: 
   typeSubfiix: "\xE5r"
@@ -12629,6 +11174,7 @@ MonoBehaviour:
   LineChartIR: {fileID: 1214523704}
   graphArea: {fileID: 228320784}
   NoDataArea: {fileID: 228320784}
+  buttonText: {fileID: 0}
 --- !u!1 &1512749014
 GameObject:
   m_ObjectHideFlags: 0
@@ -12964,11 +11510,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 964528568}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2, y: -0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 1, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &1556954952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12996,7 +11542,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -13553,24 +12099,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1698501885
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13597,7 +12125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1707354206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13992,24 +12520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1738148096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14284,24 +12794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1786148993
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14431,14 +12923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &1796938538
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -14534,24 +13018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1846858074
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14611,24 +13077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.1254902, g: 0.1254902, b: 0.1254902, a: 0.6666667}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1855027347
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14686,14 +13134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &1858989198
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -15227,14 +13667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &1933927125
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -15429,24 +13861,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1951572353
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16114,14 +14528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c85cd323a9f4dfb803470695bd0944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!222 &2019842002
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -17018,7 +15424,7 @@ GameObject:
   - component: {fileID: 2069508408}
   m_Layer: 0
   m_Name: GUIManager
-  m_TagString: Untagged
+  m_TagString: GUI Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17050,8 +15456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b91d639946a693e44ba995b3cf318e35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  action_Menu: {fileID: 497196692}
-  talkClient_BTN: {fileID: 1423768828}
+  action_Menu: {fileID: 456758139}
+  talkClient_BTN: {fileID: 35271577}
 --- !u!1 &2070113923
 GameObject:
   m_ObjectHideFlags: 0
@@ -17103,24 +15509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61287841bdc4142caba8e77985cd8715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &2070113926
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18589,10 +16977,34 @@ MonoBehaviour:
   timeHorizon: 1
   dt: 0
   step: 0
+  priceInterestRateMultiplyer: 10
+  installWithoutmentMultiplyer: 0.03
   btnContainer: {fileID: 2112863537}
   graphPrefab: {fileID: 3054240563043014080, guid: 3a7e2b8fa2c85fb4aa8ae2e4ee740826,
     type: 3}
   visualizerController: {fileID: 1497911980}
+  testClient:
+    clientName: 
+    age: 0
+    job: 
+    city: 
+    maritalStatus: 0
+    Finance:
+      monthlyIncome: 0
+      monthlyExpenses: 0
+      monthlySavings: 0
+      totalSavings: 0
+      yearlyIncome: 0
+      debt: 0
+      debtFactor: 0
+      neededLoan: 0
+    sprite: {fileID: 0}
+    haveBeenPresented: 0
+    startMeet: 0
+    minPitch: 0
+    maxPitch: 0
+    firstCaseIndex: 0
+    customerType: 0
 --- !u!1 &3226763775274595140
 GameObject:
   m_ObjectHideFlags: 0
