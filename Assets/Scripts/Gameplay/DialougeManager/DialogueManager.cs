@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 
 
@@ -36,7 +34,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private string[] VoiceClip;
     
     public bool hasRun = false;
-    [HideInInspector] public bool dialogueVissible;
+    [HideInInspector] public bool dialogueVissible = false;
 
 
     [SerializeField] private GameObject gameObject_continue;
@@ -58,6 +56,7 @@ public class DialogueManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             dialogDone = new UnityEvent();
             sentinceDone = new UnityEvent();
+            animator.SetBool("IsOpen", dialogueVissible);
         }
         else
         {

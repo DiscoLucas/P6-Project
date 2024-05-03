@@ -3836,7 +3836,7 @@ PrefabInstance:
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[0].row.Array.data[1]
-      value: 
+      value: aegaegea
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
