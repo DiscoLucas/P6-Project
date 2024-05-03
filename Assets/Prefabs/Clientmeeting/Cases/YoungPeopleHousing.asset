@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca41fcda68334254597fc3ddea6a29a5, type: 3}
+  m_Name: YoungPeopleHousing
+  m_EditorClassIdentifier: 
+  caseName: YoungPeopleHousing_case
+  meetings:
+  - name: Make Loan
+    haveEncountered: 0
+    meetingPrefab: {fileID: 3219788146086106611, guid: 82c64d7838ec2a640ac4b2dd63dc13bc,
+      type: 3}
+    meetingSentences: 00000000
+    needToFinnishToProgress: 0
+    assistantSaulSentensis: 
+  - name: ConvertLoan
+    haveEncountered: 0
+    meetingPrefab: {fileID: 5675643620597591121, guid: 619e80ed280b5d24081e8907867a6375,
+      type: 3}
+    meetingSentences: 00000000
+    needToFinnishToProgress: 0
+    assistantSaulSentensis: 
+  - name: Infri Loan
+    haveEncountered: 0
+    meetingPrefab: {fileID: 3529224287150383671, guid: 5df6e81eb7e4a5643b1fd410222daf52,
+      type: 3}
+    meetingSentences: 00000000
+    needToFinnishToProgress: 0
+    assistantSaulSentensis: 
+  caseDiscription: 
+  needLoan: 0
+  type: 0

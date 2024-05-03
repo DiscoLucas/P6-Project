@@ -17,14 +17,14 @@ public class Qustion_Convertion : chooseLoan_qustion
             
         }
         Debug.Log("Is this last period: " + _case.loan.lastPeriod);
+        _case.nextImportenTurn = GameManager.instance.monthNumber + _case.loan.LoanTerm;
+        _case.loan.debtAmount = _case.loanAmount * Mathf.Pow((1 + (float)_case.loan.IRForTime[_case.loan.IRForTime.Count-1]), _case.loan.LoanTerm / 12);
         if (_case.loan.lastPeriod)
         {
-
-            _case.canMoveToNext = true;
+            _case.contiuneToNextTypeOfMeeting();
         }
-        else {
-            _case.canMoveToNext = false;
+        else { 
+            _case.sentincesIndex= 0;
         }
-        _case.nextImportenTurn = GameManager.instance.monthNumber + _case.loan.LoanTerm;
     }
 }

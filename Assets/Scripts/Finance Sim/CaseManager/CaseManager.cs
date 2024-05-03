@@ -23,7 +23,6 @@ public class CaseManager : MonoBehaviour
     [SerializeField] public Transform clientMeetingTransform;
 
     public void endMeeting() {
-        currentCases[currentCaseIndex].goToNextClientMeeting();
         if (currentCases[currentCaseIndex].checkIfCaseIsDone()) {
             currentCases.RemoveAt(currentCaseIndex);
             closedCases++;

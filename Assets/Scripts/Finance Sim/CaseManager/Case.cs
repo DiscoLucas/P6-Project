@@ -12,14 +12,12 @@ public class Case
     [Tooltip("The type of customer who can partake in these meetings")] public CustomerType type;
     public ClientData client;
     public float loanAmount;
-    public float ovenAmount;
+    public float debt;
     public Loan loan;
     [Tooltip("Which meeting they need to be in")]public int meetingIndex = 0;
     public int sentincesIndex = 0;
-    public bool caseClosed = false;
-    public bool canMoveToNext = false;
     public bool needLoan;
-    public bool loanOngoing;
+    public bool closeCase =false;
     public string caseDiscription;
     public int nextImportenTurn = -1;
     public Case(CaseTemplate template,ClientData _client) {
@@ -34,6 +32,10 @@ public class Case
         return caseName;
     }
 
+    public void contiuneToNextTypeOfMeeting() {
+        meetingIndex++;
+        sentincesIndex = 0;
+    }
 
     public MeetingCollection getCurrentMeeting() {
         return meetings[meetingIndex];
@@ -43,28 +45,7 @@ public class Case
     }
 
     public bool checkIfCaseIsDone() {
-        caseClosed = (meetingIndex >= meetings.Length);
-        Debug.Log("Meeting Done and there are more : " + !caseClosed);
-        return caseClosed;
-    }
-
-    public void goToNextClientMeeting() {
-        if (meetings[meetingIndex].needToFinnishToProgress)
-        {
-            meetingIndex++;
-            if (convertionMeetingIndex == meetingIndex) {
-                meetingIndex++;
-            }
-            sentincesIndex = 0;
-            canMoveToNext = false;
-        }
-        else {
-            if (canMoveToNext) {
-                meetingIndex++;
-            }
-            sentincesIndex = 0;
-            canMoveToNext = false;
-        }
+        return closeCase;// loan.RemainingLoanAmount <= 0;
     }
 
     public bool checkCaseUpdate() { 
@@ -73,10 +54,6 @@ public class Case
             bool update = (GameManager.instance.monthNumber - loan.initialMonth >= 360);
             
             if (update) {
-                meetingIndex++;
-                
-                sentincesIndex = 0;
-                canMoveToNext = false;
             }
             return update; 
 

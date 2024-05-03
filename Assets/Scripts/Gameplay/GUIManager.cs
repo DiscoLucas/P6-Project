@@ -12,8 +12,8 @@ public class GUIManager : MonoBehaviour
     RectTransform dialogBox;
     Canvas canvas;
 
-    private void Awake()
-    {
+    private void Awake() 
+    { 
         if (dialogBox == null) dialogBox = GameObject.FindWithTag("Dialog Box").GetComponent<RectTransform>();
             
         else throw new System.Exception("There is either more than one Dialog Box in the scene, or none");

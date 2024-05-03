@@ -77,7 +77,7 @@ public class ClientMeeting : MonoBehaviour
                 commentSystem.NegComment();
             }
         }
-        qustions[0]._case.canMoveToNext = canProcede;
+        
 
         GameManager.instance.closeMeeting();
     }

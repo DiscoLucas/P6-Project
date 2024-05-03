@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ChatLog : MonoBehaviour
 {
-    public List<MailThread> Threads; //Threads er alle de mailtråde med de forskellige klienter som mail tabben har
+   /* public List<MailThread> Threads; //Threads er alle de mailtråde med de forskellige klienter som mail tabben har
     public TextMeshProUGUI ChatLogtmpu;
     int ThreadNumber;
 
@@ -24,13 +24,13 @@ public class ChatLog : MonoBehaviour
     void Update()
     {
         Threads[ThreadNumber].DisplayMail(ChatLogtmpu); //display mails i den valgte tråd
-    }
+    }*/
 }
 
 //strange monolithic code
 public class MailThread : MonoBehaviour
 {
-    public string Name;
+   /* public string Name;
     public List<string> Messages;
 
     public void NewMessage(string message) //TAG FAT I DET HER MED CLIENT TINGEN HVER GANG EN CLIENT TALER
@@ -46,5 +46,5 @@ public class MailThread : MonoBehaviour
         //display allebeskeder
         // - tmpu.text = allebeskeder
         Debug.Log(Messages);
-    }
+    }*/
 }
