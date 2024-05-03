@@ -2976,15 +2976,26 @@ MonoBehaviour:
       IRForTime: []
       IRPForTime: []
       installment: 0
+      fixedIR: 0
+      lastPeriod: 0
+      loanTypes:
+        name: 
+        loanTime: 0
+        installment: 0
+        interssetRate: 0
+        volatility: 0
+        longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
+    canMoveToNext: 0
     needLoan: 0
     caseDiscription: 
     nextImportenTurn: 0
   qutionsParrent: {fileID: 5441665127686858351}
   qustions: []
   allneedTobecorrect: 0
+  canProcede: 0
 --- !u!1 &5686497915805384367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4029,9 +4040,19 @@ MonoBehaviour:
       IRForTime: []
       IRPForTime: []
       installment: 0
+      fixedIR: 0
+      lastPeriod: 0
+      loanTypes:
+        name: 
+        loanTime: 0
+        installment: 0
+        interssetRate: 0
+        volatility: 0
+        longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
+    canMoveToNext: 0
     needLoan: 0
     caseDiscription: 
     nextImportenTurn: 0
@@ -4598,9 +4619,19 @@ MonoBehaviour:
       IRForTime: []
       IRPForTime: []
       installment: 0
+      fixedIR: 0
+      lastPeriod: 0
+      loanTypes:
+        name: 
+        loanTime: 0
+        installment: 0
+        interssetRate: 0
+        volatility: 0
+        longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
     caseClosed: 0
+    canMoveToNext: 0
     needLoan: 0
     caseDiscription: 
     nextImportenTurn: 0

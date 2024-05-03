@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
         int turnTypeIndex = 0;
         if (@case != null)
         {
+            Debug.Log("CHANGE FOR CASE!!");
             turnT = TurnType.Change_forCustomer;
             mn_lastIncedient = monthNumber;
             showTurnCounter();
@@ -119,27 +120,28 @@ public class GameManager : MonoBehaviour
         }
         
 
-        if (turnType[turnTypeIndex].type == TurnType.Change_forCustomer || needChange)
+        if (needChange)
         {
-            turnT = TurnType.Change_forCustomer;
-            Case c = csm.getCasesThatCanUpdate();
-            if (c == null)
+
+            if (clm.canGenerateMoreClients)
             {
-                if (clm.canGenerateMoreClients)
-                {
-                    turnT = TurnType.New_customer;
-                    mn_lastIncedient = monthNumber;
-                    showTurnCounter();
-                }
-                else
-                {
-                    newMounth();
-                }
-            }
-            else {
+                turnT = TurnType.New_customer;
                 mn_lastIncedient = monthNumber;
                 showTurnCounter();
             }
+            else
+            {
+                if ((MathF.Abs(mn_lastIncedient - monthNumber) > timeSkipCacth))
+                {
+                    turnT = TurnType.Evnet;
+                    mn_lastIncedient = monthNumber;
+                    showTurnCounter();
+                }
+                else {
+                    newMounth();
+                }
+            }
+
 
         }else if (turnType[turnTypeIndex].type == TurnType.New_customer && clm.canGenerateMoreClients && !needChange)
         {
@@ -252,16 +254,6 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Loan loan = mm.checkIfTimeIsUpForLoan();
-            if (loan != null) {
-                Debug.Log("Change For Loan");
-                if (loan.initialMonth + 360 <= monthNumber) {
-                    Debug.Log("Loan Done");
-                }
-                return turnType.Length - 1;
-            }
-
-
             for (int i = 0; i < turnType.Length-1; i++)
             {
                 float guessValue = UnityEngine.Random.Range(0, 100);

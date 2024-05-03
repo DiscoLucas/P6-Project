@@ -79,7 +79,7 @@ public class CaseManager : MonoBehaviour
         Case c = null;
         for (int i = 0; i < currentCases.Count; i++) {
             Case cas = currentCases[i];
-            if (!cas.needLoan)
+            if (cas.nextImportenTurn >= GameManager.instance.monthNumber || cas.checkCaseUpdate())
             {
                 currentCaseIndex = i;
                 c = cas;
@@ -94,14 +94,17 @@ public class CaseManager : MonoBehaviour
     /// </summary>
     /// <returns></returns>
     public Case getCasesThatNeedUpdate(int mountCounter) {
-        Debug.LogWarning("THIS METHOD IS NOT IMPLEMENTEDE YET!");
         Case c = null;
         for (int i = 0; i < currentCases.Count; i++)
         {
             Case cas = currentCases[i];
-            if (cas.nextImportenTurn >= mountCounter)
+            Debug.Log(cas.caseName + " KAN DENNE CASE GÅ VIDERE" + ((cas.nextImportenTurn >= mountCounter)));
+            if (cas.nextImportenTurn <= mountCounter)
             {
+                Debug.Log(cas.caseName + " Need update (" + mountCounter + " looked at mount: " + cas.nextImportenTurn);
+                currentCaseIndex = i;
                 c = cas;
+                break;
             }
         }
         return c;

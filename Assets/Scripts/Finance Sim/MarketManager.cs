@@ -202,7 +202,7 @@ public class MarketManager : MonoBehaviour
                                 loanType.volatility,
                                 loanType.longTermRate,
                                 GameManager.instance.monthNumber,
-                                loanType.installment
+                                loanType.installment,loanType
         );
         nLoan.fixedIR = (loanType.loanTime == 360);
         var graphObj = Instantiate(graphPrefab,btnContainer);
@@ -296,11 +296,12 @@ public class MarketManager : MonoBehaviour
         int remaingTime = GameManager.instance.monthNumber - loan.periodStartMonth;
         int loanTime = l.loanTime;
         loan.fixedIR = (l.loanTime == 360);
-        if (remaingTime + l.loanTime > 360) {
+        if (remaingTime + l.loanTime >= 360) {
             loanTime = 360 - remaingTime;
+            loan.lastPeriod = true;
         }
         
-        loan.convertLoan(GameManager.instance.monthNumber, loanTime, l.interssetRate, l.volatility);
+        loan.convertLoan(GameManager.instance.monthNumber, loanTime, l.interssetRate, l.volatility,l);
         return loan;
     }
 }

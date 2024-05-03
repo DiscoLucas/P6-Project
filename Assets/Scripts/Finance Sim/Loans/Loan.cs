@@ -16,8 +16,8 @@ public class Loan
     internal double longTermRate { get; set; }
     [Tooltip("The client that have the loan")] public ClientData clientData;
     [Tooltip("the length of the loan in months")] public int LoanTerm;
-    [Tooltip("The month that the loan was started")] internal int initialMonth { get; set; }
-    [Tooltip("The month that the loan currentPeriodStarted")] internal int periodStartMonth { get; set; }
+    [SerializeField][Tooltip("The month that the loan was started")] internal int initialMonth { get; set; }
+    [SerializeField][Tooltip("The month that the loan currentPeriodStarted")] internal int periodStartMonth { get; set; }
     [Tooltip("[Not in use] The mount that still need to be payed")] internal double RemainingLoanAmount { get; set; }
     [Tooltip("How much the client pay per mounth ")] internal double MonthlyPayment { get; set; }
 
@@ -27,7 +27,10 @@ public class Loan
 
     [Tooltip("Do the loan have installment")] public bool installment = false;
     public bool fixedIR = false;
-    public Loan(ClientData client,int LoanTerm, double loanAmount, double interestRate, double volatility, double longTermRate, int startMount,bool installment)
+    public bool lastPeriod = false;
+
+    public LoanTypes loanTypes;
+    public Loan(ClientData client,int LoanTerm, double loanAmount, double interestRate, double volatility, double longTermRate, int startMount, bool installment, LoanTypes loanTypes)
     {
         this.clientData = client;
         this.LoanTerm = LoanTerm;
@@ -39,6 +42,7 @@ public class Loan
         this.periodStartMonth = startMount;
         this.installment = installment;
         IRPForTime.Add(100);
+        this.loanTypes = loanTypes;
     }
     /// <summary>
     /// Return all the interest rate over time
@@ -72,11 +76,12 @@ public class Loan
     /// <param name="interestRate"></param>
     /// <param name="volatility"></param>
     /// <param name="longTermRate"></param>
-    public void convertLoan(int currentMount, int LoanTerm, double interestRate, double volatility) {
+    public void convertLoan(int currentMount, int LoanTerm, double interestRate, double volatility,LoanTypes loanTypes) {
         periodStartMonth = currentMount;
         this.LoanTerm = LoanTerm;
         this.interestRate = interestRate;
         this.volatility = volatility;
+        this.loanTypes = loanTypes;
 
     }
 

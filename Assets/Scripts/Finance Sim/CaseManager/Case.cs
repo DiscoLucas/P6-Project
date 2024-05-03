@@ -8,6 +8,7 @@ public class Case
 {
     public string caseName = "_case";
     public MeetingCollection[] meetings;
+    public int convertionMeetingIndex = 1;
     [Tooltip("The type of customer who can partake in these meetings")] public CustomerType type;
     public ClientData client;
     public float loanAmount;
@@ -16,7 +17,9 @@ public class Case
     [Tooltip("Which meeting they need to be in")]public int meetingIndex = 0;
     public int sentincesIndex = 0;
     public bool caseClosed = false;
+    public bool canMoveToNext = false;
     public bool needLoan;
+    public bool loanOngoing;
     public string caseDiscription;
     public int nextImportenTurn = -1;
     public Case(CaseTemplate template,ClientData _client) {
@@ -45,9 +48,40 @@ public class Case
         return caseClosed;
     }
 
-    public void goToNextClientMeeting() { 
-        meetingIndex++;
-        sentincesIndex = 0;
+    public void goToNextClientMeeting() {
+        if (meetings[meetingIndex].needToFinnishToProgress)
+        {
+            meetingIndex++;
+            if (convertionMeetingIndex == meetingIndex) {
+                meetingIndex++;
+            }
+            sentincesIndex = 0;
+            canMoveToNext = false;
+        }
+        else {
+            if (canMoveToNext) {
+                meetingIndex++;
+            }
+            sentincesIndex = 0;
+            canMoveToNext = false;
+        }
+    }
+
+    public bool checkCaseUpdate() { 
+        if(loan != null)
+        {
+            bool update = (GameManager.instance.monthNumber - loan.initialMonth >= 360);
+            
+            if (update) {
+                meetingIndex++;
+                
+                sentincesIndex = 0;
+                canMoveToNext = false;
+            }
+            return update; 
+
+        }
+        return false;
     }
 
     public int returnSentince()
@@ -71,6 +105,7 @@ public struct MeetingCollection {
     public bool haveEncountered;
     public GameObject meetingPrefab;
     public int[] meetingSentences;
+    public bool needToFinnishToProgress;
     public int[] assistantSaulSentensis;
 }
 
