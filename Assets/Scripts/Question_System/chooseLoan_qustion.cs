@@ -12,7 +12,8 @@ public class chooseLoan_qustion : Qustion
     public Toggle installmentToggel;
     public Dictionary<string, LoanTypes> loans = new Dictionary<string, LoanTypes>();
     public string sufix = "%",ir_Name = "Rente";
-
+    public bool doNotTakeAll = false;
+    public bool ir_lower = false;
     public override void calcCorrectAnswer()
     {
         
@@ -21,6 +22,21 @@ public class chooseLoan_qustion : Qustion
         inputField.ClearOptions();
         List<string> list= new List<string>();
         foreach (LoanTypes loant in lt) {
+            if (doNotTakeAll) {
+
+                if (ir_lower)
+                {
+                    if (_case.loan.IRForTime[_case.loan.IRForTime.Count - 1] < loant.interssetRate) {
+                        continue;
+                    }
+                }
+                else {
+                    if (_case.loan.IRForTime[_case.loan.IRForTime.Count - 1] > loant.interssetRate)
+                    {
+                        continue;
+                    }
+                }
+            }
             string ir = string.Format("{0:N2}", (loant.interssetRate*100).ToString());
             string key = loant.name + "-" + ir_Name + ":" + ir + sufix;
             loans.Add(key, loant);
@@ -37,9 +53,19 @@ public class chooseLoan_qustion : Qustion
  
         LoanTypes l = loans[inputField.options[inputField.value].text];
         l.installment = installmentToggel.isOn;
-        _case.loan = GameManager.instance.mm.createLoan(client, client.Finance.neededLoan, l);
-        Debug.Log("Next mounth somthing happends: " + (GameManager.instance.monthNumber + _case.loan.LoanTerm));
+        _case.loan = GameManager.instance.mm.createLoan(client, _case.loanAmount, l);
+        Debug.Log("Next mounth somthing happends: " + (GameManager.instance.monthNumber + _case.loan.LoanTerm) + " " + _case.loan.loanTypes.name);
         _case.nextImportenTurn = GameManager.instance.monthNumber + _case.loan.LoanTerm;
+        _case.loan.debtAmount = _case.loanAmount * Mathf.Pow((1 + (float)_case.loan.interestRate), _case.loan.LoanTerm / 12);
+        if (l.loanTime == 360)
+        {
+            _case.sentincesIndex = 0;
+            _case.meetingIndex = _case.meetings.Length-1;
+        }
+        else {
+            _case.contiuneToNextTypeOfMeeting();
+        }
+        
     }
 
     public override void setAnswer()

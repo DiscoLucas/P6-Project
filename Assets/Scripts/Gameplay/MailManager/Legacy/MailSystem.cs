@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MailSystem : MonoBehaviour
 {
-    Thread[] Threads;
+   /* Thread[] Threads;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +20,12 @@ public class MailSystem : MonoBehaviour
         {
             Debug.Log(thread.name);
         }
-    }
+    }*/
 }
 
 //strange monolithic code
 
-public class Thread : MonoBehaviour
+/*public class Thread : MonoBehaviour
 {
     public string Name = "Bob";
     public string[] Messages;
@@ -33,4 +33,4 @@ public class Thread : MonoBehaviour
     {
         Messages.Append("Hey");
     }
-}
+}*/

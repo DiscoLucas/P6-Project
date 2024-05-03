@@ -297,6 +297,7 @@ public class MarketManager : MonoBehaviour
         int loanTime = l.loanTime;
         loan.fixedIR = (l.loanTime == 360);
         if (remaingTime + l.loanTime >= 360) {
+            Debug.Log("LastPeriod");
             loanTime = 360 - remaingTime;
             loan.lastPeriod = true;
         }
