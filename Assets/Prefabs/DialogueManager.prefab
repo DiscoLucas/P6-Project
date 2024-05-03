@@ -74,8 +74,8 @@ MonoBehaviour:
     startMeet: 0
     minPitch: 1.6
     maxPitch: 0.6
-    caseDiscription: 
     firstCaseIndex: 0
+    customerType: 0
   clientInfo: {fileID: 0}
   animator: {fileID: 0}
   textFreq: 3
@@ -127,6 +127,23 @@ MonoBehaviour:
     \xE5r nu og ser p\xE5 at k\xF8be et hus."
   - "Hvert m\xE5nede tjener jeg [Tjener] kr f\xF8r skat, og er sikker i min stilling."
   - Jeg har opsparet [FuldOpsparing] kr, gennem min arbejds tid.
+  - "Hvilket l\xE5n vil du lave til mig?"
+  - "Hej, jeg har set at der har v\xE6ret en \xE6ndring i kursen, og vil gerne se
+    om det ville give mening at oml\xE6gge mit l\xE5n."
+  - 
+  - "For at finde ud af hvor meget en klient kan l\xE5ne, er det godt at huske, som
+    en tommelfingerregel, at man m\xE5 have en g\xE6ldsfaktor p\xE5 4."
+  - "N\xE5r en klient s\xF8ger et l\xE5n, skal de selv have et minimum af 5% l\xE5net
+    til udbetaling."
+  - "S\xE5 find deres \xE5rsl\xF8n ganget med g\xE6ldsfaktoren er hvormaget kunden
+    kan l\xE5ne. For at se hvor meget deres bolig kan koste skal de penge de har
+    til udbetalig ligges oven i.\r\n"
+  - "I v\xE6kstomr\xE5der som K\xF8benhavn og Aarhus kan kunder med bel\xE5ningsgrad
+    over 60% og en g\xE6ldfaktor over 4 ikke f\xE5 et \"usikkert l\xE5n\"."
+  - "1. Alle variabelt forrentede l\xE5n med eller uden afdrag, hvor renten justeres
+    med en frekvens p\xE5 mindre end fem \xE5r."
+  - "2. Afdragsfrie variabelt forrentede l\xE5n, hvor renten justeres med en frekvens
+    p\xE5 fem \xE5r eller mere."
   tags:
   - '[Navn]'
   - '[Alder]'

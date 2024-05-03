@@ -25,7 +25,7 @@ public class Assistant : MonoBehaviour
     public void assistantStartTalk()
     {
         walk.Play();
-        DialogueManager.instance.StartDia(GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].assistantSentinceReturn());
+        DialogueManager.instance.StartDia(13);
     }
 
     public void assistantNewLine()

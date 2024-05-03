@@ -139,7 +139,7 @@ MonoBehaviour:
   musicArray:
   - name: Music
     clip: {fileID: 8300000, guid: 211c1cd0edd397342b64c6786fda5783, type: 3}
-    volume: 1
+    volume: 0.01
     pitch: 1
     spatialBlend: 0
     spatialize: 0

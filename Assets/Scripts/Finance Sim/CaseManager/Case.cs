@@ -84,17 +84,27 @@ public class Case
         return false;
     }
 
+    public bool updateSentince()
+    {
+        sentincesIndex++;
+        return (sentincesIndex < meetings[meetingIndex].meetingSentences.Length);
+    }
+
     public int returnSentince()
     {
         int i = meetings[meetingIndex].meetingSentences[sentincesIndex];
-        sentincesIndex++;
         return i;
+    }
+
+    public bool assistantsSentinceUpdate()
+    {
+        sentincesIndex++;
+        return (sentincesIndex < meetings[meetingIndex].assistantSaulSentensis.Length);
     }
 
     public int assistantSentinceReturn()
     {
         int i = meetings[meetingIndex].assistantSaulSentensis[sentincesIndex];
-        sentincesIndex++;
         return i;
     }
 

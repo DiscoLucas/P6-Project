@@ -17,10 +17,14 @@ public class ClientCutOutController : MonoBehaviour
             DialogueManager.instance.nextSentince = 
                 GameManager.instance.csm.getCurrentCase()
                 .returnSentince();
-
+            if (GameManager.instance.csm.getCurrentCase().updateSentince())
+            {
+                dialogueDone();
+            }
             Debug.Log("startTalking");
             cm.clientStartTalking();
         }
+
     }
 
     public void stopClient() {
