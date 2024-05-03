@@ -54,13 +54,14 @@ public class MailManager : MonoBehaviour
         GameObject newMailObject = Instantiate(mailPrefab, parentObject, false);
         //adadawqonqdwnanjda mailSystem = newMailObject.GetComponent<adadawqonqdwnanjda>();
 
-       /* if (mailSystem == null)
+        //if (mailSystem == null)
+        /*
         {
             Debug.LogError("Mail system not found");
             return;
-        }
-
-        mailList.Add(null);*/
+        }*/
+       
+        mailList.Add(null);
     }
 
 
