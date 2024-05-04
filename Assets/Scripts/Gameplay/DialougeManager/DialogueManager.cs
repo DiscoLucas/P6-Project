@@ -212,10 +212,11 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
-        dialogDone.Invoke();
         dialogueVissible = false;
+        hasRun = false;
         animator.SetBool("IsOpen", dialogueVissible);
         Debug.Log("End of Dialogue");
+        dialogDone.Invoke();
     }
 }
 

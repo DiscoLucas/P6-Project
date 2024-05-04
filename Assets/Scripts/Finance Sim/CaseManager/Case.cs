@@ -41,7 +41,7 @@ public class Case
         return meetings[meetingIndex];
     }
     public bool checkIfDoneTalking() {
-        return (sentincesIndex < meetings[meetingIndex].meetingSentences.Length);
+        return false;
     }
 
     public bool checkIfCaseIsDone() {
@@ -64,12 +64,13 @@ public class Case
     public bool updateSentince()
     {
         sentincesIndex++;
-        return (sentincesIndex < meetings[meetingIndex].meetingSentences.Length);
+        return false;
     }
 
     public int returnSentince()
     {
-        int i = meetings[meetingIndex].meetingSentences[sentincesIndex];
+        Debug.Log("Meeting index: " + meetingIndex);
+        int i = meetings[meetingIndex].meetingDialog;
         return i;
     }
 
@@ -91,7 +92,7 @@ public struct MeetingCollection {
     public string name;
     public bool haveEncountered;
     public GameObject meetingPrefab;
-    public int[] meetingSentences;
+    public int meetingDialog;
     public bool needToFinnishToProgress;
     public int[] assistantSaulSentensis;
 }

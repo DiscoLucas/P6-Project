@@ -284,6 +284,7 @@ public class GameManager : MonoBehaviour
         clm.currentClient = cClient;
         GameObject obj = Instantiate(prefab,Vector3.zero,quaternion.identity);
         obj.transform.parent = csm.clientMeetingTransform;
+        Debug.Log("Meeting have been instantiatet it parrent is: " + obj.transform.parent.name + " obj is " + obj.name);
 
     }
 
@@ -297,7 +298,12 @@ public class GameManager : MonoBehaviour
 
     public void createClientMeeting()
     {
-        createClientMeeting(csm.currentCases[csm.currentCaseIndex].getCurrentMeeting().meetingPrefab, clm.getrRandomClient());
+        Debug.Log("Creating meeting");
+        var currentCase = csm.currentCases[csm.currentCaseIndex];
+        var cureentMeeting = currentCase.getCurrentMeeting();
+        var meetingprefab = cureentMeeting.meetingPrefab;
+        Debug.Log("not null[\nCurrent case: " + (currentCase != null) + "\nprefab: " + (meetingprefab != null) + "\n]");
+        createClientMeeting(meetingprefab, currentCase.client);
 
     }
 

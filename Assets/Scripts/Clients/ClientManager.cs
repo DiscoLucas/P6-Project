@@ -165,9 +165,9 @@ public class ClientManager : MonoBehaviour
     }
     public void clientStartTalking()
     {
-        if (clientPresState == ClientPresState.talking) {
-            DialogueManager.instance.StartDia(precentationIndex);
-        }
+        Debug.Log("Start Talking");
+        DialogueManager.instance.StartDia(precentationIndex);
+    
     }
     public void clientDoneTalking() {
         Debug.Log("DoneTalking");
