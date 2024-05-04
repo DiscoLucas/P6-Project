@@ -323,19 +323,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 828464859923675073, guid: f288332e4eccdcb41a52aa9a76709d1f,
+    - target: {fileID: 1267768301226041484, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2136560986}
+    - target: {fileID: 2518141235963804989, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 828464859923675073, guid: f288332e4eccdcb41a52aa9a76709d1f,
+    - target: {fileID: 2518141235963804989, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 828464859923675073, guid: f288332e4eccdcb41a52aa9a76709d1f,
+    - target: {fileID: 3183970717710616683, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
-      propertyPath: m_AnchorMin.x
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818128141037322577, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818128141037322577, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4923685502799423490, guid: f288332e4eccdcb41a52aa9a76709d1f,
@@ -442,21 +457,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonitorScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458309634314127230, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458309634314127230, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7458309634314127230, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2455,28 +2455,6 @@ MonoBehaviour:
   graphPrefab: {fileID: 3054240563043014080, guid: 3a7e2b8fa2c85fb4aa8ae2e4ee740826,
     type: 3}
   visualizerController: {fileID: 604666461}
-  testClient:
-    clientName: 
-    age: 0
-    job: 
-    city: 
-    maritalStatus: 0
-    Finance:
-      monthlyIncome: 0
-      monthlyExpenses: 0
-      monthlySavings: 0
-      totalSavings: 0
-      yearlyIncome: 0
-      debt: 0
-      debtFactor: 0
-      neededLoan: 0
-    sprite: {fileID: 0}
-    haveBeenPresented: 0
-    startMeet: 0
-    minPitch: 0
-    maxPitch: 0
-    firstCaseIndex: 0
-    customerType: 0
 --- !u!1 &8745699182369324135
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,8 +65,6 @@ public class MarketManager : MonoBehaviour
     /// The scrit that controll the visual aspect of the graphs
     /// </summary>
     public IRVisualizer visualizerController;
-
-    [Tooltip("SLET MIG !")]public ClientData testClient;
     private void Awake()
     {
         dt = timeHorizon / 4f;
@@ -75,7 +73,6 @@ public class MarketManager : MonoBehaviour
 
     private void Start()
     {
-        createLoan(testClient, 124251, loanTypes[0]);
     }
     /// <summary>
     /// The different types of market events
