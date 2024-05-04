@@ -78,7 +78,7 @@ MonoBehaviour:
     customerType: 0
   clientInfo: {fileID: 0}
   animator: {fileID: 0}
-  textFreq: 3
+  textFreq: 2
   TypeSpeed: 0.03
   dialoguec:
     VoiceClip: []
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentinces:
     gridSize: {x: 15, y: 16}
-    cellSize: {x: 128, y: 16}
+    cellSize: {x: 64, y: 16}
     cells:
     - row:
       - 'Hej med dig, du er den nye konsulent her ude er du ikke?   '
@@ -165,9 +165,12 @@ MonoBehaviour:
         kan l\xE5ne. "
       - "For at se hvor meget deres bolig kan koste, skal de penge de har til udbetaling
         l\xE6gges oven i."
-      - 
-      - 
-      - 
+      - "I v\xE6kstomr\xE5der som K\xF8benhavn og Aarhus kan kunder med bel\xE5ningsgrad
+        over 60% og en g\xE6ldfaktor over 4 ikke f\xE5 et \"usikkert l\xE5n\"."
+      - "1) Alle variabelt forrentede l\xE5n med eller uden afdrag, hvor renten justeres
+        med en frekvens p\xE5 mindre end fem \xE5r."
+      - "2) Afdragsfrie variabelt forrentede l\xE5n, hvor renten justeres med en
+        frekvens p\xE5 fem \xE5r eller mere."
       - 
       - 
       - 
@@ -178,12 +181,9 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - "I v\xE6kstomr\xE5der som K\xF8benhavn og Aarhus kan kunder med bel\xE5ningsgrad
-        over 60% og en g\xE6ldfaktor over 4 ikke f\xE5 et \"usikkert l\xE5n\"."
-      - "1) Alle variabelt forrentede l\xE5n med eller uden afdrag, hvor renten justeres
-        med en frekvens p\xE5 mindre end fem \xE5r."
-      - "2) Afdragsfrie variabelt forrentede l\xE5n, hvor renten justeres med en
-        frekvens p\xE5 fem \xE5r eller mere."
+      - 
+      - 
+      - 
       - 
       - 
       - 

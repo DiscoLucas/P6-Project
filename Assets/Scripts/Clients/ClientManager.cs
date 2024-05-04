@@ -13,7 +13,7 @@ public class ClientManager : MonoBehaviour
     List<ClientData> clients;
     public ClientData currentClient;
     [SerializeField]
-    int precentationIndex = 0;
+    int precentationIndex = 1;
     DialogueInteractor di;
     [SerializeField]
     ClientPresState clientPresState = ClientPresState.none;

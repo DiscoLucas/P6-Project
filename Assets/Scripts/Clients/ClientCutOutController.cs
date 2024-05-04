@@ -6,6 +6,7 @@ using System;
 public class ClientCutOutController : MonoBehaviour
 {
     public ClientManager cm;
+    public Assistant assistant;
     private void Start()
     {
         DialogueManager.instance.sentinceDone.AddListener(dialogueDone);
@@ -33,15 +34,27 @@ public class ClientCutOutController : MonoBehaviour
 
     public void dialogueDone()
     {
-        
-        if (GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].checkIfDoneTalking())
+        if (assistant.tutorialRunning)
         {
-            DialogueManager.instance.nextSentince = GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].returnSentince();
+            if (assistant.checkIfTutorialDone())
+            {
+                DialogueManager.instance.hasRun = true;
+            }
+            else
+            {
+
+            }
         }
         else
         {
-            DialogueManager.instance.hasRun = true;
+            if (GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].checkIfDoneTalking())
+            {
+                DialogueManager.instance.nextSentince = GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].returnSentince();
+            }
+            else
+            {
+                DialogueManager.instance.hasRun = true;
+            }
         }
-        
     }
 }

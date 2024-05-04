@@ -54,7 +54,6 @@ public class DialogueManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            dialogDone = new UnityEvent();
             sentinceDone = new UnityEvent();
             animator.SetBool("IsOpen", dialogueVissible);
         }

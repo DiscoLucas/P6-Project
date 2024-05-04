@@ -8,6 +8,7 @@ using static UnityEngine.ParticleSystem;
 public class CaseManager : MonoBehaviour
 {
     public Case _case;
+    public Assistant assistant;
 
     [Header("Client Meeting")]
     [SerializeField]
@@ -59,6 +60,10 @@ public class CaseManager : MonoBehaviour
     /// </summary>
     public void startConviencation()
     {
+        if (!assistant.firstTimeConvert)
+        {
+            assistant.convertionTutorial();
+        }
 
         GameManager.instance.guim.showActionMenu();
         TurnType turnT = GameManager.instance.getCurrentTurnType();
