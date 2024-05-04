@@ -42,7 +42,7 @@ public class Loan
         this.initialMonth = startMount;
         this.periodStartMonth = startMount;
         this.installment = installment;
-        IRPForTime.Add(100);
+        IRPForTime.Add((interestRate/20)+95);
         this.loanTypes = loanTypes;
     }
     /// <summary>

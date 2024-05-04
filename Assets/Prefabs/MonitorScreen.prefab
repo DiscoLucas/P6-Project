@@ -125,40 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientData:
-    clientName: 
-    age: 0
-    job: 
-    city: 
-    maritalStatus: 0
-    Finance:
-      monthlyIncome: 0
-      monthlyExpenses: 0
-      monthlySavings: 0
-      totalSavings: 0
-      yearlyIncome: 0
-      debt: 0
-      debtFactor: 0
-      neededLoan: 0
-    sprite: {fileID: 0}
-    haveBeenPresented: 0
-    startMeet: 0
-    minPitch: 0
-    maxPitch: 0
-    firstCaseIndex: 0
-    customerType: 0
-  mail:
-    Reciever: 
-    Sender: 
-    Subject: 
-    info: 'akflkadf
-
-      asdfsad
-
-      sdfsdf'
-    test: {fileID: 0}
-  rect: {fileID: 0}
-  clientInfo: {fileID: 0}
 --- !u!1 &137474095194367348
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,36 +2537,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientData:
-    clientName: 
-    age: 0
-    job: 
-    city: 
-    maritalStatus: 0
-    Finance:
-      monthlyIncome: 0
-      monthlyExpenses: 0
-      monthlySavings: 0
-      totalSavings: 0
-      yearlyIncome: 0
-      debt: 0
-      debtFactor: 0
-      neededLoan: 0
-    sprite: {fileID: 0}
-    haveBeenPresented: 0
-    startMeet: 0
-    minPitch: 0
-    maxPitch: 0
-    firstCaseIndex: 0
-    customerType: 0
-  mail:
-    Reciever: 
-    Sender: 
-    Subject: 
-    info: 
-    test: {fileID: 0}
-  rect: {fileID: 0}
-  clientInfo: {fileID: 0}
 --- !u!1 &1402181711413582293
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,8 +4817,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3904242730922367983}
   m_HandleRect: {fileID: 828464859923675073}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.99999976
+  m_Value: 1
+  m_Size: 0.9999998
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5329,6 +5265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentShowedLoan:
+    debtAmount: 0
     clientData:
       clientName: 
       age: 0
@@ -7354,7 +7291,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3790365439035776865}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5855930151191857676}
+        m_TargetAssemblyTypeName: IRVisualizer, Assembly-CSharp
+        m_MethodName: changeWhatsIsOnGraph
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3990393990984289777
 GameObject:
   m_ObjectHideFlags: 0
@@ -9789,36 +9738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientData:
-    clientName: 
-    age: 0
-    job: 
-    city: 
-    maritalStatus: 0
-    Finance:
-      monthlyIncome: 0
-      monthlyExpenses: 0
-      monthlySavings: 0
-      totalSavings: 0
-      yearlyIncome: 0
-      debt: 0
-      debtFactor: 0
-      neededLoan: 0
-    sprite: {fileID: 0}
-    haveBeenPresented: 0
-    startMeet: 0
-    minPitch: 0
-    maxPitch: 0
-    firstCaseIndex: 0
-    customerType: 0
-  mail:
-    Reciever: 
-    Sender: 
-    Subject: 
-    info: 
-    test: {fileID: 0}
-  rect: {fileID: 0}
-  clientInfo: {fileID: 5408868048476009866}
 --- !u!1 &4462170327737904834
 GameObject:
   m_ObjectHideFlags: 0
@@ -11024,7 +10943,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7602527762284984447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13507,8 +13426,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 441064845700488361}
   m_HandleRect: {fileID: 7458309634314127230}
   m_Direction: 2
-  m_Value: 0.99999756
-  m_Size: 0.15866165
+  m_Value: 0.9999968
+  m_Size: 0.15866163
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using XCharts.Runtime;
 
 public class GUIManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class GUIManager : MonoBehaviour
     [Header("Menu Stuff")]
     public GameObject action_Menu;
     public GameObject talkClient_BTN;
+    public GameObject space_Canvas, computer_Canvas;
 
     RectTransform dialogBox;
     Canvas canvas;
@@ -22,6 +24,8 @@ public class GUIManager : MonoBehaviour
             canvas = GameObject.FindWithTag("Main Canvas").GetComponent<Canvas>();
         else throw new System.Exception("There is either more than one Main Canvas in the scene, or none");
     }
+
+    
 
     public void showActionMenu() { 
         action_Menu.SetActive(true);
