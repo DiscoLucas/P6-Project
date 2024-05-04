@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace XCharts.Runtime
@@ -8,7 +10,7 @@ namespace XCharts.Runtime
     {
         public virtual bool vertsDirty { get { return m_VertsDirty; } }
         public virtual bool componentDirty { get { return m_ComponentDirty; } }
-
+        
         public virtual SerieColorBy defaultColorBy { get { return SerieColorBy.Serie; } }
         public virtual bool titleJustForSerie { get { return false; } }
         public virtual bool useSortData { get { return false; } }
@@ -26,7 +28,7 @@ namespace XCharts.Runtime
 
         public SerieHandler handler { get; set; }
 
-
+        
 
         public static void ClearVerticesDirty(ChildComponent component)
         {
@@ -42,12 +44,12 @@ namespace XCharts.Runtime
 
         public static bool IsVertsDirty(ChildComponent component)
         {
-            return component == null ? false : component.vertsDirty;
+            return component == null?false : component.vertsDirty;
         }
 
         public static bool IsComponentDirty(ChildComponent component)
         {
-            return component == null ? false : component.componentDirty;
+            return component == null?false : component.componentDirty;
         }
 
         public virtual void SetVerticesDirty()

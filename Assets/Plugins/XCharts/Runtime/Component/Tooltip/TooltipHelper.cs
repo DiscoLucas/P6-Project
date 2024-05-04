@@ -55,7 +55,7 @@ namespace XCharts.Runtime
 
         public static bool IsIgnoreFormatter(string itemFormatter)
         {
-            return "-".Equals(itemFormatter) || "{i}".Equals(itemFormatter, StringComparison.CurrentCultureIgnoreCase);
+            return "-".Equals(itemFormatter) ||"{i}".Equals(itemFormatter, StringComparison.CurrentCultureIgnoreCase);
         }
 
         public static void LimitInRect(Tooltip tooltip, Rect chartRect)

@@ -45,7 +45,7 @@ namespace XCharts.Runtime
             var theme = chart.theme;
             var xAxisIndex = xAxis.index;
             xAxis.painter = chart.painter;
-            xAxis.refreshComponent = delegate ()
+            xAxis.refreshComponent = delegate()
             {
                 var grid = chart.GetChartComponent<GridCoord>(xAxis.gridIndex);
                 if (grid != null)
