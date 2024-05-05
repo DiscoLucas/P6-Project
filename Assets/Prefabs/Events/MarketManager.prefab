@@ -885,14 +885,129 @@ MonoBehaviour:
   eventDescription: {fileID: 1106549681098993996}
   eventEffect: {fileID: 7797995006256632637}
   Popup: {fileID: 2103938491711022676}
-  eventsDescriptionList:
-  - "Albert f\xE5r en banan"
-  - "Albert f\xE5r en appelsin"
-  eventsEffectList:
-  - "Albert f\xE5r banan. Albert er meget glad for banan. Det er meget godt. Albert
-    spiser mange bananer."
-  - "Albert f\xE5r appelsin. Albert g\xE5r helt amok for appelsin. Det er vanvittigt.
-    Pr\xF8v at se Albert med den appelsin. Albert er helt glad."
+  marketEvents:
+  - eventsDescription: Nationalbanken laver rentejusteringer
+    eventsEffect: "Nationalbanken offentlig\xF8r deres beslutninger om rentesatser,
+      hvilket p\xE5virker l\xE5nsomkostninger for b\xE5de forbrugere og virksomheder."
+    eventType: 1
+    rateModifier: 0.5
+  - eventsDescription: Den Danske Krone Sejrer!
+    eventsEffect: "Nationalbanken overaskede i dag B\xF8rsen ved anonnceringen af
+      et nyt skift i rente politik. Denne nyhed har allerede stiget v\xE6rdien af
+      kronen sammenlignet med andre valutaer, hvilket potientielt g\xF8r Danskeres
+      l\xE5n dyrre."
+    eventType: 1
+    rateModifier: 1
+  - eventsDescription: "Frygt over Amerikansk recession skr\xE6mmer investorer!"
+    eventsEffect: "Det forventes at usikkerheden i USA kommer til at p\xE5virke Det
+      danske market."
+    eventType: 2
+    rateModifier: 2
+  - eventsDescription: "Dansk Eksport i V\xE6kst!"
+    eventsEffect: "Forbruger tilid har aldrig v\xE6ret h\xF8jere!"
+    eventType: 1
+    rateModifier: -1
+  - eventsDescription: Energi krise
+    eventsEffect: "Geopolitiske sp\xE6ndinger i Mellem\xF8sten har sendt b\xF8lger
+      gennem det globale energi market."
+    eventType: 2
+    rateModifier: 3
+  - eventsDescription: "EU godkender historisk gr\xF8n investor pakke"
+    eventsEffect: "Det forventes at dette f\xF8rer til lavere renter."
+    eventType: 1
+    rateModifier: -2
+  - eventsDescription: "Local startup f\xE5r rekord-stor investering"
+    eventsEffect: Investeringen signalerer en ny tillid i den danske invationssektor,
+      som potentielt kan lede til at mere stabilt market.
+    eventType: 2
+    rateModifier: -1
+  - eventsDescription: "Nationalbanken s\xE6tter foden p\xE5 speederen: Renten stiger
+      markant!"
+    eventsEffect: "Bekymringer over stigende priser f\xF8rer til markant renteforh\xF8jelse.
+      L\xE5ntagere m\xE6rker presset, mens forsparinger f\xE5r et pusterum."
+    eventType: 1
+    rateModifier: 3
+  - eventsDescription: Reddit shorter GME-aktier... igen
+    eventsEffect: Eksperter er forvirret over hvad det kommer til at betyde for markede
+    eventType: 2
+    rateModifier: 1
+  - eventsDescription: 'Krone under pres: Renten stiger forsigtigt.'
+    eventsEffect: "Forsigtig renteforh\xF8jelse l\xE6gger pres p\xE5 den danske krone,
+      men kan styrke investorernes tillid til dansk \xF8konomi."
+    eventType: 1
+    rateModifier: 1
+  - eventsDescription: 'Renten styrtdykker: Uro rammer finansielle markeder!'
+    eventsEffect: "Markant rentefald skaber usikkerhed p\xE5 markederne. L\xE5ntagere
+      jubler, mens investorer s\xF8ger sikker havn."
+    eventType: 1
+    rateModifier: -3
+  - eventsDescription: 'Renten falder: Bekymringer om recession lurer i horisonten.'
+    eventsEffect: "Forsigtig rentelettelse kan bremse en mulig recession, men skaber
+      ogs\xE5 usikkerhed om fremtiden."
+    eventType: 1
+    rateModifier: -1
+  - eventsDescription: 'Marked roliger sig: Ny regulering bringer stabilitet.'
+    eventsEffect: "Strengere markedsregler d\xE6mper volatilitet og skaber et mere
+      forudsigeligt investeringsmilj\xF8."
+    eventType: 2
+    rateModifier: -5
+  - eventsDescription: 'Optimisme spirer: Markedsvolatilitet falder gradvist.'
+    eventsEffect: "Forsigtig reduktion i volatilitet tyder p\xE5 \xF8get investoroptimisme
+      og en mere stabil \xF8konomisk udvikling."
+    eventType: 2
+    rateModifier: -1
+  loanTypes:
+  - name: "3 \xE5rs Fastforrentet med afdrag"
+    loanTime: 36
+    installment: 1
+    interssetRate: 0
+    volatility: 0
+    longTermRate: 0
+  - name: "5 \xE5rs Fastforrentet med afdrag"
+    loanTime: 60
+    installment: 1
+    interssetRate: 0
+    volatility: 0
+    longTermRate: 0
+  - name: "10 \xE5rs Fastforrentet med afdrag"
+    loanTime: 120
+    installment: 1
+    interssetRate: 0
+    volatility: 0
+    longTermRate: 0
+  - name: "20 \xE5rs Fastforrentet med afdrag"
+    loanTime: 240
+    installment: 1
+    interssetRate: 0
+    volatility: 0
+    longTermRate: 0
+  - name: "30 \xE5rs Fastforrentet med afdrag"
+    loanTime: 360
+    installment: 1
+    interssetRate: 0
+    volatility: 0
+    longTermRate: 0
+  - name: "5 \xE5rs Flexl\xE5n med afdrag"
+    loanTime: 60
+    installment: 1
+    interssetRate: 0
+    volatility: 0
+    longTermRate: 0
+  - name: "3 \xE5rs Flexl\xE5n med afdrag"
+    loanTime: 36
+    installment: 1
+    interssetRate: 0
+    volatility: 0
+    longTermRate: 0
+  loans: []
+  timeHorizon: 1
+  dt: 0
+  step: 0
+  priceInterestRateMultiplyer: 10
+  installWithoutmentMultiplyer: 0.03
+  btnContainer: {fileID: 0}
+  graphPrefab: {fileID: 0}
+  visualizerController: {fileID: 0}
 --- !u!1 &8425133624170000177
 GameObject:
   m_ObjectHideFlags: 0

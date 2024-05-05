@@ -117,7 +117,7 @@ public class Loan
         if (monthlyInterestRate > 0)
         {
             monthlyPayment = loanAmount * monthlyInterestRate / (1 - Math.Pow(1 + monthlyInterestRate, -loanTermInMonths));
-            Debug.Log(clientData.clientName + "paid of " + monthlyPayment + " of their loan, with a POSITVE interest");
+            Debug.Log(clientData.clientName + " paid of " + monthlyPayment + " of their loan, with a POSITVE interest");
         }
         else
         {

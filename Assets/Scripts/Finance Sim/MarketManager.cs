@@ -309,6 +309,7 @@ public class MarketManager : MonoBehaviour
 [Serializable]
 public class MarketEvents {
     public string eventsDescription;
+    [TextArea(3, 6)]
     public string eventsEffect;
     public MarketEventType eventType;
     public double rateModifier;

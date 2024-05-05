@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 154be7c567ac9b04788d058139304b2d, type: 3}
   m_Name: Venom Snake
   m_EditorClassIdentifier: 
-  clientName: 
-  age: 0
-  job: 
-  city: 
+  clientName: Punished "Venom" Snake
+  age: 52
+  job: Mecenary Commander
+  city: Outer Heaven
   maritalStatus: 0
-  customerType: 0
+  customerType: 1
   chacterSprite: {fileID: 21300000, guid: e09f479e8c10ec6459be394f06d3a0ed, type: 3}
-  minPitch: 0
+  minPitch: -3
   maxPitch: 0
   startMeet: 0
-  monthlyIncome: 0
-  monthlyExpenses: 0
-  monthlySavings: 0
-  totalSavings: 0
-  neededLoan: 0
+  monthlyIncome: 4850930
+  monthlyExpenses: 2771960
+  monthlySavings: 1039485
+  totalSavings: 13859800
+  neededLoan: 3.46495e+9
   debt: 0
   startClientmeeting: 0
