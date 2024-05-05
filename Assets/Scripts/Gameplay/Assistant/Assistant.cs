@@ -12,8 +12,9 @@ public class Assistant : MonoBehaviour
     [Header("Dialogues")]
     public int dialogueToSay;
     public int tutorialDialogue = 0;
+    [SerializeField] string assistant_Name = "Saul";
 
-    [Header("Tutorial Flags")]
+    [Header("Tutorial Bools")]
     public bool tutorialHasPlayed = false;
     public bool firstTimeMakeLoan = false;
     public bool firstTimeBuyout = false;
@@ -40,6 +41,7 @@ public class Assistant : MonoBehaviour
     {
         tutorialRunning = true;
         intro.Play();
+        DialogueManager.instance.nameText.text = assistant_Name;
         DialogueManager.instance.StartDia(dialogueIndex);
         if (GameManager.instance.csm.getCurrentCase().assistantsSentinceUpdate())
         {

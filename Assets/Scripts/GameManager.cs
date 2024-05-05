@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
     TMP_Text mountCounter;
     string counterString;
     public float points = 0;
+    public Assistant assistant;
 
     private void Awake()
     {
@@ -223,6 +224,10 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void markedEvent()
     {
+        if (!assistant.firstTimeBuyout)
+        {
+            assistant.newLoanTutorial();
+        }
         Debug.Log("MArked event " + " Mounth: " + monthNumber);
         mm.showMarkedEvent();
         //tr�k incident fra incident list
