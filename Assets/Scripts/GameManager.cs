@@ -353,6 +353,7 @@ public class TurnEvent {
     public float chance;
     public bool disable = false;
     public TurnType type;
+    public bool tutorial = false;
 }
 
 
