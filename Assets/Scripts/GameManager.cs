@@ -224,10 +224,6 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void markedEvent()
     {
-        if (!assistant.firstTimeBuyout)
-        {
-            assistant.newLoanTutorial();
-        }
         Debug.Log("MArked event " + " Mounth: " + monthNumber);
         mm.showMarkedEvent();
         //tr�k incident fra incident list
