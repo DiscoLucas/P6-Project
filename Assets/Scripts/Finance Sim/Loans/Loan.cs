@@ -68,8 +68,8 @@ public class Loan
     /// <param name="amount"></param>
     public void payLoan() 
     { 
-        
-        loanAmount -= CalculateMonthlyPayment();
+        double monthlyPayment = CalculateMonthlyPayment();
+        loanAmount -= monthlyPayment;
     }
 
     /// <summary>
@@ -101,9 +101,9 @@ public class Loan
     private double CalculateMonthlyPayment()
     {
         double monthlyInterestRate;
-        if (fixedIR)
+        if (fixedIR || IRForTime.Count == 0)
         {
-            monthlyInterestRate = interestRate / 12; // if it's fixed, use the initial interest rate
+            monthlyInterestRate = interestRate / 12; // if it's fixed or if there are no interest rates, use the initial interest rate
         }
         else
         {
@@ -122,7 +122,7 @@ public class Loan
         else
         {
             monthlyPayment = loanAmount / loanTermInMonths;
-            Debug.Log(clientData.clientName + "paid of " + monthlyPayment + " of their loan, with a NEGATIVE interest");
+            Debug.Log(clientData.clientName + " paid of " + monthlyPayment + " of their loan, with a NEGATIVE interest");
         }
         return MonthlyPayment = monthlyPayment;
     }
