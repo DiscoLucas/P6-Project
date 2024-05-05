@@ -283,8 +283,7 @@ public class GameManager : MonoBehaviour
     public void createClientMeeting(GameObject prefab, ClientData cClient) {
         destoryCurrentClientMeeting();
         clm.currentClient = cClient;
-        GameObject obj = Instantiate(prefab,Vector3.zero,quaternion.identity);
-        obj.transform.parent = csm.clientMeetingTransform;
+        GameObject obj = Instantiate(prefab, csm.clientMeetingTransform);
         Debug.Log("Meeting have been instantiatet it parrent is: " + obj.transform.parent.name + " obj is " + obj.name);
 
     }
