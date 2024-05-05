@@ -25,14 +25,14 @@ MonoBehaviour:
     haveEncountered: 0
     meetingPrefab: {fileID: 3543866400164522722, guid: 619e80ed280b5d24081e8907867a6375,
       type: 3}
-    meetingDialog: 0
+    meetingDialog: 1
     needToFinnishToProgress: 0
     assistantSaulSentensis: 
   - name: Infri Loan
     haveEncountered: 0
     meetingPrefab: {fileID: 7088544836619742971, guid: becb5d6a724556a48b9fa7ffd4febea7,
       type: 3}
-    meetingDialog: 0
+    meetingDialog: 2
     needToFinnishToProgress: 0
     assistantSaulSentensis: 
   caseDiscription: 

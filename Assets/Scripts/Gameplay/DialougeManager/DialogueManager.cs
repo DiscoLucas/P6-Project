@@ -105,6 +105,7 @@ public class DialogueManager : MonoBehaviour
             if (currentDialogueIndex < dialogueRegistry.sentinces.GridSize.x)
             {
                 string sentence = dialogueRegistry.GetSentincesIndex(currentCaseIndex, currentDialogueIndex);
+                sentence = dialogueRegistry.replaceString(sentence, GameManager.instance.csm.getCurrentCase());
                 DisplayOneSentince(sentence);
                 currentDialogueIndex++;
 

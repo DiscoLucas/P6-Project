@@ -122,75 +122,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentinces:
-    gridSize: {x: 15, y: 16}
-    cellSize: {x: 64, y: 16}
+    gridSize: {x: 4, y: 16}
+    cellSize: {x: 100, y: 50}
     cells:
     - row:
-      - 'Hej med dig, du er den nye konsulent her ude er du ikke?   '
-      - "Jeg er Samuel, din assistent her for at hj\xE6lpe dig med at falde godt
-        til, jeg kan lige give dig en lille rundvising af dit kontor."
-      - "Over til venstre har du din computer hvor som du kan trykke ind p\xE5 n\xE5r
-        end det passer dig. Her kan du tjekke hvad dine kunder har sagt til dig,
-        samnt makrdet med renter og kurser.  "
-      - "Du kan ogs\xE5 g\xE5 ind og tjekke hvad dine kunder syntes om dig og din
-        overordnet score. Der ud over har du adgang til vores eget lokale informations
-        forum hvor du kan f\xE5 gen opfrisket forskelige termer. "
-      - "Til h\xF8jere har du en telephon, den kan du trykke p\xE5 for at indkalde
-        kudner n\xE5r du er klar, der er vist allerade en kunder er venter p\xE5
-        dig."
-      - "God arbejds lyst, jeg vil v\xE6re lige ved siden af og klar til at hj\xE6lpe
-        n\xE5r nye opgaver dukker op. "
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
+      - Hej jeg hedder [Navn] og er [Alder] gammel. Jeg leder efter en studie bolig
+      - "Jeg tjener [Tjener] kr om m\xE5neden og har [FuldOpsparing] Kr p\xE5 min
+        opsparing"
+      - "Hvor meget kan jeg l\xE5ne? Kan du ogs\xE5 hj\xE6lpe mig med at lave et
+        l\xE5n"
       - 
     - row:
-      - "Hej, jeg mit navn er [Navn]. Jeg er her i dag for at se hvor stort et l\xE5n
-        jeg kan f\xE5. Og forh\xE5bentligt anskaffe det l\xE5n."
-      - "Jeg er [Alder]  \xE5r, og  er lige blevet f\xE6rdig med min uddannelse og
-        kigger efter at anskaffe mig en ejerbolig."
-      - "Lige nu p\xE5 min nye stilling tjener jeg [Tjener] kr f\xF8r skat."
+      - "Hej igen. Jeg ville gerne konvertere mit l\xE5n"
+      - "Er det noget du kan hj\xE6lpe mig med?"
+      - 
       - "I mit studiejob har jeg sammen tjent [FuldOpsparing] kr sammen med lidt
         fra min b\xF8rneopsparing."
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
     - row:
-      - "For at finde ud af hvor meget en kunde kan l\xE5ne, er det godt at huske,
-        som en tommelfingerregel, at man m\xE5 have en g\xE6ldsfaktor p\xE5 4."
-      - "N\xE5r en kunde s\xF8ger et l\xE5n, skal de selv have minimum  5% i udbetaling. 
-        S\xE5 find deres \xE5rsl\xF8n ganget med g\xE6ldsfaktoren er hvor meget kunden
-        kan l\xE5ne. "
-      - "For at se hvor meget deres bolig kan koste, skal de penge de har til udbetaling
-        l\xE6gges oven i."
+      - "Jeg har h\xF8rt noget om jeg m\xE5ske kan indfrie mit l\xE5n, kan du f\xF8lge
+        mig igennem om det giver mening for mig?"
+      - 
+      - 
       - "I v\xE6kstomr\xE5der som K\xF8benhavn og Aarhus kan kunder med bel\xE5ningsgrad
         over 60% og en g\xE6ldfaktor over 4 ikke f\xE5 et \"usikkert l\xE5n\"."
-      - "1) Alle variabelt forrentede l\xE5n med eller uden afdrag, hvor renten justeres
-        med en frekvens p\xE5 mindre end fem \xE5r."
-      - "2) Afdragsfrie variabelt forrentede l\xE5n, hvor renten justeres med en
-        frekvens p\xE5 fem \xE5r eller mere."
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
     - row:
       - 
       - 

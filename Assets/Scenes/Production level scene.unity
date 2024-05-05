@@ -1850,27 +1850,35 @@ PrefabInstance:
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[0].row.Array.data[0]
-      value: case1
+      value: Hej jeg hedder [Navn] og er [Alder] gammel. Jeg leder efter en studie
+        bolig
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[0].row.Array.data[1]
-      value: aegaegea
+      value: "Jeg tjener [Tjener] kr om m\xE5neden og har [FuldOpsparing] Kr p\xE5
+        min opsparing"
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[0].row.Array.data[2]
+      value: "Hvor meget kan jeg l\xE5ne? Kan du ogs\xE5 hj\xE6lpe mig med at lave
+        et l\xE5n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
+        type: 3}
+      propertyPath: sentinces.cells.Array.data[0].row.Array.data[3]
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[1].row.Array.data[0]
-      value: case2
+      value: "Hej igen. Jeg ville gerne konvertere mit l\xE5n"
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[1].row.Array.data[1]
-      value: jeg er nr 2!
+      value: "Er det noget du kan hj\xE6lpe mig med?"
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
@@ -1880,17 +1888,18 @@ PrefabInstance:
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[2].row.Array.data[0]
-      value: case3
+      value: "Jeg har h\xF8rt noget om jeg m\xE5ske kan indfrie mit l\xE5n, kan du
+        f\xF8lge mig igennem om det giver mening for mig?"
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[2].row.Array.data[1]
-      value: jeg er nr 3
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: sentinces.cells.Array.data[2].row.Array.data[2]
-      value: farvel
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}

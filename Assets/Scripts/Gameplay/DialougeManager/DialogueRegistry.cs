@@ -56,6 +56,9 @@ public class DialogueRegistry : MonoBehaviour
         }
     }
     public string replaceString(string message, Case currentCase) {
+        if (currentCase == null) { 
+            return message;
+        }
         string[] values = {
             currentCase.client.clientName,
             currentCase.client.age.ToString() ,

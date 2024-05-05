@@ -50,6 +50,9 @@ public class CaseManager : MonoBehaviour
     }
 
     public Case getCurrentCase() {
+        if (currentCaseIndex < 0) {
+            return null;
+        }
         return currentCases[currentCaseIndex];
     }
 
