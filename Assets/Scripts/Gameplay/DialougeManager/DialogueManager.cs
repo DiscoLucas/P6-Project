@@ -17,7 +17,6 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
     public ClientData clientData;
-    public ClientInfo clientInfo;
     public Animator animator;
 
     public static DialogueManager instance;

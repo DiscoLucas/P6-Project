@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Qustion_Convertion" Collapsed="true">
+    <Position X="19.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Qustion_Convertion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_RedeemLoan" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAQAAACAAAAAAACAIBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Qustion_RedeemLoan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientCutOutController" Collapsed="true">
+    <Position X="28.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAQACEAABAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientCutOutController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientData" Collapsed="true">
+    <Position X="30" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAAAAACQAAAAAACCAIAABAAAAAAEAAAAAYQAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FinanceData" Collapsed="true">
+    <Position X="37" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABIAAAIAAAAAAAAACAAAACAAAACAAAAQIAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientManager" Collapsed="true">
+    <Position X="31.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAKAAACgYACBDQAAAEAFgCBAIAAEQDAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientMeeting" Collapsed="true">
+    <Position X="8.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYCAAAAACAAAAAAAQAAAAIAABAAAAAAgIAAAARAAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientMeeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientTemplate" Collapsed="true">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAABIACQIAAAAAACAICAAAACIAAEAAAAAIYAgA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EI_Information" Collapsed="true">
+    <Position X="1" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAgAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\EI_Information.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CaseTemplate" Collapsed="true">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAABAAAiAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\Case Template.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Case" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIACAAgEAAIAAAAACEAAAAAgBEABCgAiAAkARADAAAk=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\Case.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CaseManager" Collapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQACAIgAAIAAAAAAAAAiIEAAgAABAAAAAQBgAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\CaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CoverageOfIncomst" Collapsed="true">
+    <Position X="10" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAARAAAAAEAAAAAAAABAAgEAAAAAAAIFAEIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CoverageOfIncomst.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Action" Collapsed="true">
+    <Position X="3.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAACACAAkAAAIgAAAAAAAAAAAAAAAAAABAAEAAE=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\Action.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="actionsDisplay" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAgBBACAAAAkAAAJAAAAAAAAAAAAAAAAIAAAAAACEE=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\actionsDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActionTemplate" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAgAQgIAAAAAAAAAAAAAAAAAAABAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\ActionTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerEvent" Collapsed="true">
+    <Position X="3.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\CustomerEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Event_manager" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAEAAAAAQAAAAAJIAAAAAAAAAIBAAEA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\Event_manager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxLoanAction" Collapsed="true">
+    <Position X="0.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\MaxLoanAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Turn" Collapsed="true">
+    <Position X="31.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAASAAAAAAAAAAAAAAgBgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\Turn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HowMuchCanItCostAD" Collapsed="true">
+    <Position X="3.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgABAARAAAIAEAAAAAAAABAAgEAAAAAAAIFAEIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\HowMuchCanItCostAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Interest_Rate_Predictor" Collapsed="true">
+    <Position X="33.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAkAAACgAAAAAAAgAAAEAAAAAABAAABAAAQAAUAIAEA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Interest rate simulation\Interest_Rate_Predictor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IRModel_HullWhite" Collapsed="true">
+    <Position X="35.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACCAAABAABAAAAAAAAAAAAAAAAAABBAAAAAEgEAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Interest rate simulation\IRModel_HullWhite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IRVisualizer" Collapsed="true">
+    <Position X="37" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EFEAJKAAAEAABAAAAAAIAABAABAEEgAAAAQyAAQoGAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Interest rate simulation\IRVisualizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loan" Collapsed="true">
+    <Position X="26.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAEAJAAAABAAACAlAAhQAAEEAAQAABAACEAFBAAQA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Loans\Loan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanManager" Collapsed="true">
+    <Position X="28.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Loans\LoanManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanTemplate" Collapsed="true">
+    <Position X="31.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAEAAAAACAAAAAAAAAAAAAAAAAAAAEABAAAAAAABQAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Loans\LoanTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarketManager" Collapsed="true">
+    <Position X="31.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAIAAAAgACAAAAEABQACRAICgkAgABQQAAQAAQAABEI=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\MarketManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MarketEvents" Collapsed="true">
+    <Position X="30" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAADAAAAAAABAAE=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\MarketManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanTypes" Collapsed="true">
+    <Position X="33.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAACAAAAAAAAAgAEAAAAAAAAAEQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\MarketManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxLoanActionDisplay" Collapsed="true">
+    <Position X="5.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAARAAAAAEAAAAAAAABAAgEAAAAABAIFAEIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\MaxLoanActionDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RuleOfThumbAD" Collapsed="true">
+    <Position X="7.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAARAAAAAEAAAAAAAABAAgEAAAAAAAIFAEIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\RuleOfThumbAD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="26.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAACAICAQIBUgABIAAAICAgBIQAcgCBQAgQEgBEA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TurnEvent" Collapsed="true">
+    <Position X="33.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABAAFAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActivateComputerBehavoir" Collapsed="true">
+    <Position X="26.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAQQAACAAEAIAAACAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ActivateComputerBehavoir.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assistant" Collapsed="true">
+    <Position X="28.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAYBAAACAIBAIAAACBEAAAAAAAAABhACAAAARCAQA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\Assistant\Assistant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioData" Collapsed="true">
+    <Position X="3" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQCAAAAAAACAIAAAAAAAAAAIAEAEAgAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\AudioManager\AudioData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioManager" Collapsed="true">
+    <Position X="30" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAACAACAACAIAAABIAAGAAABIAAAAgAAQAAgAAEA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\AudioManager\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HelpMe" Collapsed="true">
+    <Position X="30" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\AudioManager\HelpMe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Music" Collapsed="true">
+    <Position X="0.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\AudioManager\Music.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sound" Collapsed="true">
+    <Position X="3" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\AudioManager\Sound.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Voice" Collapsed="true">
+    <Position X="5.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\AudioManager\Voice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraBehaviour" Collapsed="true">
+    <Position X="31.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAACACAAAAAAAAAAAAAIAAAAAAAAAIAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\CameraBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ChatLog" Collapsed="true">
+    <Position X="26.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ChatLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailThread" Collapsed="true">
+    <Position X="28.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ChatLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D_interface_controller" Collapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\D_interface_controller.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dialogue" Collapsed="true">
+    <Position X="26.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAEABAAAAAEAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\Dialogue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueInteractor" Collapsed="true">
+    <Position X="28.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAQA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\DialogueInteractor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueManager" Collapsed="true">
+    <Position X="30" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BKFAAwECACABIAAQAAAEAAAAEQBAAIAAIQAAABAAGOA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\DialogueManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueRegistry" Collapsed="true">
+    <Position X="31.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAAAAAAAAQQAAAAAAAAAABAACAAAABAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\DialogueRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUIManager" Collapsed="true">
+    <Position X="28.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAAAAAAAAAAAAAAAAkAAACAwYAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\GUIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mail" Collapsed="true">
+    <Position X="35.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAIAAAAAAAAAAAAAIQAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\MailManager\Legacy\Mail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailManager" Collapsed="true">
+    <Position X="37" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQEAEAECBMAAAAAIAAIACAAAAAAAAAQAACABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\MailManager\Legacy\MailManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSystem" Collapsed="true">
+    <Position X="26.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\MailManager\Legacy\MailSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommentSystem" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAgAQQAAAAIAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ScoreSiteScripts\CommentSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Score" Collapsed="true">
+    <Position X="35.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ScoreSiteScripts\Legacy\Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ScoreManager" Collapsed="true">
+    <Position X="37" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAQAQAAAAAaAAAAAAQAAAAAwAAEAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ScoreSiteScripts\Legacy\ScoreManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestScoreScriptNeg" Collapsed="true">
+    <Position X="28.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ScoreSiteScripts\Legacy\TestScoreScriptNeg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestScoreScriptPos" Collapsed="true">
+    <Position X="30" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ScoreSiteScripts\Legacy\TestScoreScriptPos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StartMenuFunctions" Collapsed="true">
+    <Position X="26.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAoAIAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\StartMenuFunctions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Paper_work" Collapsed="true">
+    <Position X="8.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>0AQAAAAgBAAAEyAAAkAAgAAAAcAAAAAAAAABACQAAAI=</HashCode>
+      <FileName>Assets\Scripts\Paper_work.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="chooseLoan_qustion" Collapsed="true">
+    <Position X="19.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAEAACQAQAAAAAAAAAAIIAACgAQAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\chooseLoan_qustion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EI_Qustion" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\EI_Qustion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IncomeActionDisplay" Collapsed="true">
+    <Position X="12.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAARAAAAAEAAAAAAAABAAgEAAAAAAAIFAEIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\IncomeActionDisplay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanSelcetor" Collapsed="true">
+    <Position X="30" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAKAAAAAAAAAAAAAAAAAAgAIAABAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\loanSelcetor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAQAAAAQAAAAAAAAAAAEgoAAAgMAAAAABYAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_Ejerbolig_Prosent" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_Ejerbolig_Prosent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_EnoughMoneyForThis" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAAAAAAAAAAAAAAEAAAJAEAAAIAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_EnoughMoneyForThis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HouseData" Collapsed="true">
+    <Position X="31.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAQAAAAAAAAAAAAEAAgBAEAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_EnoughMoneyForThis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_FeildBoolean" Collapsed="true">
+    <Position X="14" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_FeildBoolean.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_FeildInput" Collapsed="true">
+    <Position X="17.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAAAQAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_FeildInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_HouseInfomation" Collapsed="true">
+    <Position X="33.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_HouseInfomation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_Infomation" Collapsed="true">
+    <Position X="21.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_Infomation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_konvertion" Collapsed="true">
+    <Position X="24" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAAAAARAAAAAAAABAAAAIBBAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_konvertion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_MaxBuyFor" Collapsed="true">
+    <Position X="10.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_MaxBuyFor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_MaxLoan" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAQAAAAACAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_MaxLoan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_NumberInput" Collapsed="true">
+    <Position X="7.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACAAAAgAAAAAAAAACAAAAAAAEAAAAAAAAAAEEAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_NumberInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_payoutEnough" Collapsed="true">
+    <Position X="15" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_payoutEnough.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="qustion_yearlyIncom" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\qustion_yearlyIncom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldSpaceButton" Collapsed="true">
+    <Position X="35.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\WorldSpaceButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="MeetingCollection" Collapsed="true">
+    <Position X="26.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAQEBAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\Case.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="MaritalStatus" Collapsed="true">
+    <Position X="30" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CustomerType" Collapsed="true">
+    <Position X="28.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ClientPresState" Collapsed="true">
+    <Position X="26.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAQAAAAAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TurnType" Collapsed="true">
+    <Position X="31.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABABAAAAIAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
