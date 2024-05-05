@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using static MarketManager;
+using Random = UnityEngine.Random;
 /// <summary>
 /// The manager that controlls the market and loans
 /// </summary>
@@ -49,8 +51,9 @@ public class MarketManager : MonoBehaviour
     /// The step that are simulatede 
     /// </summary>
     public float step;
-
+    public float marketChange = 0.0001f;
     public float priceInterestRateMultiplyer = 10;
+    public float housemarketEffectOnRateMultiplyer = 0.1f;
     public float installWithoutmentMultiplyer = 0.03f;
     /// <summary>
     /// The container that have all the buttons
@@ -65,6 +68,8 @@ public class MarketManager : MonoBehaviour
     /// The scrit that controll the visual aspect of the graphs
     /// </summary>
     public IRVisualizer visualizerController;
+
+    public MarketVisualizer marketVisualizer;
     private void Awake()
     {
         dt = timeHorizon / 4f;
@@ -73,6 +78,7 @@ public class MarketManager : MonoBehaviour
 
     private void Start()
     {
+        marketVisualizer.createChart(loanTypes);
     }
     /// <summary>
     /// The different types of market events
@@ -123,17 +129,20 @@ public class MarketManager : MonoBehaviour
                     break;
 
                 case MarketManager.MarketEventType.HousingPriceChange:
+                    interestRateChange = (double)Mathf.Lerp((float)interestRateChange, (float)updateModifer(marketEvent.rateModifier),housemarketEffectOnRateMultiplyer);
                     housingMarked = updateModifer(marketEvent.rateModifier);
                     break;
                 default: break;
             }
 
             foreach (LoanTypes loanTypes in loanTypes) {
-                loanTypes.interssetRate *= (float)interestRateChange;
+                loanTypes.interssetRate *= (float)interestRateChange+ Random.Range(-marketChange,marketChange);
                 loanTypes.volatility *= volatility;
 
             }
         }
+        marketVisualizer.updateIr(loanTypes);
+
         //Update All loan
         foreach (Loan loan in loans) {
             //hvis lån er med afdrag: Betal lån tilbage med monthly payment

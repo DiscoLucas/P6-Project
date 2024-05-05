@@ -847,31 +847,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1525460415}
-    - target: {fileID: 2518141235963804989, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2518141235963804989, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3183970717710616683, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3818128141037322577, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3818128141037322577, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4923685502799423490, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2310,6 +2285,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8290a123c7d60054e87a04e53f106dd8, type: 3}
+--- !u!114 &941653843 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7397486042635171086, guid: f288332e4eccdcb41a52aa9a76709d1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 142612006}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0de7c48996c81d4b903d6bda8b3c4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &948903067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3990,14 +3977,129 @@ PrefabInstance:
       objectReference: {fileID: 437502708}
     - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
+      propertyPath: marketChange
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
       propertyPath: eventDescription
       value: 
       objectReference: {fileID: 409530521}
     - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
+      propertyPath: marketVisualizer
+      value: 
+      objectReference: {fileID: 941653843}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
       propertyPath: visualizerController
       value: 
       objectReference: {fileID: 617852320}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[0].volatility
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[1].volatility
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[2].volatility
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[3].volatility
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[4].volatility
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[5].volatility
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[6].volatility
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[0].longTermRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[1].longTermRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[2].longTermRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[3].longTermRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[4].longTermRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[5].longTermRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[6].longTermRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[0].interssetRate
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[1].interssetRate
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[2].interssetRate
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[3].interssetRate
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[4].interssetRate
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[5].interssetRate
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4342240181937950349, guid: 7d347c556ae3ac549a2ae8e6b209c072,
+        type: 3}
+      propertyPath: loanTypes.Array.data[6].interssetRate
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 8061770259794444509, guid: 7d347c556ae3ac549a2ae8e6b209c072,
         type: 3}
       propertyPath: m_Name
