@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
     public float points = 0;
     public Assistant assistant;
     public Vector2 pointsCol ;
+    public TurnEvent turnEvent;
+
     private void Awake()
     {
         //Singleton pattern
@@ -206,7 +208,8 @@ public class GameManager : MonoBehaviour
             {
                 assistant.tutorialStart();
             }
-            else {
+            else
+            {
                 guim.showActionMenu();
             }
         }
@@ -251,7 +254,16 @@ public class GameManager : MonoBehaviour
         Case c = csm.getCurrentCase();
         clm.currentClient = c.client;
         DialogueManager.instance.clientData = c.client;
-        clm.startClientIntro(c.client);
+        /*
+        int turnTypeIndex = 0;
+        turnTypeIndex = decideWhatShouldHappend();
+        TurnType turnT = getCurrentTurnType();
+        if (!assistant.checkTurnTypeBool(turnT))
+        {
+            assistant.playSpecificTutorial(turnEvent.tutorialNR);
+        }else
+        */
+            clm.startClientIntro(c.client);
     }
 
 
@@ -391,6 +403,7 @@ public class TurnEvent {
     public bool disable = false;
     public TurnType type;
     public bool tutorial = false;
+    public int tutorialNR;
 }
 
 

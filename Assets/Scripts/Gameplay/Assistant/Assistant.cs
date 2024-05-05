@@ -6,6 +6,9 @@ using UnityEngine.Events;
 public class Assistant : MonoBehaviour
 {
     public UnityEvent turtialDone;
+    public GameManager gameManager;
+    TurnType turnType;
+    TurnEvent turnEvent;
     [Header("Components")]
     public Animation intro;
     public Animation reverseIntro;
@@ -59,11 +62,29 @@ public class Assistant : MonoBehaviour
         }
     }
 
+    public void playSpecificTutorial(int tutorialNR)
+    {
+        PlayTutorial(tutorialNR);
+        turnEvent.tutorial = true;
+    }
+
+    public bool checkTurnTypeBool()
+    {
+        if (turnEvent.tutorial == true)
+        {
+            return true;
+        }else 
+        return false;
+    }
+
     public void tutorialStart()
     {
         if (!tutorialHasPlayed)
         {
             PlayTutorial(tutorialDialogue);
+            newLoanTutorial();
+            buyOutTutorial();
+            convertionTutorial();
         }
     }
 

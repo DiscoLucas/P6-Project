@@ -122,7 +122,7 @@ MonoBehaviour:
   reverseIntro: {fileID: 97913378011513985}
   reverseIntro2: {fileID: 7400000, guid: 2ec1d59fd1cc85c48936dd9b71b7f06a, type: 2}
   dialogueToSay: 0
-  tutorialDialogue: 0
+  tutorialDialogue: 15
   assistant_Name: Saul
   tutorialHasPlayed: 0
   firstTimeMakeLoan: 0
@@ -147,8 +147,8 @@ MonoBehaviour:
     sprite: {fileID: 0}
     haveBeenPresented: 0
     startMeet: 0
-    minPitch: 0
-    maxPitch: 0
+    minPitch: 0.9
+    maxPitch: 1.1
     firstCaseIndex: 0
     customerType: 0
   currentIndex: -1
