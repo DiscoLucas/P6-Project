@@ -6,21 +6,29 @@ using System;
 public class ClientCutOutController : MonoBehaviour
 {
     public ClientManager cm;
+    public Assistant assistant;
     private void Start()
     {
         DialogueManager.instance.sentinceDone.AddListener(dialogueDone);
     }
     public void updateState(ClientPresState state) {
+        Debug.Log("Client walk in");
         cm.changeClientPresState(state);
         Debug.LogAssertion("ALLO MAND OBJECT ER" + (GameManager.instance.csm.currentClientMeeting != null ));
         if (state == ClientPresState.talking) {
-            DialogueManager.instance.nextSentince = 
-                GameManager.instance.csm.getCurrentCase()
+            Debug.Log("Set next sentinces");
+            int nextSen = GameManager.instance.csm.getCurrentCase()
                 .returnSentince();
-
+            DialogueManager.instance.nextSentince = nextSen;
+            Debug.Log("next sen: " + nextSen);
+            if (GameManager.instance.csm.getCurrentCase().updateSentince())
+            {
+                dialogueDone();
+            }
             Debug.Log("startTalking");
             cm.clientStartTalking();
         }
+
     }
 
     public void stopClient() {
@@ -29,15 +37,27 @@ public class ClientCutOutController : MonoBehaviour
 
     public void dialogueDone()
     {
-        
-        if (GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].checkIfDoneTalking())
+        if (assistant.tutorialRunning)
         {
-            DialogueManager.instance.nextSentince = GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].returnSentince();
+            if (assistant.checkIfTutorialDone())
+            {
+                DialogueManager.instance.hasRun = true;
+            }
+            else
+            {
+
+            }
         }
         else
         {
-            DialogueManager.instance.hasRun = true;
+            if (GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].checkIfDoneTalking())
+            {
+                DialogueManager.instance.nextSentince = GameManager.instance.csm.currentCases[GameManager.instance.csm.currentCaseIndex].returnSentince();
+            }
+            else
+            {
+                DialogueManager.instance.hasRun = true;
+            }
         }
-        
     }
 }

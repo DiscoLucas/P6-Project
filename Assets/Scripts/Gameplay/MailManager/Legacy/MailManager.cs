@@ -14,7 +14,7 @@ public class MailManager : MonoBehaviour
 
     public GameObject mailPrefab; // Assign this to the AMail button prefab
 
-    public GameObject mailInfo;    // Assign this to the Mail RawImage prefab
+    public GameObject mailInfo;   // Assign this to the Mail RawImage prefab
 
     public Transform parentObject;
     
@@ -52,14 +52,15 @@ public class MailManager : MonoBehaviour
     public void MailSetActive()
     {
         GameObject newMailObject = Instantiate(mailPrefab, parentObject, false);
-        MailSystem mailSystem = newMailObject.GetComponent<MailSystem>();
+        //adadawqonqdwnanjda mailSystem = newMailObject.GetComponent<adadawqonqdwnanjda>();
 
-        if (mailSystem == null)
+        //if (mailSystem == null)
+        /*
         {
             Debug.LogError("Mail system not found");
             return;
-        }
-
+        }*/
+       
         mailList.Add(null);
     }
 

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using XUGL;
 
 namespace XCharts.Runtime
 {

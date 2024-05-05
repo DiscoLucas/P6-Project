@@ -19,24 +19,28 @@ MonoBehaviour:
     meetingPrefab: {fileID: 2374550443469124037, guid: 3dc26303bd818034b94059b03e849e73,
       type: 3}
     meetingSentences: 00000000010000000200000003000000
-    assistantSaulSentensis: 0d0000000e0000000f000000
+    needToFinnishToProgress: 0
+    assistantSaulSentensis: 00000000
   - name: Realkredit info
     haveEncountered: 0
     meetingPrefab: {fileID: 5531958231513377944, guid: d1eb46999d28f9c4cbea23eddf3450fe,
       type: 3}
     meetingSentences: 0b000000
+    needToFinnishToProgress: 0
     assistantSaulSentensis: 
   - name: "Lav l\xE5n"
     haveEncountered: 0
     meetingPrefab: {fileID: 3301004322246205049, guid: ee340e8af53d86e49b2311ff350bc7eb,
       type: 3}
     meetingSentences: 0a000000
+    needToFinnishToProgress: 0
     assistantSaulSentensis: 100000001100000012000000
   - name: "Konvertering af l\xE5n"
     haveEncountered: 0
     meetingPrefab: {fileID: 5675643620597591121, guid: 619e80ed280b5d24081e8907867a6375,
       type: 3}
     meetingSentences: 0b000000
+    needToFinnishToProgress: 0
     assistantSaulSentensis: 
   caseDiscription: 
   needLoan: 0

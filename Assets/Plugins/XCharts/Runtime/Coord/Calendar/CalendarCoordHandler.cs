@@ -1,3 +1,6 @@
+using System;
+using UnityEngine;
+
 namespace XCharts.Runtime
 {
     [UnityEngine.Scripting.Preserve]

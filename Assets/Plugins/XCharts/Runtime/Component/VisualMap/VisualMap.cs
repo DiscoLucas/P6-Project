@@ -386,8 +386,8 @@ namespace XCharts.Runtime
             }
         }
 
-        public float runtimeRangeMinHeight { get { return (float)((rangeMin - min) / (max - min) * itemHeight); } }
-        public float runtimeRangeMaxHeight { get { return (float)((rangeMax - min) / (max - min) * itemHeight); } }
+        public float runtimeRangeMinHeight { get { return (float) ((rangeMin - min) / (max - min) * itemHeight); } }
+        public float runtimeRangeMaxHeight { get { return (float) ((rangeMax - min) / (max - min) * itemHeight); } }
 
         public void AddColors(List<Color32> colors)
         {
@@ -437,7 +437,7 @@ namespace XCharts.Runtime
                 if (index == splitNumber - 1)
                     return m_InRange[index].color;
                 else
-                    return Color32.Lerp(m_InRange[index].color, m_InRange[index + 1].color, (float)rate);
+                    return Color32.Lerp(m_InRange[index].color, m_InRange[index + 1].color, (float) rate);
             }
         }
 

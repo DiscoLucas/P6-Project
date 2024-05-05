@@ -69,6 +69,10 @@ public class ClientMeeting : MonoBehaviour
     public virtual void close() {
         foreach (Qustion q in qustions) { 
             q.closeMeeting();
+            if (commentSystem == null) {
+                Debug.LogError("The Comment system have not been set");
+                continue;
+            }
             if (q.isCorrect) {
                 commentSystem.PosComment();
             }
@@ -77,7 +81,7 @@ public class ClientMeeting : MonoBehaviour
                 commentSystem.NegComment();
             }
         }
-        qustions[0]._case.canMoveToNext = canProcede;
+        
 
         GameManager.instance.closeMeeting();
     }

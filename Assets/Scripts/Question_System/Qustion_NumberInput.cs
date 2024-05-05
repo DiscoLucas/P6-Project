@@ -12,12 +12,13 @@ public class Qustion_NumberInput : Qustion
     float answerPrecents = 5;
     [SerializeField]
     protected float correctAnswer = 1;
+    protected float answer;
     float calcProcent() {
         return correctAnswer * (correctAnswer / 100);
     }
     public override void setAnswer()
     {
-        float answer = stringToNumber(answerFeild.text);
+        answer = stringToNumber(answerFeild.text);
         float minAnswer = correctAnswer - calcProcent();
         float maxAnswer = correctAnswer + calcProcent();
         Debug.Log("given answer: " + answer + " Min answer: " + minAnswer + " max answer: " + maxAnswer);

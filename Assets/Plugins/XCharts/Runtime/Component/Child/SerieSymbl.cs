@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace XCharts.Runtime
 {
@@ -162,7 +163,7 @@ namespace XCharts.Runtime
                 case SymbolSizeType.FromData:
                     if (data != null && dataIndex >= 0 && dataIndex < data.Count)
                     {
-                        var value = (float)data[dataIndex] * m_DataScale;
+                        var value = (float) data[dataIndex] * m_DataScale;
                         if (m_MinSize != 0 && value < m_MinSize) value = m_MinSize;
                         if (m_MaxSize != 0 && value > m_MaxSize) value = m_MaxSize;
                         return value;

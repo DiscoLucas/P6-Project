@@ -54,7 +54,6 @@ public class DialogueManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            dialogDone = new UnityEvent();
             sentinceDone = new UnityEvent();
             animator.SetBool("IsOpen", dialogueVissible);
         }
@@ -213,10 +212,11 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
-        dialogDone.Invoke();
         dialogueVissible = false;
+        hasRun = false;
         animator.SetBool("IsOpen", dialogueVissible);
         Debug.Log("End of Dialogue");
+        dialogDone.Invoke();
     }
 }
 

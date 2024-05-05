@@ -11,6 +11,7 @@ public class Loan
     [SerializeField]
     [Tooltip("The amount that have been loaned")] internal double loanInitialAmount { get; set; }
     [Tooltip("The amount that have been loaned and is back")] internal double loanAmount { get; set; }
+    public float debtAmount = 0;
     [Tooltip("The first interest rate and what is used as a start for the simulation")] internal double interestRate { get; set; }
     [Tooltip("The voliatility of the loan (How much the price change)")] internal double volatility { get; set; }
     internal double longTermRate { get; set; }
@@ -41,7 +42,7 @@ public class Loan
         this.initialMonth = startMount;
         this.periodStartMonth = startMount;
         this.installment = installment;
-        IRPForTime.Add(100);
+        IRPForTime.Add((interestRate/20)+95);
         this.loanTypes = loanTypes;
     }
     /// <summary>

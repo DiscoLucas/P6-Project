@@ -67,8 +67,8 @@ namespace XCharts.Example
             //清空颜色重新添加
 
             var heatmapGridWid = 10f;
-            int xSplitNumber = (int)(grid.context.width / heatmapGridWid);
-            int ySplitNumber = (int)(grid.context.height / heatmapGridWid);
+            int xSplitNumber = (int) (grid.context.width / heatmapGridWid);
+            int ySplitNumber = (int) (grid.context.height / heatmapGridWid);
             var colors = new List<string>
             {
                 "#313695",

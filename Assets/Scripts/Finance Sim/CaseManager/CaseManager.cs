@@ -23,7 +23,6 @@ public class CaseManager : MonoBehaviour
     [SerializeField] public Transform clientMeetingTransform;
 
     public void endMeeting() {
-        currentCases[currentCaseIndex].goToNextClientMeeting();
         if (currentCases[currentCaseIndex].checkIfCaseIsDone()) {
             currentCases.RemoveAt(currentCaseIndex);
             closedCases++;
@@ -63,6 +62,7 @@ public class CaseManager : MonoBehaviour
 
         GameManager.instance.guim.showActionMenu();
         TurnType turnT = GameManager.instance.getCurrentTurnType();
+
         if (turnT == TurnType.Change_forCustomer)
         {
             GameManager.instance.clientMeeting();
