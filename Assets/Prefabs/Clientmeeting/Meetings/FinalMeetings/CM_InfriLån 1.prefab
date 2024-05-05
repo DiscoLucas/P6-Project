@@ -2052,6 +2052,7 @@ MonoBehaviour:
   ir_Name: Rente
   doNotTakeAll: 0
   ir_lower: 0
+  chooseThis: 0
 --- !u!1 &4729305030421414132
 GameObject:
   m_ObjectHideFlags: 0
@@ -4505,3 +4506,4 @@ MonoBehaviour:
   - "Ved at oml\xE6gge sit l\xE5n og optager et nyt l\xE5n, som bruges til at betale
     det gamle l\xE5n af med."
   convertLoanWindow: {fileID: 8320380669803284992}
+  convertion: {fileID: 8916302239547092609}

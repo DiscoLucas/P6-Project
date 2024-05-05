@@ -1995,10 +1995,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5901445087610871287, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1238723050}
-    - targetCorrespondingSourceObject: {fileID: 5901445087610871287, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1039502646}
     - targetCorrespondingSourceObject: {fileID: 5901445087610871287, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
@@ -2044,6 +2040,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 2062528868}
+    - targetCorrespondingSourceObject: {fileID: 5901445087610871287, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1238723050}
     - targetCorrespondingSourceObject: {fileID: 5901445087610871287, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       insertIndex: -1
@@ -3316,7 +3316,7 @@ MonoBehaviour:
   guim: {fileID: 2069508408}
   dlm: {fileID: 419886079}
   cm: {fileID: 1188979867}
-  endSceneIndex: 0
+  endSceneIndex: 2
   startType: 3
   turnType:
   - name: Nothing
@@ -3345,6 +3345,7 @@ MonoBehaviour:
   mountCounter: {fileID: 1308846927}
   points: 0
   assistant: {fileID: 115913098}
+  pointsCol: {x: 0, y: 0}
 --- !u!4 &305047533
 Transform:
   m_ObjectHideFlags: 0

@@ -43,8 +43,10 @@ public class CaseManager : MonoBehaviour
         CaseTemplate ct = templates[Random.Range(0, count)];
         Case c = new Case(ct, clientData);
         currentCases.Add(c);
-        if (needClosedCases >= (closedCases + GameManager.instance.clm.getClientsCount()))
+        if (needClosedCases <= (closedCases + GameManager.instance.clm.getClientsCount())) {
+            Debug.Log("Can not create more customeres. There are  " + closedCases + " closedCases and the amount of clients are " + GameManager.instance.clm.getClientsCount() + "Clients");
             GameManager.instance.clm.cantCreateMore();
+        }
         currentCaseIndex = currentCases.Count - 1;
         
     }

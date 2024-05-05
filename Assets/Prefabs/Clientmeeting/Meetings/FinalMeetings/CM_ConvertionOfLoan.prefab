@@ -240,6 +240,7 @@ MonoBehaviour:
   ir_Name: Rente
   doNotTakeAll: 1
   ir_lower: 0
+  chooseThis: 0
 --- !u!1 &157279494380598818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,6 +1526,8 @@ MonoBehaviour:
   shouldDownConvert: 0
   downConvertionWindow: {fileID: 7576350187074241263}
   upConvertionWindow: {fileID: 6033805725079006081}
+  downCS: {fileID: 4127200388824859680}
+  upCS: {fileID: 2982781284428572534}
   answers:
   - DownKonverting
   - UpKonverting
@@ -6320,6 +6323,7 @@ MonoBehaviour:
   ir_Name: Rente
   doNotTakeAll: 1
   ir_lower: 1
+  chooseThis: 0
 --- !u!1 &8927704253764240206
 GameObject:
   m_ObjectHideFlags: 0

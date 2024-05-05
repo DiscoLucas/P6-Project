@@ -307,8 +307,8 @@ public class MarketManager : MonoBehaviour
             loanTime = 360 - remaingTime;
             loan.lastPeriod = true;
         }
-        
         loan.convertLoan(GameManager.instance.monthNumber, loanTime, l.interssetRate, l.volatility,l);
+        loan.loanTypes= l;
         return loan;
     }
 }

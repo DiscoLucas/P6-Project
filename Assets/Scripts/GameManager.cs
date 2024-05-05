@@ -59,14 +59,14 @@ public class GameManager : MonoBehaviour
     string counterString;
     public float points = 0;
     public Assistant assistant;
-
+    public Vector2 pointsCol ;
     private void Awake()
     {
         //Singleton pattern
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject.transform.parent);
             clientMeetingDone = new UnityEvent();
         }
         else
@@ -349,7 +349,24 @@ public class GameManager : MonoBehaviour
     }
 
     public void endGame() {
+        pointsCol = new Vector2(cm.score, cm.bestPossibleScore);
         SceneManager.LoadScene(endSceneIndex);
+    }
+
+    public void destoryAllManagers() {
+        instance = null;
+        Destroy(transform.parent);
+}
+
+    void tryTodestoy(GameObject obj) {
+        try
+        {
+            Destroy(obj);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
     }
 }
 

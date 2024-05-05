@@ -166,7 +166,7 @@ public class ClientManager : MonoBehaviour
     public void clientStartTalking()
     {
         Debug.Log("Start Talking");
-        DialogueManager.instance.StartDia(precentationIndex);
+        DialogueManager.instance.StartDia(GameManager.instance.csm.getCurrentCase().returnSentince());
     
     }
     public void clientDoneTalking() {

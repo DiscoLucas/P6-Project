@@ -13,6 +13,7 @@ public class Qustion_konvertion : Qustion
     [SerializeField]
     protected bool shouldDownConvert = false;
     public GameObject downConvertionWindow,upConvertionWindow;
+    public Qustion_Convertion downCS, upCS;
     public List<string> answers = new List<string>();
 
     public override void fillOutHeaderAndDescribtion()
@@ -31,6 +32,8 @@ public class Qustion_konvertion : Qustion
             Debug.Log("downConvert");
             downConvertionWindow.SetActive(true);
             upConvertionWindow.SetActive(false);
+            downCS.chooseThis = true;
+            upCS.chooseThis = false;
             isCorrect = shouldDownConvert;
 
         }
@@ -39,12 +42,16 @@ public class Qustion_konvertion : Qustion
             Debug.Log("upConvert");
             downConvertionWindow.SetActive(false);
             upConvertionWindow.SetActive(true);
+            downCS.chooseThis = false;
+            upCS.chooseThis = true;
             isCorrect = !shouldDownConvert;
         }
         else {
             Debug.Log("behold");
             downConvertionWindow.SetActive(false);
             upConvertionWindow.SetActive(false);
+            downCS.chooseThis = false;
+            upCS.chooseThis = false;
             isCorrect = !shouldDownConvert;
         }
 

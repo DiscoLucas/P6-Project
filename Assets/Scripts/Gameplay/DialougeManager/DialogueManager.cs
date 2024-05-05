@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     public static DialogueManager instance;
-    int currentCaseIndex = -1;
+    public int currentCaseIndex = -1;
     int currentDialogueIndex = 0;
 
     [Header("Voice parameters")]
