@@ -3307,8 +3307,9 @@ MonoBehaviour:
       firstCaseIndex: 0
       customerType: 0
     loanAmount: 0
-    ovenAmount: 0
+    debt: 0
     loan:
+      debtAmount: 0
       clientData:
         clientName: 
         age: 0
@@ -3346,10 +3347,8 @@ MonoBehaviour:
         longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
-    caseClosed: 0
-    canMoveToNext: 0
     needLoan: 0
-    loanOngoing: 0
+    closeCase: 0
     caseDiscription: 
     nextImportenTurn: 0
   caseTemplate:
@@ -7365,36 +7364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientData:
-    clientName: 
-    age: 0
-    job: 
-    city: 
-    maritalStatus: 0
-    Finance:
-      monthlyIncome: 0
-      monthlyExpenses: 0
-      monthlySavings: 0
-      totalSavings: 0
-      yearlyIncome: 0
-      debt: 0
-      debtFactor: 0
-      neededLoan: 0
-    sprite: {fileID: 0}
-    haveBeenPresented: 0
-    startMeet: 0
-    minPitch: 0
-    maxPitch: 0
-    firstCaseIndex: 0
-    customerType: 0
-  mail:
-    Reciever: 
-    Sender: 
-    Subject: 
-    info: 
-    test: {fileID: 0}
-  rect: {fileID: 0}
-  clientInfo: {fileID: 0}
 --- !u!1 &1020942377
 GameObject:
   m_ObjectHideFlags: 0
@@ -7795,6 +7764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cm: {fileID: 1181538538}
+  assistant: {fileID: 0}
 --- !u!1 &1047790389
 GameObject:
   m_ObjectHideFlags: 0
@@ -7824,40 +7794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68176bf2fa816ca458e26b019b284f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clientData:
-    clientName: 
-    age: 0
-    job: 
-    city: 
-    maritalStatus: 0
-    Finance:
-      monthlyIncome: 0
-      monthlyExpenses: 0
-      monthlySavings: 0
-      totalSavings: 0
-      yearlyIncome: 0
-      debt: 0
-      debtFactor: 0
-      neededLoan: 0
-    sprite: {fileID: 0}
-    haveBeenPresented: 0
-    startMeet: 0
-    minPitch: 0
-    maxPitch: 0
-    firstCaseIndex: 0
-    customerType: 0
-  mail:
-    Reciever: 
-    Sender: 
-    Subject: 
-    info: 'akflkadf
-
-      asdfsad
-
-      sdfsdf'
-    test: {fileID: 0}
-  rect: {fileID: 0}
-  clientInfo: {fileID: 0}
 --- !u!224 &1047790391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12544,6 +12480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentShowedLoan:
+    debtAmount: 0
     clientData:
       clientName: 
       age: 0
@@ -12584,11 +12521,12 @@ MonoBehaviour:
   headerPrice: 
   typeSubfiix: "\xE5r"
   loanFast: Fast
-  LineChartPrice: {fileID: 0}
   LineChartIR: {fileID: 1214523704}
   graphArea: {fileID: 228320784}
   NoDataArea: {fileID: 228320784}
   buttonText: {fileID: 0}
+  firstNumber: {fileID: 0}
+  LastNumber: {fileID: 0}
 --- !u!1 &1512749014
 GameObject:
   m_ObjectHideFlags: 0
@@ -16011,6 +15949,124 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977444880}
   m_CullTransparentMesh: 1
+--- !u!1001 &2004955544
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55975275992192750, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484060978761017155, guid: d9fd05ac19458824c911a094beadb407,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d9fd05ac19458824c911a094beadb407, type: 3}
 --- !u!1 &2007879878
 GameObject:
   m_ObjectHideFlags: 0
@@ -17124,6 +17180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action_Menu: {fileID: 5693355127581555993}
   talkClient_BTN: {fileID: 4829544517324860324}
+  space_Canvas: {fileID: 0}
+  computer_Canvas: {fileID: 0}
 --- !u!1 &2070113923
 GameObject:
   m_ObjectHideFlags: 0
@@ -18791,10 +18849,10 @@ RectTransform:
   - {fileID: 1239197964997363917}
   m_Father: {fileID: 4768521401706937291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1219.5441, y: -255.13}
+  m_SizeDelta: {x: 2419.0881, y: 290.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1147195777487307428
 RectTransform:
@@ -19197,7 +19255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1491083596458793154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19262,10 +19320,10 @@ RectTransform:
   - {fileID: 836766134238680298}
   m_Father: {fileID: 4768521401706937291}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 1219.5441, y: -50}
+  m_SizeDelta: {x: 2419.0881, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1523288061748765586
 CanvasRenderer:
@@ -20015,8 +20073,9 @@ MonoBehaviour:
       firstCaseIndex: 0
       customerType: 0
     loanAmount: 0
-    ovenAmount: 0
+    debt: 0
     loan:
+      debtAmount: 0
       clientData:
         clientName: 
         age: 0
@@ -20054,10 +20113,8 @@ MonoBehaviour:
         longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
-    caseClosed: 0
-    canMoveToNext: 0
     needLoan: 0
-    loanOngoing: 0
+    closeCase: 0
     caseDiscription: 
     nextImportenTurn: 0
   qutionsParrent: {fileID: 2066713986500155583}
@@ -21333,28 +21390,6 @@ MonoBehaviour:
   graphPrefab: {fileID: 3054240563043014080, guid: 3a7e2b8fa2c85fb4aa8ae2e4ee740826,
     type: 3}
   visualizerController: {fileID: 1497911980}
-  testClient:
-    clientName: 
-    age: 0
-    job: 
-    city: 
-    maritalStatus: 0
-    Finance:
-      monthlyIncome: 0
-      monthlyExpenses: 0
-      monthlySavings: 0
-      totalSavings: 0
-      yearlyIncome: 0
-      debt: 0
-      debtFactor: 0
-      neededLoan: 0
-    sprite: {fileID: 0}
-    haveBeenPresented: 0
-    startMeet: 0
-    minPitch: 0
-    maxPitch: 0
-    firstCaseIndex: 0
-    customerType: 0
 --- !u!1 &3101062645080853186
 GameObject:
   m_ObjectHideFlags: 0
@@ -22846,8 +22881,9 @@ MonoBehaviour:
       firstCaseIndex: 0
       customerType: 0
     loanAmount: 0
-    ovenAmount: 0
+    debt: 0
     loan:
+      debtAmount: 0
       clientData:
         clientName: 
         age: 0
@@ -22885,16 +22921,16 @@ MonoBehaviour:
         longTermRate: 0.5
     meetingIndex: 0
     sentincesIndex: 0
-    caseClosed: 0
-    canMoveToNext: 0
     needLoan: 0
-    loanOngoing: 0
+    closeCase: 0
     caseDiscription: 
     nextImportenTurn: 0
   inputField: {fileID: 0}
   installmentToggel: {fileID: 0}
   sufix: '%'
   ir_Name: Rente
+  doNotTakeAll: 0
+  ir_lower: 0
 --- !u!114 &5117600479505793997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25985,3 +26021,4 @@ SceneRoots:
   - {fileID: 2100214864}
   - {fileID: 2136560987}
   - {fileID: 2044040280}
+  - {fileID: 2004955544}
