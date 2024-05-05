@@ -1668,6 +1668,8 @@ MonoBehaviour:
     nextImportenTurn: 0
   caseTemplate:
   - {fileID: 11400000, guid: fbd6c58dd1cd27b429e01f0f7a257b5a, type: 2}
+  - {fileID: 11400000, guid: 848b2887c663cca43a53461847a5ee62, type: 2}
+  - {fileID: 11400000, guid: e6c6d8a5497917d4190f25a7b2cc344c, type: 2}
   currentCases: []
   currentCaseIndex: -1
   closedCases: 0
@@ -1749,164 +1751,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: tags.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: values.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: tags.Array.data[11]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cellSize.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cellSize.y
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.gridSize.x
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: values.Array.data[1]
-      value: '[value1]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces2D.cellSize.x
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces2D.cellSize.y
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[0]
-      value: "Hej, jeg hedder [Navn]. Jeg er her for at se om jeg kan f\xE5 mig et
-        l\xE5n."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[1]
-      value: "Jeg er [Alder]  \xE5r, og [Forhold]. Jeg er lige blevet f\xE6rdig med
-        min udanelse og kigger efter at anskaffe mig en ejerbolig."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[2]
-      value: "I mit studiejob har jeg sammen tj\xE6nt [FuldOpsparing] kr sammen med
-        lidt fra min b\xF8rneopsparing."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[3]
-      value: "Lige nu p\xE5 min nye stillinger tjener jeg [Tjener]  kr f\xF8r skat."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[4]
-      value: Jeg har adskelige shrines til Albert [By]
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.Array.data[5]
-      value: "Albert er det eneste jeg kan t\xE6nke p\xE5 [Forhold]"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[1].row.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[2].row.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.data[0]
-      value: Hej jeg hedder [Navn] og er [Alder] gammel. Jeg leder efter en studie
-        bolig
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.data[1]
-      value: "Jeg tjener [Tjener] kr om m\xE5neden og har [FuldOpsparing] Kr p\xE5
-        min opsparing"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.data[2]
-      value: "Hvor meget kan jeg l\xE5ne? Kan du ogs\xE5 hj\xE6lpe mig med at lave
-        et l\xE5n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[1].row.Array.data[0]
-      value: "Hej igen. Jeg ville gerne konvertere mit l\xE5n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[1].row.Array.data[1]
-      value: "Er det noget du kan hj\xE6lpe mig med?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[1].row.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[2].row.Array.data[0]
-      value: "Jeg har h\xF8rt noget om jeg m\xE5ske kan indfrie mit l\xE5n, kan du
-        f\xF8lge mig igennem om det giver mening for mig?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[2].row.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[2].row.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces2D.cells.Array.data[0].row.Array.data[0]
-      value: "Hej mit navn er [Navn]. jeg er her i dag for at se hvor stort et l\xE5n
-        jeg kan f\xE5, og forh\xE5bentligt anskaffe mig et."
-      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: Diatext
@@ -1922,16 +1766,6 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 1308846928}
-    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: textFreq
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: TypeSpeed
-      value: 0.03
-      objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
       propertyPath: gameObject_end
@@ -5977,7 +5811,7 @@ PrefabInstance:
     - target: {fileID: 6717328503421305980, guid: c07cc4845619b3e40a219955d87b3950,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 6717328503421305980, guid: c07cc4845619b3e40a219955d87b3950,
         type: 3}
@@ -6013,6 +5847,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095076634058197816, guid: c07cc4845619b3e40a219955d87b3950,
+        type: 3}
+      propertyPath: tutorialDialogue
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
