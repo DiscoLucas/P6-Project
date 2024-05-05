@@ -98,6 +98,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: e6dd3a6edb5d51d48b551e236976a4e1, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: e6dd3a6edb5d51d48b551e236976a4e1, type: 2}
+  - {fileID: 7400000, guid: 2d858ef40e43a834b941519d8cd319ba, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
@@ -114,5 +115,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c715af21df696154b8800c8a6cee4198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walk: {fileID: 97913378011513985}
-  dialoguToSay: 4
+  intro: {fileID: 97913378011513985}
+  reverseIntro: {fileID: 97913378011513985}
+  reverseIntro2: {fileID: 7400000, guid: 2ec1d59fd1cc85c48936dd9b71b7f06a, type: 2}
+  dialogueToSay: 0
+  tutorialDialogue: 0
+  assistant_Name: Saul
+  tutorialHasPlayed: 0
+  firstTimeMakeLoan: 0
+  firstTimeBuyout: 0
+  firstTimeConvert: 0
+  tutorialRunning: 0
