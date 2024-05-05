@@ -92,11 +92,13 @@ public class Assistant : MonoBehaviour
 
     public void endAssistantTalk()
     {
-        reverseIntro.clip = reverseIntro2;
-        reverseIntro.PlayQueued(reverseIntro2.name);
-        reverseIntro.Play();
-        tutorialHasPlayed = true;
-        Debug.Log("I love you");
-        turtialDone.Invoke();
+        if (!tutorialHasPlayed) {
+            reverseIntro.clip = reverseIntro2;
+            reverseIntro.PlayQueued(reverseIntro2.name);
+            reverseIntro.Play();
+            tutorialHasPlayed = true;
+            Debug.Log("I love you");
+            turtialDone.Invoke();
+        }
     }
 }
