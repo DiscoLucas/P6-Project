@@ -28,7 +28,7 @@ public class CaseManager : MonoBehaviour
             closedCases++;
             if (closedCases >= needClosedCases) {
                 Debug.Log("SPILLET ER FÆRDIG TABER");
-                Debug.Break();
+                GameManager.instance.endGame();
             }
         }
         currentCaseIndex= -1;

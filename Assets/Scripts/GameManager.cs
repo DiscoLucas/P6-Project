@@ -12,7 +12,7 @@ using XCharts;
 using XCharts.Runtime;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Events")]
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public readonly static float dt = timeHorizon / 4f;
 
     [Header("References")]
+    public int endSceneIndex = 0;
     public int startType = 0;
     public TurnEvent[] turnType;
     [SerializeField]
@@ -87,6 +88,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         updateTurn();
+        assistant.turtialDone.AddListener(turtroialDone);
+    }
+
+    public void turtroialDone() {
+        if (monthNumber == 1) {
+            guim.showActionMenu();
+        }
     }
 
     /// <summary>
@@ -194,8 +202,13 @@ public class GameManager : MonoBehaviour
         }
         else if (turnT == TurnType.Change_forCustomer || turnT == TurnType.New_customer)
         {
-            guim.showActionMenu();
-
+            if (monthNumber == 1)
+            {
+                assistant.tutorialStart();
+            }
+            else {
+                guim.showActionMenu();
+            }
         }
     }
 
@@ -293,6 +306,7 @@ public class GameManager : MonoBehaviour
         //TODO: let the player create a loan if they want to, through the Loan class.
         //loanManager.CreateLoan(currentClientMeeting.currentClient.clientName, 12);
         destoryCurrentClientMeeting();
+        guim.hideMeetingPopUp();
         clientMeetingDone.Invoke();
     }
 
@@ -304,6 +318,7 @@ public class GameManager : MonoBehaviour
         var meetingprefab = cureentMeeting.meetingPrefab;
         Debug.Log("not null[\nCurrent case: " + (currentCase != null) + "\nprefab: " + (meetingprefab != null) + "\n]");
         createClientMeeting(meetingprefab, currentCase.client);
+        guim.showMeetingPopUp();
 
     }
 
@@ -330,6 +345,10 @@ public class GameManager : MonoBehaviour
     internal TurnType getCurrentTurnType()
     {
         return turnT;
+    }
+
+    public void endGame() {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(endSceneIndex));
     }
 }
 

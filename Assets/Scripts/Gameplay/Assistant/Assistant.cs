@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Assistant : MonoBehaviour
 {
+    public UnityEvent turtialDone;
     [Header("Components")]
     public Animation intro;
     public Animation reverseIntro;
@@ -21,11 +23,13 @@ public class Assistant : MonoBehaviour
     public bool firstTimeConvert = false;
     public bool tutorialRunning = false;
 
+
+    public ClientData assisentData;
+    public int currentIndex = -1;
     // Start is called before the first frame update
     void Start()
     {
         ResetBool();
-        tutorialStart();
         DialogueManager.instance.dialogDone.AddListener(endAssistantTalk);
     }
 
@@ -39,10 +43,16 @@ public class Assistant : MonoBehaviour
 
     void PlayTutorial(int dialogueIndex)
     {
-        tutorialRunning = true;
+        currentIndex = dialogueIndex;
         intro.Play();
+    }
+
+    public void startTurtialText(){
+        DialogueManager.instance.clientData = assisentData;
+        tutorialRunning = true;
         DialogueManager.instance.nameText.text = assistant_Name;
-        DialogueManager.instance.StartDia(dialogueIndex);
+        DialogueManager.instance.StartDia(currentIndex);
+        currentIndex =-1;
         if (GameManager.instance.csm.getCurrentCase().assistantsSentinceUpdate())
         {
 
@@ -83,8 +93,10 @@ public class Assistant : MonoBehaviour
     public void endAssistantTalk()
     {
         reverseIntro.clip = reverseIntro2;
+        reverseIntro.PlayQueued(reverseIntro2.name);
         reverseIntro.Play();
         tutorialHasPlayed = true;
         Debug.Log("I love you");
+        turtialDone.Invoke();
     }
 }
