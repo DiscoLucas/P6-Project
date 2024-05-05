@@ -348,7 +348,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void endGame() {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(endSceneIndex));
+        SceneManager.LoadScene(endSceneIndex);
     }
 }
 
