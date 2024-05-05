@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Array2DEditor;
 
 public class DialogueRegistry : MonoBehaviour
 {
     public static DialogueRegistry instance;
+    //public string[][] sentinces;
+    //[TextArea(3, 10)]
 
-    [TextArea(3, 10)]
-    public string[][] sentinces;
+    [Tooltip("The x axis are the cases, and they y axis are the dialogue options")] public Array2DString sentinces;
     //[SerializeField]
     public string[] tags = {
         "[Tjener]",
@@ -33,6 +35,8 @@ public class DialogueRegistry : MonoBehaviour
         }
     }
 
+
+
     /// <summary>
     /// This funktion takes an int that selects the coresponding element from the Sentince[]
     /// </summary>
@@ -40,9 +44,10 @@ public class DialogueRegistry : MonoBehaviour
     /// <returns></returns>
     public string GetSentincesIndex(int caseIndex, int dialogueIndex)
     {
-        if (caseIndex >=0 && caseIndex < sentinces.Length && dialogueIndex >= 0 && dialogueIndex < sentinces[caseIndex].Length)
+        
+        if (caseIndex >= 0 && caseIndex < sentinces.GridSize.y && dialogueIndex >= 0 && dialogueIndex < sentinces.GridSize.x)
         {
-            return sentinces[caseIndex][dialogueIndex];
+            return sentinces.GetCell(dialogueIndex, caseIndex);
         }
         else
         {
@@ -88,7 +93,7 @@ public class DialogueRegistry : MonoBehaviour
 
     public int GetIndex()
     {
-        int randomNr = (Random.Range(0, sentinces.Length));
+        int randomNr = (Random.Range(0, sentinces.GridSize.x));
         //Debug.Log(randomNr);
         return randomNr;
     }

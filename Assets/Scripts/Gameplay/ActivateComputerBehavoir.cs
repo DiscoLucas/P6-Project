@@ -13,7 +13,7 @@ public class ActivateComputerBehavoir : MonoBehaviour
     public GameObject OtherCanvas; //Måske gør det her en liste, så den kan have flere other canvasses?
     private void OnMouseOver()
     {
-        if (!zoomedIn && !DialogueManager.instance.isWorking)
+        if (!zoomedIn && !DialogueManager.instance.dialogueVissible)
         {
             light.SetActive(true);
             if(Input.GetMouseButtonDown(0)) { //WHEN IT CLICK

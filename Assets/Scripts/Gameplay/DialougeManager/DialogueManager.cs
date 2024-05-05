@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 
 
@@ -13,19 +11,20 @@ public class DialogueManager : MonoBehaviour
 {
     public UnityEvent dialogDone;
     public UnityEvent sentinceDone;
+
+    [Header("References")]
     public TMP_Text Diatext;
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
     public ClientData clientData;
     public ClientInfo clientInfo;
-
     public Animator animator;
-    GUIManager guiManager;
 
     public static DialogueManager instance;
     int currentCaseIndex = -1;
     int currentDialogueIndex = 0;
 
+    [Header("Voice parameters")]
     [Range(1, 3)]
     [SerializeField] private int textFreq = 2;
     [SerializeField] private float TypeSpeed = 0.04f;
@@ -33,14 +32,15 @@ public class DialogueManager : MonoBehaviour
     public Dialogue dialoguec;
     public DialogueRegistry dialogueRegistry;
     [SerializeField] private string[] VoiceClip;
+    
     public bool hasRun = false;
-    public bool isWorking = false;
+    [HideInInspector] public bool dialogueVissible = false;
+
 
     [SerializeField] private GameObject gameObject_continue;
     [SerializeField] private GameObject gameObject_end;
 
     public int nextSentince;
-
 
     private void Awake()
     {
@@ -56,6 +56,7 @@ public class DialogueManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             dialogDone = new UnityEvent();
             sentinceDone = new UnityEvent();
+            animator.SetBool("IsOpen", dialogueVissible);
         }
         else
         {
@@ -82,7 +83,7 @@ public class DialogueManager : MonoBehaviour
             DisplayCaseSummary();
             return;
         }
-        isWorking = true;
+        dialogueVissible = true;   
         currentCaseIndex = caseIndex;
         currentDialogueIndex = 0;
         //string sentince = thisSentince(registryIndex);
@@ -96,30 +97,21 @@ public class DialogueManager : MonoBehaviour
         string caseSum = GameManager.instance.csm.getCurrentCase().caseDiscription;
         DisplayOneSentince(caseSum);
     }
-    /*
-    public string thisSentince(int caseIndex)
-    {
-        DialogueRegistry.instance.GetSentincesIndex(caseIndex);
-        clientData = GameManager.instance.clm.currentClient;
-        string sent = DialogueRegistry.instance.sentinces[caseIndex]; // Get the tag from DialogueRegistry
-        string sentince = DialogueRegistry.instance.replaceString(sent, clientData);
-
-        return sentince;
-    }*/
 
 
     public void DisplayNextSentence()
     {
-        if (currentCaseIndex >= 0 && currentCaseIndex < dialogueRegistry.sentinces.Length)
+        if (currentCaseIndex >= 0 && currentCaseIndex < dialogueRegistry.sentinces.GridSize.y)
         {
-            if ( currentDialogueIndex < dialogueRegistry.sentinces[currentCaseIndex].Length)
+            
+            if (currentDialogueIndex < dialogueRegistry.sentinces.GridSize.x)
             {
-                string sentence = dialogueRegistry.sentinces[currentCaseIndex][currentDialogueIndex];
+                string sentence = dialogueRegistry.GetSentincesIndex(currentCaseIndex, currentDialogueIndex);
                 DisplayOneSentince(sentence);
                 currentDialogueIndex++;
 
-                // checking if this was the last sentence of the case
-                if (currentDialogueIndex >= dialogueRegistry.sentinces[currentCaseIndex].Length)
+                // checking if this was the last sentence of the case or if the case has more sentences
+                if (currentDialogueIndex >= dialogueRegistry.sentinces.GridSize.x || string.IsNullOrEmpty(sentence))
                 {
                     hasRun = true;
                     EndDialogue();
@@ -169,7 +161,7 @@ public class DialogueManager : MonoBehaviour
             gameObject_continue.SetActive(false);
             gameObject_end.SetActive(true);
         }
-        animator.SetBool("IsOpen", true);
+        animator.SetBool("IsOpen", dialogueVissible);
         nameText.text = clientData.clientName;
         StopAllCoroutines();
         StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch));
@@ -222,8 +214,8 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
         dialogDone.Invoke();
-        isWorking= false;
-        animator.SetBool("IsOpen", false);
+        dialogueVissible = false;
+        animator.SetBool("IsOpen", dialogueVissible);
         Debug.Log("End of Dialogue");
     }
 }
