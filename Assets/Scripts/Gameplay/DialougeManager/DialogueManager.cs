@@ -161,6 +161,9 @@ public class DialogueManager : MonoBehaviour
             gameObject_end.SetActive(true);
         }
         animator.SetBool("IsOpen", dialogueVissible);
+        Debug.Log("client start talking: " + clientData.clientName);
+        Case c = GameManager.instance.csm.getCurrentCase();
+        if (c != null) { clientData = c.client; }
         nameText.text = clientData.clientName;
         StopAllCoroutines();
         StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch));

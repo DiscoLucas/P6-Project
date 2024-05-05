@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1314062006686153218
 RectTransform:
   m_ObjectHideFlags: 0
@@ -882,9 +882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventID: 0
-  eventDescription: {fileID: 1106549681098993996}
-  eventEffect: {fileID: 7797995006256632637}
-  Popup: {fileID: 2103938491711022676}
+  eventDescription: {fileID: 0}
+  eventEffect: {fileID: 0}
+  Popup: {fileID: 0}
   marketEvents:
   - eventsDescription: Nationalbanken laver rentejusteringer
     eventsEffect: "Nationalbanken offentlig\xF8r deres beslutninger om rentesatser,
@@ -957,57 +957,43 @@ MonoBehaviour:
     eventType: 2
     rateModifier: -1
   loanTypes:
-  - name: "3 \xE5rs Fastforrentet med afdrag"
+  - name: "1 \xE5rs l\xE5n"
+    loanTime: 12
+    installment: 1
+    interssetRate: 0.01
+    volatility: 0.00009
+    longTermRate: 0.5
+  - name: "3 \xE5rs l\xE5n"
     loanTime: 36
     installment: 1
-    interssetRate: 0
-    volatility: 0
-    longTermRate: 0
-  - name: "5 \xE5rs Fastforrentet med afdrag"
+    interssetRate: 0.031
+    volatility: 0.001
+    longTermRate: 0.5
+  - name: "5 \xE5rs l\xE5n"
     loanTime: 60
     installment: 1
-    interssetRate: 0
-    volatility: 0
-    longTermRate: 0
-  - name: "10 \xE5rs Fastforrentet med afdrag"
-    loanTime: 120
-    installment: 1
-    interssetRate: 0
-    volatility: 0
-    longTermRate: 0
-  - name: "20 \xE5rs Fastforrentet med afdrag"
-    loanTime: 240
-    installment: 1
-    interssetRate: 0
-    volatility: 0
-    longTermRate: 0
-  - name: "30 \xE5rs Fastforrentet med afdrag"
+    interssetRate: 0.042
+    volatility: 0.0002
+    longTermRate: 0.5
+  - name: "Fastvariable l\xE5n"
     loanTime: 360
     installment: 1
-    interssetRate: 0
-    volatility: 0
-    longTermRate: 0
-  - name: "5 \xE5rs Flexl\xE5n med afdrag"
-    loanTime: 60
-    installment: 1
-    interssetRate: 0
-    volatility: 0
-    longTermRate: 0
-  - name: "3 \xE5rs Flexl\xE5n med afdrag"
-    loanTime: 36
-    installment: 1
-    interssetRate: 0
-    volatility: 0
-    longTermRate: 0
+    interssetRate: 0.052
+    volatility: 0.001
+    longTermRate: 0.5
   loans: []
   timeHorizon: 1
   dt: 0
   step: 0
+  marketChange: 0.01
   priceInterestRateMultiplyer: 10
+  housemarketEffectOnRateMultiplyer: 0.1
   installWithoutmentMultiplyer: 0.03
   btnContainer: {fileID: 0}
-  graphPrefab: {fileID: 0}
+  graphPrefab: {fileID: 3054240563043014080, guid: 3a7e2b8fa2c85fb4aa8ae2e4ee740826,
+    type: 3}
   visualizerController: {fileID: 0}
+  marketVisualizer: {fileID: 0}
 --- !u!1 &8425133624170000177
 GameObject:
   m_ObjectHideFlags: 0

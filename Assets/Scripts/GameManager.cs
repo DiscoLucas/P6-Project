@@ -250,6 +250,7 @@ public class GameManager : MonoBehaviour
     {
         Case c = csm.getCurrentCase();
         clm.currentClient = c.client;
+        DialogueManager.instance.clientData = c.client;
         clm.startClientIntro(c.client);
     }
 
