@@ -8,6 +8,8 @@ using static UnityEngine.ParticleSystem;
 public class CaseManager : MonoBehaviour
 {
     public Case _case;
+    public TurnEvent _turnEvent;
+    public Assistant _assistant;
 
     [Header("Client Meeting")]
     [SerializeField]
@@ -62,10 +64,8 @@ public class CaseManager : MonoBehaviour
     /// </summary>
     public void startConviencation()
     {
-
         GameManager.instance.guim.showActionMenu();
         TurnType turnT = GameManager.instance.getCurrentTurnType();
-
         if (turnT == TurnType.Change_forCustomer)
         {
             GameManager.instance.clientMeeting();
