@@ -2550,6 +2550,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2016920394761383525, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00030517578
+      objectReference: {fileID: 0}
     - target: {fileID: 4923685502799423490, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2658,43 +2663,44 @@ PrefabInstance:
     - target: {fileID: 6666694101067188741, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_text
-      value: "<style=header>Realkreditl\xE5n\n<style=normal>Et realkreditl\xE5n er
-        et l\xE5n, kunden optager til fast ejendom. Det vil sige en ejerlejlighed,
+      value: "<style=header>Realkreditl\xE5n\r\n<style=normal>Et realkreditl\xE5n
+        er et l\xE5n, kunden optager til fast ejendom. Det vil sige en ejerlejlighed,
         et hus eller et sommerhus.\r\n\r\nEt realkreditl\xE5n m\xE5 h\xF8jst udg\xF8re
         80 % af v\xE6rdien af en hel\xE5rsbolig.\r\n\r\nEt realkreditl\xE5n m\xE5
-        h\xF8jst udg\xF8re 75 % af v\xE6rdien af et sommerhus.\r\n\nN\xE5r kunden
+        h\xF8jst udg\xF8re 75 % af v\xE6rdien af et sommerhus.\r\n\r\nN\xE5r kunden
         tager et realkreditl\xE5n, udsteder realkreditinstituttet obligationer. Obligationerne
         er g\xE6ldsbeviser, der fort\xE6ller, hvorn\xE5r og hvordan g\xE6lden skal
-        betales tilbage. \r\n\nRealkreditinstituttet s\xE6lger derefter obligationerne
+        betales tilbage. \r\n\r\nRealkreditinstituttet s\xE6lger derefter obligationerne
         til investorer p\xE5 de finansielle markeder. Udbud og eftersp\xF8rgsel p\xE5
-        markedet bestemmer, hvor h\xF8j renten p\xE5 realkreditl\xE5net er.\r\n\nRealkreditobligationer
+        markedet bestemmer, hvor h\xF8j renten p\xE5 realkreditl\xE5net er.\r\n\r\nRealkreditobligationer
         er de obligationer, som realkreditinstituttet udsteder p\xE5 boligejernes
         vegne og s\xE6lger p\xE5 de finansielle markeder. Det er v\xE6rdipapirer,
-        hvor kursen g\xE5r op og ned i takt med udbud og eftersp\xF8rgsel.\r\n\nI
+        hvor kursen g\xE5r op og ned i takt med udbud og eftersp\xF8rgsel.\r\n\r\nI
         traditionel realkredit er der direkte sammenh\xE6ng imellem realkreditl\xE5net
-        og en bestemt obligation. \r\n\n\n<style=header>Kurs\n<style=normal>Hvis
-        kursen p\xE5 realkreditobligationen er p\xE5 100, s\xE5 modtager du 100 kroner
-        per 100 kroner, du l\xE5ner. Hvis kursen er 95, s\xE5 modtager du kun 95
-        kroner for hver 100 kroner, du l\xE5ner.\r\nDermed kan man lidt popul\xE6rt
-        sagt sige, at hvis kursen eksempelvis er 95, s\xE5 taber du 5 kroner, hver
-        gang du l\xE5ner 100 kroner.\r\nOversat til et noget h\xF8jere bel\xF8b:
-        Skal du bruge 2.000.000 kroner til dit boligk\xF8b, som du l\xE5ner til kurs
-        95, s\xE5 kommer din g\xE6ld til at v\xE6re over 2.105.000 kroner.\r\n\nKursen
-        skal derfor som tommelfingerregel v\xE6re s\xE5 t\xE6t p\xE5 100 som muligt,
-        n\xE5r du skal l\xE5ne. S\xE5 kommer du nemlig til at skylde s\xE5 f\xE5
-        penge som muligt.\r\nKurs 100 kaldes ogs\xE5  kurs pari. \r\n\r\nHvis renten
-        i samfundet falder, stiger kursen p\xE5 den eksisterende obligation.\r\nHvis
-        renten i samfundet stiger, s\xE5 falder kursen p\xE5 de eksisterende obligationer.\n\n<style=header>Fast
-        rente\n<style=normal>L\xE5n med fast rente kan have en l\xF8betid  p\xE5
-        op til 30 \xE5r. Renten p\xE5 et fastforrentet l\xE5n \xE6ndrer sig ikke
-        over den tid. Dette giver l\xE5net \xF8konomisk sikkerhed.\n\n<style=header>Variable
-        rente\n<style=normal>L\xE5n med variable rente er ogs\xE5 kaldt flexl\xE5n,
-        og rentetilpasningsl\xE5n. Den variable rente er fast i en periode p\xE5 
-        enten 1 \xE5r, 3 \xE5r eller 5 \xE5r. (F-1, F-3, F-5) Dette betyder, at l\xE5net
-        efter hver periode f\xE5r en ny rente. \n\nDet kan blive billigere p\xE5
-        kort sigt, men dyrere i l\xE6ngere sigt.\r\n\r\nKunder der skal have l\xE5n
-        med variable rente skal have luft i deres \xF8konomi til at klare rente\xE6ndringer.\r\n\n<style=header>Rente,
-        kurs & Varighed\n<style=normal>Kurserne p\xE5 obligationer bliver som sagt
+        og en bestemt obligation. \r\n\r\n\r\n<style=header>Kurs\r\n<style=normal>Hvis
+        kursen p\xE5 realkreditobligationen er p\xE5 100, s\xE5 modtager kunden 100
+        kroner per 100 kroner, kunden l\xE5ner. Hvis kursen er 95, s\xE5 modtager
+        kunden kun 95 kroner for hver 100 kroner, kunden l\xE5ner.\n\r\nDermed kan
+        man lidt popul\xE6rt sagt sige, at hvis kursen eksempelvis er 95, s\xE5 taber
+        kunden 5 kroner, hver gang de l\xE5ner 100 kroner.\n\r\nOversat til et noget
+        h\xF8jere bel\xF8b: Skal de bruge 2.000.000 kroner til sit boligk\xF8b, som
+        de l\xE5ner til kurs 95, s\xE5 kommer deres g\xE6ld til at v\xE6re over 2.105.000
+        kroner.\r\n\r\nKursen skal derfor som tommelfingerregel v\xE6re s\xE5 t\xE6t
+        p\xE5 100 som muligt, n\xE5r kunden skal l\xE5ne. S\xE5 kommer de nemlig
+        til at skylde s\xE5 f\xE5 penge som muligt.\r\n\nKurs 100 kaldes ogs\xE5 
+        kurs pari. \r\n\r\nHvis renten i samfundet falder, stiger kursen p\xE5 den
+        eksisterende obligation.\r\n\nHvis renten i samfundet stiger, s\xE5 falder
+        kursen p\xE5 de eksisterende obligationer.\r\n\r\n<style=header>Fast rente\r\n<style=normal>L\xE5n
+        med fast rente kan have en l\xF8betid  p\xE5 op til 30 \xE5r. Renten p\xE5
+        et fastforrentet l\xE5n \xE6ndrer sig ikke over den tid. Dette giver l\xE5net
+        \xF8konomisk sikkerhed.\r\n\r\n<style=header>Variable rente\r\n<style=normal>L\xE5n
+        med variable rente er ogs\xE5 kaldt flexl\xE5n, og rentetilpasningsl\xE5n.
+        Den variable rente er fast i en periode p\xE5  enten 1 \xE5r, 3 \xE5r eller
+        5 \xE5r. (F-1, F-3, F-5) Dette betyder, at l\xE5net efter hver periode f\xE5r
+        en ny rente. \r\n\r\nDet kan blive billigere p\xE5 kort sigt, men dyrere
+        i l\xE6ngere sigt.\r\n\r\nKunder der skal have l\xE5n med variable rente
+        skal have luft i deres \xF8konomi til at klare rente\xE6ndringer.\r\n\r\n<style=header>Rente,
+        kurs & Varighed\r\n<style=normal>Kurserne p\xE5 obligationer bliver som sagt
         bestemt af udbud og eftersp\xF8rgsel. N\xE5r investor har en 2 pct. obligation,
         og markedsrenten falder, vil en anden investor give en h\xF8jere pris (kurs)
         for obligationen, hvor hun er sikker p\xE5 at f\xE5 2 pct. i rente. Og omvendt,
@@ -2703,31 +2709,56 @@ PrefabInstance:
         er renteudviklingen. Det er forskelligt, hvordan obligationerne p\xE5virkes.
         Som udgangspunkt er obligationer med lang l\xF8betid mest kursf\xF8lsomme,
         hvorimod obligationer, der udl\xF8ber til kurs 100 om f\xE5 \xE5r, ikke vil
-        svinge ret meget. \n\nEt v\xE6rkt\xF8j til at \u201Dm\xE5le\u201D kursf\xF8lsomheden
+        svinge ret meget. \r\n\r\nEt v\xE6rkt\xF8j til at \u201Dm\xE5le\u201D kursf\xF8lsomheden
         er varigheden, som kan ses i de fleste kurslister. Varigheden fort\xE6ller,
         hvor meget en obligation teoretisk set, stiger eller falder i kurs ved en
         rente\xE6ndring p\xE5 1 procentpoint. Alts\xE5 hvis varigheden er 5 vil kursen
         falde med 5 %, n\xE5r renten stiger med 1 procentpoint. Det er dog ikke et
-        pr\xE6cist tal, men kan bruges som indikator. Lav varighed = lav kursrisiko.\r\n\nDet
+        pr\xE6cist tal, men kan bruges som indikator. Lav varighed = lav kursrisiko.\r\n\r\nDet
         er vigtigt at understrege, at der er forskellige renter. Den korte rente
         er styringsrenten for bankl\xE5n og variabelt forrentede l\xE5n. Den lange
-        rente bestemmer renten/kursen p\xE5 de lange 20- og 30-\xE5rige realkreditl\xE5n.\r\n\n\n<style=header>Afdrag
-        / afdragsfrihed\n<style=normal>Afdrag er n\xE5r g\xE6lden l\xF8bende betales
+        rente bestemmer renten/kursen p\xE5 de lange 20- og 30-\xE5rige realkreditl\xE5n.\r\n\r\n\r\n<style=header>Afdrag
+        / afdragsfrihed\r\n<style=normal>Afdrag er n\xE5r g\xE6lden l\xF8bende betales
         tilbage.\r\nAfdragsfrihed er n\xE5r kunden udskyder tilbagebetalingen, typisk
         op til 10 \xE5r.\r\n\r\nAfdragsfrie l\xE5n har typisk en lavere kurs i forhold
         til l\xE5n med afdrag.\r\nDet kan v\xE6re en god id\xE9 at v\xE6lge afdragsfrihed,
         hvis kunden f.eks. g\xE5r ned i l\xF8n i en periode eller vil betale af p\xE5
-        en anden (og dyrere) g\xE6ld.\r\n\n<style=header>Konvertering\n<style=normal>At
+        en anden (og dyrere) g\xE6ld.\r\n\r\n<style=header>Indfrining af l\xE5n\r\n<style=normal>At
+        indfri et realkreditl\xE5n betyder, at kunden betaler hele bel\xF8bet af,
+        s\xE5 han/hun ikke l\xE6ngere skylder noget p\xE5 l\xE5net.\r\n\nMan kan
+        indfri sit realkreditl\xE5n p\xE5 4 m\xE5der:\r\n1)\tVed at betale hele l\xE5net
+        tilbage som aftalt.\r\n2)\tVed at s\xE6lge sin bolig og realkreditinstituttet
+        f\xE5r det, kunden skylder p\xE5 l\xE5net.\r\n3)\tVed at oml\xE6gge sit l\xE5n
+        og optager et nyt l\xE5n, som bruges til at betale det gamle l\xE5n af med.\r\n4)\tVed
+        at betale l\xE5net af f\xF8r tid, fordi kunden har penge til at betale l\xE5net
+        ud her og nu.\r\n\nDet koster penge, hvis man vil indfri sit l\xE5n f\xF8r
+        tid, for eksempel fordi kunden \xF8nsker at oml\xE6gge sit l\xE5n.\r\nN\xE5r
+        kunden betaler sit l\xE5n tilbage efter den aftalte l\xE5neperiode, kaldes
+        det ogs\xE5 for en ordin\xE6r indfrielse af l\xE5n. Hvis kunden derimod indfrier
+        l\xE5net f\xF8r tid, kaldes det for en f\xF8rtids indfrielse.\n \r\n\xD8nsker
+        en kunde at indfri eller oml\xE6gge sit realkreditl\xE5n, skal du som r\xE5dgiver
+        v\xE6re opm\xE6rksom p\xE5 fristerne og mulighederne ved indfrielse af l\xE5n,
+        det kan nemlig v\xE6re kunden en del penge.\r\n\r\n<style=header>Konvertering\r\n<style=normal>At
         konvertere et realkreditl\xE5n betyder at oml\xE6gge et eksisterende l\xE5n
         til et andet realkreditl\xE5n. Det sker typisk fordi kunden kan spare penge
         enten p\xE5 ydelsen, hvis renten er faldet, eller p\xE5 restg\xE6lden, hvis
-        renten er steget, for s\xE5 falder kursen.\n\n<style=header>Bidragssatser\n<style=normal>Bidragssatser
+        renten er steget, for s\xE5 falder kursen.\r\n\r\nDer er to typer af konvertering
+        vi bruger:\r\n1. Op konvertering: Typisk i perioder hvor renterne stiger,
+        er den god mulighed hvis vi forvetner at renten er lavere n\xE6ste gang kunden
+        vil konvatere.\r\n\r\n2. Ned konvertering: Typisk n\xE5r renten er lav, det
+        er en en god ide at g\xF8re for kunder, for s\xE5 ender de med en mindre
+        ydelse.\r\n\r\n<style=header>Bidragssatser\r\n<style=normal>Bidragssatser
         er det gebyr, kunden betaler til realkreditinstituttet for det arbejde de
-        har med l\xE5net.\r\nBidragssatsen afh\xE6nger af, hvilken type l\xE5n kunden
-        har. Rentetilpasningsl\xE5n og l\xE5n med afdragsfrihed koster typisk mere
-        i bidrag end fastforrentede l\xE5n.\r\nBidragssats er direkte koblet sammen
-        med bel\xE5ningsgraden p\xE5 kundens bolig og er h\xF8jere, jo mere kunden
-        har l\xE5nt i forhold til boligens v\xE6rdi.\r\n"
+        har med l\xE5net.\r\n\nBidragssatsen afh\xE6nger af, hvilken type l\xE5n
+        kunden har. Rentetilpasningsl\xE5n og l\xE5n med afdragsfrihed koster typisk
+        mere i bidrag end fastforrentede l\xE5n.\n\r\nBidragssats er direkte koblet
+        sammen med bel\xE5ningsgraden p\xE5 kundens bolig og er h\xF8jere, jo mere
+        kunden har l\xE5nt i forhold til boligens v\xE6rdi.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666694101067188741, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7458309634314127230, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
@@ -2758,6 +2789,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947454006766817340, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -7066,368 +7102,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.gridSize.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[1].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[2].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[3].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[4].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[5].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[6].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[7].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[8].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[9].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[10].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[11].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[15].row.Array.size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.data[0]
-      value: "Jeg er [Alder]  \xE5r. Jeg er lige blevet f\xE6rdig med min uddannelse
-        og kigger efter at anskaffe mig en ejerbolig"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.data[1]
-      value: "Lige nu p\xE5 min nye stilling tjener jeg [Tjener] kr f\xF8r skat."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[0].row.Array.data[2]
-      value: "I mit studiejob har jeg sammen tjent [FuldOpsparing] kr sammen med
-        lidt fra min b\xF8rneopsparing."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[1].row.Array.data[0]
-      value: "Hej igen. Jeg ville gerne konvertere mit l\xE5n"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[1].row.Array.data[1]
-      value: "Er det noget du kan hj\xE6lpe mig med?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[2].row.Array.data[0]
-      value: "Jeg har h\xF8rt noget om jeg m\xE5ske kan indfrie mit l\xE5n, kan du
-        f\xF8lge mig igennem om det giver mening for mig?"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[3].row.Array.data[0]
-      value: "Jeg er [Alder] \xE5r . Jeg pr\xF8ver at anskaffe mig et sommerhus."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[3].row.Array.data[1]
-      value: "Jeg har lige f\xE5et mig en ny forfremmelse hvor jeg tjener [Tjener]
-        kr om m\xE5neden f\xF8r skat."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[3].row.Array.data[2]
-      value: Jeg har opsparet [FuldOpsparing] kr., gennem min arbejdstid.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[4].row.Array.data[0]
-      value: "Jeg er [Alder] \xE5r . Jeg har boet i en lejlighed i en god h\xE5ndfuld
-        \xE5r nu og ser p\xE5 at k\xF8be et hus."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[4].row.Array.data[1]
-      value: "Hver m\xE5ned tjener jeg [Tjener] kr f\xF8r skat, og er sikker i min
-        stilling."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[4].row.Array.data[2]
-      value: Jeg har opsparet [FuldOpsparing] kr., gennem min arbejdstid.
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[5].row.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[5].row.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[5].row.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[5].row.Array.data[7]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[7].row.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[7].row.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[7].row.Array.data[6]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[7].row.Array.data[7]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[0]
-      value: "Du skal nu i gang med at oml\xE6gge et l\xE5n det kalder vi ogs\xE5
-        at konvertere.  N\xE5r kunden oml\xE6gger sine l\xE5n, bruges det nye l\xE5n
-        i boligen til at indfri det gamle. Det kan bl.a. v\xE6re en fordel, hvis
-        renten \xE6ndrer sig, eller kunden vil l\xE5ne i sin friv\xE6rdi."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[1]
-      value: "Hvis renten senere stiger, kan kunden oml\xE6gge sit l\xE5n og reducere
-        restg\xE6lden. Hvis renten derimod falder, kan kunden oml\xE6gge til en lavere
-        rente og dermed f\xE5 en lavere ydelse."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[2]
-      value: "Det giver kunden mulighed for at indfri l\xE5net ved at opk\xF8be de
-        bagvedliggende obligationer. I perioder med rente\xE6ndringer kan dette give
-        mulighed for at oml\xE6gge realkreditl\xE5net, hvor enten renten eller restg\xE6lden
-        reduceres."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[3]
-      value: "Hvis kursen p\xE5 et fastforrentet l\xE5n er over kurs 100, kan kunden
-        opsige l\xE5net 2 m\xE5neder f\xF8r en termin til kurs 100. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[4]
-      value: "Hvis kunden har et l\xE5n med variabel rente, kan kunden kun opsige
-        l\xE5net 2 m\xE5neder f\xF8r rentetilpasning til kurs 100, ellers skal kunden
-        ud og k\xF8be de bagvedliggende obligationer til over kurs 100. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[5]
-      value: "Dog kan l\xE5n med variabel rente kun skiftes ved rentetilpasningen
-        efter l\xE5nets varighed. (fx. F-3 = 3 \xE5r)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[6]
-      value: "Der er to typer af konvateringer:  Op konvertering: Typisk i perioder
-        hvor renterne stiger, er den god mulighed hvis vi forvetner at renten er
-        lavere n\xE6ste gang kunden vil konvatere."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[12].row.Array.data[7]
-      value: "Ned konvertering: Typisk n\xE5r renten er lav, det er en en god ide
-        at g\xF8re for kunder, for s\xE5 ender de med en mindre ydelse."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[0]
-      value: "Du har nu mulighed for at hj\xE6lpe kunden med at indfrie sit l\xE5n,
-        det betyder at de vil betale l\xE5net tilbage."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[1]
-      value: "Der er fire m\xE5der l\xE5net kan blive betalt tilbage p\xE5. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[2]
-      value: "1) Ved at betale hele l\xE5net tilbage som aftalt."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[3]
-      value: "2) Ved at s\xE6lge sin bolig og realkreditinstituttet f\xE5r det, kunden
-        skylder p\xE5 l\xE5net."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[4]
-      value: "3) Ved at oml\xE6gge sit l\xE5n og optager et nyt l\xE5n, som bruges
-        til at betale det gamle l\xE5n af med."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[5]
-      value: "4) Ved at betale l\xE5net af f\xF8r tid, fordi kunden har penge til
-        at betale l\xE5net ud her og nu."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[6]
-      value: "Men du skal prim\xE6rt kun t\xE6nke p\xE5 om de skal beholde deres
-        l\xE5n eller om det skal oml\xE6gges. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[13].row.Array.data[7]
-      value: "Et fastforrentet l\xE5n kan man opsige til kurs 100 hvis kursen er
-        over 100. Derfor skal kunderne ikke betale mere end kurs-100 (kurs pari)
-        n\xE5r de vil indfri deres l\xE5n."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.data[0]
-      value: "For at finde ud af hvor meget en kunde kan l\xE5ne, er det godt at
-        huske, som en tommelfingerregel, at man m\xE5 have en g\xE6ldsfaktor p\xE5
-        4."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.data[1]
-      value: "N\xE5r en kunde s\xF8ger et l\xE5n, skal de selv have minimum  5% i
-        udbetaling."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.data[2]
-      value: "S\xE5 find deres \xE5rsl\xF8n ganget med g\xE6ldsfaktoren er hvor meget
-        kunden kan l\xE5ne."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.data[3]
-      value: "For at se hvor meget deres bolig kan koste, skal de penge de har til
-        udbetaling l\xE6gges oven i."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.data[4]
-      value: "I v\xE6kstomr\xE5der som K\xF8benhavn og Aarhus kan kunder med bel\xE5ningsgrad
-        over 60% og en g\xE6ldfaktor over 4 ikke f\xE5 et \"usikkert l\xE5n\"."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.data[5]
-      value: "1) Alle variabelt forrentede l\xE5n med eller uden afdrag, hvor renten
-        justeres med en frekvens p\xE5 mindre end fem \xE5r."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[14].row.Array.data[6]
-      value: "2) Afdragsfrie variabelt forrentede l\xE5n, hvor renten justeres med
-        en frekvens p\xE5 fem \xE5r eller mere."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[15].row.Array.data[0]
-      value: "Hej med dig, du er den nye konsulent her ude er du ikke?  Jeg er Samuel,
-        din assistent her for at hj\xE6lpe dig med at falde godt til, jeg kan lige
-        give dig en lille rundvising af dit kontor. "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[15].row.Array.data[1]
-      value: "Over til venstre har du din computer hvor som du kan trykke ind p\xE5
-        n\xE5r end det passer dig. Her kan du tjekke hvad dine kunder har sagt til
-        dig, samnt makrdet med renter og kurser.  "
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[15].row.Array.data[2]
-      value: "Du kan ogs\xE5 g\xE5 ind og tjekke hvad dine kunder syntes om dig og
-        din overordnet score."
-      objectReference: {fileID: 0}
-    - target: {fileID: 7013967350456804574, guid: 5656f458e09551b4b943c85e73f0a000,
-        type: 3}
-      propertyPath: sentinces.cells.Array.data[15].row.Array.data[3]
-      value: "Der ud over har du adgang til vores eget lokale informations forum
-        hvor du kan f\xE5 gen opfrisket forskelige termer."
       objectReference: {fileID: 0}
     - target: {fileID: 7876590447810124933, guid: 5656f458e09551b4b943c85e73f0a000,
         type: 3}
