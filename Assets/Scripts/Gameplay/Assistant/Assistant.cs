@@ -131,6 +131,7 @@ public class Assistant : MonoBehaviour
             if (!introHaveplayed)
             {
                 turtialDone.Invoke();
+                introHaveplayed = true;
             }
             else {
                 Debug.Log("startClientIntro after turtoial");
