@@ -320,5 +320,6 @@ MonoBehaviour:
   - '[FuldOpsparing]'
   - "[G\xE6ld]"
   - "[G\xE6ldFaktor]"
+  - '[LoanAmount]'
   values:
   - '[value1]'
