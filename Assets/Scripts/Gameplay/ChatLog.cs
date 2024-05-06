@@ -4,47 +4,29 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-public class ChatLog : MonoBehaviour
+public class ChatLog : MonoBehaviour //Chatlog burde gøre så: Klik på chatloggen > Display mails fra et tilhørende thread.
 {
-   /* public List<MailThread> Threads; //Threads er alle de mailtråde med de forskellige klienter som mail tabben har
-    public TextMeshProUGUI ChatLogtmpu;
-    int ThreadNumber;
-
-    // Start is called before the first frame update
-    public void AppendMails()
-    {
-        Threads.Append(new MailThread()); //test, der skal senere dymaniskt tilføjes værdier hertil
+    public List<MailThread> Threads; //Threads er alle de mailtråde med de forskellige klienter som mail tabben har
+    
+    public void loadThread(MailThread mailThread, TextMeshPro textMeshPro) //Den her skal gøres hver
+    {                                                                      //gang nogen trykker på en klients knap
+        string name = "<header>" + mailThread.Name + "</header>" + "\n";
+        string allStrings = "<normal>" + string.Join("\n", mailThread.Messages) + "</normal>";
+        textMeshPro.text = name + allStrings;
     }
-
-    public void UpdateThreadNumber(int threadnumber)
-    {
-        ThreadNumber = threadnumber;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        Threads[ThreadNumber].DisplayMail(ChatLogtmpu); //display mails i den valgte tråd
-    }*/
 }
 
 //strange monolithic code
-public class MailThread : MonoBehaviour
+public class MailThread : MonoBehaviour //Er en mailtread for en klient. Indeholder alle beskeder klienten har sendt.
 {
-   /* public string Name;
-    public List<string> Messages;
+    //noget til den klient det går ud fra
+    public string Name;
+    public List<string> Messages; //string list af alle ting klienten har sagt
 
     public void NewMessage(string message) //TAG FAT I DET HER MED CLIENT TINGEN HVER GANG EN CLIENT TALER
     {
         Messages.Append(message);
     }
 
-    public void DisplayMail(TextMeshProUGUI tmpu) //Smider mails ind i tekstfeltet
-    {
-        //byg stringet af alle beskeder
-        // - allebeskeder = foreach mails
-
-        //display allebeskeder
-        // - tmpu.text = allebeskeder
-        Debug.Log(Messages);
-    }*/
+    //TODO - Mangler dynamsikt at tilføje lortet
 }
