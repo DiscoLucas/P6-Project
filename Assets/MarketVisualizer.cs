@@ -22,4 +22,10 @@ public class MarketVisualizer : MonoBehaviour
             lineChart.AddData(loan.name, loan.interssetRate * 100);
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        lineChart.RemoveAllSerie();
+        lineChart.RemoveData();
+    }
 }
