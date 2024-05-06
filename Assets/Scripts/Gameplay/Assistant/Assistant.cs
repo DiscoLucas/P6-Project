@@ -58,6 +58,7 @@ public class Assistant : MonoBehaviour
     public TurtoialIds startTurtoialCheck(TurtoialIds id)
     {
         PlayTutorial(id.conventationIndex);
+        DialogueManager.instance.clientData = assisentData;
         return id;
     }
 
