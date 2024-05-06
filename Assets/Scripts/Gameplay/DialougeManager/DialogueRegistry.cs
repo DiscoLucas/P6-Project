@@ -55,19 +55,23 @@ public class DialogueRegistry : MonoBehaviour
             return null;
         }
     }
-    public string replaceString(string message, ClientData client) {
+    public string replaceString(string message, Case currentCase) {
+        if (currentCase == null) { 
+            return message;
+        }
         string[] values = {
-            client.clientName,
-            client.age.ToString() ,
-            client.job.ToString() ,
-            client.city.ToString() ,
-            client.maritalStatus.ToString() ,
-            client.Finance.monthlyIncome.ToString() ,
-            client.Finance.monthlyExpenses.ToString() ,
-            client.Finance.monthlySavings.ToString() ,
-            client.Finance.totalSavings.ToString(),
-            client.Finance.debt.ToString() ,
-            client.Finance.debtFactor.ToString()
+            currentCase.client.clientName,
+            currentCase.client.age.ToString() ,
+            currentCase.client.job.ToString() ,
+            currentCase.client.city.ToString() ,
+            currentCase.client.maritalStatus.ToString() ,
+            currentCase.client.Finance.monthlyIncome.ToString() ,
+            currentCase.client.Finance.monthlyExpenses.ToString() ,
+            currentCase.client.Finance.monthlySavings.ToString() ,
+            currentCase.client.Finance.totalSavings.ToString(),
+            currentCase.client.Finance.debt.ToString() ,
+            currentCase.client.Finance.debtFactor.ToString(),
+            currentCase.loanAmount.ToString()
         };
 
         return replaceString(message, tags, values);

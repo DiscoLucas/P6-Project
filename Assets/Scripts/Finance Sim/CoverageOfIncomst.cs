@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using UnityEngine.Rendering.Universal;
 
 public class CoverageOfIncomst : actionsDisplay
 {
@@ -20,7 +16,6 @@ public class CoverageOfIncomst : actionsDisplay
         "[PengeTilUdbetaling]",
     };
     [SerializeField] float correctAnswer = 0;
-    internal ClientInfo client;
 
 
     public override void fillOutDisplay()

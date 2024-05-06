@@ -38,7 +38,10 @@ public class Case
     }
 
     public MeetingCollection getCurrentMeeting() {
-        return meetings[meetingIndex];
+        if(meetingIndex >= meetings.Length)
+            return meetings[meetings.Length-1];
+        else
+            return meetings[meetingIndex];
     }
     public bool checkIfDoneTalking() {
         return false;
@@ -70,7 +73,10 @@ public class Case
     public int returnSentince()
     {
         Debug.Log("Meeting index: " + meetingIndex);
-        int i = meetings[meetingIndex].meetingDialog;
+        int index = meetingIndex;
+        if (meetingIndex >= meetings.Length)
+            index = meetings.Length - 1;    
+        int i = meetings[index].meetingDialog;
         return i;
     }
 
@@ -95,5 +101,6 @@ public struct MeetingCollection {
     public int meetingDialog;
     public bool needToFinnishToProgress;
     public int[] assistantSaulSentensis;
+    public int turtoialIndex;
 }
 

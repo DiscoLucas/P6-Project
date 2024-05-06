@@ -12,7 +12,7 @@ using XCharts;
 using XCharts.Runtime;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [Header("Events")]
@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public readonly static float dt = timeHorizon / 4f;
 
     [Header("References")]
+    public int endSceneIndex = 0;
     public int startType = 0;
     public TurnEvent[] turnType;
     [SerializeField]
@@ -57,6 +58,9 @@ public class GameManager : MonoBehaviour
     TMP_Text mountCounter;
     string counterString;
     public float points = 0;
+    public Assistant assistant;
+    public Vector2 pointsCol ;
+    public TurnEvent turnEvent;
 
     private void Awake()
     {
@@ -64,7 +68,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject.transform.parent);
             clientMeetingDone = new UnityEvent();
         }
         else
@@ -86,6 +90,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         updateTurn();
+        assistant.turtialDone.AddListener(turtroialDone);
+    }
+
+    public void turtroialDone() {
+        if (monthNumber == 1) {
+            guim.showActionMenu();
+        }
     }
 
     /// <summary>
@@ -193,8 +204,14 @@ public class GameManager : MonoBehaviour
         }
         else if (turnT == TurnType.Change_forCustomer || turnT == TurnType.New_customer)
         {
-            guim.showActionMenu();
-
+            if (monthNumber == 1)
+            {
+                assistant.tutorialStart();
+            }
+            else
+            {
+                guim.showActionMenu();
+            }
         }
     }
 
@@ -234,10 +251,34 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void clientMeeting()
     {
+        Debug.Log("Client meeting have startede");
         Case c = csm.getCurrentCase();
         clm.currentClient = c.client;
-        clm.startClientIntro(c.client);
+        DialogueManager.instance.clientData = c.client;
+        /*
+        int turnTypeIndex = 0;
+        turnTypeIndex = decideWhatShouldHappend();
+        TurnType turnT = getCurrentTurnType();
+        if (!assistant.checkTurnTypeBool(turnT))
+        {
+            assistant.playSpecificTutorial(turnEvent.tutorialNR);
+        }else
+        */
+
+        bool haveCompletede = assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede;
+        assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede = true;
+        Debug.Log("Have the tutroial completede: " + haveCompletede);
+        if (haveCompletede)
+        {
+            Debug.Log("client intro startet: " + c.client);
+            clm.startClientIntro(c.client);
+        }
+        else {
+            Debug.Log("This part of turtoual done: "+ assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede);
+            assistant.turtoialID[c.getCurrentMeeting().turtoialIndex] = assistant.startTurtoialCheck(assistant.turtoialID[c.getCurrentMeeting().turtoialIndex]);
+        }
     }
+
 
 
 
@@ -282,8 +323,7 @@ public class GameManager : MonoBehaviour
     public void createClientMeeting(GameObject prefab, ClientData cClient) {
         destoryCurrentClientMeeting();
         clm.currentClient = cClient;
-        GameObject obj = Instantiate(prefab,Vector3.zero,quaternion.identity);
-        obj.transform.parent = csm.clientMeetingTransform;
+        GameObject obj = Instantiate(prefab, csm.clientMeetingTransform);
         Debug.Log("Meeting have been instantiatet it parrent is: " + obj.transform.parent.name + " obj is " + obj.name);
 
     }
@@ -293,6 +333,7 @@ public class GameManager : MonoBehaviour
         //TODO: let the player create a loan if they want to, through the Loan class.
         //loanManager.CreateLoan(currentClientMeeting.currentClient.clientName, 12);
         destoryCurrentClientMeeting();
+        guim.hideMeetingPopUp();
         clientMeetingDone.Invoke();
     }
 
@@ -304,6 +345,7 @@ public class GameManager : MonoBehaviour
         var meetingprefab = cureentMeeting.meetingPrefab;
         Debug.Log("not null[\nCurrent case: " + (currentCase != null) + "\nprefab: " + (meetingprefab != null) + "\n]");
         createClientMeeting(meetingprefab, currentCase.client);
+        guim.showMeetingPopUp();
 
     }
 
@@ -331,6 +373,27 @@ public class GameManager : MonoBehaviour
     {
         return turnT;
     }
+
+    public void endGame() {
+        pointsCol = new Vector2(cm.score, cm.bestPossibleScore);
+        SceneManager.LoadScene(endSceneIndex);
+    }
+
+    public void destoryAllManagers() {
+        instance = null;
+        Destroy(transform.parent);
+}
+
+    void tryTodestoy(GameObject obj) {
+        try
+        {
+            Destroy(obj);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError(e);
+        }
+    }
 }
 
 /// <summary>
@@ -353,6 +416,8 @@ public class TurnEvent {
     public float chance;
     public bool disable = false;
     public TurnType type;
+    public bool tutorial = false;
+    public int tutorialNR;
 }
 
 

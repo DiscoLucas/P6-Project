@@ -10,6 +10,7 @@ public class GUIManager : MonoBehaviour
     public GameObject action_Menu;
     public GameObject talkClient_BTN;
     public GameObject space_Canvas, computer_Canvas;
+    public GameObject meetingPopUp;
 
     RectTransform dialogBox;
     Canvas canvas;
@@ -25,6 +26,15 @@ public class GUIManager : MonoBehaviour
         else throw new System.Exception("There is either more than one Main Canvas in the scene, or none");
     }
 
+    public void hideMeetingPopUp()
+    {
+        meetingPopUp.SetActive(false);
+
+    }
+
+    public void showMeetingPopUp() {
+        meetingPopUp.SetActive(true);
+    }
     
 
     public void showActionMenu() { 

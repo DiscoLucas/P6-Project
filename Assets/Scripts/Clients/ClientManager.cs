@@ -134,16 +134,27 @@ public class ClientManager : MonoBehaviour
     /// </summary>
     /// <param name="c"></param>
     public void startClientIntro(ClientData c) {
-        spriteRenderer.sprite = c.sprite;
-        currentClient = c;
-        if (an != null)
+        bool haveCompletede = GameManager.instance.assistant.turtoialID[GameManager.instance.csm.getCurrentCase().getCurrentMeeting().turtoialIndex].haveCompletede;
+        Debug.Log("Have the tutroial completede: " + haveCompletede);
+        if (haveCompletede)
         {
-            an.Play(walkInAnimation);
-            //when the dialog is done please do this:
-            //an.SetBool("WalkOut", true);
+            spriteRenderer.sprite = c.sprite;
+            currentClient = c;
+            if (an != null)
+            {
+                an.Play(walkInAnimation);
+                //when the dialog is done please do this:
+                //an.SetBool("WalkOut", true);
+            }
+            else
+            {
+                Debug.LogError("Could not find Animation");
+            }
         }
-        else {
-            Debug.LogError("Could not find Animation");
+        else
+        {
+            GameManager.instance.assistant.turtoialID[GameManager.instance.csm.getCurrentCase().getCurrentMeeting().turtoialIndex].haveCompletede = true;
+            GameManager.instance.assistant.turtoialID[GameManager.instance.csm.getCurrentCase().getCurrentMeeting().turtoialIndex]= GameManager.instance.assistant.startTurtoialCheck(GameManager.instance.assistant.turtoialID[GameManager.instance.csm.getCurrentCase().getCurrentMeeting().turtoialIndex]);
         }
 
     }
@@ -166,7 +177,7 @@ public class ClientManager : MonoBehaviour
     public void clientStartTalking()
     {
         Debug.Log("Start Talking");
-        DialogueManager.instance.StartDia(precentationIndex);
+        DialogueManager.instance.StartDia(GameManager.instance.csm.getCurrentCase().returnSentince());
     
     }
     public void clientDoneTalking() {

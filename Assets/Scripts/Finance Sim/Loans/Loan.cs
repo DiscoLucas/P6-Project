@@ -10,7 +10,7 @@ public class Loan
 {
     [SerializeField]
     [Tooltip("The amount that have been loaned")] internal double loanInitialAmount { get; set; }
-    [Tooltip("The amount that have been loaned and is back")] internal double loanAmount { get; set; }
+    [Tooltip("The remaining amount of the loan")] internal double loanAmount { get; set; }
     public float debtAmount = 0;
     [Tooltip("The first interest rate and what is used as a start for the simulation")] internal double interestRate { get; set; }
     [Tooltip("The voliatility of the loan (How much the price change)")] internal double volatility { get; set; }
@@ -23,7 +23,8 @@ public class Loan
     [Tooltip("How much the client pay per mounth ")] internal double MonthlyPayment { get; set; }
 
     [SerializeField]
-    [Tooltip("The intersate rates that is calulatede over time ")] internal List<double> IRForTime = new List<double>();
+    [Tooltip("The interest rates that are calulated over time. " +
+        "4 steps are generated every month")] internal List<double> IRForTime = new List<double>();
     public List<double> IRPForTime = new List<double>();
 
     [Tooltip("Do the loan have installment")] public bool installment = false;
@@ -42,7 +43,7 @@ public class Loan
         this.initialMonth = startMount;
         this.periodStartMonth = startMount;
         this.installment = installment;
-        IRPForTime.Add((interestRate/20)+95);
+        IRPForTime.Add((interestRate/20)+95); // wtf are these magic numbers? -Mitchell
         this.loanTypes = loanTypes;
     }
     /// <summary>
@@ -65,8 +66,10 @@ public class Loan
     /// used to pay back some of the loan . the amount is the given variable
     /// </summary>
     /// <param name="amount"></param>
-    public void payLoan(int amount) { 
-        loanAmount -= amount;
+    public void payLoan() 
+    { 
+        double monthlyPayment = CalculateMonthlyPayment();
+        loanAmount -= monthlyPayment;
     }
 
     /// <summary>
@@ -91,5 +94,37 @@ public class Loan
         return IRPForTime[IRPForTime.Count-1];
     }   
 
+    /// <summary>
+    /// Calculates the monthly payment of the loan
+    /// </summary>
+    /// <returns>The updated <see cref="MonthlyPayment"/></returns>
+    private double CalculateMonthlyPayment()
+    {
+        double monthlyInterestRate;
+        if (fixedIR || IRForTime.Count == 0)
+        {
+            monthlyInterestRate = interestRate / 12; // if it's fixed or if there are no interest rates, use the initial interest rate
+        }
+        else
+        {
+            double currentInterestRate = IRForTime[IRForTime.Count - 1]; // Get the latest interest rate
+            monthlyInterestRate = currentInterestRate / 12; // Calculate the monthly interest rate
+        }
+
+        // calculate the monthly payment using the loan formula
+        double monthlyPayment;
+        double loanTermInMonths = LoanTerm;
+        if (monthlyInterestRate > 0)
+        {
+            monthlyPayment = loanAmount * monthlyInterestRate / (1 - Math.Pow(1 + monthlyInterestRate, -loanTermInMonths));
+            Debug.Log(clientData.clientName + " paid of " + monthlyPayment + " of their loan, with a POSITVE interest");
+        }
+        else
+        {
+            monthlyPayment = loanAmount / loanTermInMonths;
+            Debug.Log(clientData.clientName + " paid of " + monthlyPayment + " of their loan, with a NEGATIVE interest");
+        }
+        return MonthlyPayment = monthlyPayment;
+    }
 
 }

@@ -121,5 +121,11 @@ public class IRVisualizer : MonoBehaviour
             
 
     }
+    private void OnApplicationQuit()
+    {
+        LineChartIR.RemoveData();
+        LineChartIR.RemoveAllSerie();
+        
+    }
 
 }

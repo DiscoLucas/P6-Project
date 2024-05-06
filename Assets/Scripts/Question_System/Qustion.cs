@@ -26,8 +26,8 @@ public class Qustion : MonoBehaviour
     }
 
     public virtual void fillOutHeaderAndDescribtion() { 
-        header.text = DialogueRegistry.instance.replaceString(header_text,client);
-        describtion.text = DialogueRegistry.instance.replaceString(describtion_text, client);
+        header.text = DialogueRegistry.instance.replaceString(header_text,_case);
+        describtion.text = DialogueRegistry.instance.replaceString(describtion_text, _case);
     }
     public void init()
     {

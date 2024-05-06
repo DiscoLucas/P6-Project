@@ -7,6 +7,7 @@ public class Qustion_RedeemLoan : Qustion
     public TMP_Dropdown dropdown;
     public List<string> answers;
     public GameObject convertLoanWindow;
+    public Qustion_Convertion convertion;
     public override void calcCorrectAnswer()
     {
         isCorrect= true;
@@ -15,7 +16,9 @@ public class Qustion_RedeemLoan : Qustion
 
     public override void setAnswer()
     {
-        convertLoanWindow.SetActive((dropdown.value > 0));
+        bool shouldBeactive = (dropdown.value > 0);
+        convertLoanWindow.SetActive(shouldBeactive);
+        convertion.chooseThis = shouldBeactive;
     }
 
     public override void closeMeeting()

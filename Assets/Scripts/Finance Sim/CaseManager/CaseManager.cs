@@ -8,6 +8,8 @@ using static UnityEngine.ParticleSystem;
 public class CaseManager : MonoBehaviour
 {
     public Case _case;
+    public TurnEvent _turnEvent;
+    public Assistant _assistant;
 
     [Header("Client Meeting")]
     [SerializeField]
@@ -28,7 +30,7 @@ public class CaseManager : MonoBehaviour
             closedCases++;
             if (closedCases >= needClosedCases) {
                 Debug.Log("SPILLET ER FÆRDIG TABER");
-                Debug.Break();
+                GameManager.instance.endGame();
             }
         }
         currentCaseIndex= -1;
@@ -43,13 +45,18 @@ public class CaseManager : MonoBehaviour
         CaseTemplate ct = templates[Random.Range(0, count)];
         Case c = new Case(ct, clientData);
         currentCases.Add(c);
-        if (needClosedCases >= (closedCases + GameManager.instance.clm.getClientsCount()))
+        if (needClosedCases <= (closedCases + GameManager.instance.clm.getClientsCount())) {
+            Debug.Log("Can not create more customeres. There are  " + closedCases + " closedCases and the amount of clients are " + GameManager.instance.clm.getClientsCount() + "Clients");
             GameManager.instance.clm.cantCreateMore();
+        }
         currentCaseIndex = currentCases.Count - 1;
         
     }
 
     public Case getCurrentCase() {
+        if (currentCaseIndex < 0) {
+            return null;
+        }
         return currentCases[currentCaseIndex];
     }
 
@@ -59,10 +66,8 @@ public class CaseManager : MonoBehaviour
     /// </summary>
     public void startConviencation()
     {
-
         GameManager.instance.guim.showActionMenu();
         TurnType turnT = GameManager.instance.getCurrentTurnType();
-
         if (turnT == TurnType.Change_forCustomer)
         {
             GameManager.instance.clientMeeting();

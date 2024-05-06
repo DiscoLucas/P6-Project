@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MenuScreen.unity
     guid: d28a067dc427a1340bd4d457deb153c8
   - enabled: 1
-    path: Assets/Scenes/GameManager.unity
-    guid: 417e8314cf894da498813b4c4a828aec
+    path: Assets/Scenes/Production level scene.unity
+    guid: 0c7684034a080234a81de62d3d0e4e3e
+  - enabled: 1
+    path: Assets/Scenes/Endscenen.unity
+    guid: 8fbd1e8a55a04c04392b9f156396c456
   m_configObjects: {}

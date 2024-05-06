@@ -17,11 +17,10 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
     public ClientData clientData;
-    public ClientInfo clientInfo;
     public Animator animator;
 
     public static DialogueManager instance;
-    int currentCaseIndex = -1;
+    public int currentCaseIndex = -1;
     int currentDialogueIndex = 0;
 
     [Header("Voice parameters")]
@@ -106,6 +105,7 @@ public class DialogueManager : MonoBehaviour
             if (currentDialogueIndex < dialogueRegistry.sentinces.GridSize.x)
             {
                 string sentence = dialogueRegistry.GetSentincesIndex(currentCaseIndex, currentDialogueIndex);
+                sentence = dialogueRegistry.replaceString(sentence, GameManager.instance.csm.getCurrentCase());
                 DisplayOneSentince(sentence);
                 currentDialogueIndex++;
 
@@ -161,6 +161,9 @@ public class DialogueManager : MonoBehaviour
             gameObject_end.SetActive(true);
         }
         animator.SetBool("IsOpen", dialogueVissible);
+        Debug.Log("client start talking: " + clientData.clientName);
+        Case c = GameManager.instance.csm.getCurrentCase();
+        if (c != null&&GameManager.instance.assistant.tutorialHasPlayed ) { clientData = c.client; }
         nameText.text = clientData.clientName;
         StopAllCoroutines();
         StartCoroutine(TypeDia(sentinceToDisplay, TypeSpeed, VoiceClip, clientData.maxPitch, clientData.minPitch));

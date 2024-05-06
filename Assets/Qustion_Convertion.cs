@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Qustion_Convertion : chooseLoan_qustion
 {
+    public bool chooseThis = false;
     public override void closeMeeting()
     {
-        if (gameObject.active)
+        if (chooseThis)
         {
-            LoanTypes l = loans[inputField.options[inputField.value].text];
+            string key = inputField.options[inputField.value].text;
+            Debug.Log(key);
+            LoanTypes l = loans[key];
             l.installment = installmentToggel.isOn;
             _case.loan = GameManager.instance.mm.convertLoan(client, client.Finance.neededLoan, _case.loan, l);
+            Debug.Log("Updatede: " + _case.caseName + " to loantype " + l.name);
         }
         else {
             _case.loan = GameManager.instance.mm.convertLoan(client, client.Finance.neededLoan, _case.loan, _case.loan.loanTypes);
