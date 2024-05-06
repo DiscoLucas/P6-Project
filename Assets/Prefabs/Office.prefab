@@ -2559,9 +2559,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 7451775065106781204}
   - component: {fileID: 1982679683759574857}
   - component: {fileID: 6497940581231689954}
+=======
+  - component: {fileID: 2086322975290721165}
+  - component: {fileID: 3755398904200326922}
+  - component: {fileID: 8925277235617335601}
+  - component: {fileID: 1370834610131914850}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Untagged
@@ -2633,13 +2640,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< Updated upstream
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4778342172448092883
 GameObject:
+=======
+  m_Sprite: {fileID: 21300000, guid: dbcdfe8d60655104fb4feb222abdcd4c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 7, y: 4.67}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!111 &8925277235617335601
+Animation:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 38903219674583412}
@@ -2654,6 +2678,19 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &38903219674583412
 Transform:
+=======
+  m_GameObject: {fileID: 4321049124459430176}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: c7043b67fd1ccfd498f6fa95ef8ada48, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &1370834610131914850
+MonoBehaviour:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2683,6 +2720,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4778342172448092883}
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2717,6 +2755,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd168d28ac645c4d8c30a0964dcc076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    VoiceClip: []
+    minPitch: -0.5
+    maxPitch: 1.5
+    sentencis: []
+    hasRun: 0
+  dialogueRegistry: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &4843112717801494167
 GameObject:
   m_ObjectHideFlags: 0

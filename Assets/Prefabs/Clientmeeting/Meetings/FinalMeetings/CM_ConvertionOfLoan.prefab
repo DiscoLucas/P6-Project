@@ -1422,8 +1422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fc24e24f9cc814fba6b31a3f25d750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header_text: etyhytre
-  describtion_text: fss
+  header_text: "Hvordan skal [Navn] konvertere sit l\xE5n?"
+  describtion_text: "[Navn] har et l\xE5n p\xE5 [LoanAmoutn] kr. og er kommet for
+    at h\xF8re om det giver mening at konvertere l\xE5net. \n\nDu kan se p\xE5 computeren
+    hvad [Navn]'s opridenlig rente er, og hvad den nuv\xE6rende rente er p\xE5 forskellige
+    l\xE5n.\n\nDu kan ogs\xE5 tjekke \"Termer\" for at en opfriskning p\xE5 Konvertering."
   header: {fileID: 5227578434427497578}
   describtion: {fileID: 4413723721446291197}
   client:
