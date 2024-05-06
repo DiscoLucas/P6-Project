@@ -239,18 +239,20 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - "Du skal nu i gang med at oml\xE6gge et l\xE5n det kalder vi ogs\xE5 at konvertere. 
-        N\xE5r kunden oml\xE6gger sine l\xE5n, bruges det nye l\xE5n i boligen til
-        at indfri det gamle. Det kan bl.a. v\xE6re en fordel, hvis renten \xE6ndrer
-        sig, eller kunden vil l\xE5ne i sin friv\xE6rdi."
-      - "Hvis renten senere stiger, kan kunden oml\xE6gge sit l\xE5n og reducere
-        restg\xE6lden. Hvis renten derimod falder, kan kunden oml\xE6gge til en lavere
-        rente og dermed f\xE5 en lavere ydelse."
+      - "Nu skal du i gang med at oml\xE6gge et l\xE5n. At oml\xE6gge et l\xE5n,
+        kaldes ogs\xE5 at konvertere. N\xE5r kunden skal oml\xE6gge sit l\xE5n, bruges
+        det nye l\xE5n til bolig, til at indfri det gamle l\xE5n. Det kan bl.a. v\xE6re
+        en fordel, hvis enten renten den \xE6ndre sig, eller at kunden vil l\xE5ne
+        til sin friv\xE6rdi."
+      - "Hvis renten senere stiger, kan kunden oml\xE6gge sit l\xE5n og dermed reducerer
+        restg\xE6lden. Derimod, hvis renten falder, kan kunden oml\xE6gge til en
+        lavere rente, og dermed f\xE5 en lavere ydelse."
       - "Det giver kunden mulighed for at indfri l\xE5net ved at opk\xF8be de bagvedliggende
-        obligationer. I perioder med rente\xE6ndringer kan dette give mulighed for
-        at oml\xE6gge realkreditl\xE5net, hvor enten renten eller restg\xE6lden reduceres."
-      - "Hvis kursen p\xE5 et fastforrentet l\xE5n er over kurs 100, kan kunden opsige
-        l\xE5net 2 m\xE5neder f\xF8r en termin til kurs 100. "
+        obligationer. I perioder hvor der opst\xE5r rente\xE6ndringer, kan dette
+        give mulighed for at oml\xE6gge realkreditl\xE5net, hvor enten renten eller
+        restg\xE6lden reduceres."
+      - "Hvis kursen p\xE5 et fastforrentet l\xE5n er over kurs 100, kan kunden v\xE6lge
+        at opsige l\xE5net 2 m\xE5neder f\xF8r en termin, til kurs 100."
       - "Hvis kunden har et l\xE5n med variabel rente, kan kunden kun opsige l\xE5net
         2 m\xE5neder f\xF8r rentetilpasning til kurs 100, ellers skal kunden ud og
         k\xF8be de bagvedliggende obligationer til over kurs 100. "
@@ -262,12 +264,13 @@ MonoBehaviour:
       - "Ned konvertering: Typisk n\xE5r renten er lav, det er en en god ide at g\xF8re
         for kunder, for s\xE5 ender de med en mindre ydelse."
     - row:
-      - "Du har nu mulighed for at hj\xE6lpe kunden med at indfrie sit l\xE5n, det
-        betyder at de vil betale l\xE5net tilbage."
-      - "Der er fire m\xE5der l\xE5net kan blive betalt tilbage p\xE5. "
-      - "1) Ved at betale hele l\xE5net tilbage som aftalt."
-      - "2) Ved at s\xE6lge sin bolig og realkreditinstituttet f\xE5r det, kunden
-        skylder p\xE5 l\xE5net."
+      - "Du har nu mulighed for at hj\xE6lpe kunden med at indfri sit l\xE5n. Det
+        betyder at de gerne vil tilbagebetale l\xE5net. "
+      - "Der eksisterer fire m\xE5der som l\xE5net ville kunne blive tilbagebetalt
+        af kunden:"
+      - "1) Ved at tilbagebetale hele l\xE5net som aftalt."
+      - "2) Ved at kunden s\xE6lger sin bolig, s\xE5 realkreditinstituttet modtager
+        det bel\xF8b som kunden skylder."
       - "3) Ved at oml\xE6gge sit l\xE5n og optager et nyt l\xE5n, som bruges til
         at betale det gamle l\xE5n af med."
       - "4) Ved at betale l\xE5net af f\xF8r tid, fordi kunden har penge til at betale
@@ -278,13 +281,13 @@ MonoBehaviour:
         100. Derfor skal kunderne ikke betale mere end kurs-100 (kurs pari) n\xE5r
         de vil indfri deres l\xE5n."
     - row:
-      - "For at finde ud af hvor meget en kunde kan l\xE5ne, er det godt at huske,
-        som en tommelfingerregel, at man m\xE5 have en g\xE6ldsfaktor p\xE5 4."
-      - "N\xE5r en kunde s\xF8ger et l\xE5n, skal de selv have minimum  5% i udbetaling."
-      - "S\xE5 find deres \xE5rsl\xF8n ganget med g\xE6ldsfaktoren er hvor meget
-        kunden kan l\xE5ne."
-      - "For at se hvor meget deres bolig kan koste, skal de penge de har til udbetaling
-        l\xE6gges oven i."
+      - "For at finde ud af hvor meget en kunde kan l\xE5ne, er en god tommelfingerregel
+        at man m\xE5 have en g\xE6ldsfaktor p\xE5 4."
+      - "N\xE5r en kunde s\xF8ger et l\xE5n, skal de selv min. have 5% i udbetaling."
+      - "S\xE5 for at regne ud hvor meget kunden kan l\xE5ne, skal man gange kundens
+        \xE5rsl\xF8n med g\xE6ldsfaktoren."
+      - "For at se hvor meget kundens bolig kan koste, skal man l\xE6gge de penge
+        kunden har f\xE5et til udbetaling oven i. "
       - "I v\xE6kstomr\xE5der som K\xF8benhavn og Aarhus kan kunder med bel\xE5ningsgrad
         over 60% og en g\xE6ldfaktor over 4 ikke f\xE5 et \"usikkert l\xE5n\"."
       - "1) Alle variabelt forrentede l\xE5n med eller uden afdrag, hvor renten justeres
@@ -293,16 +296,20 @@ MonoBehaviour:
         frekvens p\xE5 fem \xE5r eller mere."
       - 
     - row:
-      - "Hej med dig, du er den nye konsulent her ude er du ikke?  Jeg er Samuel,
-        din assistent her for at hj\xE6lpe dig med at falde godt til, jeg kan lige
-        give dig en lille rundvising af dit kontor. "
-      - "Over til venstre har du din computer hvor som du kan trykke ind p\xE5 n\xE5r
-        end det passer dig. Her kan du tjekke hvad dine kunder har sagt til dig,
-        samnt makrdet med renter og kurser.  "
-      - "Du kan ogs\xE5 g\xE5 ind og tjekke hvad dine kunder syntes om dig og din
-        overordnet score."
-      - "Der ud over har du adgang til vores eget lokale informations forum hvor
-        du kan f\xE5 gen opfrisket forskelige termer."
+      - "Hej med dig, du m\xE5 v\xE6re vores nye konsulent, ikke? Mit navn er Samuel,
+        din assistent her p\xE5 jobbet og mit job er at hj\xE6lpe dig med dine opgaver,
+        for at hj\xE6lpe dig med at falde godt til. Lad mig lige give dig en lille
+        rundvisning af dit kontor."
+      - "Over til venstre har du din computer. Den er tilg\xE6ngelige hvorn\xE5r
+        end det passer dig. Du kan tjekke din mail, hvor du kan f\xE5 et overblik
+        om dine forskellige kunder, og hvad de har sagt til dig, samt et sted hvor
+        du kan se markedet med renter og kurser. "
+      - "Du kan ogs\xE5 g\xE5 ind p\xE5 computeren, for at tjekke hvad dine kunder
+        syntes om dig. Deres positive eller negative respons, som vil give til din
+        overordnede score. "
+      - "Derudover har du adgang til vores eget lokale informationsforum, hvor du
+        kan f\xE5 genopfrisket forskellige relevante termer, som kan hj\xE6lpe dig
+        med dine opgaver. "
       - 
       - 
       - 
