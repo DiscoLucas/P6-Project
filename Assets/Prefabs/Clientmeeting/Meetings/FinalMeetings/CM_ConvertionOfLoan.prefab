@@ -1532,8 +1532,8 @@ MonoBehaviour:
   downCS: {fileID: 4127200388824859680}
   upCS: {fileID: 2982781284428572534}
   answers:
-  - DownKonverting
-  - UpKonverting
+  - Nedkonvertering
+  - Opkonvertering
   - Behold
 --- !u!1 &1685210250506794729
 GameObject:
@@ -3726,7 +3726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bombaclat
+  m_text: "Hvordan skal l\xE5net konvertes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4710,7 +4710,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WHICH BOMBACLAT DOG I AM
+  m_text: "Der er 3 valgmuligheder:\nOp \nNed \neller behold l\xE5net"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
