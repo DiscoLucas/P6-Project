@@ -1828,7 +1828,7 @@ PrefabInstance:
     - target: {fileID: 2016920394761383525, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1453.2007
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3178190735522248190, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
@@ -2043,6 +2043,21 @@ PrefabInstance:
     - target: {fileID: 7458309634314127230, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497642260877240519, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497642260877240519, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7497642260877240519, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8947454006766817340, guid: f288332e4eccdcb41a52aa9a76709d1f,
@@ -10445,11 +10460,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 305047532}
-    - target: {fileID: 7095076634058197816, guid: c07cc4845619b3e40a219955d87b3950,
-        type: 3}
-      propertyPath: tutorialDialogue
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

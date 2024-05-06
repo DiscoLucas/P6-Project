@@ -101,5 +101,6 @@ public struct MeetingCollection {
     public int meetingDialog;
     public bool needToFinnishToProgress;
     public int[] assistantSaulSentensis;
+    public int turtoialIndex;
 }
 

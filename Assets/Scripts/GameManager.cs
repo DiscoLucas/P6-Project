@@ -251,6 +251,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void clientMeeting()
     {
+        Debug.Log("Client meeting have startede");
         Case c = csm.getCurrentCase();
         clm.currentClient = c.client;
         DialogueManager.instance.clientData = c.client;
@@ -263,8 +264,21 @@ public class GameManager : MonoBehaviour
             assistant.playSpecificTutorial(turnEvent.tutorialNR);
         }else
         */
+
+        bool haveCompletede = assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede;
+        assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede = true;
+        Debug.Log("Have the tutroial completede: " + haveCompletede);
+        if (haveCompletede)
+        {
+            Debug.Log("client intro startet: " + c.client);
             clm.startClientIntro(c.client);
+        }
+        else {
+            Debug.Log("This part of turtoual done: "+ assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede);
+            assistant.turtoialID[c.getCurrentMeeting().turtoialIndex] = assistant.startTurtoialCheck(assistant.turtoialID[c.getCurrentMeeting().turtoialIndex]);
+        }
     }
+
 
 
 

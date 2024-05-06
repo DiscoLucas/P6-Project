@@ -89,6 +89,7 @@ MonoBehaviour:
     firstCaseIndex: 0
     customerType: 0
   animator: {fileID: 0}
+  currentCaseIndex: -1
   textFreq: 2
   TypeSpeed: 0.03
   dialoguec:
@@ -301,23 +302,7 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-    - row:
-      - 
+      - TABER
       - 
       - 
       - 
@@ -333,7 +318,23 @@ MonoBehaviour:
       - 
       - 
     - row:
+      - JEG ER TILBAGE
       - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - MUHAHAH
       - 
       - 
       - 
