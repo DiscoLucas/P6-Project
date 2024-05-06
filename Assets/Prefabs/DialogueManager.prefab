@@ -129,9 +129,8 @@ MonoBehaviour:
     - row:
       - "Jeg er [Alder]  \xE5r. Jeg er lige blevet f\xE6rdig med min uddannelse og
         kigger efter at anskaffe mig en ejerbolig"
-      - "Lige nu p\xE5 min nye stilling tjener jeg [Tjener] kr f\xF8r skat."
-      - "I mit studiejob har jeg sammen tjent [FuldOpsparing] kr sammen med lidt
-        fra min b\xF8rneopsparing."
+      - "Lige nu i min nye stilling tjener jeg [Tjener] kr f\xF8r skat."
+      - I mit studiejob har jeg opsparet [FuldOpsparing] kr.
       - 
       - 
       - 
