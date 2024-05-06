@@ -137,7 +137,7 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - "Hej igen. Jeg ville gerne konvertere mit l\xE5n"
+      - "Hej igen. Jeg vil gerne konvertere mit l\xE5n."
       - "Er det noget du kan hj\xE6lpe mig med?"
       - 
       - 
@@ -146,8 +146,8 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - "Jeg har h\xF8rt noget om jeg m\xE5ske kan indfrie mit l\xE5n, kan du f\xF8lge
-        mig igennem om det giver mening for mig?"
+      - "Jeg har h\xF8rt, om at jeg m\xE5ske kan indfri mit l\xE5n hos jer. Kan du
+        hj\xE6lpe mig med at f\xE5 det til at give mening for mig?"
       - 
       - 
       - 
@@ -156,20 +156,20 @@ MonoBehaviour:
       - 
       - 
     - row:
-      - "Jeg er [Alder] \xE5r . Jeg pr\xF8ver at anskaffe mig et sommerhus."
-      - "Jeg har lige f\xE5et mig en ny forfremmelse hvor jeg tjener [Tjener] kr
-        om m\xE5neden f\xF8r skat."
-      - Jeg har opsparet [FuldOpsparing] kr., gennem min arbejdstid.
+      - "Jeg er [Alder] \xE5r gammel. Jeg vil gerne fors\xF8ge p\xE5 at anskaffe
+        mig et sommerhus."
+      - "Jeg har lige f\xE5et en forfremmelse, hvor jeg tjener [Tjener] kr. om m\xE5neden."
+      - Jeg har opsparet [FuldOpsparing] kr. igennem min arbejdstid.
       - 
       - 
       - 
       - 
       - 
     - row:
-      - "Jeg er [Alder] \xE5r . Jeg har boet i en lejlighed i en god h\xE5ndfuld
-        \xE5r nu og ser p\xE5 at k\xF8be et hus."
-      - "Hver m\xE5ned tjener jeg [Tjener] kr f\xF8r skat, og er sikker i min stilling."
-      - Jeg har opsparet [FuldOpsparing] kr., gennem min arbejdstid.
+      - "Jeg er [Alder] \xE5r gammel, og har boet i en lejlighed i et godt stykke
+        tid nu og ser nu p\xE5 at k\xF8be et hus."
+      - "Hver m\xE5ned tjener jeg [Tjener] kr. og f\xF8ler mig sikker i min stilling."
+      - Jeg har sparet [FuldOpsparing] kr. op igennem min arbejdstid.
       - 
       - 
       - 
