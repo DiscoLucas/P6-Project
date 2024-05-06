@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     public Assistant assistant;
     public Vector2 pointsCol ;
     public TurnEvent turnEvent;
-
+    public bool meetingOngoing = false;
     private void Awake()
     {
         //Singleton pattern
@@ -314,6 +314,7 @@ public class GameManager : MonoBehaviour
     public Case setCurrentCase(ClientMeeting clientMeeting) {
 
         csm.currentClientMeeting = clientMeeting;
+        meetingOngoing = true;
         return csm.currentCases[csm.currentCaseIndex];
     }
     /// <summary>
@@ -351,6 +352,7 @@ public class GameManager : MonoBehaviour
 
 
     void destoryCurrentClientMeeting() {
+        meetingOngoing = false;
         //Log what is need to be logged
 
         //Destory the current object
