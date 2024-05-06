@@ -51,6 +51,7 @@ public class Assistant : MonoBehaviour
     }
 
     public void startTurtialText(){
+        Debug.Log("Start Talking");
         DialogueManager.instance.clientData = assisentData;
         tutorialRunning = true;
         DialogueManager.instance.nameText.text = assistant_Name;
@@ -82,9 +83,9 @@ public class Assistant : MonoBehaviour
         if (!tutorialHasPlayed)
         {
             PlayTutorial(tutorialDialogue);
-            newLoanTutorial();
+            /*newLoanTutorial();
             buyOutTutorial();
-            convertionTutorial();
+            convertionTutorial();*/
         }
     }
 
