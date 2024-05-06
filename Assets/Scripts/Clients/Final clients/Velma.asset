@@ -18,12 +18,12 @@ MonoBehaviour:
   city: "K\xF8benhavn"
   maritalStatus: 0
   customerType: 0
-  chacterSprite: {fileID: 21300000, guid: e09f479e8c10ec6459be394f06d3a0ed, type: 3}
+  chacterSprite: {fileID: 21300000, guid: 428f48e5e2550aa42ae1f9529dddabc7, type: 3}
   minPitch: 1.1
   maxPitch: 1.5
   startMeet: 0
   monthlyIncome: 31000
-  monthlyExpenses: 0
+  monthlyExpenses: 4000
   monthlySavings: 0
   totalSavings: 350000
   neededLoan: 0
