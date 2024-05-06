@@ -4400,8 +4400,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbea004a9b169ac438cea7644072216d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header_text: " Hvad skal der ske med [Navn]'s l\xE5n??"
-  describtion_text: " Skal l\xE5net konverteres eller forblive det samme"
+  header_text: " Hvad skal der ske med [Navn]'s l\xE5n?"
+  describtion_text: "[Navn] gl\xE6d ligge p\xE5 [G\xE6ld] kr.\n\nSkal l\xE5net konverteres
+    eller forblive det samme?\n"
   header: {fileID: 7465578583424848589}
   describtion: {fileID: 6305969933413712960}
   client:
