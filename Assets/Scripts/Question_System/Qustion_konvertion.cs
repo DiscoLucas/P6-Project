@@ -18,16 +18,22 @@ public class Qustion_konvertion : Qustion
 
     public override void fillOutHeaderAndDescribtion()
     {
+        base.fillOutHeaderAndDescribtion();
         answerFeild.ClearOptions();
         Debug.Log(" DOES ANSWERFEILD ANWERS" + answerFeild.options.Count + " ANSERS COUNT: " + answers.Count);
         answerFeild.AddOptions(answers);
 
     }
+    public bool checkAnswer(int index) {
+        return (answerFeild.options[answerFeild.value].text == answers[index]);
+    }
+
     public override void setAnswer()
     {
 
-
-        if (answerFeild.value == 0)
+        if (checkAnswer(0)) { 
+        
+        }else if (checkAnswer(1))
         {
             Debug.Log("downConvert");
             downConvertionWindow.SetActive(true);
@@ -37,7 +43,7 @@ public class Qustion_konvertion : Qustion
             isCorrect = shouldDownConvert;
 
         }
-        else if (answerFeild.value == 1)
+        else if (checkAnswer(2))
         {
             Debug.Log("upConvert");
             downConvertionWindow.SetActive(false);

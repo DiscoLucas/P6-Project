@@ -37,7 +37,7 @@ public class chooseLoan_qustion : Qustion
                     }
                 }
             }
-            string ir = string.Format("{0:N2}", (loant.interssetRate*100).ToString());
+            string ir = string.Format("{0:N2}", (loant.interssetRate*100).ToString("N2"));
             string key = loant.name + "-" + ir_Name + ":" + ir + sufix;
             loans.Add(key, loant);
             list.Add(key);

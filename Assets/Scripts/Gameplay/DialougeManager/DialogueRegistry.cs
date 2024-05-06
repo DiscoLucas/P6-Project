@@ -65,13 +65,15 @@ public class DialogueRegistry : MonoBehaviour
             currentCase.client.job.ToString() ,
             currentCase.client.city.ToString() ,
             currentCase.client.maritalStatus.ToString() ,
-            currentCase.client.Finance.monthlyIncome.ToString() ,
-            currentCase.client.Finance.monthlyExpenses.ToString() ,
-            currentCase.client.Finance.monthlySavings.ToString() ,
-            currentCase.client.Finance.totalSavings.ToString(),
-            currentCase.client.Finance.debt.ToString() ,
+            currentCase.client.Finance.monthlyIncome.ToString("N") ,
+            currentCase.client.Finance.monthlyExpenses.ToString("N") ,
+            currentCase.client.Finance.monthlySavings.ToString("N") ,
+            currentCase.client.Finance.totalSavings.ToString("N"),
+            currentCase.client.Finance.debt.ToString("N") ,
             currentCase.client.Finance.debtFactor.ToString(),
-            currentCase.loanAmount.ToString()
+            currentCase.loanAmount.ToString("N"),
+            
+            (currentCase.loan == null)?"NAN":currentCase.loan.loanAmount.ToString("N")
         };
 
         return replaceString(message, tags, values);

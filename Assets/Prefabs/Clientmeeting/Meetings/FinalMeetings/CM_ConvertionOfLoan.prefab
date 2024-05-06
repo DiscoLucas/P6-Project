@@ -1423,7 +1423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   header_text: "Hvordan skal [Navn] konvertere sit l\xE5n?"
-  describtion_text: "[Navn] har et l\xE5n p\xE5 [LoanAmoutn] kr. og er kommet for
+  describtion_text: "[Navn] har et l\xE5n p\xE5 [LoanAmount] kr. og er kommet for
     at h\xF8re om det giver mening at konvertere l\xE5net. \n\nDu kan se p\xE5 computeren
     hvad [Navn]'s opridenlig rente er, og hvad den nuv\xE6rende rente er p\xE5 forskellige
     l\xE5n, for at finde ud af hvad der ville passe bedst til kunden.\n\nDu kan ogs\xE5
@@ -1533,6 +1533,7 @@ MonoBehaviour:
   downCS: {fileID: 4127200388824859680}
   upCS: {fileID: 2982781284428572534}
   answers:
+  - "V\xE6lg"
   - Nedkonvertering
   - Opkonvertering
   - Behold
