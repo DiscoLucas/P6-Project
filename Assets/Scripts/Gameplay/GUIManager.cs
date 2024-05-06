@@ -8,7 +8,7 @@ public class GUIManager : MonoBehaviour
 {
     [Header("Menu Stuff")]
     public GameObject action_Menu;
-    public GameObject talkClient_BTN;
+    public bool talkClient_BTN;
     public GameObject space_Canvas, computer_Canvas;
     public GameObject meetingPopUp;
 
@@ -39,11 +39,12 @@ public class GUIManager : MonoBehaviour
 
     public void showActionMenu() { 
         action_Menu.SetActive(true);
-        talkClient_BTN.SetActive(true);
+        talkClient_BTN = true;
     }
 
     public void hideActionMenu() {
         action_Menu.SetActive(false);
+        talkClient_BTN = false;
     }
 
     /// <summary>
