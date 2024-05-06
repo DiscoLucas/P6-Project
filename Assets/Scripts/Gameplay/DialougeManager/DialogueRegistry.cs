@@ -70,7 +70,8 @@ public class DialogueRegistry : MonoBehaviour
             currentCase.client.Finance.monthlySavings.ToString() ,
             currentCase.client.Finance.totalSavings.ToString(),
             currentCase.client.Finance.debt.ToString() ,
-            currentCase.client.Finance.debtFactor.ToString()
+            currentCase.client.Finance.debtFactor.ToString(),
+            currentCase.loanAmount.ToString()
         };
 
         return replaceString(message, tags, values);

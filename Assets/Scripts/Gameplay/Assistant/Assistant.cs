@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,8 +13,8 @@ public class Assistant : MonoBehaviour
     [Header("Components")]
     public Animation intro;
     public Animation reverseIntro;
-    public AnimationClip reverseIntro2;
-
+    public AnimationClip reverseIntro2, intro2;
+    public TurtoialIds[] turtoialID;
     [Header("Dialogues")]
     public int dialogueToSay;
     public int tutorialDialogue = 0;
@@ -21,6 +22,7 @@ public class Assistant : MonoBehaviour
 
     [Header("Tutorial Bools")]
     public bool tutorialHasPlayed = false;
+    public bool introHaveplayed = false;
     public bool firstTimeMakeLoan = false;
     public bool firstTimeBuyout = false;
     public bool firstTimeConvert = false;
@@ -46,8 +48,18 @@ public class Assistant : MonoBehaviour
 
     void PlayTutorial(int dialogueIndex)
     {
+        tutorialHasPlayed = false;
         currentIndex = dialogueIndex;
-        intro.Play();
+        reverseIntro.clip = intro2;
+        reverseIntro.PlayQueued(reverseIntro2.name);
+        reverseIntro.Play();
+    }
+
+    public TurtoialIds startTurtoialCheck(TurtoialIds id)
+    {
+        PlayTutorial(id.conventationIndex);
+        DialogueManager.instance.clientData = assisentData;
+        return id;
     }
 
     public void startTurtialText(){
@@ -57,11 +69,8 @@ public class Assistant : MonoBehaviour
         DialogueManager.instance.nameText.text = assistant_Name;
         DialogueManager.instance.StartDia(currentIndex);
         currentIndex =-1;
-        if (GameManager.instance.csm.getCurrentCase().assistantsSentinceUpdate())
-        {
-
-        }
     }
+
 
     public void playSpecificTutorial(int tutorialNR)
     {
@@ -120,7 +129,20 @@ public class Assistant : MonoBehaviour
             reverseIntro.Play();
             tutorialHasPlayed = true;
             Debug.Log("I love you");
-            turtialDone.Invoke();
+            if (!introHaveplayed)
+            {
+                turtialDone.Invoke();
+                introHaveplayed = true;
+            }
+            else {
+                Debug.Log("startClientIntro after turtoial");
+                GameManager.instance.clm.startClientIntro(GameManager.instance.csm.getCurrentCase().client);
+            }
         }
     }
+}
+[Serializable]
+public struct TurtoialIds {
+    public int conventationIndex;
+    public bool haveCompletede;
 }

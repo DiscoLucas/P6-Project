@@ -1222,8 +1222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: -495
+    m_Right: -498
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
@@ -1946,8 +1946,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e8b8707ed8b2e4f87e693981556620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header_text: "l\xE5n igen !!!"
-  describtion_text: ' '
+  header_text: "Hvilket l\xE5ntype skal [Navn]'s l\xE5n konverteres til?"
+  describtion_text: " V\xE6lge det som [Navn]'s l\xE5n skal konverteres til?"
   header: {fileID: 6130017933500486972}
   describtion: {fileID: 5041403679406825650}
   client:
@@ -4400,8 +4400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbea004a9b169ac438cea7644072216d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header_text: " Hvad skal der ske med l\xE5net??"
-  describtion_text: ' '
+  header_text: " Hvad skal der ske med [Navn]'s l\xE5n??"
+  describtion_text: " Skal l\xE5net konverteres eller forblive det samme"
   header: {fileID: 7465578583424848589}
   describtion: {fileID: 6305969933413712960}
   client:

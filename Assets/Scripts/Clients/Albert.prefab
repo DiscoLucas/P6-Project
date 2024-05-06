@@ -118,13 +118,23 @@ MonoBehaviour:
   turtialDone:
     m_PersistentCalls:
       m_Calls: []
+  gameManager: {fileID: 0}
   intro: {fileID: 97913378011513985}
   reverseIntro: {fileID: 97913378011513985}
   reverseIntro2: {fileID: 7400000, guid: 2ec1d59fd1cc85c48936dd9b71b7f06a, type: 2}
+  intro2: {fileID: 7400000, guid: e6dd3a6edb5d51d48b551e236976a4e1, type: 2}
+  turtoialID:
+  - conventationIndex: 14
+    haveCompletede: 0
+  - conventationIndex: 13
+    haveCompletede: 0
+  - conventationIndex: 12
+    haveCompletede: 0
   dialogueToSay: 0
   tutorialDialogue: 15
   assistant_Name: Saul
   tutorialHasPlayed: 0
+  introHaveplayed: 0
   firstTimeMakeLoan: 0
   firstTimeBuyout: 0
   firstTimeConvert: 0
