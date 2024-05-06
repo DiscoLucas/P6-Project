@@ -962,8 +962,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 994c20c80f6567f41b71ee1b02ec74a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header_text: " hvor meget kan personen l\xE5ne"
-  describtion_text: ' '
+  header_text: "Hvor stort et l\xE5n kan [Navn] udtage?"
+  describtion_text: "[Navn] har en m\xE5nedsl\xE5n [Tjener] kr. og har en g\xE6ldfaktor
+    p\xE5 [G\xE6ldFaktor].\n\n"
   header: {fileID: 7436130922362811940}
   describtion: {fileID: 6550311504330087093}
   client:
@@ -2329,8 +2330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f661515851fc97d40a544f552d84e5ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  header_text: "Hvilket l\xE5n skal han have"
-  describtion_text: ' '
+  header_text: "Hvilket l\xE5n kan [Navn] kredit vurderes til?"
+  describtion_text: "V\xE6lg om [Navn] kan blive vurderet til et variablt rente l\xE5n,
+    eller fastforrentet l\xE5n. \n\nDu kan ogs\xE5 v\xE6lge om [Navn] skal have med
+    eller uden afdrag."
   header: {fileID: 1476830320122004602}
   describtion: {fileID: 4406286100005168205}
   client:
