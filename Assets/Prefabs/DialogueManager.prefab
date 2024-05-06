@@ -50,7 +50,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Assistant, Assembly-CSharp
-        m_MethodName: endAssistantTalk
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -232,13 +232,6 @@ MonoBehaviour:
     - row:
       - 
       - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-    - row:
       - "Nu skal du i gang med at oml\xE6gge et l\xE5n. At oml\xE6gge et l\xE5n,
         kaldes ogs\xE5 at konvertere. N\xE5r kunden skal oml\xE6gge sit l\xE5n, bruges
         det nye l\xE5n til bolig, til at indfri det gamle l\xE5n. Det kan bl.a. v\xE6re
@@ -247,12 +240,21 @@ MonoBehaviour:
       - "Hvis renten senere stiger, kan kunden oml\xE6gge sit l\xE5n og dermed reducerer
         restg\xE6lden. Derimod, hvis renten falder, kan kunden oml\xE6gge til en
         lavere rente, og dermed f\xE5 en lavere ydelse."
+      - 
+      - 
+      - 
+      - 
+    - row:
       - "Det giver kunden mulighed for at indfri l\xE5net ved at opk\xF8be de bagvedliggende
         obligationer. I perioder hvor der opst\xE5r rente\xE6ndringer, kan dette
         give mulighed for at oml\xE6gge realkreditl\xE5net, hvor enten renten eller
         restg\xE6lden reduceres."
       - "Hvis kursen p\xE5 et fastforrentet l\xE5n er over kurs 100, kan kunden v\xE6lge
         at opsige l\xE5net 2 m\xE5neder f\xF8r en termin, til kurs 100."
+      - "Du har nu mulighed for at hj\xE6lpe kunden med at indfri sit l\xE5n. Det
+        betyder at de gerne vil tilbagebetale l\xE5net. "
+      - "Der eksisterer fire m\xE5der som l\xE5net ville kunne blive tilbagebetalt
+        af kunden:"
       - "Hvis kunden har et l\xE5n med variabel rente, kan kunden kun opsige l\xE5net
         2 m\xE5neder f\xF8r rentetilpasning til kurs 100, ellers skal kunden ud og
         k\xF8be de bagvedliggende obligationer til over kurs 100. "
@@ -264,13 +266,13 @@ MonoBehaviour:
       - "Ned konvertering: Typisk n\xE5r renten er lav, det er en en god ide at g\xF8re
         for kunder, for s\xE5 ender de med en mindre ydelse."
     - row:
-      - "Du har nu mulighed for at hj\xE6lpe kunden med at indfri sit l\xE5n. Det
-        betyder at de gerne vil tilbagebetale l\xE5net. "
-      - "Der eksisterer fire m\xE5der som l\xE5net ville kunne blive tilbagebetalt
-        af kunden:"
       - "1) Ved at tilbagebetale hele l\xE5net som aftalt."
       - "2) Ved at kunden s\xE6lger sin bolig, s\xE5 realkreditinstituttet modtager
         det bel\xF8b som kunden skylder."
+      - "3) Ved at kunden oml\xE6gger sit l\xE5n og s\xE5 optager et nyt l\xE5n,
+        som kan bruges til at betale sit gamle l\xE5n af med."
+      - "4) Ved at betale l\xE5net af f\xF8r tid, fordi kunden har pengene til at
+        betale l\xE5net her og nu. "
       - "3) Ved at oml\xE6gge sit l\xE5n og optager et nyt l\xE5n, som bruges til
         at betale det gamle l\xE5n af med."
       - "4) Ved at betale l\xE5net af f\xF8r tid, fordi kunden har penge til at betale
