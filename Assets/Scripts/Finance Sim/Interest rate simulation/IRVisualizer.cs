@@ -20,7 +20,7 @@ public class IRVisualizer : MonoBehaviour
     public string typeSubfiix = "år", loanFast = "Fast";
     string seriesName;
     string subfix = "s lån";
-    string btn_showIR = "Rente", btn_showIRP = "Kurs";
+    string btn_showIR = "Rente", btn_showIRP = "Kurs", btn_flavor = "Vis";
     string xAxis = "M ", secondXAxis = " D ";
     string noDataHeader = "Ingen Data Valgt";
     [Header("UI elements")]
@@ -46,7 +46,12 @@ public class IRVisualizer : MonoBehaviour
         LineChartIR.RemoveData();
         LineChartIR.AddSerie<Line>(clientName + "s lån");
         LineChartIR.AddXAxisData("Måned 0");
-        LineChartIR.AddData(0, interestRate*100);
+        addIRData(interestRate);
+    }
+
+    void addIRData(double interestRate) {
+        float data = (float)(interestRate * 100);
+        LineChartIR.AddData(0, data);
     }
 
     /// <summary>
@@ -68,6 +73,7 @@ public class IRVisualizer : MonoBehaviour
 
     public void changeWhatsIsOnGraph() {
         buttonText.text = (showIR)? btn_showIR: btn_showIRP;
+        buttonText.text = btn_flavor+" " + buttonText.text;
         UpdateRateLineChart(!showIR);
     }
 
@@ -83,15 +89,15 @@ public class IRVisualizer : MonoBehaviour
         string whatIsShowen = (showIR) ? btn_showIR : btn_showIRP;
         if (isIR) {
             data = currentShowedLoan.getInterestRate().ToArray();
-            firstNumber.text = (data[0] * 100).ToString();
-            LastNumber.text = (data[data.Length-1] * 100).ToString();
+            firstNumber.text = (data[0] * 100).ToString("N2");
+            LastNumber.text = (data[data.Length-1] * 100).ToString("N2");
 
 
         }
         else {
             data = currentShowedLoan.IRPForTime.ToArray();
-            firstNumber.text = (data[0]).ToString();
-            LastNumber.text = (data[data.Length - 1]).ToString();
+            firstNumber.text = (data[0]).ToString("N2");
+            LastNumber.text = (data[data.Length - 1]).ToString("N2");
         }
 
         CreateLineChart(lineChart);
@@ -105,7 +111,7 @@ public class IRVisualizer : MonoBehaviour
         {
             lineChart.AddXAxisData(xAxis + GameManager.instance.monthNumber + secondXAxis + (i+1));
             if(isIR)
-                lineChart.AddData(0, data[i]*100);
+                addIRData(data[i]);
             else
                 lineChart.AddData(0, data[i]);
         }

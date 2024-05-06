@@ -9,7 +9,9 @@ public class MarketVisualizer : MonoBehaviour
 
     public void createChart(LoanTypes[] loanTypes) {
         lineChart.RemoveData();
+        Debug.Log("Create Market");
         foreach (LoanTypes loan in loanTypes) {
+            Debug.Log("loan.name: " + loan.name);
             lineChart.AddSerie<Line>(loan.name);
         }
     }
