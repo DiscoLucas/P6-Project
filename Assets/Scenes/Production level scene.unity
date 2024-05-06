@@ -1071,8 +1071,8 @@ PrefabInstance:
         hvor kursen g\xE5r op og ned i takt med udbud og eftersp\xF8rgsel.\r\n\r\nI
         traditionel realkredit er der direkte sammenh\xE6ng imellem realkreditl\xE5net
         og en bestemt obligation. \r\n\r\n<style=header>Kredit vurdering\r\n<style=normal>For
-        at kredit vurdere skal kundes \xE5rs l\xF8n findes og ganges med kundes g\xE6ldsfaktor,
-        som typisk ligger p\xE5 4 som en tommelfinger regl.\r\n\r\n<style=header>Kurs\r\n<style=normal>Hvis
+        at kreditvurdere skal kundes \xE5rsl\xF8n ganges med kundes g\xE6ldsfaktor,
+        som h\xF8jst m\xE5 ligger p\xE5 4, som en tommelfingerregel.\r\n\r\n<style=header>Kurs\r\n<style=normal>Hvis
         kursen p\xE5 realkreditobligationen er p\xE5 100, s\xE5 modtager kunden 100
         kroner per 100 kroner, kunden l\xE5ner. Hvis kursen er 95, s\xE5 modtager
         kunden kun 95 kroner for hver 100 kroner, kunden l\xE5ner.\r\n\r\nDermed
@@ -1083,42 +1083,43 @@ PrefabInstance:
         2.105.000 kroner.\r\n\r\nKursen skal derfor som tommelfingerregel v\xE6re
         s\xE5 t\xE6t p\xE5 100 som muligt, n\xE5r kunden skal l\xE5ne. S\xE5 kommer
         de nemlig til at skylde s\xE5 f\xE5 penge som muligt.\r\n\r\nKurs 100 kaldes
-        ogs\xE5  kurs pari. \r\n\r\nHvis renten i samfundet falder, stiger kursen
+        ogs\xE5 kurs pari. \r\n\r\nHvis renten i samfundet falder, stiger kursen
         p\xE5 den eksisterende obligation.\r\n\r\nHvis renten i samfundet stiger,
         s\xE5 falder kursen p\xE5 de eksisterende obligationer.\r\n\r\n<style=header>Fast
-        rente\r\n<style=normal>L\xE5n med fast rente kan have en l\xF8betid  p\xE5
+        rente\r\n<style=normal>L\xE5n med fast rente kan have en l\xF8betid p\xE5
         op til 30 \xE5r. Renten p\xE5 et fastforrentet l\xE5n \xE6ndrer sig ikke
         over den tid. Dette giver l\xE5net \xF8konomisk sikkerhed.\r\n\r\n<style=header>Variable
         rente\r\n<style=normal>L\xE5n med variable rente er ogs\xE5 kaldt flexl\xE5n,
-        og rentetilpasningsl\xE5n. Den variable rente er fast i en periode p\xE5 
-        enten 1 \xE5r, 3 \xE5r eller 5 \xE5r. (F-1, F-3, F-5) Dette betyder, at l\xE5net
+        og rentetilpasningsl\xE5n. Den variable rente er fast i en periode p\xE5
+        fx 1 \xE5r, 3 \xE5r eller 5 \xE5r. (F-1, F-3, F-5) Dette betyder, at l\xE5net
         efter hver periode f\xE5r en ny rente. \r\n\r\nDet kan blive billigere p\xE5
-        kort sigt, men dyrere i l\xE6ngere sigt.\r\n\r\nKunder der skal have l\xE5n
-        med variable rente skal have luft i deres \xF8konomi til at klare rente\xE6ndringer.\r\n\r\n<style=header>Rente,
-        kurs & Varighed\r\n<style=normal>Kurserne p\xE5 obligationer bliver som sagt
-        bestemt af udbud og eftersp\xF8rgsel. N\xE5r investor har en 2 pct. obligation,
-        og markedsrenten falder, vil en anden investor give en h\xF8jere pris (kurs)
-        for obligationen, hvor hun er sikker p\xE5 at f\xE5 2 pct. i rente. Og omvendt,
-        n\xE5r renten stiger, s\xE5 bliver en obligation med en lavere rente mindre
-        v\xE6rd.\r\nDen st\xF8rste p\xE5virkning p\xE5 kurserne for danske realkreditobligationer
-        er renteudviklingen. Det er forskelligt, hvordan obligationerne p\xE5virkes.
-        Som udgangspunkt er obligationer med lang l\xF8betid mest kursf\xF8lsomme,
-        hvorimod obligationer, der udl\xF8ber til kurs 100 om f\xE5 \xE5r, ikke vil
-        svinge ret meget. \r\n\r\nEt v\xE6rkt\xF8j til at \u201Dm\xE5le\u201D kursf\xF8lsomheden
-        er varigheden, som kan ses i de fleste kurslister. Varigheden fort\xE6ller,
-        hvor meget en obligation teoretisk set, stiger eller falder i kurs ved en
-        rente\xE6ndring p\xE5 1 procentpoint. Alts\xE5 hvis varigheden er 5 vil kursen
-        falde med 5 %, n\xE5r renten stiger med 1 procentpoint. Det er dog ikke et
-        pr\xE6cist tal, men kan bruges som indikator. Lav varighed = lav kursrisiko.\r\n\r\nDet
-        er vigtigt at understrege, at der er forskellige renter. Den korte rente
-        er styringsrenten for bankl\xE5n og variabelt forrentede l\xE5n. Den lange
-        rente bestemmer renten/kursen p\xE5 de lange 20- og 30-\xE5rige realkreditl\xE5n.\r\n\r\n\r\n<style=header>Afdrag
+        kort sigt, men dyrere p\xE5 l\xE6ngere sigt.\r\n\r\nKunder der skal have
+        l\xE5n med variable rente skal have luft i deres \xF8konomi til at klare
+        rente\xE6ndringer.\r\n\r\n<style=header>Rente, kurs & Varighed\r\n<style=normal>Kurserne
+        p\xE5 obligationer bliver som sagt bestemt af udbud og eftersp\xF8rgsel.
+        N\xE5r investor har en 2 % obligation, og markedsrenten falder, vil en anden
+        investor give en h\xF8jere pris (kurs) for obligationen, hvor hun er sikker
+        p\xE5 at f\xE5 2 % i rente. Og omvendt, n\xE5r renten stiger, s\xE5 bliver
+        en obligation med en lavere rente mindre v\xE6rd.\r\nDen st\xF8rste p\xE5virkning
+        p\xE5 kurserne for danske realkreditobligationer er renteudviklingen. Det
+        er forskelligt, hvordan obligationerne p\xE5virkes. Som udgangspunkt er obligationer
+        med lang l\xF8betid mest kursf\xF8lsomme, hvorimod obligationer, der udl\xF8ber
+        til kurs 100 om f\xE5 \xE5r, ikke vil svinge ret meget. \r\n\r\nEt v\xE6rkt\xF8j
+        til at \u201Dm\xE5le\u201D kursf\xF8lsomheden er varigheden, som kan ses
+        i de fleste kurslister. Varigheden fort\xE6ller, hvor meget en obligation
+        teoretisk set, stiger eller falder i kurs ved en rente\xE6ndring p\xE5 1
+        procentpoint. Alts\xE5 hvis varigheden er 5 vil kursen falde med 5 %, n\xE5r
+        renten stiger med 1 procentpoint. Det er dog ikke et pr\xE6cist tal, men
+        kan bruges som indikator. Lav varighed = lav kursrisiko.\r\n\r\nDet er vigtigt
+        at understrege, at der er forskellige renter. Den korte rente er styringsrenten
+        for bankl\xE5n og variabelt forrentede l\xE5n. Den lange rente bestemmer
+        renten/kursen p\xE5 de lange 20- og 30-\xE5rige realkreditl\xE5n.\r\n\r\n\r\n<style=header>Afdrag
         / afdragsfrihed\r\n<style=normal>Afdrag er n\xE5r g\xE6lden l\xF8bende betales
         tilbage.\r\nAfdragsfrihed er n\xE5r kunden udskyder tilbagebetalingen, typisk
         op til 10 \xE5r.\r\n\r\nAfdragsfrie l\xE5n har typisk en lavere kurs i forhold
         til l\xE5n med afdrag.\r\nDet kan v\xE6re en god id\xE9 at v\xE6lge afdragsfrihed,
         hvis kunden f.eks. g\xE5r ned i l\xF8n i en periode eller vil betale af p\xE5
-        en anden (og dyrere) g\xE6ld.\r\n\r\n<style=header>Indfrining af l\xE5n\r\n<style=normal>At
+        en anden (og dyrere) g\xE6ld.\r\n\r\n<style=header>Indfrielse af l\xE5n\r\n<style=normal>At
         indfri et realkreditl\xE5n betyder, at kunden betaler hele bel\xF8bet af,
         s\xE5 han/hun ikke l\xE6ngere skylder noget p\xE5 l\xE5net.\r\n\r\nMan kan
         indfri sit realkreditl\xE5n p\xE5 4 m\xE5der:\r\n1)\tVed at betale hele l\xE5net
@@ -1133,16 +1134,16 @@ PrefabInstance:
         l\xE5net f\xF8r tid, kaldes det for en f\xF8rtids indfrielse.\r\n \r\n\xD8nsker
         en kunde at indfri eller oml\xE6gge sit realkreditl\xE5n, skal du som r\xE5dgiver
         v\xE6re opm\xE6rksom p\xE5 fristerne og mulighederne ved indfrielse af l\xE5n,
-        det kan nemlig v\xE6re kunden en del penge.\r\n\r\n<style=header>Konvertering\r\n<style=normal>At
+        det kan nemlig spare kunden en del penge.\r\n\r\n<style=header>Konvertering\r\n<style=normal>At
         konvertere et realkreditl\xE5n betyder at oml\xE6gge et eksisterende l\xE5n
         til et andet realkreditl\xE5n. Det sker typisk fordi kunden kan spare penge
         enten p\xE5 ydelsen, hvis renten er faldet, eller p\xE5 restg\xE6lden, hvis
         renten er steget, for s\xE5 falder kursen.\r\n\r\nDer er to typer af konvertering
-        vi bruger:\r\n1. Op konvertering: Typisk i perioder hvor renterne stiger,
-        er den god mulighed hvis vi forvetner at renten er lavere n\xE6ste gang kunden
-        vil konvatere.\r\n\r\n2. Ned konvertering: Typisk n\xE5r renten er lav, det
-        er en en god ide at g\xF8re for kunder, for s\xE5 ender de med en mindre
-        ydelse.\r\n\r\n<style=header>Bidragssatser\r\n<style=normal>Bidragssatser
+        vi bruger:\r\n1. Op-konvertering: Typisk i perioder hvor renterne stiger,
+        er den god mulighed, hvis vi forventer at renten er lavere n\xE6ste gang
+        kunden vil konvertere.\r\n\r\n2. Ned-konvertering: Typisk n\xE5r renten er
+        lav, det er en god ide at g\xF8re for kunder, for s\xE5 f\xE5r de en lavere
+        (billigere) ydelse.\r\n\r\n<style=header>Bidragssatser\r\n<style=normal>Bidragssatser
         er det gebyr, kunden betaler til realkreditinstituttet for det arbejde de
         har med l\xE5net.\r\n\r\nBidragssatsen afh\xE6nger af, hvilken type l\xE5n
         kunden har. Rentetilpasningsl\xE5n og l\xE5n med afdragsfrihed koster typisk

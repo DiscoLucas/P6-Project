@@ -128,7 +128,7 @@ MonoBehaviour:
     cells:
     - row:
       - "Jeg er [Alder]  \xE5r. Jeg er lige blevet f\xE6rdig med min uddannelse og
-        kigger efter at anskaffe mig en ejerbolig"
+        kigger efter at anskaffe mig en ejerbolig."
       - "Lige nu i min nye stilling tjener jeg [Tjener] kr f\xF8r skat."
       - I mit studiejob har jeg opsparet [FuldOpsparing] kr.
       - 
@@ -300,8 +300,8 @@ MonoBehaviour:
     - row:
       - "Hej med dig, du m\xE5 v\xE6re vores nye konsulent, ikke? Mit navn er Samuel,
         din assistent her p\xE5 jobbet og mit job er at hj\xE6lpe dig med dine opgaver,
-        for at hj\xE6lpe dig med at falde godt til. Lad mig lige give dig en lille
-        rundvisning af dit kontor."
+        og for at du falder godt til. Lad mig lige give dig en lille rundvisning
+        af dit kontor."
       - "Over til venstre har du din computer. Den er tilg\xE6ngelige hvorn\xE5r
         end det passer dig. Du kan tjekke din mail, hvor du kan f\xE5 et overblik
         om dine forskellige kunder, og hvad de har sagt til dig, samt et sted hvor
