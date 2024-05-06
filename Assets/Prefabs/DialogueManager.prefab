@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentinces:
-    gridSize: {x: 4, y: 16}
+    gridSize: {x: 8, y: 16}
     cellSize: {x: 100, y: 50}
     cells:
     - row:
@@ -133,9 +133,17 @@ MonoBehaviour:
       - "I mit studiejob har jeg sammen tjent [FuldOpsparing] kr sammen med lidt
         fra min b\xF8rneopsparing."
       - 
+      - 
+      - 
+      - 
+      - 
     - row:
       - "Hej igen. Jeg ville gerne konvertere mit l\xE5n"
       - "Er det noget du kan hj\xE6lpe mig med?"
+      - 
+      - 
+      - 
+      - 
       - 
       - 
     - row:
@@ -144,18 +152,15 @@ MonoBehaviour:
       - 
       - 
       - 
+      - 
+      - 
+      - 
+      - 
     - row:
       - "Jeg er [Alder] \xE5r . Jeg pr\xF8ver at anskaffe mig et sommerhus."
       - "Jeg har lige f\xE5et mig en ny forfremmelse hvor jeg tjener [Tjener] kr
         om m\xE5neden f\xF8r skat."
       - Jeg har opsparet [FuldOpsparing] kr., gennem min arbejdstid.
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
       - 
       - 
       - 
@@ -171,27 +176,8 @@ MonoBehaviour:
       - 
       - 
       - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
     - row:
       - 
-      - 
-      - 
-      - 
-      - "3) Ved at oml\xE6gge sit l\xE5n og optager et nyt l\xE5n, som bruges til
-        at betale det gamle l\xE5n af med."
-      - "4) Ved at betale l\xE5net af f\xF8r tid, fordi kunden har penge til at betale
-        l\xE5net ud her og nu. "
-      - "Men du skal prim\xE6rt kun t\xE6nke p\xE5 om de skal beholde deres l\xE5n
-        eller om det skal oml\xE6gges."
-      - "Et fastforrentet l\xE5n kan man opsige til kurs 100 hvis kursen er over
-        100. Derfor skal kunderne ikke betale mere end kurs-100 (kurs pari) n\xE5r
-        de vil indfri deres l\xE5n."
       - 
       - 
       - 
@@ -208,6 +194,8 @@ MonoBehaviour:
       - 
       - 
       - 
+    - row:
+      - 
       - 
       - 
       - 
@@ -220,134 +208,90 @@ MonoBehaviour:
       - 
       - 
       - 
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+      - 
+    - row:
+      - "Du skal nu i gang med at oml\xE6gge et l\xE5n det kalder vi ogs\xE5 at konvertere. 
+        N\xE5r kunden oml\xE6gger sine l\xE5n, bruges det nye l\xE5n i boligen til
+        at indfri det gamle. Det kan bl.a. v\xE6re en fordel, hvis renten \xE6ndrer
+        sig, eller kunden vil l\xE5ne i sin friv\xE6rdi."
+      - "Hvis renten senere stiger, kan kunden oml\xE6gge sit l\xE5n og reducere
+        restg\xE6lden. Hvis renten derimod falder, kan kunden oml\xE6gge til en lavere
+        rente og dermed f\xE5 en lavere ydelse."
+      - "Det giver kunden mulighed for at indfri l\xE5net ved at opk\xF8be de bagvedliggende
+        obligationer. I perioder med rente\xE6ndringer kan dette give mulighed for
+        at oml\xE6gge realkreditl\xE5net, hvor enten renten eller restg\xE6lden reduceres."
       - "Hvis kursen p\xE5 et fastforrentet l\xE5n er over kurs 100, kan kunden opsige
         l\xE5net 2 m\xE5neder f\xF8r en termin til kurs 100. "
       - "Hvis kunden har et l\xE5n med variabel rente, kan kunden kun opsige l\xE5net
         2 m\xE5neder f\xF8r rentetilpasning til kurs 100, ellers skal kunden ud og
         k\xF8be de bagvedliggende obligationer til over kurs 100. "
-      - "Hvis kursen er under 100 kan kunden altid k\xF8be de bagvedliggende obligationer."
       - "Dog kan l\xE5n med variabel rente kun skiftes ved rentetilpasningen efter
         l\xE5nets varighed. (fx. F-3 = 3 \xE5r)"
-      - 'Der er to typer af konvateringer:'
-      - "Op konvertering: Typisk i perioder hvor renterne stiger, er den god mulighed
-        hvis vi forvetner at renten er lavere n\xE6ste gang kunden vil konvatere."
+      - "Der er to typer af konvateringer:  Op konvertering: Typisk i perioder hvor
+        renterne stiger, er den god mulighed hvis vi forvetner at renten er lavere
+        n\xE6ste gang kunden vil konvatere."
       - "Ned konvertering: Typisk n\xE5r renten er lav, det er en en god ide at g\xF8re
         for kunder, for s\xE5 ender de med en mindre ydelse."
-      - 
-      - 
-      - 
-      - 
     - row:
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
+      - "Du har nu mulighed for at hj\xE6lpe kunden med at indfrie sit l\xE5n, det
+        betyder at de vil betale l\xE5net tilbage."
+      - "Der er fire m\xE5der l\xE5net kan blive betalt tilbage p\xE5. "
+      - "1) Ved at betale hele l\xE5net tilbage som aftalt."
+      - "2) Ved at s\xE6lge sin bolig og realkreditinstituttet f\xE5r det, kunden
+        skylder p\xE5 l\xE5net."
+      - "3) Ved at oml\xE6gge sit l\xE5n og optager et nyt l\xE5n, som bruges til
+        at betale det gamle l\xE5n af med."
+      - "4) Ved at betale l\xE5net af f\xF8r tid, fordi kunden har penge til at betale
+        l\xE5net ud her og nu."
+      - "Men du skal prim\xE6rt kun t\xE6nke p\xE5 om de skal beholde deres l\xE5n
+        eller om det skal oml\xE6gges. "
+      - "Et fastforrentet l\xE5n kan man opsige til kurs 100 hvis kursen er over
+        100. Derfor skal kunderne ikke betale mere end kurs-100 (kurs pari) n\xE5r
+        de vil indfri deres l\xE5n."
     - row:
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-    - row:
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-    - row:
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-    - row:
-      - TABER
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-    - row:
-      - JEG ER TILBAGE
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-    - row:
-      - MUHAHAH
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
+      - "For at finde ud af hvor meget en kunde kan l\xE5ne, er det godt at huske,
+        som en tommelfingerregel, at man m\xE5 have en g\xE6ldsfaktor p\xE5 4."
+      - "N\xE5r en kunde s\xF8ger et l\xE5n, skal de selv have minimum  5% i udbetaling."
+      - "S\xE5 find deres \xE5rsl\xF8n ganget med g\xE6ldsfaktoren er hvor meget
+        kunden kan l\xE5ne."
+      - "For at se hvor meget deres bolig kan koste, skal de penge de har til udbetaling
+        l\xE6gges oven i."
+      - "I v\xE6kstomr\xE5der som K\xF8benhavn og Aarhus kan kunder med bel\xE5ningsgrad
+        over 60% og en g\xE6ldfaktor over 4 ikke f\xE5 et \"usikkert l\xE5n\"."
+      - "1) Alle variabelt forrentede l\xE5n med eller uden afdrag, hvor renten justeres
+        med en frekvens p\xE5 mindre end fem \xE5r."
+      - "2) Afdragsfrie variabelt forrentede l\xE5n, hvor renten justeres med en
+        frekvens p\xE5 fem \xE5r eller mere."
       - 
     - row:
       - "Hej med dig, du er den nye konsulent her ude er du ikke?  Jeg er Samuel,
@@ -360,13 +304,6 @@ MonoBehaviour:
         overordnet score."
       - "Der ud over har du adgang til vores eget lokale informations forum hvor
         du kan f\xE5 gen opfrisket forskelige termer."
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
-      - 
       - 
       - 
       - 
