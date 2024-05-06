@@ -7,13 +7,14 @@ public class StartMeeting : MonoBehaviour
 {
     public GameObject light;
     public UnityEvent onClick;
-    bool zoomedIn = false;
+    public bool zoomedIn = false;
     private void OnMouseOver()
     {
-        if (!zoomedIn && !DialogueManager.instance.dialogueVissible)
+        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && !GameManager.instance.meetingOngoing && GameManager.instance.assistant.tutorialHasPlayed)
         {
+            Debug.Log("M Over ");
             light.SetActive(true);
-            if (Input.GetMouseButtonDown(0) && GameManager.instance.guim.talkClient_BTN) ;
+            if (Input.GetMouseButtonDown(0)) 
             { //WHEN IT CLICK
                 light.SetActive(false);
                 onClick.Invoke();
@@ -25,5 +26,6 @@ public class StartMeeting : MonoBehaviour
     private void OnMouseExit()
     {
         light.SetActive(false);
+        zoomedIn = false;
     }
 }
