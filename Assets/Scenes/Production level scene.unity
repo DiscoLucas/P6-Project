@@ -383,6 +383,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 544723990447196231, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 544723990447196231, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 544723990447196231, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 617660619127241230, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_text
@@ -397,6 +412,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 640046730367291964, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 640046730367291964, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748475158193488717, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748475158193488717, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1234905426601879980, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
@@ -477,6 +512,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_enableAutoSizing
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240139665964800959, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240139665964800959, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240139665964800959, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240139665964800959, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2475853407482626622, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
@@ -571,6 +626,16 @@ PrefabInstance:
     - target: {fileID: 3086991927042364580, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172909593684633531, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3172909593684633531, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3183970717710616683, guid: f288332e4eccdcb41a52aa9a76709d1f,
@@ -683,6 +748,36 @@ PrefabInstance:
       propertyPath: m_Padding.m_Top
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 4318731426601802643, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318731426601802643, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318731426601802643, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318731426601802643, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318731426601802643, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4318731426601802643, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4663491219413486278, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -701,6 +796,36 @@ PrefabInstance:
     - target: {fileID: 4663491219413486278, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707294497176279296, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707294497176279296, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707294497176279296, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707294497176279296, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707294497176279296, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4707294497176279296, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4807802023078851473, guid: f288332e4eccdcb41a52aa9a76709d1f,
@@ -868,6 +993,36 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5292770242106416150, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292770242106416150, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292770242106416150, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292770242106416150, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292770242106416150, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292770242106416150, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6417360367765563354, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -894,6 +1049,133 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6417360367765563354, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6666694101067188741, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_text
+      value: "<style=header>Realkreditl\xE5n\r\n<style=normal>Et realkreditl\xE5n
+        er et l\xE5n, kunden optager til fast ejendom. Det vil sige en ejerlejlighed,
+        et hus eller et sommerhus.\r\n\r\nEt realkreditl\xE5n m\xE5 h\xF8jst udg\xF8re
+        80 % af v\xE6rdien af en hel\xE5rsbolig.\r\n\r\nEt realkreditl\xE5n m\xE5
+        h\xF8jst udg\xF8re 75 % af v\xE6rdien af et sommerhus.\r\n\r\nN\xE5r kunden
+        tager et realkreditl\xE5n, udsteder realkreditinstituttet obligationer. Obligationerne
+        er g\xE6ldsbeviser, der fort\xE6ller, hvorn\xE5r og hvordan g\xE6lden skal
+        betales tilbage. \r\n\r\nRealkreditinstituttet s\xE6lger derefter obligationerne
+        til investorer p\xE5 de finansielle markeder. Udbud og eftersp\xF8rgsel p\xE5
+        markedet bestemmer, hvor h\xF8j renten p\xE5 realkreditl\xE5net er.\r\n\r\nRealkreditobligationer
+        er de obligationer, som realkreditinstituttet udsteder p\xE5 boligejernes
+        vegne og s\xE6lger p\xE5 de finansielle markeder. Det er v\xE6rdipapirer,
+        hvor kursen g\xE5r op og ned i takt med udbud og eftersp\xF8rgsel.\r\n\r\nI
+        traditionel realkredit er der direkte sammenh\xE6ng imellem realkreditl\xE5net
+        og en bestemt obligation. \r\n\r\n<style=header>Kredit vurdering\r\n<style=normal>For
+        at kredit vurdere skal kundes \xE5rs l\xF8n findes og ganges med kundes g\xE6ldsfaktor,
+        som typisk ligger p\xE5 4 som en tommelfinger regl.\r\n\r\n<style=header>Kurs\r\n<style=normal>Hvis
+        kursen p\xE5 realkreditobligationen er p\xE5 100, s\xE5 modtager kunden 100
+        kroner per 100 kroner, kunden l\xE5ner. Hvis kursen er 95, s\xE5 modtager
+        kunden kun 95 kroner for hver 100 kroner, kunden l\xE5ner.\r\n\r\nDermed
+        kan man lidt popul\xE6rt sagt sige, at hvis kursen eksempelvis er 95, s\xE5
+        taber kunden 5 kroner, hver gang de l\xE5ner 100 kroner.\r\n\r\nOversat til
+        et noget h\xF8jere bel\xF8b: Skal de bruge 2.000.000 kroner til sit boligk\xF8b,
+        som de l\xE5ner til kurs 95, s\xE5 kommer deres g\xE6ld til at v\xE6re over
+        2.105.000 kroner.\r\n\r\nKursen skal derfor som tommelfingerregel v\xE6re
+        s\xE5 t\xE6t p\xE5 100 som muligt, n\xE5r kunden skal l\xE5ne. S\xE5 kommer
+        de nemlig til at skylde s\xE5 f\xE5 penge som muligt.\r\n\r\nKurs 100 kaldes
+        ogs\xE5  kurs pari. \r\n\r\nHvis renten i samfundet falder, stiger kursen
+        p\xE5 den eksisterende obligation.\r\n\r\nHvis renten i samfundet stiger,
+        s\xE5 falder kursen p\xE5 de eksisterende obligationer.\r\n\r\n<style=header>Fast
+        rente\r\n<style=normal>L\xE5n med fast rente kan have en l\xF8betid  p\xE5
+        op til 30 \xE5r. Renten p\xE5 et fastforrentet l\xE5n \xE6ndrer sig ikke
+        over den tid. Dette giver l\xE5net \xF8konomisk sikkerhed.\r\n\r\n<style=header>Variable
+        rente\r\n<style=normal>L\xE5n med variable rente er ogs\xE5 kaldt flexl\xE5n,
+        og rentetilpasningsl\xE5n. Den variable rente er fast i en periode p\xE5 
+        enten 1 \xE5r, 3 \xE5r eller 5 \xE5r. (F-1, F-3, F-5) Dette betyder, at l\xE5net
+        efter hver periode f\xE5r en ny rente. \r\n\r\nDet kan blive billigere p\xE5
+        kort sigt, men dyrere i l\xE6ngere sigt.\r\n\r\nKunder der skal have l\xE5n
+        med variable rente skal have luft i deres \xF8konomi til at klare rente\xE6ndringer.\r\n\r\n<style=header>Rente,
+        kurs & Varighed\r\n<style=normal>Kurserne p\xE5 obligationer bliver som sagt
+        bestemt af udbud og eftersp\xF8rgsel. N\xE5r investor har en 2 pct. obligation,
+        og markedsrenten falder, vil en anden investor give en h\xF8jere pris (kurs)
+        for obligationen, hvor hun er sikker p\xE5 at f\xE5 2 pct. i rente. Og omvendt,
+        n\xE5r renten stiger, s\xE5 bliver en obligation med en lavere rente mindre
+        v\xE6rd.\r\nDen st\xF8rste p\xE5virkning p\xE5 kurserne for danske realkreditobligationer
+        er renteudviklingen. Det er forskelligt, hvordan obligationerne p\xE5virkes.
+        Som udgangspunkt er obligationer med lang l\xF8betid mest kursf\xF8lsomme,
+        hvorimod obligationer, der udl\xF8ber til kurs 100 om f\xE5 \xE5r, ikke vil
+        svinge ret meget. \r\n\r\nEt v\xE6rkt\xF8j til at \u201Dm\xE5le\u201D kursf\xF8lsomheden
+        er varigheden, som kan ses i de fleste kurslister. Varigheden fort\xE6ller,
+        hvor meget en obligation teoretisk set, stiger eller falder i kurs ved en
+        rente\xE6ndring p\xE5 1 procentpoint. Alts\xE5 hvis varigheden er 5 vil kursen
+        falde med 5 %, n\xE5r renten stiger med 1 procentpoint. Det er dog ikke et
+        pr\xE6cist tal, men kan bruges som indikator. Lav varighed = lav kursrisiko.\r\n\r\nDet
+        er vigtigt at understrege, at der er forskellige renter. Den korte rente
+        er styringsrenten for bankl\xE5n og variabelt forrentede l\xE5n. Den lange
+        rente bestemmer renten/kursen p\xE5 de lange 20- og 30-\xE5rige realkreditl\xE5n.\r\n\r\n\r\n<style=header>Afdrag
+        / afdragsfrihed\r\n<style=normal>Afdrag er n\xE5r g\xE6lden l\xF8bende betales
+        tilbage.\r\nAfdragsfrihed er n\xE5r kunden udskyder tilbagebetalingen, typisk
+        op til 10 \xE5r.\r\n\r\nAfdragsfrie l\xE5n har typisk en lavere kurs i forhold
+        til l\xE5n med afdrag.\r\nDet kan v\xE6re en god id\xE9 at v\xE6lge afdragsfrihed,
+        hvis kunden f.eks. g\xE5r ned i l\xF8n i en periode eller vil betale af p\xE5
+        en anden (og dyrere) g\xE6ld.\r\n\r\n<style=header>Indfrining af l\xE5n\r\n<style=normal>At
+        indfri et realkreditl\xE5n betyder, at kunden betaler hele bel\xF8bet af,
+        s\xE5 han/hun ikke l\xE6ngere skylder noget p\xE5 l\xE5net.\r\n\r\nMan kan
+        indfri sit realkreditl\xE5n p\xE5 4 m\xE5der:\r\n1)\tVed at betale hele l\xE5net
+        tilbage som aftalt.\r\n2)\tVed at s\xE6lge sin bolig og realkreditinstituttet
+        f\xE5r det, kunden skylder p\xE5 l\xE5net.\r\n3)\tVed at oml\xE6gge sit l\xE5n
+        og optager et nyt l\xE5n, som bruges til at betale det gamle l\xE5n af med.\r\n4)\tVed
+        at betale l\xE5net af f\xF8r tid, fordi kunden har penge til at betale l\xE5net
+        ud her og nu.\r\n\r\nDet koster penge, hvis man vil indfri sit l\xE5n f\xF8r
+        tid, for eksempel fordi kunden \xF8nsker at oml\xE6gge sit l\xE5n.\r\nN\xE5r
+        kunden betaler sit l\xE5n tilbage efter den aftalte l\xE5neperiode, kaldes
+        det ogs\xE5 for en ordin\xE6r indfrielse af l\xE5n. Hvis kunden derimod indfrier
+        l\xE5net f\xF8r tid, kaldes det for en f\xF8rtids indfrielse.\r\n \r\n\xD8nsker
+        en kunde at indfri eller oml\xE6gge sit realkreditl\xE5n, skal du som r\xE5dgiver
+        v\xE6re opm\xE6rksom p\xE5 fristerne og mulighederne ved indfrielse af l\xE5n,
+        det kan nemlig v\xE6re kunden en del penge.\r\n\r\n<style=header>Konvertering\r\n<style=normal>At
+        konvertere et realkreditl\xE5n betyder at oml\xE6gge et eksisterende l\xE5n
+        til et andet realkreditl\xE5n. Det sker typisk fordi kunden kan spare penge
+        enten p\xE5 ydelsen, hvis renten er faldet, eller p\xE5 restg\xE6lden, hvis
+        renten er steget, for s\xE5 falder kursen.\r\n\r\nDer er to typer af konvertering
+        vi bruger:\r\n1. Op konvertering: Typisk i perioder hvor renterne stiger,
+        er den god mulighed hvis vi forvetner at renten er lavere n\xE6ste gang kunden
+        vil konvatere.\r\n\r\n2. Ned konvertering: Typisk n\xE5r renten er lav, det
+        er en en god ide at g\xF8re for kunder, for s\xE5 ender de med en mindre
+        ydelse.\r\n\r\n<style=header>Bidragssatser\r\n<style=normal>Bidragssatser
+        er det gebyr, kunden betaler til realkreditinstituttet for det arbejde de
+        har med l\xE5net.\r\n\r\nBidragssatsen afh\xE6nger af, hvilken type l\xE5n
+        kunden har. Rentetilpasningsl\xE5n og l\xE5n med afdragsfrihed koster typisk
+        mere i bidrag end fastforrentede l\xE5n.\r\n\r\nBidragssats er direkte koblet
+        sammen med bel\xE5ningsgraden p\xE5 kundens bolig og er h\xF8jere, jo mere
+        kunden har l\xE5nt i forhold til boligens v\xE6rdi.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887116927829230156, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887116927829230156, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887116927829230156, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887116927829230156, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887116927829230156, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887116927829230156, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
