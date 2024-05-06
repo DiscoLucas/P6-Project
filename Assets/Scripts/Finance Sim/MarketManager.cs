@@ -162,17 +162,19 @@ public class MarketManager : MonoBehaviour
     /// <param name="housingMarked"></param>
     void IRModifierUpdater( Loan loan, double volatility, double interestRateChange, double housingMarked)
     {
+        double meanReversion = 0.001;
         if (!loan.fixedIR)
         {
             if (loan.IRForTime.Count != 0)
             {
-                IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last() * interestRateChange, loan.volatility * volatility, loan.longTermRate);
+                IRModel_HullWhite model = new IRModel_HullWhite(loan.IRForTime.Last() * interestRateChange, meanReversion, loan.volatility * volatility, loan.longTermRate);
                 double[] predic = model.PredictIRforTimeInterval(dt, timeHorizon);
                 updateIR(loan, predic);
+                
             }
             else // if the interest history is empty, use the initial interest rate
             {
-                IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate * interestRateChange, loan.volatility * volatility, loan.longTermRate); // TODO: add market modifier to the parameters
+                IRModel_HullWhite model = new IRModel_HullWhite(loan.interestRate * interestRateChange, meanReversion, loan.volatility * volatility, loan.longTermRate); // TODO: add market modifier to the parameters
                 updateIR(loan, model.PredictIRforTimeInterval(dt, timeHorizon));
             }
         }
@@ -340,7 +342,7 @@ public class MarketEvents {
     /// <param name="eventDescription"></param>
     public void OverideText(TextMeshProUGUI eventDescription)
     {
-        eventDescription.text = eventsEffect + " " + Math.Abs(rateModifier) + "%";
+        eventDescription.text = eventsEffect;
     }
 
 

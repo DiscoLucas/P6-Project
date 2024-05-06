@@ -71,3 +71,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 ProjectSettings/Packages/com.unity.muse.common/Settings.json
+Assets/Scenes/Endscenen.unity
+Assets/Prefabs/OfficeSpace.prefab
