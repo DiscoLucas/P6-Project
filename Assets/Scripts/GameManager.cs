@@ -65,13 +65,15 @@ public class GameManager : MonoBehaviour
     public bool meetingOngoing = false;
     public string introductionMailHeader = "Introduktion";
     public float chanceToscipConvertion = 0.4f;
+    public GameObject endTurnButton;
     private void Awake()
     {
         //Singleton pattern
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject.transform.parent);
+            transform.parent = transform.parent.parent;
+            DontDestroyOnLoad(gameObject);
             clientMeetingDone = new UnityEvent();
         }
         else
@@ -408,7 +410,7 @@ public class GameManager : MonoBehaviour
 
     public void destoryAllManagers() {
         instance = null;
-        Destroy(transform.parent);
+        Destroy(gameObject);
 }
 
     void tryTodestoy(GameObject obj) {

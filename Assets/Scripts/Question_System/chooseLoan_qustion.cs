@@ -15,6 +15,7 @@ public class chooseLoan_qustion : Qustion
     public bool doNotTakeAll = false;
     public bool ir_lower = false;
     public string headerMail = "Oprettede lån",mailTypeLoan = "Type: ", mailAmount = "Lånemængden: ", mailDebt = "Skylder: ";
+    public bool chooseOwnLoan = false;
     public override void calcCorrectAnswer()
     {
         
@@ -36,6 +37,11 @@ public class chooseLoan_qustion : Qustion
                     {
                         continue;
                     }
+                }
+            }
+            if (_case.loan != null) {
+                if (!chooseOwnLoan && _case.loan.loanTypes.name == loant.name) {
+                    continue;
                 }
             }
             string ir = string.Format("{0:N2}", (loant.interssetRate*100).ToString("N2"));

@@ -87,13 +87,18 @@ public class IRVisualizer : MonoBehaviour
         string whatIsShowen = (showIR) ? btn_showIR : btn_showIRP;
         if (isIR) {
             data = currentShowedLoan.getInterestRate().ToArray();
-            firstNumber.text = (data[0] * 100).ToString("N2");
-            LastNumber.text = (data[data.Length-1] * 100).ToString("N2");
+            if (data.Length > 0) {
+                firstNumber.text = (data[0] * 100).ToString("N2");
+                LastNumber.text = (data[data.Length - 1] * 100).ToString("N2");
+            }
         }
         else {
             data = currentShowedLoan.IRPForTime.ToArray();
-            firstNumber.text = (data[0]).ToString("N2");
-            LastNumber.text = (data[data.Length - 1]).ToString("N2");
+            if (data.Length > 0)
+            {
+                firstNumber.text = (data[0]).ToString("N2");
+                LastNumber.text = (data[data.Length - 1]).ToString("N2");
+            }
         }
 
         CreateLineChart(lineChart);
@@ -115,13 +120,7 @@ public class IRVisualizer : MonoBehaviour
     public void CreateLineChart(LineChart lineChart) {
         lineChart.RemoveData();
         lineChart.RemoveAllSerie();
-        lineChart.AddSerie<Line>(currentShowedLoan.clientData.clientName + subfix);
-        if (showIR) {
-            lineChart.AddXAxisData(xAxis + 0);
-            addIRData(currentShowedLoan.getFirstInterestRate());
-        }
-            
-
+        lineChart.AddSerie<Line>(currentShowedLoan.clientData.clientName + subfix);      
     }
     private void OnApplicationQuit()
     {

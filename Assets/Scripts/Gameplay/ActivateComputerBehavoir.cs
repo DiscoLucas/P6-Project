@@ -9,10 +9,10 @@ public class ActivateComputerBehavoir : MonoBehaviour
     public CameraBehaviour cb;
     bool zoomedIn = false;
     public GameObject ComputerScreen;
-    public GameObject OtherCanvas; //Måske gør det her en liste, så den kan have flere other canvasses?
+    public GameObject OtherCanvas, mountCounter; //Måske gør det her en liste, så den kan have flere other canvasses?
     private void OnMouseOver()
     {
-        if (!zoomedIn && !DialogueManager.instance.dialogueVissible)
+        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && !GameManager.instance.meetingOngoing && GameManager.instance.assistant.tutorialHasPlayed && !mountCounter.active)
         {
             light.SetActive(true);
             if(Input.GetMouseButtonDown(0)) { //WHEN IT CLICK

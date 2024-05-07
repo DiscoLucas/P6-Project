@@ -32,7 +32,7 @@ public class ClientCutOutController : MonoBehaviour
     }
 
     public void stopClient() {
-        GameManager.instance.updateTurn();
+        GameManager.instance.endTurnButton.SetActive(true);
     }
 
     public void dialogueDone()

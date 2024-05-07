@@ -54,7 +54,6 @@ public class DialogueManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             sentinceDone = new UnityEvent();
             animator.SetBool("IsOpen", dialogueVissible);
         }
@@ -93,6 +92,10 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+    public void OnDestroy()
+    {
+        instance = null;
+    }
 
     private void DisplayCaseSummary()
     {
