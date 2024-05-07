@@ -1515,10 +1515,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1809149832}
-    - targetCorrespondingSourceObject: {fileID: 9040442104031316966, guid: f288332e4eccdcb41a52aa9a76709d1f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1822387083}
   m_SourcePrefab: {fileID: 100100000, guid: f288332e4eccdcb41a52aa9a76709d1f, type: 3}
 --- !u!1 &142612007 stripped
 GameObject:
@@ -1968,16 +1964,16 @@ MonoBehaviour:
     type: 2
     tutorial: 0
     tutorialNR: 0
+  - name: New client
+    chance: 40
+    disable: 0
+    type: 0
+    tutorial: 0
+    tutorialNR: 0
   - name: Change for client
     chance: 15
     disable: 0
     type: 1
-    tutorial: 0
-    tutorialNR: 0
-  - name: New client
-    chance: 20
-    disable: 0
-    type: 0
     tutorial: 0
     tutorialNR: 0
   monthNumber: 0
@@ -5018,32 +5014,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!1 &1822387078 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9040442104031316966, guid: f288332e4eccdcb41a52aa9a76709d1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 142612006}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1822387083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822387078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: 154.75
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 4
 --- !u!1001 &1943056545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5112,6 +5082,11 @@ PrefabInstance:
       propertyPath: header
       value: "Hj\xE6lp"
       objectReference: {fileID: 0}
+    - target: {fileID: 7095076634058197816, guid: c07cc4845619b3e40a219955d87b3950,
+        type: 3}
+      propertyPath: dialogBox
+      value: 
+      objectReference: {fileID: 1488072383}
     - target: {fileID: 7095076634058197816, guid: c07cc4845619b3e40a219955d87b3950,
         type: 3}
       propertyPath: gameManager

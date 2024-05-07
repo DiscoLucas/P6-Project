@@ -28,6 +28,7 @@ public class Assistant : MonoBehaviour
     public bool firstTimeBuyout = false;
     public bool firstTimeConvert = false;
     public bool tutorialRunning = false;
+    public GameObject dialogBox;
 
 
     public ClientData assisentData;
@@ -58,7 +59,9 @@ public class Assistant : MonoBehaviour
 
     public TurtoialIds startTurtoialCheck(TurtoialIds id)
     {
+        id.haveCompletede = true;
         PlayTutorial(id.conventationIndex);
+        dialogBox.SetActive(true);
         DialogueManager.instance.clientData = assisentData;
         return id;
     }

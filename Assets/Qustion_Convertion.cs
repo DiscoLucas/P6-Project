@@ -31,6 +31,7 @@ public class Qustion_Convertion : chooseLoan_qustion
         _case.loan.debtAmount = _case.loanAmount * Mathf.Pow((1 + (float)_case.loan.IRForTime[_case.loan.IRForTime.Count-1]), _case.loan.LoanTerm / 12);
         if (chooseThis)
             GameManager.instance.ms.addNewInfomationToMail(_case.client, mailHeader, new string[] { header_text, mailTypeLoan + _case.loan.loanTypes.name, mailAmount + _case.loanAmount, mailDebt + _case.loan.debtAmount });
+
         if (_case.loan.lastPeriod)
         {
             _case.contiuneToNextTypeOfMeeting();

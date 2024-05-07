@@ -14,7 +14,7 @@ public class chooseLoan_qustion : Qustion
     public string sufix = "%",ir_Name = "Rente";
     public bool doNotTakeAll = false;
     public bool ir_lower = false;
-    public string headerMail = "Oprettede lån",mailTypeLoan = "Type: ", mailAmount = "Lånemængden: ", mailDebt = "Skylder: ";
+    public string headerMail = "Oprettede lån",mailTypeLoan1 = "Type: ", mailAmount2 = "Lånemængden: ", mailDebt4 = "Skylder: ";
     public bool chooseOwnLoan = false;
     public override void calcCorrectAnswer()
     {
@@ -64,7 +64,7 @@ public class chooseLoan_qustion : Qustion
         Debug.Log("Next mounth somthing happends: " + (GameManager.instance.monthNumber + _case.loan.LoanTerm) + " " + _case.loan.loanTypes.name);
         _case.nextImportenTurn = GameManager.instance.monthNumber + _case.loan.LoanTerm;
         _case.loan.debtAmount = _case.loanAmount * Mathf.Pow((1 + (float)_case.loan.interestRate), _case.loan.LoanTerm / 12);
-        GameManager.instance.ms.addNewInfomationToMail(_case.client, headerMail, new string[] { mailTypeLoan + l.name, mailAmount + _case.loanAmount, mailDebt + _case.loan.debtAmount });
+        GameManager.instance.ms.addNewInfomationToMail(_case.client, headerMail, new string[] { mailTypeLoan1 + l.name, mailAmount2 + _case.loanAmount, mailDebt4 + _case.loan.debtAmount });
         if (l.loanTime == 360)
         {
             _case.loan.fixedIR = true;
