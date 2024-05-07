@@ -12,7 +12,7 @@ public class ActivateComputerBehavoir : MonoBehaviour
     public GameObject OtherCanvas, mountCounter; //Måske gør det her en liste, så den kan have flere other canvasses?
     private void OnMouseOver()
     {
-        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && !GameManager.instance.meetingOngoing && GameManager.instance.assistant.tutorialHasPlayed && !mountCounter.active)
+        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && GameManager.instance.assistant.tutorialHasPlayed && !mountCounter.active)
         {
             light.SetActive(true);
             if(Input.GetMouseButtonDown(0)) { //WHEN IT CLICK
