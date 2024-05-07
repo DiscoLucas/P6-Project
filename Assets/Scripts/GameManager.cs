@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        monthNumber = 0;
         updateTurn();
         assistant.turtialDone.AddListener(turtroialDone);
     }
@@ -123,7 +124,7 @@ public class GameManager : MonoBehaviour
 
         Case @case = csm.getCasesThatNeedUpdate(monthNumber);
         int turnTypeIndex = 0;
-        if (@case != null)
+        if (@case != null && monthNumber >1)
         {
             if (@case.loan.fixedIR || @case.loan.lastPeriod )
             {
@@ -282,15 +283,6 @@ public class GameManager : MonoBehaviour
         Case c = csm.getCurrentCase();
         clm.currentClient = c.client;
         DialogueManager.instance.clientData = c.client;
-        /*
-        int turnTypeIndex = 0;
-        turnTypeIndex = decideWhatShouldHappend();
-        TurnType turnT = getCurrentTurnType();
-        if (!assistant.checkTurnTypeBool(turnT))
-        {
-            assistant.playSpecificTutorial(turnEvent.tutorialNR);
-        }else
-        */
 
         bool haveCompletede = assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede;
         assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede = true;

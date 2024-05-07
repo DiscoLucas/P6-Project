@@ -71,6 +71,7 @@ public class chooseLoan_qustion : Qustion
             _case.sentincesIndex = 0;
             _case.contiuneToNextTypeOfMeeting();
             _case.nextImportenTurn = GameManager.instance.monthNumber + (int)UnityEngine.Random.Range(1, 5)*12;
+
         }
         else {
             _case.contiuneToNextTypeOfMeeting();

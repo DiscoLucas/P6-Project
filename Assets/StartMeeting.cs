@@ -11,7 +11,7 @@ public class StartMeeting : MonoBehaviour
     public GameObject mountCounter, endTurn;
     private void OnMouseOver()
     {
-        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && !GameManager.instance.meetingOngoing && GameManager.instance.assistant.tutorialHasPlayed&& !mountCounter.active&& !endTurn.active)
+        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && !GameManager.instance.meetingOngoing && !GameManager.instance.clm.isPresting && GameManager.instance.assistant.tutorialHasPlayed && !GameManager.instance.assistant.tutorialRunning && !mountCounter.active&& !endTurn.active)
         {
             Debug.Log("M Over ");
             light.SetActive(true);

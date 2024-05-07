@@ -50,6 +50,7 @@ public class Assistant : MonoBehaviour
 
     void PlayTutorial(int dialogueIndex)
     {
+        tutorialRunning = true;
         tutorialHasPlayed = false;
         currentIndex = dialogueIndex;
         reverseIntro.clip = intro2;
@@ -135,6 +136,7 @@ public class Assistant : MonoBehaviour
             reverseIntro.PlayQueued(reverseIntro2.name);
             reverseIntro.Play();
             tutorialHasPlayed = true;
+            tutorialRunning = false;
             Debug.Log("I love you");
             if (!introHaveplayed)
             {

@@ -28,6 +28,7 @@ public class ClientManager : MonoBehaviour
     string walkInAnimation, walkOutAnimation;
 
     [SerializeField]
+    public bool isPresting = false;
     bool startedPrestentation = false;
     public bool hastalked = false;
 
@@ -179,6 +180,7 @@ public class ClientManager : MonoBehaviour
     public void clientStartTalking()
     {
         Debug.Log("Start Talking");
+        isPresting = true;
         DialogueManager.instance.StartDia(GameManager.instance.csm.getCurrentCase().returnSentince());
     
     }
@@ -186,6 +188,7 @@ public class ClientManager : MonoBehaviour
         Debug.Log("DoneTalking");
         if (clientPresState == ClientPresState.talking)
         {
+            isPresting = false;
             Debug.Log("Starting shit");
             clientPresState = ClientPresState.filling;
             GameManager.instance.createClientMeeting();
@@ -195,6 +198,7 @@ public class ClientManager : MonoBehaviour
     public void stopMeeting() {
         if (clientPresState == ClientPresState.filling) {
             clientPresState = ClientPresState.none;
+            isPresting = true;
             an.Play(walkOutAnimation);
         }
     }

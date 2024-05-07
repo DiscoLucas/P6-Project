@@ -74,6 +74,7 @@ public class Loan
     { 
         double monthlyPayment = CalculateMonthlyPayment();
         debtAmount -=(float) monthlyPayment;
+        loanAmount-=(float) monthlyPayment;
     }
 
     /// <summary>
@@ -90,11 +91,7 @@ public class Loan
         this.interestRate = interestRate;
         this.volatility = volatility;
         this.loanTypes = loanTypes;
-        float timeleft = (GameManager.instance.monthNumber - initialMonth + this.LoanTerm);
-        Debug.Log("m: "+ GameManager.instance.monthNumber + loanTypes.name + " Timeleft: " + timeleft);
-        if (timeleft >= 360) {
-            lastPeriod = true;
-        }
+
     }
 
 

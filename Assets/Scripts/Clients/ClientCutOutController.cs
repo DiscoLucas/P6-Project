@@ -7,6 +7,7 @@ public class ClientCutOutController : MonoBehaviour
 {
     public ClientManager cm;
     public Assistant assistant;
+    public bool isrunning = false;
     private void Start()
     {
         DialogueManager.instance.sentinceDone.AddListener(dialogueDone);
@@ -31,6 +32,13 @@ public class ClientCutOutController : MonoBehaviour
 
     }
 
+    public void meetingStop() { 
+        GameManager.instance.clm.isPresting = false;
+    }
+    public void meetingStart()
+    {
+        GameManager.instance.clm.isPresting = true;
+    }
     public void stopClient() {
         GameManager.instance.endTurnButton.SetActive(true);
     }
