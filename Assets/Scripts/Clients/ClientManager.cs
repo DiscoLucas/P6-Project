@@ -180,7 +180,6 @@ public class ClientManager : MonoBehaviour
     public void clientStartTalking()
     {
         Debug.Log("Start Talking");
-        isPresting = true;
         DialogueManager.instance.StartDia(GameManager.instance.csm.getCurrentCase().returnSentince());
     
     }
@@ -198,7 +197,7 @@ public class ClientManager : MonoBehaviour
     public void stopMeeting() {
         if (clientPresState == ClientPresState.filling) {
             clientPresState = ClientPresState.none;
-            isPresting = true;
+            isPresting = false;
             an.Play(walkOutAnimation);
         }
     }
