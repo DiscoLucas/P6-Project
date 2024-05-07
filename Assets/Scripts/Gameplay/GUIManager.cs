@@ -9,7 +9,7 @@ public class GUIManager : MonoBehaviour
     [Header("Menu Stuff")]
     public GameObject action_Menu;
     public bool talkClient_BTN;
-    public GameObject space_Canvas, computer_Canvas;
+    public GameObject space_Canvas, computer_Canvas, sign1,sign2;
     public GameObject meetingPopUp;
 
     RectTransform dialogBox;
@@ -37,7 +37,11 @@ public class GUIManager : MonoBehaviour
     }
     
 
-    public void showActionMenu() { 
+    public void showActionMenu() {
+        if (GameManager.instance.monthNumber > 1) {
+            sign1.SetActive(false);
+            sign2.SetActive(false);
+        }
         action_Menu.SetActive(true);
         talkClient_BTN = true;
     }

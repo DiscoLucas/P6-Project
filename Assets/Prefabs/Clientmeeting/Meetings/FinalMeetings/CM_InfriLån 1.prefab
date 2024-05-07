@@ -2052,6 +2052,10 @@ MonoBehaviour:
   ir_Name: Rente
   doNotTakeAll: 0
   ir_lower: 0
+  headerMail: "Oprettede l\xE5n"
+  mailTypeLoan: 'Type: '
+  mailAmount: "L\xE5nem\xE6ngden: "
+  mailDebt: 'Skylder: '
   chooseThis: 0
 --- !u!1 &4729305030421414132
 GameObject:

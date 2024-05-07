@@ -45,8 +45,6 @@ public class IRVisualizer : MonoBehaviour
     {
         LineChartIR.RemoveData();
         LineChartIR.AddSerie<Line>(clientName + "s lån");
-        LineChartIR.AddXAxisData("Måned 0");
-        addIRData(interestRate);
     }
 
     void addIRData(double interestRate) {
@@ -91,8 +89,6 @@ public class IRVisualizer : MonoBehaviour
             data = currentShowedLoan.getInterestRate().ToArray();
             firstNumber.text = (data[0] * 100).ToString("N2");
             LastNumber.text = (data[data.Length-1] * 100).ToString("N2");
-
-
         }
         else {
             data = currentShowedLoan.IRPForTime.ToArray();
@@ -122,7 +118,7 @@ public class IRVisualizer : MonoBehaviour
         lineChart.AddSerie<Line>(currentShowedLoan.clientData.clientName + subfix);
         if (showIR) {
             lineChart.AddXAxisData(xAxis + 0);
-            lineChart.AddData(0, currentShowedLoan.getFirstInterestRate());
+            addIRData(currentShowedLoan.getFirstInterestRate());
         }
             
 

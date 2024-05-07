@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GUIManager guim;
     public DialogueManager dlm;
     public CommentSystem cm;
+    public MailSystem ms;
 
     //DET HER SKAL FIKSES - Case manager skal integreres bedre.
     /*[Header("Client Meeting")]
@@ -62,6 +63,8 @@ public class GameManager : MonoBehaviour
     public Vector2 pointsCol ;
     public TurnEvent turnEvent;
     public bool meetingOngoing = false;
+    public string introductionMailHeader = "Introduktion";
+    public float chanceToscipConvertion = 0.4f;
     private void Awake()
     {
         //Singleton pattern
@@ -120,11 +123,31 @@ public class GameManager : MonoBehaviour
         int turnTypeIndex = 0;
         if (@case != null)
         {
-            Debug.Log("CHANGE FOR CASE!!");
-            turnT = TurnType.Change_forCustomer;
-            mn_lastIncedient = monthNumber;
-            showTurnCounter();
-            return;
+            if (@case.loan.fixedIR || @case.loan.lastPeriod )
+            {
+                Debug.Log("CHANGE FOR CASE!!");
+                turnT = TurnType.Change_forCustomer;
+                mn_lastIncedient = monthNumber;
+                showTurnCounter();
+                return;
+            }
+            else {
+                float roll = UnityEngine.Random.Range(0.0f, 1f);
+                bool needToconvert = (roll > chanceToscipConvertion);
+                Debug.Log("Need to convert?: " + needToconvert + " the roll was: " + roll);
+                if (needToconvert)
+                {
+                    Debug.Log("CHANGE FOR CASE!!");
+                    turnT = TurnType.Change_forCustomer;
+                    mn_lastIncedient = monthNumber;
+                    showTurnCounter();
+                    return;
+                }
+                else {
+                    @case.loan.convertLoan(monthNumber, @case.loan.loanTypes.loanTime, @case.loan.IRForTime[@case.loan.IRForTime.Count - 1], @case.loan.loanTypes.volatility, @case.loan.loanTypes);
+                }
+            }
+
         }
         else {
             turnTypeIndex = decideWhatShouldHappend();
@@ -232,6 +255,8 @@ public class GameManager : MonoBehaviour
             csm.createCase(client);
             clm.startClientIntro(client);
             clm.currentClient= client;
+            DialogueManager.instance._mailtext.header = introductionMailHeader;
+            DialogueManager.instance.addToMail = true;
         }
     }
 

@@ -143,6 +143,8 @@ public class ClientManager : MonoBehaviour
             if (an != null)
             {
                 an.Play(walkInAnimation);
+                DialogueManager.instance._mailtext.header = GameManager.instance.introductionMailHeader;
+                DialogueManager.instance.addToMail = true;
                 //when the dialog is done please do this:
                 //an.SetBool("WalkOut", true);
             }

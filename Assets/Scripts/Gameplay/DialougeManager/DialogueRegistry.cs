@@ -73,7 +73,7 @@ public class DialogueRegistry : MonoBehaviour
             currentCase.client.Finance.debtFactor.ToString(),
             currentCase.loanAmount.ToString("N"),
             
-            (currentCase.loan == null)?"NAN":currentCase.loan.loanAmount.ToString("N")
+            (currentCase.loan == null)?"NAN":currentCase.loan.debtAmount.ToString("N")
         };
 
         return replaceString(message, tags, values);

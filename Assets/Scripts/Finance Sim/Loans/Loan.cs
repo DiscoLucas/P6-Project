@@ -45,6 +45,10 @@ public class Loan
         this.installment = installment;
         IRPForTime.Add((interestRate/20)+95); // wtf are these magic numbers? -Mitchell
         this.loanTypes = loanTypes;
+
+        if (LoanTerm == 360) {
+            fixedIR= true;
+        }
     }
     /// <summary>
     /// Return all the interest rate over time
@@ -69,7 +73,7 @@ public class Loan
     public void payLoan() 
     { 
         double monthlyPayment = CalculateMonthlyPayment();
-        loanAmount -= monthlyPayment;
+        debtAmount -=(float) monthlyPayment;
     }
 
     /// <summary>
@@ -86,7 +90,11 @@ public class Loan
         this.interestRate = interestRate;
         this.volatility = volatility;
         this.loanTypes = loanTypes;
-
+        float timeleft = (GameManager.instance.monthNumber - initialMonth + this.LoanTerm);
+        Debug.Log("m: "+ GameManager.instance.monthNumber + loanTypes.name + " Timeleft: " + timeleft);
+        if (timeleft >= 360) {
+            lastPeriod = true;
+        }
     }
 
 

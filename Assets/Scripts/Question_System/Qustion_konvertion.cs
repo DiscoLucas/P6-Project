@@ -15,6 +15,7 @@ public class Qustion_konvertion : Qustion
     public GameObject downConvertionWindow,upConvertionWindow;
     public Qustion_Convertion downCS, upCS;
     public List<string> answers = new List<string>();
+    public string mailHeader = "Lånet blev ikke konverteret", mailText = " ";
 
     public override void fillOutHeaderAndDescribtion()
     {
@@ -74,6 +75,9 @@ public class Qustion_konvertion : Qustion
     public override void closeMeeting()
     {
         base.closeMeeting();
+        if (checkAnswer(2)) {
+            GameManager.instance.ms.addNewInfomationToMail(_case.client, mailHeader, new string[] { mailText });
+        }
     }
 
 }

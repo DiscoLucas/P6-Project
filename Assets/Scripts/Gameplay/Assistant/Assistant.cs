@@ -19,7 +19,8 @@ public class Assistant : MonoBehaviour
     public int dialogueToSay;
     public int tutorialDialogue = 0;
     [SerializeField] string assistant_Name = "Saul";
-
+    public string header = " ";
+    int helpNumber = 0;
     [Header("Tutorial Bools")]
     public bool tutorialHasPlayed = false;
     public bool introHaveplayed = false;
@@ -63,6 +64,9 @@ public class Assistant : MonoBehaviour
     }
 
     public void startTurtialText(){
+        DialogueManager.instance.addToMail = true;
+        helpNumber++;
+        DialogueManager.instance._mailtext.header = header + " " + helpNumber;
         Debug.Log("Start Talking");
         DialogueManager.instance.clientData = assisentData;
         tutorialRunning = true;
