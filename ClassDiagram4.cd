@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MarketVisualizer">
+    <Position X="7" Y="21.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAACAAAAEAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\MarketVisualizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientCutOutController">
+    <Position X="17.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAACAAAARACEAABAAAAAAAAAAAAAAAAEIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientCutOutController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cm" />
+      <Field Name="assistant" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClientData">
+    <Position X="5" Y="15.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAAAAACQAAAAAACCAIAABAAAAAAEAAAAAYQAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Finance" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="FinanceData">
+    <Position X="21.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABIAAAIAAAAAAAAACAAAACAAAACAAAAQIAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientManager">
+    <Position X="14.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AGAAAKAAACgYACBDQAACEAFgCBAIAAEQDAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentClient" />
+      <Field Name="di" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClientTemplate">
+    <Position X="9.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAABIACQIAAAAAACAICAAAACIAAEAAAAAIYAgA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientTemplate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="maritalStatus" />
+      <Field Name="customerType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CaseTemplate">
+    <Position X="15" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAABAAAiAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\Case Template.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="meetings" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Case">
+    <Position X="19.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIACAAgEAAIAAAAACEAAAAAgBEABCgAiAAkARADAAAk=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\Case.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="meetings" />
+      <Field Name="type" />
+      <Field Name="client" />
+      <Field Name="loan" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CaseManager">
+    <Position X="17.25" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQACAIgAAIAIAAAAAAAiIEAAgAABABAAAQBgAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\CaseManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_case" />
+      <Field Name="_turnEvent" />
+      <Field Name="_assistant" />
+      <Field Name="caseTemplate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Action" Collapsed="true">
+    <Position X="2.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAACACAAkAAAIgAAAAAAAAAAAAAAAAAABAAEAAE=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\Action.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActionTemplate" Collapsed="true">
+    <Position X="1.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAABAgAQgIAAAAAAAAAAAAAAAAAAABAAABAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\ActionTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CustomerEvent" Collapsed="true">
+    <Position X="2.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\CustomerEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MaxLoanAction" Collapsed="true">
+    <Position X="1.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\MaxLoanAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Turn" Collapsed="true">
+    <Position X="23.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAASAAAAAAAAAAAAAAgBgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Events\Turn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IRModel_HullWhite">
+    <Position X="14.25" Y="15.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAACCAAABAABAAAAAAAAAAAAAAAAAABBAAAAAEgEAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Interest rate simulation\IRModel_HullWhite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IRVisualizer">
+    <Position X="20.75" Y="22.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EFEAJLAAAEAABAAAAAAIAABAAhAEEgAAAAQzAAQoGAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Interest rate simulation\IRVisualizer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameManager" />
+      <Field Name="currentShowedLoan" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Loan">
+    <Position X="28.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAEAJAAAABAAACAlAAhQAAEEAAQAABAACEAFBAAQA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Loans\Loan.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="clientData" />
+      <Field Name="loanTypes" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MarketManager">
+    <Position X="10" Y="18.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="MarketManager.MarketEventType">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Finance Sim\MarketManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>xAIAAAAgACAAAIEABQACRAICgkAgEBQQAAQAAQAABEI=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\MarketManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="eventEffect" />
+      <Field Name="marketEvents" />
+      <Field Name="loanTypes" />
+      <Field Name="visualizerController" />
+      <Field Name="marketVisualizer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MarketEvents">
+    <Position X="7.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAADAAAAAAABAAE=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\MarketManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanTypes" Collapsed="true">
+    <Position X="12" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAACAAAAAAAAAgAEAAAAAAAAAEQAAAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\MarketManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager">
+    <Position X="25.5" Y="5.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAACgICCQIhUhCBIAAAIDAghIQAcgCBSAgQEghMA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="clm" />
+      <Field Name="mm" />
+      <Field Name="csm" />
+      <Field Name="guim" />
+      <Field Name="dlm" />
+      <Field Name="cm" />
+      <Field Name="ms" />
+      <Field Name="turnType" />
+      <Field Name="turnT" />
+      <Field Name="assistant" />
+      <Field Name="turnEvent" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TurnEvent">
+    <Position X="26" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAABAAFAAAIAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Assistant">
+    <Position X="20.25" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAYBQgACgKBJKAAAChEBQAACACAABhACAAIARCAcA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\Assistant\Assistant.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gameManager" />
+      <Field Name="turnType" />
+      <Field Name="turnEvent" />
+      <Field Name="assisentData" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Dialogue">
+    <Position X="30.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAEABAAAAAEAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\Dialogue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueInteractor">
+    <Position X="23" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAQA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\DialogueInteractor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="dialogue" />
+      <Field Name="dialogueRegistry" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DialogueManager">
+    <Position X="11.75" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BKFBAwESACABYAAQAAAMAAAAEQBAAIAAIQAAQhAAGOA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\DialogueManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="clietntTemp" />
+      <Field Name="clientData" />
+      <Field Name="dialogueRegistry" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DialogueRegistry">
+    <Position X="9.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAKAAAAAAAAAQQAAAAAAAAAABAACAAAABAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\DialogueRegistry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUIManager">
+    <Position X="25.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAEAAAAAAABAAgQAAAAkAAACAwYAAAAQAAAAAIAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\GUIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mail" Collapsed="true">
+    <Position X="17" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAIAAAAAAAAAAAAAIQAAAAAAIAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\MailManager\Legacy\Mail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MailSystem">
+    <Position X="29.25" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAgAAAAAAAAAAAAAAEAAAgAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\MailManager\Legacy\MailSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommentSystem">
+    <Position X="29.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAgAQQAAAAIAAAAAAAAAAAAAAABAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ScoreSiteScripts\CommentSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanSelcetor">
+    <Position X="24.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAKAAAAAAAAAAAAAAAAAAgAIAABAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\loanSelcetor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="loan" />
+      <Field Name="iRVisualizer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="HouseData" Collapsed="true">
+    <Position X="9.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAQAAAAAAAAAAAAEAAgBAEAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_EnoughMoneyForThis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TMPro.TextMeshProUGUI" Collapsed="true">
+    <Position X="14.25" Y="22" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="16.75" Y="14" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="MeetingCollection">
+    <Position X="17" Y="21.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAQEBAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\Case.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="MaritalStatus" Collapsed="true">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="CustomerType" Collapsed="true">
+    <Position X="9.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TurnType">
+    <Position X="24.5" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABABAAAAIAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

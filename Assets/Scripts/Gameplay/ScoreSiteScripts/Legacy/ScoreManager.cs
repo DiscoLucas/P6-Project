@@ -7,7 +7,6 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
 
     private Slider slider;
 

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Qustion">
+    <Position X="12.75" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACIAAQAAAAQAAAAAAAAAAAEgoAAAgMAAAAABYAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_case" />
+      <Field Name="client" />
+      <Field Name="manager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="chooseLoan_qustion">
+    <Position X="0.5" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AASAAAAEAACQAQAAAAAAAAAAIMAACgAQAAAAAABAgAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\chooseLoan_qustion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_Ejerbolig_Prosent">
+    <Position X="19.75" Y="13.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_Ejerbolig_Prosent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_EnoughMoneyForThis">
+    <Position X="6" Y="12.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAAAAAAAAAAAAAAEAAAJAEAAAIAAAAAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_EnoughMoneyForThis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_FeildBoolean">
+    <Position X="7.25" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_FeildBoolean.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_FeildInput">
+    <Position X="11.75" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAAAQAAAAAAAAAAAAAAAEAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_FeildInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_Infomation" Collapsed="true">
+    <Position X="18" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_Infomation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_konvertion">
+    <Position X="3" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AACIgABAAQARAAAQAAAABAAQAoBBAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_konvertion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_MaxBuyFor">
+    <Position X="14.75" Y="13.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_MaxBuyFor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_MaxLoan">
+    <Position X="17.25" Y="13.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAQAAAAACAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_MaxLoan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_NumberInput">
+    <Position X="15.75" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QACAAAAgAAAAAAAAACAAAAAAAEAAAAAAAAAAEEAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_NumberInput.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Qustion_payoutEnough">
+    <Position X="9" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\Qustion_payoutEnough.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="qustion_yearlyIncom">
+    <Position X="11.75" Y="13.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\qustion_yearlyIncom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Case">
+    <Position X="18.5" Y="5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>EIACAAgEAAIAAAAACEAAAAAgBEABCgAiAAkARADAAAk=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\CaseManager\Case.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientData">
+    <Position X="16" Y="5.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAEAAAAACQAAAAAACCAIAABAAAAAAEAAAAAYQAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClientMeeting">
+    <Position X="10" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAYCAAAAACAAAAAAAQAAAAIAABAAAAAAgIAAAARAAAA=</HashCode>
+      <FileName>Assets\Scripts\Clients\ClientMeeting.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
