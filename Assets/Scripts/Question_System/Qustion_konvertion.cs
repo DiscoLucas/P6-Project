@@ -15,6 +15,8 @@ public class Qustion_konvertion : Qustion
     public GameObject downConvertionWindow,upConvertionWindow;
     public Qustion_Convertion downCS, upCS;
     public List<string> answers = new List<string>();
+    public string mailHeader = "Lånet blev ikke konverteret", mailText = " ";
+    public GameObject button;
 
     public override void fillOutHeaderAndDescribtion()
     {
@@ -31,9 +33,10 @@ public class Qustion_konvertion : Qustion
     public override void setAnswer()
     {
 
-        if (checkAnswer(0)) { 
-        
-        }else if (checkAnswer(1))
+        if (checkAnswer(0)) {
+            button.SetActive(false);
+        }
+        else if (checkAnswer(1))
         {
             Debug.Log("downConvert");
             downConvertionWindow.SetActive(true);
@@ -41,6 +44,7 @@ public class Qustion_konvertion : Qustion
             downCS.chooseThis = true;
             upCS.chooseThis = false;
             isCorrect = shouldDownConvert;
+            button.SetActive(true);
 
         }
         else if (checkAnswer(2))
@@ -51,6 +55,7 @@ public class Qustion_konvertion : Qustion
             downCS.chooseThis = false;
             upCS.chooseThis = true;
             isCorrect = !shouldDownConvert;
+            button.SetActive(true);
         }
         else {
             Debug.Log("behold");
@@ -59,6 +64,7 @@ public class Qustion_konvertion : Qustion
             downCS.chooseThis = false;
             upCS.chooseThis = false;
             isCorrect = !shouldDownConvert;
+            button.SetActive(true);
         }
 
 
@@ -74,6 +80,9 @@ public class Qustion_konvertion : Qustion
     public override void closeMeeting()
     {
         base.closeMeeting();
+        if (checkAnswer(2)) {
+            GameManager.instance.ms.addNewInfomationToMail(_case.client, mailHeader, new string[] { mailText });
+        }
     }
 
 }

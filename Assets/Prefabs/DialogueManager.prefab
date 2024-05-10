@@ -63,6 +63,7 @@ MonoBehaviour:
   sentinceDone:
     m_PersistentCalls:
       m_Calls: []
+  dialogObj: {fileID: 0}
   Diatext: {fileID: 0}
   nameText: {fileID: 0}
   clietntTemp: {fileID: 11400000, guid: d2162486cf55d5344951b97b41450c8b, type: 2}
@@ -110,6 +111,11 @@ MonoBehaviour:
   gameObject_continue: {fileID: 0}
   gameObject_end: {fileID: 0}
   nextSentince: 0
+  _mailtext:
+    header: 
+    text: []
+  _mailTextText: []
+  addToMail: 0
 --- !u!114 &7013967350456804574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,5 +335,6 @@ MonoBehaviour:
   - "[G\xE6ld]"
   - "[G\xE6ldFaktor]"
   - '[LoanAmount]'
+  - "[G\xE6ld]"
   values:
   - '[value1]'

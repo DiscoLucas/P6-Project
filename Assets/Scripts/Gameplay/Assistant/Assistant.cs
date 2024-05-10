@@ -19,7 +19,8 @@ public class Assistant : MonoBehaviour
     public int dialogueToSay;
     public int tutorialDialogue = 0;
     [SerializeField] string assistant_Name = "Saul";
-
+    public string header = " ";
+    int helpNumber = 0;
     [Header("Tutorial Bools")]
     public bool tutorialHasPlayed = false;
     public bool introHaveplayed = false;
@@ -27,6 +28,7 @@ public class Assistant : MonoBehaviour
     public bool firstTimeBuyout = false;
     public bool firstTimeConvert = false;
     public bool tutorialRunning = false;
+    public GameObject dialogBox;
 
 
     public ClientData assisentData;
@@ -48,6 +50,7 @@ public class Assistant : MonoBehaviour
 
     void PlayTutorial(int dialogueIndex)
     {
+        tutorialRunning = true;
         tutorialHasPlayed = false;
         currentIndex = dialogueIndex;
         reverseIntro.clip = intro2;
@@ -57,12 +60,17 @@ public class Assistant : MonoBehaviour
 
     public TurtoialIds startTurtoialCheck(TurtoialIds id)
     {
+        id.haveCompletede = true;
         PlayTutorial(id.conventationIndex);
+        dialogBox.SetActive(true);
         DialogueManager.instance.clientData = assisentData;
         return id;
     }
 
     public void startTurtialText(){
+        DialogueManager.instance.addToMail = true;
+        helpNumber++;
+        DialogueManager.instance._mailtext.header = header + " " + helpNumber;
         Debug.Log("Start Talking");
         DialogueManager.instance.clientData = assisentData;
         tutorialRunning = true;
@@ -128,6 +136,7 @@ public class Assistant : MonoBehaviour
             reverseIntro.PlayQueued(reverseIntro2.name);
             reverseIntro.Play();
             tutorialHasPlayed = true;
+            tutorialRunning = false;
             Debug.Log("I love you");
             if (!introHaveplayed)
             {

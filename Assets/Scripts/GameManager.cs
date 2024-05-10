@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GUIManager guim;
     public DialogueManager dlm;
     public CommentSystem cm;
+    public MailSystem ms;
 
     //DET HER SKAL FIKSES - Case manager skal integreres bedre.
     /*[Header("Client Meeting")]
@@ -62,13 +63,17 @@ public class GameManager : MonoBehaviour
     public Vector2 pointsCol ;
     public TurnEvent turnEvent;
     public bool meetingOngoing = false;
+    public string introductionMailHeader = "Introduktion";
+    public float chanceToscipConvertion = 0.4f;
+    public GameObject endTurnButton;
     private void Awake()
     {
         //Singleton pattern
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject.transform.parent);
+            transform.parent = transform.parent.parent;
+            DontDestroyOnLoad(gameObject);
             clientMeetingDone = new UnityEvent();
         }
         else
@@ -89,6 +94,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        monthNumber = 0;
         updateTurn();
         assistant.turtialDone.AddListener(turtroialDone);
     }
@@ -118,13 +124,33 @@ public class GameManager : MonoBehaviour
 
         Case @case = csm.getCasesThatNeedUpdate(monthNumber);
         int turnTypeIndex = 0;
-        if (@case != null)
+        if (@case != null && monthNumber >1)
         {
-            Debug.Log("CHANGE FOR CASE!!");
-            turnT = TurnType.Change_forCustomer;
-            mn_lastIncedient = monthNumber;
-            showTurnCounter();
-            return;
+            if (@case.loan.fixedIR || @case.loan.lastPeriod )
+            {
+                Debug.Log("CHANGE FOR CASE!!");
+                turnT = TurnType.Change_forCustomer;
+                mn_lastIncedient = monthNumber;
+                showTurnCounter();
+                return;
+            }
+            else {
+                float roll = UnityEngine.Random.Range(0.0f, 1f);
+                bool needToconvert = (roll > chanceToscipConvertion);
+                Debug.Log("Need to convert?: " + needToconvert + " the roll was: " + roll);
+                if (needToconvert)
+                {
+                    Debug.Log("CHANGE FOR CASE!!");
+                    turnT = TurnType.Change_forCustomer;
+                    mn_lastIncedient = monthNumber;
+                    showTurnCounter();
+                    return;
+                }
+                else {
+                    @case.loan.convertLoan(monthNumber, @case.loan.loanTypes.loanTime, @case.loan.IRForTime[@case.loan.IRForTime.Count - 1], @case.loan.loanTypes.volatility, @case.loan.loanTypes);
+                }
+            }
+
         }
         else {
             turnTypeIndex = decideWhatShouldHappend();
@@ -232,6 +258,8 @@ public class GameManager : MonoBehaviour
             csm.createCase(client);
             clm.startClientIntro(client);
             clm.currentClient= client;
+            DialogueManager.instance._mailtext.header = introductionMailHeader;
+            DialogueManager.instance.addToMail = true;
         }
     }
 
@@ -255,15 +283,6 @@ public class GameManager : MonoBehaviour
         Case c = csm.getCurrentCase();
         clm.currentClient = c.client;
         DialogueManager.instance.clientData = c.client;
-        /*
-        int turnTypeIndex = 0;
-        turnTypeIndex = decideWhatShouldHappend();
-        TurnType turnT = getCurrentTurnType();
-        if (!assistant.checkTurnTypeBool(turnT))
-        {
-            assistant.playSpecificTutorial(turnEvent.tutorialNR);
-        }else
-        */
 
         bool haveCompletede = assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede;
         assistant.turtoialID[c.getCurrentMeeting().turtoialIndex].haveCompletede = true;
@@ -383,7 +402,7 @@ public class GameManager : MonoBehaviour
 
     public void destoryAllManagers() {
         instance = null;
-        Destroy(transform.parent);
+        Destroy(gameObject);
 }
 
     void tryTodestoy(GameObject obj) {

@@ -18,7 +18,7 @@ MonoBehaviour:
   city: "K\xF8benhavn"
   maritalStatus: 0
   customerType: 0
-  chacterSprite: {fileID: 21300000, guid: 3f8f6fb3540bddc4eaef4b05cc5d6da0, type: 3}
+  chacterSprite: {fileID: 21300000, guid: 4d2e06c3bea02af4e82f3d10d836e52d, type: 3}
   minPitch: 1.2
   maxPitch: 1.6
   startMeet: 0

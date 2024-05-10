@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 
 
@@ -13,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public UnityEvent sentinceDone;
 
     [Header("References")]
+    public GameObject dialogObj;
     public TMP_Text Diatext;
     public TMP_Text nameText;
     public ClientTemplate clietntTemp;
@@ -52,7 +54,6 @@ public class DialogueManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             sentinceDone = new UnityEvent();
             animator.SetBool("IsOpen", dialogueVissible);
         }
@@ -76,11 +77,13 @@ public class DialogueManager : MonoBehaviour
     /// <param name="registryIndex"></param>
     public void StartDia(int caseIndex)
     {
+        dialogObj.SetActive(true);
         if (hasRun)
         {
             DisplayCaseSummary();
             return;
         }
+        
         dialogueVissible = true;   
         currentCaseIndex = caseIndex;
         currentDialogueIndex = 0;
@@ -89,6 +92,10 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+    public void OnDestroy()
+    {
+        instance = null;
+    }
 
     private void DisplayCaseSummary()
     {
@@ -96,7 +103,15 @@ public class DialogueManager : MonoBehaviour
         DisplayOneSentince(caseSum);
     }
 
+    public MailText _mailtext;
+    public List<string> _mailTextText;
+    public bool addToMail = false;
 
+    public void restMailCollection() {
+        _mailtext = new MailText();
+        _mailTextText.Clear();
+        addToMail= false;
+    }
     public void DisplayNextSentence()
     {
         if (currentCaseIndex >= 0 && currentCaseIndex < dialogueRegistry.sentinces.GridSize.y)
@@ -106,6 +121,7 @@ public class DialogueManager : MonoBehaviour
             {
                 string sentence = dialogueRegistry.GetSentincesIndex(currentCaseIndex, currentDialogueIndex);
                 sentence = dialogueRegistry.replaceString(sentence, GameManager.instance.csm.getCurrentCase());
+                _mailTextText.Add(sentence);
                 DisplayOneSentince(sentence);
                 currentDialogueIndex++;
 
@@ -215,11 +231,17 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     public void EndDialogue() //All this does is change the animation state of the Dialogue Plane / Canvas
     {
+        if (addToMail) {
+            _mailtext.text = _mailTextText.ToArray();
+            GameManager.instance.ms.addNewInfomationToMail(clientData, _mailtext.header, _mailtext.text);
+        }
+        restMailCollection();
         dialogueVissible = false;
         hasRun = false;
         animator.SetBool("IsOpen", dialogueVissible);
         Debug.Log("End of Dialogue");
         dialogDone.Invoke();
+
     }
 }
 

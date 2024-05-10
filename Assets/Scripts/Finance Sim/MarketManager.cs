@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static MarketManager;
 using Random = UnityEngine.Random;
 /// <summary>
@@ -299,17 +300,9 @@ public class MarketManager : MonoBehaviour
         GameManager.instance.updateTurn();
     }
 
-    internal Loan convertLoan(ClientData client, float neededLoan, Loan loan, LoanTypes l)
+    public  Loan convertLoan(ClientData client, float neededLoan, Loan loan, LoanTypes l)
     {
-        int remaingTime = GameManager.instance.monthNumber - loan.periodStartMonth;
-        int loanTime = l.loanTime;
-        loan.fixedIR = (l.loanTime == 360);
-        if (remaingTime + l.loanTime >= 360) {
-            Debug.Log("LastPeriod");
-            loanTime = 360 - remaingTime;
-            loan.lastPeriod = true;
-        }
-        loan.convertLoan(GameManager.instance.monthNumber, loanTime, l.interssetRate, l.volatility,l);
+        loan.convertLoan(GameManager.instance.monthNumber, l.loanTime, l.interssetRate, l.volatility,l);
         loan.loanTypes= l;
         return loan;
     }

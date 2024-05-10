@@ -54,7 +54,7 @@ public class Case
     public bool checkCaseUpdate() { 
         if(loan != null)
         {
-            bool update = (GameManager.instance.monthNumber - loan.initialMonth >= 360);
+            bool update = (GameManager.instance.monthNumber - loan.periodStartMonth+loan.initialMonth >= 360);
             
             if (update) {
             }

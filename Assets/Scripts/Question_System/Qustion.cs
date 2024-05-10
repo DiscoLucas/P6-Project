@@ -6,7 +6,7 @@ public class Qustion : MonoBehaviour
 {
     [SerializeField]
     [TextArea(3, 10)]
-    string header_text = " ";
+    public string header_text = " ";
     [SerializeField]
     [TextArea(3, 10)]
     string describtion_text = " ";

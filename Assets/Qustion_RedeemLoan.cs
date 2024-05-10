@@ -23,7 +23,10 @@ public class Qustion_RedeemLoan : Qustion
 
     public override void closeMeeting()
     {
-        if((dropdown.value == 0))
+        if ((dropdown.value == 0))
+        {
             GameManager.instance.csm.getCurrentCase().closeCase = true;
+        }
+        GameManager.instance.ms.addNewInfomationToMail(_case.client, dropdown.options[dropdown.value].text, new string[] { " " });
     }
 }

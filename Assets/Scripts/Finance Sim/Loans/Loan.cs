@@ -45,6 +45,10 @@ public class Loan
         this.installment = installment;
         IRPForTime.Add((interestRate/20)+95); // wtf are these magic numbers? -Mitchell
         this.loanTypes = loanTypes;
+
+        if (LoanTerm == 360) {
+            fixedIR= true;
+        }
     }
     /// <summary>
     /// Return all the interest rate over time
@@ -69,7 +73,8 @@ public class Loan
     public void payLoan() 
     { 
         double monthlyPayment = CalculateMonthlyPayment();
-        loanAmount -= monthlyPayment;
+        debtAmount -=(float) monthlyPayment;
+        loanAmount-=(float) monthlyPayment;
     }
 
     /// <summary>
