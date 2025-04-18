@@ -5,19 +5,23 @@ using UnityEngine.Events;
 
 public class StartMeeting : MonoBehaviour
 {
-    public GameObject light;
+    public GameObject interactionLight;
     public UnityEvent onClick;
     public bool zoomedIn = false;
     public GameObject mountCounter, endTurn;
     private void OnMouseOver()
     {
-        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && !GameManager.instance.meetingOngoing  && GameManager.instance.assistant.tutorialHasPlayed && !GameManager.instance.assistant.tutorialRunning && !mountCounter.active&& !endTurn.active)
+        if (!zoomedIn && !DialogueManager.instance.dialogueVissible && 
+        !GameManager.instance.meetingOngoing && 
+        GameManager.instance.assistant.tutorialHasPlayed && 
+        !GameManager.instance.assistant.tutorialRunning && 
+        !mountCounter.active && 
+        !endTurn.active)
         {
-            Debug.Log("M Over ");
-            light.SetActive(true);
+            interactionLight.SetActive(true);
             if (Input.GetMouseButtonDown(0)) 
             { //WHEN IT CLICK
-                light.SetActive(false);
+                interactionLight.SetActive(false);
                 onClick.Invoke();
                 zoomedIn = true;
             }
@@ -26,7 +30,7 @@ public class StartMeeting : MonoBehaviour
 
     private void OnMouseExit()
     {
-        light.SetActive(false);
+        interactionLight.SetActive(false);
         zoomedIn = false;
     }
 }
