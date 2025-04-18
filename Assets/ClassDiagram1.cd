@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GameManager">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQAAACgICCQIhUhCBIAAAIDAghIQAcgCBSAgQEghMA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cm" />
+      <Field Name="assistant" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TurnEvent" Collapsed="true">
+    <Position X="11.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAABAAFAAAIAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommentSystem" Collapsed="true">
+    <Position X="13.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAgAQQAAAAIAAAAAAAAAAAAAAABAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\ScoreSiteScripts\CommentSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Assistant">
+    <Position X="6.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAYBQgACgKBJKAAAChEBQAACACAABhACAAIARCAcA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\Assistant\Assistant.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialogueManager">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BKFBAwESACABYAAQAAAMAAAAEQBAAIAAIQAAQhAAGOA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\DialougeManager\DialogueManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoanSelcetor">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAKAAAAAAAAAAAAAAAAAAgAIAABAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Question_System\loanSelcetor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="loan" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Loan">
+    <Position X="8" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEBAEAJAAAABAAACAlAAhQAAEEAAQAABAACEAFBAAQA=</HashCode>
+      <FileName>Assets\Scripts\Finance Sim\Loans\Loan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TurtoialIds">
+    <Position X="12.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Gameplay\Assistant\Assistant.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="TurnType" Collapsed="true">
+    <Position X="11.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABABAAAAIAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
