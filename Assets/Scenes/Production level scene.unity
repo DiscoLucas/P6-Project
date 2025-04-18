@@ -420,6 +420,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 122875816463816527, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 108
+      objectReference: {fileID: 0}
     - target: {fileID: 305257264891405149, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
       propertyPath: m_PreferredWidth
@@ -1325,6 +1330,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018294361529453634, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105371104852801779, guid: f288332e4eccdcb41a52aa9a76709d1f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -62
       objectReference: {fileID: 0}
     - target: {fileID: 5122991666941844309, guid: f288332e4eccdcb41a52aa9a76709d1f,
         type: 3}
@@ -3916,7 +3931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6037743bdd6bab04592c260c6fd4ace6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 714586960}
+  interactionLight: {fileID: 714586960}
   onClick:
     m_PersistentCalls:
       m_Calls:

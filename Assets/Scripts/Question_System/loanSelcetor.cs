@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 /// <summary>
-/// Class on the button that tells when the main virsualizer should update and the infotion
+/// Class on the button that tells when the main visualizer should update and the infomation.
+/// Used when the user wants to create a loan for a client.
 /// </summary>
 public class LoanSelcetor : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class LoanSelcetor : MonoBehaviour
     public TMP_Text text;
     public IRVisualizer iRVisualizer;
     [Header("The sufix used in UI ")]
-    public string sufix = "ÅR";
+    public string sufix = "ï¿½R";
     public string sufixFast = "Fast";
 
     /// <summary>
